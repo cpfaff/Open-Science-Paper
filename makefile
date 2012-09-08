@@ -28,7 +28,7 @@ CLEANSWP = .*.swp subdocuments/.*.swp
 
 all: $(DOCUMENT).pdf 
 
-$(DOCUMENT).pdf: $(DOCUMENT).Rnw $(DOCUMENT).tex praeambel.tex subdocuments/*.tex $(DOCUMENT).tex
+$(DOCUMENT).pdf: $(DOCUMENT).Rnw $(DOCUMENT).tex subdocuments/praeambel.tex subdocuments/*.tex $(DOCUMENT).tex
 	$(KNITR) $(DOCUMENT).Rnw $(DOCUMENT).tex --pdf
 	$(PDFLATEX) $(DOCUMENT).tex
 	$(BIBTEX) $(DOCUMENT)
