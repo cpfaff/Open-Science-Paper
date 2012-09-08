@@ -1,0 +1,343 @@
+%% Font and input encodings %%
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+
+%% Font %%
+\RequirePackage{lmodern}
+
+%% patch old LaTeX problems %%
+\RequirePackage{fixltx2e}
+\RequirePackage{scrhack}
+\RequirePackage{etex}
+\reserveinserts{30}
+
+%% Language options %%
+\RequirePackage[ngerman,english]{babel} 
+\RequirePackage[autostyle]{csquotes}
+
+% correction of white spaces 
+\RequirePackage{ellipsis}
+\RequirePackage{xspace}
+
+%% Lorem ipsum dolor sit amet ... %%
+\RequirePackage{lipsum}
+
+%% Paper abstract %%
+\RequirePackage{abstract}
+
+%% Calculate with latex sizes %%
+\RequirePackage{calc}
+
+%% Upper and lower case text %% 
+\RequirePackage{textcase}
+
+%% use color %%
+\RequirePackage{xcolor} 
+% Standards
+% green, blue, cyan, magenta, red, yellow, black, white, darkgray, gray, lightgray
+
+%% Colordefinitions %%
+\xdefinecolor{ListingBackgroundColor}{gray}{.95}
+\xdefinecolor{ListingCommentstyleColor}{gray}{.60}
+\xdefinecolor{LinkColor}{rgb}{0,0,0.4}
+
+\colorlet{ListingStringstyleColor}{green!25} 
+\colorlet{ListingEmphstyleColor}{blue}
+\colorlet{ListingKeywordstyleColor}{orange!70}
+
+\RequirePackage{graphicx}
+\RequirePackage{overpic}
+
+%Create graphix with tikz-language
+\RequirePackage{tikz}
+
+%Some tikz-librarys, extend tikz funcionality
+\usetikzlibrary{spy,external,automata,patterns,shadows,trees,mindmap,arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+% Define block styles
+\tikzstyle{pictureframe} = [rectangle, rounded corners, draw]
+\tikzstyle{signbackground}=[rectangle, fill=gray!3, rounded corners, draw=gray, very thin]
+
+%Platzieren von Floatingumgebungen
+\RequirePackage{float} 
+%implementiert:
+%	Floatingparameter (H)
+%	\floatstyle
+%	\floatname
+%	\floatplacement
+%	\restylefloat
+%
+% Note:
+%	The parameter "H" must be used in "Multicol" environments because they
+%  not allow floating	
+
+%Layout des Caption (Beschriftung) einer Floating Umgebung. (mit dem paket "sidecap" kann man legenden Seitlich des Gleitobjektes setzen)
+\RequirePackage[margin=10pt, font={small,it}, format=hang, labelformat=default, labelsep=endash, justification=centering, singlelinecheck=false]{caption}
+
+%Macht es möglich mehrere Bilder gleichzeitig besser zu setzten. Siehe Dokumentation
+\RequirePackage{subfig}
+
+%%% Besondere-Symbole %%%
+\RequirePackage{textcomp}
+
+%%%-------------------------------------------------%%%
+%%% Tabellensatz-Einstellungen%%%
+%%%-------------------------------------------------%%%
+
+%Erzeugen professioneller Tabellen
+\RequirePackage{booktabs}
+%implementiert:
+%	\toprule
+%	\midrule
+%	\bottomrule
+
+%Erweiterte Tabellenfunktionen
+\RequirePackage{tabularx}
+%implementiert:
+%	Spaltentyp (X)
+%	etc...
+
+%Zellen von Tabellen zusammenfassen
+\RequirePackage{multirow}
+%implementiert:
+%
+%Horizontales Zusammenfassen
+%	\multicolumn{Spalten}{Ausrichtung}{Text}
+%		Spalten     ==> Anzahl der Spalten die zusammengefasst werden ssollen
+%		Ausrichtung ==> Ausrichtung des Textes in der zusammengefassten Zelle (links,zentriert, rechts)
+%		Text        ==> Text, der in der zusammengefassten Zelle stehen soll
+%Vertikales Zusammenfassen
+%	\multirow{Spalten}{Breite}{Text}
+%		Zeilen   ==> Anzahl der Zeilen die zusammengefasst werden ssollen
+%		Breite   ==> Breite der Zelle; z.B. 20mm oder * für automatische Breite
+%		Text     ==> Text, der in der zusammengefassten Zelle stehen soll
+%
+%\RequirePackage{array}          % wird von colortbl benötigt
+%\RequirePackage{colortbl}       % ermöglicht farbig hinterlegte Tabellen
+
+
+
+%% Multi column documents %%
+\RequirePackage{multicol}
+
+
+%%%-------------------------------------------------%%%
+%%% Bibliography Options %%%
+%%%-------------------------------------------------%%%
+
+%citation management
+\RequirePackage[backend=biber, natbib=true,style=authoryear,bibstyle=authoryear,hyperref=true]{biblatex}
+%,
+\ExecuteBibliographyOptions{
+url=false,
+isbn=false,
+doi=false,
+firstinits=false,
+bibencoding=utf8
+}
+
+\addbibresource{paper.bib}
+
+%\citet{jon90} ⇒ Jones et al. (1990)
+%\citet[chap.~2]{jon90} ⇒ Jones et al. (1990, chap. 2)
+%\citep{jon90} ⇒ (Jones et al., 1990)
+%\citep[chap.~2]{jon90} ⇒ (Jones et al., 1990, chap. 2)
+%\citep[see][]{jon90} ⇒ (see Jones et al., 1990)
+%\citep[see][chap.~2]{jon90} ⇒ (see Jones et al., 1990, chap. 2)
+%\citet*{jon90} ⇒ Jones, Baker, and Williams (1990)
+%\citep*{jon90} ⇒ (Jones, Baker, and Williams, 1990)
+
+%%%-------------------------------------------------%%%
+%%% Math Options %%%
+%%%-------------------------------------------------%%%
+
+%Für alle Mathematischen Symbole und Fonts
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+
+%Nice typesetting of SI units
+\RequirePackage{siunitx}
+%examples
+%\si{kg.m/s^2}
+%\num{12345}
+%\num{0,1234}
+%\num{.12345}
+%\ang{12.3}
+%\ang{1;2;3}
+%\ang{;;-1}
+%\SI{-29}{\degreeCelsius}   
+%\SI{30000}{\kilogram}
+
+%%%-------------------------------------------------%%%
+%%% PDF Options %%%
+%%%-------------------------------------------------%%%
+
+% Define colors hyperref 
+\xdefinecolor{LinkColor}{rgb}{0,0,0.4}
+
+\RequirePackage[%
+  %plainpages=false,%
+  bookmarks=true,%
+  bookmarksopen=true,%
+  pdfborder={0 0 0},%
+  %pdfpagemode=UseNone,%
+  colorlinks=false,%
+  linkcolor=LinkColor,
+  citecolor=LinkColor,%
+  filecolor=LinkColor,%
+  menucolor=LinkColor,%	
+  urlcolor=LinkColor,%
+  breaklinks=true,%
+  raiselinks=true,%
+  pdfauthor={Your name here},
+  pdfcreator={Your name here},
+  pdfsubject={Your subject here},
+  pdfkeywords={LaTeX, Tikz, Knitr, Scientific paper, Open science}
+  ]{hyperref}
+
+%% Examples:
+% \href{URL}{text} 
+% \url{URL}
+% \nolinkurl{URL}
+
+%%%-------------------------------------------------%%%
+%%% References with prettyref %%%
+%%%-------------------------------------------------%%%
+
+\RequirePackage{prettyref}
+
+\newrefformat{fig}{figure~\ref{#1}}
+\newrefformat{Fig}{Figure~\lowercase{\ref{#1}}}
+\newrefformat{cha}{chapter~\ref{#1}}
+\newrefformat{Cha}{Chapter~\lowercase{\ref{#1}}}
+\newrefformat{sec}{chapter~\ref{#1}}
+\newrefformat{Sec}{Chapter~\lowercase{\ref{#1}}}
+\newrefformat{sub}{chapter~\ref{#1}}
+\newrefformat{Sub}{Chapter~\lowercase{\ref{#1}}}
+\newrefformat{subs}{chapter~\ref{#1}}
+\newrefformat{Subs}{Chapter~\lowercase{\ref{#1}}}
+\newrefformat{tab}{table~\ref{#1}}
+\newrefformat{Tab}{Table~\lowercase{\ref{#1}}}
+\newrefformat{lst}{listing~\ref{#1}}
+\newrefformat{Lst}{Listing~\lowercase{\ref{#1}}}
+\newrefformat{equ}{equation~\ref{#1}}
+\newrefformat{Equ}{Equation~\lowercase{\ref{#1}}}
+
+
+%%%-------------------------------------------------%%%
+%%% References with prettyref %%%
+%%%-------------------------------------------------%%%
+
+%Source code and compiled LaTeX next to each other
+\RequirePackage{showexpl}
+
+\RequirePackage{listings}
+
+\xdefinecolor{ListingBackgroundColor}{gray}{.95}
+\xdefinecolor{ListingCommentstyleColor}{gray}{.60}
+
+\lstset{
+   backgroundcolor=\color{ListingBackgroundColor},
+   language=[LaTeX]TeX,
+   basicstyle=\scriptsize\ttfamily,
+   keywordstyle=\bfseries\ttfamily\color{ListingKeywordstyleColor},
+   stringstyle=\color{ListingStringstyleColor}\ttfamily,
+   commentstyle=\color{ListingCommentstyleColor}\ttfamily,
+   emph={word1}, 
+   emphstyle=\color{ListingEmphstyleColor}\texttt, %for word 1
+   emph={[2]word2,word3},
+   emphstyle={[2]\color{ListingEmphstyleColor}\texttt}, %for word 2
+   showstringspaces=false,
+   flexiblecolumns=false,
+   tabsize=3,
+   numbers=left,
+   breaklines=true,
+   numberstyle=\tiny,
+   numberblanklines=true,
+   stepnumber=1,
+   numbersep=10pt,
+   xleftmargin=15pt
+ }
+
+\xdefinecolor{gray}{rgb}{0.4,0.4,0.4}
+\xdefinecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\xdefinecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+%highlight definition for XML in listings 
+\lstdefinelanguage{XML}
+{
+  morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  identifierstyle=\color{darkblue},
+  keywordstyle=\color{cyan},
+  morekeywords={xmlns,version,type}% list your attributes here
+}
+
+\lstset{literate=%
+{Ö}{{\"O}}1
+{Ä}{{\"A}}1
+{Ü}{{\"U}}1
+{ß}{{\ss}}2 
+{ü}{{\"u}}1
+{ä}{{\"a}}1
+{ö}{{\"o}}1
+{~}{{\textasciitilde}}1
+}
+
+%%%-------------------------------------------------%%%
+
+\setlength{\parskip}{0.5ex plus0.0ex minus0ex} % Absatzabstand etwas groesser
+\setlength{\itemsep}{0ex minus0.2ex} % Abstand zweier Listenelemente kleiner
+\setlength{\parindent}{0em} % Kein Absatzeinzug kann eingestellt werden nach Bedarf
+
+\RequirePackage[noindentafter,calcwidth]{titlesec}  %%%-------------------------------------------------%%%
+%%% Unterdrücken von Fehlermeldungen und Sonstiges %%%
+%%%-------------------------------------------------%%%
+
+\hbadness = 10000               % unterdrückt unwichtige Fehlermeldungen
+\clubpenalty = 10000            % Keine "Schusterjungen"
+\widowpenalty = 10000       % Keine "Hurenkinder"
+\displaywidowpenalty = 10000
+
+%%%-------------------------------------------------%%%
+%%% Umdefinition von Umgebungen %%%
+%%%-------------------------------------------------%%%
+
+
+%Umdefinition der Literatur Umgebung
+\makeatletter
+\renewenvironment{thebibliography}[1]
+{\subsection*{\refname}%
+\@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+\list{\@biblabel{\@arabic\c@enumiv}}%
+{\settowidth\labelwidth{\@biblabel{#1}}%
+\leftmargin\labelwidth
+\setlength{\bibhang}{2em}
+\setlength{\bibindent}{3em}
+%\advance\leftmargin\labelsep
+\@openbib@code
+\usecounter{enumiv}%
+\let\p@enumiv\@empty
+\renewcommand\theenumiv{\@arabic\c@enumiv}}%
+\clubpenalty4000
+\@clubpenalty \clubpenalty
+\widowpenalty4000%
+\sfcode`\.\@m}
+{\def\@noitemerr
+{\@latex@warning{Empty `thebibliography' environment}}%
+\endlist}
+\makeatother
+
+
+\makeatletter
+\renewcommand*\bib@heading{%
+  \subsection{\refname}%
+}
+\makeatother
+
+
