@@ -36,7 +36,7 @@
 % Standards
 % green, blue, cyan, magenta, red, yellow, black, white, darkgray, gray, lightgray
 
-%% Colordefinitions %%
+%% Color definitions %%
 \xdefinecolor{ListingBackgroundColor}{gray}{.95}
 \xdefinecolor{ListingCommentstyleColor}{gray}{.60}
 \xdefinecolor{LinkColor}{rgb}{0,0,0.4}
@@ -45,13 +45,18 @@
 \colorlet{ListingEmphstyleColor}{blue}
 \colorlet{ListingKeywordstyleColor}{orange!70}
 
+\xdefinecolor{ListingBackgroundColor}{gray}{.95}
+\xdefinecolor{ListingCommentstyleColor}{gray}{.60}
+
+\xdefinecolor{gray}{rgb}{0.4,0.4,0.4}
+\xdefinecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\xdefinecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+%% Use and create graphics %%
 \RequirePackage{graphicx}
 \RequirePackage{overpic}
-
-%Create graphix with tikz-language
 \RequirePackage{tikz}
-
-%Some tikz-librarys, extend tikz funcionality
+% Some tikz-library's, extend tikz functionality
 \usetikzlibrary{spy,external,automata,patterns,shadows,trees,mindmap,arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
 \pgfdeclarelayer{background}
 \pgfdeclarelayer{foreground}
@@ -60,76 +65,58 @@
 \tikzstyle{pictureframe} = [rectangle, rounded corners, draw]
 \tikzstyle{signbackground}=[rectangle, fill=gray!3, rounded corners, draw=gray, very thin]
 
-%Platzieren von Floatingumgebungen
+%% Control floating placement %%
 \RequirePackage{float} 
-%implementiert:
-%	Floatingparameter (H)
-%	\floatstyle
-%	\floatname
-%	\floatplacement
-%	\restylefloat
-%
 % Note:
-%	The parameter "H" must be used in "Multicol" environments because they
-%  not allow floating	
+% The parameter "H" must be used in "multicol" environments because they
+% do not allow floating	
 
-%Layout des Caption (Beschriftung) einer Floating Umgebung. (mit dem paket "sidecap" kann man legenden Seitlich des Gleitobjektes setzen)
+%% Control caption layout %%
 \RequirePackage[margin=10pt, font={small,it}, format=hang, labelformat=default, labelsep=endash, justification=centering, singlelinecheck=false]{caption}
 
-%Macht es möglich mehrere Bilder gleichzeitig besser zu setzten. Siehe Dokumentation
+%% Create subfigures (check if already obsolete!) %%
 \RequirePackage{subfig}
 
-%%% Besondere-Symbole %%%
+%%% Symbols %%%
 \RequirePackage{textcomp}
 
-%%%-------------------------------------------------%%%
-%%% Tabellensatz-Einstellungen%%%
-%%%-------------------------------------------------%%%
-
-%Erzeugen professioneller Tabellen
+%% Professional tables
 \RequirePackage{booktabs}
-%implementiert:
+% useage:
 %	\toprule
 %	\midrule
 %	\bottomrule
+% 	\cmidrule{from column #. - to column #}
 
-%Erweiterte Tabellenfunktionen
+%% Extended table functions
 \RequirePackage{tabularx}
 %implementiert:
 %	Spaltentyp (X)
 %	etc...
 
-%Zellen von Tabellen zusammenfassen
+%% Aggregate column cells %%
 \RequirePackage{multirow}
-%implementiert:
-%
-%Horizontales Zusammenfassen
-%	\multicolumn{Spalten}{Ausrichtung}{Text}
-%		Spalten     ==> Anzahl der Spalten die zusammengefasst werden ssollen
-%		Ausrichtung ==> Ausrichtung des Textes in der zusammengefassten Zelle (links,zentriert, rechts)
-%		Text        ==> Text, der in der zusammengefassten Zelle stehen soll
-%Vertikales Zusammenfassen
-%	\multirow{Spalten}{Breite}{Text}
-%		Zeilen   ==> Anzahl der Zeilen die zusammengefasst werden ssollen
-%		Breite   ==> Breite der Zelle; z.B. 20mm oder * für automatische Breite
-%		Text     ==> Text, der in der zusammengefassten Zelle stehen soll
-%
-%\RequirePackage{array}          % wird von colortbl benötigt
-%\RequirePackage{colortbl}       % ermöglicht farbig hinterlegte Tabellen
+% usage:
+%  Horizontal aggregation of table cells
+%	 \multicolumn{columns}{alignment}{text}
+%  Vertical aggregation of table cells  
+%	 \multirow{rows}{width}{text}
 
-
+% Use color in tables 
+%\RequirePackage{array}          
+%\RequirePackage{colortbl}       
 
 %% Multi column documents %%
 \RequirePackage{multicol}
-
 
 %%%-------------------------------------------------%%%
 %%% Bibliography Options %%%
 %%%-------------------------------------------------%%%
 
-%citation management
+% citation management
 \RequirePackage[backend=biber, natbib=true,style=authoryear,bibstyle=authoryear,hyperref=true]{biblatex}
-%,
+
+% additional options
 \ExecuteBibliographyOptions{
 url=false,
 isbn=false,
@@ -138,16 +125,19 @@ firstinits=false,
 bibencoding=utf8
 }
 
-\addbibresource{paper.bib}
+% add a BibTeX file 
+\addbibresource{subdocuments/paper.bib}
 
-%\citet{jon90} ⇒ Jones et al. (1990)
-%\citet[chap.~2]{jon90} ⇒ Jones et al. (1990, chap. 2)
-%\citep{jon90} ⇒ (Jones et al., 1990)
-%\citep[chap.~2]{jon90} ⇒ (Jones et al., 1990, chap. 2)
-%\citep[see][]{jon90} ⇒ (see Jones et al., 1990)
-%\citep[see][chap.~2]{jon90} ⇒ (see Jones et al., 1990, chap. 2)
-%\citet*{jon90} ⇒ Jones, Baker, and Williams (1990)
-%\citep*{jon90} ⇒ (Jones, Baker, and Williams, 1990)
+% citate:
+%  \citet{jon90} ⇒ Jones et al. (1990)
+%  \citet[chap.~2]{jon90} ⇒ Jones et al. (1990, chap. 2)
+%  \citep{jon90} ⇒ (Jones et al., 1990)
+%  \citep[chap.~2]{jon90} ⇒ (Jones et al., 1990, chap. 2)
+%  \citep[see][]{jon90} ⇒ (see Jones et al., 1990)
+%  \citep[see][chap.~2]{jon90} ⇒ (see Jones et al., 1990, chap. 2)
+%  \citet*{jon90} ⇒ Jones, Baker, and Williams (1990)
+%  \citep*{jon90} ⇒ (Jones, Baker, and Williams, 1990)
+
 
 %%%-------------------------------------------------%%%
 %%% Math Options %%%
@@ -236,8 +226,6 @@ bibencoding=utf8
 
 \RequirePackage{listings}
 
-\xdefinecolor{ListingBackgroundColor}{gray}{.95}
-\xdefinecolor{ListingCommentstyleColor}{gray}{.60}
 
 \lstset{
    backgroundcolor=\color{ListingBackgroundColor},
@@ -261,10 +249,6 @@ bibencoding=utf8
    numbersep=10pt,
    xleftmargin=15pt
  }
-
-\xdefinecolor{gray}{rgb}{0.4,0.4,0.4}
-\xdefinecolor{darkblue}{rgb}{0.0,0.0,0.6}
-\xdefinecolor{cyan}{rgb}{0.0,0.6,0.6}
 
 %highlight definition for XML in listings 
 \lstdefinelanguage{XML}

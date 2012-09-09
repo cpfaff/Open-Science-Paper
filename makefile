@@ -1,31 +1,29 @@
-#My LaTeX-Makefile
+##------------------------------------------------------------------------------------##
+##------------------------------------------------------------------------------------##
+## Content: Open-Science-Paper LaTeX-Makefile
+## Usage: Compile Open-Science-Papers  
+## Author: Claas-Thido Pfaff
+##------------------------------------------------------------------------------------##
+##------------------------------------------------------------------------------------##
 
 #Maindocument
 DOCUMENT = maindoc_paper
 
-MAPDIR = maps/
-MAPFILES = $(wildcard maps/Map*.pdf)
-MAPNAMES = $(notdir $(MAPFILES))
-
-#MULTIDOCS = doc1 doc2 doc3 usw...
-
-#Programs
-SWEAVE = R CMD Sweave
-PGFSWEAVE = R CMD pgfsweave -s -p 2
+#Used Programs
 KNITR = knit
 BIBTEX = biber
 PDFLATEX = pdflatex 
 PDFVIEWER = okular 
 GLOSSARYINDEXER = makeglossaries
 
-#Archive the document
+# Archive the document
 ARCHNAME = $(DOCUMENT)-$(shell date +%y%m%d)
-ARCHFILES = bibliography distmap.r distmap.sh $(DOCUMENT).pdf $(DOCUMENT).Rnw maps subdocuments rawdata pictures scripts myclass2012de.cls species.list makefile tinyurl.sh startdevel.sh
+ARCHFILES = paper.bib $(DOCUMENT).pdf $(DOCUMENT).Rnw subdocuments data graphics makefile
 
+# Clean up the document folder
 CLEANFILES = Bilder/*.tikz cache/* *.xdy *tikzDictionary *.idx *.mtc* *.glo *.maf *.ptc *.tikz *.lot *.dpth *.figlist *.dep *.log *.makefile *.out *.map *.pdf *.tex *.toc *.aux *.tmp *.bbl *.blg *.lof *.acn *.acr *.alg *.glg *.gls *.ilg *.ind *.ist *.slg *.syg *.syi minimal.acn minimal.dvi minimal.ist minimal.syg minimal.synctex.gz *.bcf *.run.xml *-blx.bib  
 
-CLEANSWP = .*.swp subdocuments/.*.swp
-
+# General rules
 all: $(DOCUMENT).pdf 
 
 $(DOCUMENT).pdf: $(DOCUMENT).Rnw $(DOCUMENT).tex subdocuments/praeambel.tex subdocuments/*.tex $(DOCUMENT).tex
@@ -34,7 +32,8 @@ $(DOCUMENT).pdf: $(DOCUMENT).Rnw $(DOCUMENT).tex subdocuments/praeambel.tex subd
 	$(BIBTEX) $(DOCUMENT)
 	$(PDFLATEX) $(DOCUMENT).tex
 
-nosint:
+# Special rules
+noknit:
 	$(PDFLATEX) $(DOCUMENT).Rnw
 	$(BIBTEX) $(DOCUMENT)
 	$(PDFLATEX) $(DOCUMENT).Rnw
@@ -80,16 +79,6 @@ warnings:
 	@-grep 'Underfull' $(DOCUMENT).log
 	@-echo "----------------------------------------------------o"
 
-maps: distmap.r species.list
-	./distmap.sh -u
-
-clipmaps:
-	for map in $(MAPNAMES); do pdfcrop --margins '1 5 1 5' --clip $(MAPDIR)$${map} $(MAPDIR)cl$${map}; done
-	@-rm tmp-pdfcrop*.pdf
-
-tinyurl: tinyurl.sh
-	./tinyurl.sh
-
 shrinkpdf:
 	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=Shrink$(DOCUMENT).pdf $(DOCUMENT).pdf 
 
@@ -97,8 +86,4 @@ archive:
 	zip -r $(ARCHNAME).zip $(ARCHFILES)
 
 clean:
-	@-rm -r $(CLEANFILES)
-
-swpclean:
-	@-rm $(CLEANSWP)
-	
+	@-rm -r $(CLEANFILES)	
