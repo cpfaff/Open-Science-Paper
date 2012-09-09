@@ -1,6 +1,5 @@
 *.aux
 *.bcf
-maindoc_paper.pdf
 maindoc_paper.run.xml
 maindoc_paper.tex
 *.bbl
