@@ -279,19 +279,35 @@ bibencoding=utf8
 \setlength{\itemsep}{0ex minus0.2ex} % Abstand zweier Listenelemente kleiner
 \setlength{\parindent}{0em} % Kein Absatzeinzug kann eingestellt werden nach Bedarf
 
-\RequirePackage[noindentafter,calcwidth]{titlesec}  %%%-------------------------------------------------%%%
-%%% Unterdrücken von Fehlermeldungen und Sonstiges %%%
-%%%-------------------------------------------------%%%
-
-\hbadness = 10000               % unterdrückt unwichtige Fehlermeldungen
-\clubpenalty = 10000            % Keine "Schusterjungen"
-\widowpenalty = 10000       % Keine "Hurenkinder"
-\displaywidowpenalty = 10000
+\RequirePackage[noindentafter,calcwidth]{titlesec}  
 
 %%%-------------------------------------------------%%%
-%%% Umdefinition von Umgebungen %%%
+%%% Suppress errors and typographical finetuning %%%
 %%%-------------------------------------------------%%%
 
+\clubpenalty = 9999	           % No "Schusterjungen"
+\widowpenalty = 9999         % No "Hurenkinder"
+\displaywidowpenalty = 9999
+\tolerance = 200
+\hbadness = 1414
+\emergencystretch = 1.5em
+\hfuzz = 0.3pt
+
+% Typographic finetuning
+\RequirePackage[protrusion=true,%
+expansion=true,%
+babel=true,%
+tracking=true,% 
+spacing=false]{microtype}     
+
+\DeclareMicrotypeSet*[tracking]{my}% 
+       { font = */*/*/sc/* }% 
+\SetTracking{ encoding = *, shape = sc }{40}
+
+
+%%%-------------------------------------------------%%%
+%%% Refine environments %%%
+%%%-------------------------------------------------%%%
 
 %Umdefinition der Literatur Umgebung
 \makeatletter
@@ -316,7 +332,6 @@ bibencoding=utf8
 {\@latex@warning{Empty `thebibliography' environment}}%
 \endlist}
 \makeatother
-
 
 \makeatletter
 \renewcommand*\bib@heading{%
