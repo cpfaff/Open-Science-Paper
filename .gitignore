@@ -1,7 +1,7 @@
 *.aux
 *.bcf
-maindoc_paper.run.xml
-maindoc_paper.tex
+*.run.xml
+*.tex
 *.bbl
 *.blg
 *.dvi
