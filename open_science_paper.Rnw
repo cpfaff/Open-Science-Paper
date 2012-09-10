@@ -1,7 +1,7 @@
 %%------------------------------------------------------------------------------------%%
 %%------------------------------------------------------------------------------------%%
-%% Content: LateX Scaffold 
-%% Usage: Scientific Paper %%
+%% Content: Open-Science-Paper LaTeX Scaffold 
+%% Usage: Collaborative scientific paper writing %%
 %% Author: Claas-Thido Pfaff
 %%------------------------------------------------------------------------------------%%
 %%------------------------------------------------------------------------------------%%
@@ -12,14 +12,8 @@
 %%
 %
 
-\documentclass[fontsize=11pt,headings=small, captions=tableheading, pagesize=auto,
-DIV=20,final]{scrartcl}
-
-%%%------------------------------------------------------------------------------%%%
-%%% Load necessary packages %%%
-%%%------------------------------------------------------------------------------%%%
-
-\input{subdocuments/praeambel.tex}
+\documentclass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto,
+DIV=20, notitlepage, final]{subdocuments/open_science_paper}
 
 %%%------------------------------------------------------------------------------%%%
 %%% Begin the document %%%

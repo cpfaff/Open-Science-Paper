@@ -1,3 +1,17 @@
+%%------------------------------------------------------------------------------------%%
+%%------------------------------------------------------------------------------------%%
+%% Content : Open-Science-Paper LateX-Class 
+%% Use : Open-Sciene-Paper formatting 
+%% Author : Claas-Thido Pfaff
+%%------------------------------------------------------------------------------------%%
+%%------------------------------------------------------------------------------------%%
+
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesClass{open-science-paper}[2012/09/10 version 0.1 LaTeX class Open-Science-Paper]
+
+\LoadClassWithOptions{scrreprt}
+
 %% Font and input encodings %%
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}

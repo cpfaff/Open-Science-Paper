@@ -7,7 +7,7 @@
 ##------------------------------------------------------------------------------------##
 
 #Maindocument
-DOCUMENT = maindoc_paper
+DOCUMENT =open_science_paper
 
 #Used Programs
 KNITR = knit
@@ -26,7 +26,7 @@ CLEANFILES = Bilder/*.tikz cache/* *.xdy *tikzDictionary *.idx *.mtc* *.glo *.ma
 # General rules
 all: $(DOCUMENT).pdf 
 
-$(DOCUMENT).pdf: $(DOCUMENT).Rnw $(DOCUMENT).tex subdocuments/praeambel.tex subdocuments/*.tex $(DOCUMENT).tex
+$(DOCUMENT).pdf: $(DOCUMENT).Rnw $(DOCUMENT).tex subdocuments/open_science_paper.cls subdocuments/*.tex $(DOCUMENT).tex
 	$(KNITR) $(DOCUMENT).Rnw $(DOCUMENT).tex --pdf
 	$(PDFLATEX) $(DOCUMENT).tex
 	$(BIBTEX) $(DOCUMENT)
