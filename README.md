@@ -50,10 +50,60 @@ collaboration.
 
 ### Makefile
 
+The first variable in the makefile defines the name of the main document to
+compile. Right below it you can find the decencies of the main file. If anything
+changes in these files the call of make newly compiles the document.
+
+```
+# Maindocument
+DOCUMENT = open_science_paper
+
+# Dependencies maindocument
+DEPENDENCIES = $(DOCUMENT).Rnw subdocuments/open_science_paper.cls subdocuments/*.tex 
+```
+
+The programs used for certain tasks are defined in the makefile. You can change
+them to your needs by changing the variables. Right at the moment the commands
+are adapted for a Unix like system and need to be changed if you like to use the
+makefile on a Windows machine. 
+
+```
+# Used Programs
+KNITR = knit
+BIBTEX = biber
+PDFLATEX = pdflatex 
+PACKER= zip -r
+REMOVER = @-rm -r
+PRINTER = @-echo 
+GREPPER = @-grep
+PDFVIEWER = okular
+DATE = $(shell date +%y%m%d)
+```
+
+The makefile can help you archiving your document. You can adapt the archive
+name and the files you wish to add to the archive. The archiver program can be
+changed under used programs.
+
+```
+# Archive document
+ARCHNAME = $(DOCUMENT)-$(DATE)
+ARCHFILES = $(DOCUMENT).pdf $(DOCUMENT).Rnw subdocuments data graphics makefile
+```
+
+This following variable defines files to clean from the repository if you are
+finished. All this files can be cleaned because they are generated while the
+compilation process.
+
+```
+# Clean up the document folder
+CLEANFILES = Bilder/*.tikz cache/* *.xdy *tikzDictionary *.idx *.mtc* *.glo *.maf *.ptc *.tikz *.lot *.dpth *.figlist *.dep *.log *.makefile *.out *.map *.pdf *.tex *.toc *.aux *.tmp *.bbl *.blg *.lof *.acn *.acr *.alg *.glg *.gls *.ilg *.ind *.ist *.slg *.syg *.syi minimal.acn minimal.dvi minimal.ist minimal.syg minimal.synctex.gz *.bcf *.run.xml *-blx.bib  
+```
+
 The standard rule which is called when you use make without any options. The
 workflow for this task is Knitr > PDF-LaTeX > BibTeX > PDF-LaTeX (call: make).
 
 ```
+# General rule
 all: $(DOCUMENT).pdf 
 
 $(DOCUMENT).pdf: $(DOCUMENT).Rnw subdocuments/open_science_paper.cls subdocuments/*.tex 
@@ -65,11 +115,11 @@ $(DOCUMENT).pdf: $(DOCUMENT).Rnw subdocuments/open_science_paper.cls subdocument
 
 Special rules you can call to to evoke predefined tasks. You have to call make
 with one of the names of rules introduced below (e.g make showpdf). The rule
-"showpdf" displays the compiled PDF using the PDF viewer defined in the makefile
-(call: make showpdf). If you like to use the option you should adapt the variable in
-the makefile to your needs (eg: evince).
+"showpdf" displays the compiled PDF using the PDF viewer defined under the used
+programs (call: make showpdf). 
 
 ```
+# Special rules
 showpdf:
 	$(PDFVIEWER) $(DOCUMENT).pdf & 
 ```
@@ -79,34 +129,38 @@ are written into the documents log file (call: make warnings).
 
 ```
 warnings:
-	@-echo "----------------------------------------------------o"
-	@-echo "Multiple defined lables!"
-	@-echo ""
-	@-grep 'multiply defined' $(DOCUMENT).log
-	@-echo "----------------------------------------------------o"
-	@-echo "Undefined lables!"
-	@-echo ""
-	@-grep 'undefined' $(DOCUMENT).log
-	@-echo "----------------------------------------------------o"
-	@-echo "Warnings!"
-	@-echo ""
-	@-grep 'Warning' $(DOCUMENT).log
-	@-echo "----------------------------------------------------o"
-	@-echo "Over- and Underfull boxes!"
-	@-echo ""
-	@-grep 'Overfull' $(DOCUMENT).log
-	@-grep 'Underfull' $(DOCUMENT).log
-	@-echo "----------------------------------------------------o"
+	$(PRINTER) "----------------------------------------------------o"
+	$(PRINTER) "Multiple defined lables!"
+	$(PRINTER) ""
+	$(GREPPER) 'multiply defined' $(DOCUMENT).log
+	$(PRINTER) "----------------------------------------------------o"
+	$(PRINTER) "Undefined lables!"
+	$(PRINTER) ""
+	$(GREPPER) 'undefined' $(DOCUMENT).log
+	$(PRINTER) "----------------------------------------------------o"
+	$(PRINTER) "Warnings!"
+	$(PRINTER) ""
+	$(GREPPER) 'Warning' $(DOCUMENT).log
+	$(PRINTER) "----------------------------------------------------o"
+	$(PRINTER) "Over- and Underfull boxes!"
+	$(PRINTER) ""
+	$(GREPPER) 'Overfull' $(DOCUMENT).log
+	$(GREPPER) 'Underfull' $(DOCUMENT).log
+	$(PRINTER) "----------------------------------------------------o"
 ```
 
-The rule "archive" calls zip
+The rule "archive" creates a document archive with the name defined in
+"ARCHNAME" adding all the files defined under "ARCHFILES".
 
 ```
 archive:
-	zip -r $(ARCHNAME).zip $(ARCHFILES)
+	$(PACKER) $(ARCHNAME) $(ARCHFILES)
 ```
+
+The rule "clean" removes the files defined under the variable "CLEANFILES" from
+your document folder.
 
 ```
 clean:
-	@-rm -r $(CLEANFILES)	
+	$(REMOVER) $(CLEANFILES)	
 ```
