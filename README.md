@@ -36,7 +36,7 @@ command like the following to knit the .Rnw document.
 Rscript -e "library(knitr); knit('open_science_paper.Rnw')"
 ```
 
-On Windows you need to install GNU make (link?) to use the makefile which
+On Windows you need to install GNU make () to use the makefile which
 compiles the document for you. The make commands are documented below.
 
 ## Usage
@@ -50,7 +50,7 @@ collaboration.
 
 ### Makefile
 
-The general rule which is calles when you only call make without any option
+The standard rule which is called when you use make without any options.
 
 ```
 all: $(DOCUMENT).pdf 
@@ -62,10 +62,10 @@ $(DOCUMENT).pdf: $(DOCUMENT).Rnw $(DOCUMENT).tex subdocuments/open_science_paper
 	$(PDFLATEX) $(DOCUMENT).tex
 ```
 
-Special rules when you call make with the name of one of those (e.g make
-noknit). The "noknit" rule call's PDF-LaTeX, BibTeX, and PDF-LaTeX again
-if you have no Knitr chunks in your document and do not need them you can 
-use this option.
+Special rules used when you call make with the name of one of them (e.g make
+noknit). The "noknit" rule call's PDF-LaTeX, BibTeX, and PDF-LaTeX again if you
+have no Knitr chunks in your document and do not need them you can use this
+option.
 
 ```
 noknit:
@@ -74,12 +74,18 @@ noknit:
 	$(PDFLATEX) $(DOCUMENT).Rnw
 ```
 
+The "init" rule initiates the document and should be called once at the
+beginning. After initialization you can use "make" without any options for
+compilation.
+
 ```
 init:
 	$(KNITR) $(DOCUMENT).Rnw $(DOCUMENT).tex --pdf
 	$(BIBTEX) $(DOCUMENT)
 	$(PDFLATEX) $(DOCUMENT).tex
 ```
+
+The "gloss" option calls PDF-LaTeX and the glossary indexer  
 
 ```
 gloss:	
