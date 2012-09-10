@@ -12,9 +12,9 @@ reproducibility of your research offering executable documents to others.
 
 To get started with this document a working installation of LaTeX is required.
 Depending on your choice of LaTeX distribution and the type of installation
-(full/subset), additional packages which are required in the document have to be
-installed additionally. Some LaTeX distributions (e.g MiKTeX, TeX Live) offer
-package managers which help you with this task.
+(full/subset), packages required for the document might have to be installed
+additionally. Some LaTeX distributions (e.g MiKTeX, TeX Live) offer package
+managers which help you with this task.
 
 ## Usage
 
