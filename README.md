@@ -10,11 +10,12 @@ reproducibility of your research offering executable documents to others.
 
 ## Prerequisites
 
-To get started with this document a working installation of LaTeX is required.
-Depending on your choice of LaTeX distribution and the type of installation
+To get started with this document a working installation of LaTeX and R is
+required. Depending on your LaTeX distribution and the type of installation
 (full/subset), packages required for the document might have to be installed
 additionally. Some LaTeX distributions (e.g MiKTeX, TeX Live) offer package
-managers which help you with this task.
+managers which help you with this task. In R you have to install the Knitr
+package which is documented here: https://github.com/yihui/knitr.
 
 ## Usage
 
