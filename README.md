@@ -1,5 +1,7 @@
 # Open-Science-Paper
 
+![osclogo](graphics/logo2.png)
+
 This repository contains a LaTeX document with a two column layout which
 can be used for collaborative paper writing. The layout is close to
 common paper formats which helps to prepare the figures and tables for
