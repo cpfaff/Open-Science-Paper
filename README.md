@@ -19,17 +19,22 @@ automatically if they are required from a document).
 
 In R you have to install the Knitr package which is documented here:
 https://github.com/yihui/knitr. To use the knit command directly from the
-console as it is defined in the documents makefile you have to ensure that the
-directory of knitr is in you systems path. For Unix like systems you could add
-some code to your ~.bashrc.
+console as it is defined in the documents makefile you have to ensure
+that the directory of knitr is in you systems path. For Unix like systems
+you could add some code to your ~.bashrc or the configuration of the
+shell you are using. For other systems you may find helpful informations
+about path changes here http://www.java.com/en/download/help/path.xml.
 
 ```
-PATH=$PATH:/path/to/your/R_libs/knitr/bin
+PATH=$PATH:/path/to/your/R_libs/knitr/bin 
 ```
 
-Or if you dont like to add a path you could also redefine the makefile to call R
-as follows.
+Or if you dont like to add a path you could also redefine the knit command in
+the makefile by changing the variable "knit".
 
+```
+R CMD knit
+```
 
 
 ## Usage

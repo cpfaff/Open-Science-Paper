@@ -7,7 +7,7 @@
 ##------------------------------------------------------------------------------------##
 
 #Maindocument
-DOCUMENT =open_science_paper
+DOCUMENT = open_science_paper
 
 #Used Programs
 KNITR = knit

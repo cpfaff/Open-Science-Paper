@@ -55,10 +55,6 @@
 \xdefinecolor{ListingCommentstyleColor}{gray}{.60}
 \xdefinecolor{LinkColor}{rgb}{0,0,0.4}
 
-\colorlet{ListingStringstyleColor}{green!25} 
-\colorlet{ListingEmphstyleColor}{blue}
-\colorlet{ListingKeywordstyleColor}{orange!70}
-
 \xdefinecolor{ListingBackgroundColor}{gray}{.95}
 \xdefinecolor{ListingCommentstyleColor}{gray}{.60}
 
