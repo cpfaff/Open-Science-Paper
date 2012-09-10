@@ -1,6 +1,6 @@
 # Open-Science-Paper
 
-![osclogo](cpfaff.github.com/Open-Science-Paper/graphics/logo2.png)
+![osclogo](https://github.com/cpfaff/Open-Science-Paper/blob/master/graphics/logo2.png)
 
 This repository contains a LaTeX document with a two column layout which
 can be used for collaborative paper writing. The layout is close to
