@@ -29,13 +29,12 @@ about path changes here http://www.java.com/en/download/help/path.xml.
 PATH=$PATH:/path/to/your/R_libs/knitr/bin 
 ```
 
-Or if you dont like to add a path you could also redefine the knit command in
-the makefile by changing the variable "knit".
+Or if you dont like to add a path, you could also redefine the makefile to use a
+command like the following to knit the .Rnw document.
 
 ```
-R CMD knit
+Rscript -e "library(knitr); knit('open_science_paper.Rnw')"
 ```
-
 
 ## Usage
 
