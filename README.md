@@ -36,8 +36,8 @@ command like the following to knit the .Rnw document.
 Rscript -e "library(knitr); knit('open_science_paper.Rnw')"
 ```
 
-On Windows you need to install GNU make () to use the makefile which
-compiles the document for you. The make commands are documented below.
+On Windows you need to install GNU make (link: fixme) to use the makefile which compiles
+the document for you. The make commands are documented below.
 
 ## Usage
 
@@ -50,64 +50,32 @@ collaboration.
 
 ### Makefile
 
-The standard rule which is called when you use make without any options.
+The standard rule which is called when you use make without any options. The
+workflow for this task is Knitr > PDF-LaTeX > BibTeX > PDF-LaTeX (call: make).
 
 ```
 all: $(DOCUMENT).pdf 
 
-$(DOCUMENT).pdf: $(DOCUMENT).Rnw $(DOCUMENT).tex subdocuments/open_science_paper.cls subdocuments/*.tex $(DOCUMENT).tex
+$(DOCUMENT).pdf: $(DOCUMENT).Rnw subdocuments/open_science_paper.cls subdocuments/*.tex 
 	$(KNITR) $(DOCUMENT).Rnw $(DOCUMENT).tex --pdf
 	$(PDFLATEX) $(DOCUMENT).tex
 	$(BIBTEX) $(DOCUMENT)
 	$(PDFLATEX) $(DOCUMENT).tex
 ```
 
-Special rules used when you call make with the name of one of them (e.g make
-noknit). The "noknit" rule call's PDF-LaTeX, BibTeX, and PDF-LaTeX again if you
-have no Knitr chunks in your document and do not need them you can use this
-option.
-
-```
-noknit:
-	$(PDFLATEX) $(DOCUMENT).Rnw
-	$(BIBTEX) $(DOCUMENT)
-	$(PDFLATEX) $(DOCUMENT).Rnw
-```
-
-The "init" rule initiates the document and should be called once at the
-beginning. After initialization you can use "make" without any options for
-compilation.
-
-```
-init:
-	$(KNITR) $(DOCUMENT).Rnw $(DOCUMENT).tex --pdf
-	$(BIBTEX) $(DOCUMENT)
-	$(PDFLATEX) $(DOCUMENT).tex
-```
-
-The "gloss" option calls PDF-LaTeX and the glossary indexer  
-
-```
-gloss:	
-	$(PDFLATEX) $(DOCUMENT).tex
-	$(GLOSSARYINDEXER) $(DOCUMENT)
-	$(PDFLATEX) $(DOCUMENT).tex
-```
-
-```
-final:	
-	$(KNITR) $(DOCUMENT).Rnw $(DOCUMENT).tex --pdf
-	$(PDFLATEX) $(DOCUMENT).tex
-	$(BIBTEX) $(DOCUMENT)
-	$(PDFLATEX) $(DOCUMENT).tex
-	$(GLOSSARYINDEXER) $(DOCUMENT)
-	$(PDFLATEX) $(DOCUMENT).tex
-```
+Special rules you can call to to evoke predefined tasks. You have to call make
+with one of the names of rules introduced below (e.g make showpdf). The rule
+"showpdf" displays the compiled PDF using the PDF viewer defined in the makefile
+(call: make showpdf). If you like to use the option you should adapt the variable in
+the makefile to your needs (eg: evince).
 
 ```
 showpdf:
 	$(PDFVIEWER) $(DOCUMENT).pdf & 
 ```
+
+The rule "warnings" displays the warnings from the latest compilation run which
+are written into the documents log file (call: make warnings).
 
 ```
 warnings:
@@ -131,10 +99,7 @@ warnings:
 	@-echo "----------------------------------------------------o"
 ```
 
-```
-shrinkpdf:
-	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=Shrink$(DOCUMENT).pdf $(DOCUMENT).pdf 
-```
+The rule "archive" calls zip
 
 ```
 archive:
