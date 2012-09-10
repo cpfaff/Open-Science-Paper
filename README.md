@@ -10,8 +10,17 @@ reproducibility of your research offering executable documents to others.
 
 ## Prerequisites
 
-The document needs working installations of LaTeX and R. The packages need for la
+To get started with this document a working installation of LaTeX is required.
+Depending on your choice of LaTeX distribution and the type of installation
+(full/subset), additional packages which are required in the document have to be
+installed additionally. Some LaTeX distributions (e.g MiKTeX, TeX Live) offer
+package managers which help you with this task.
 
 ## Usage
 
-The document offers also a makefile which takes care of the right  
+The usage of this document with github for collaborative writing is easy and
+requires only some small steps. Get a GitHub account and turn it into an
+organization account under your account settings. You can now fork the document
+to get your own copy of the Open-Science-Paper. After that you can checkout your
+copy to a local repository and start writing and invite other researchers for
+collaboration.
