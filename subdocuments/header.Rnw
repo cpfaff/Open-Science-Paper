@@ -1,0 +1,14 @@
+\noindent
+\rule{\textwidth}{0.8pt}\\[0.5\baselineskip]
+\begin{tabular}{cc}
+\begin{minipage}{0.25\textwidth}
+	\includegraphics[scale=0.3]{graphics/open-science-papers-logo.png} 
+\end{minipage}&	
+\begin{minipage}{0.75\textwidth} 
+	\begin{Huge}Open Science Paper Title\end{Huge}\hfill\\[.5\baselineskip]
+	Author One, Author Two, ...\hfill\\[.5\baselineskip]
+	Keywords: Open science, Git, R, Knitr, ggplot2, tikz \hfill\\[.5\baselineskip]
+\end{minipage}\\
+\end{tabular}\\[0.5\baselineskip]
+\noindent
+\rule{\textwidth}{0.8pt}

@@ -7,7 +7,7 @@
 %%------------------------------------------------------------------------------------%%
 
 %%%------------------------------------------------------------------------------%%%
-%%% Document class (Koma-Script: article) %%%
+%%% Document class: open_science_paper (Based on Koma-Script: article) %%%
 %%%------------------------------------------------------------------------------%%%
 %%
 %
@@ -21,26 +21,86 @@ DIV=20, notitlepage, final]{subdocuments/open_science_paper}
 
 \begin{document}
 
-%% Load header %%
-\input{subdocuments/header.tex}
+%%%--------------------------------------------------------------%%%
+%%% Document preparations %%%
+%%%--------------------------------------------------------------%%%
+%%
+%
 
-%% Load abstract %%
-\input{subdocuments/abstract.tex}
+%%%-------------------------------------------------%%%
+%%% Preferences for Knitr %%%
+%%%-------------------------------------------------%%%
 
-%% Start 2 column layout %%
+% This code chunk is used to include global Knitr options 
+<<child-body_prefs_knitr, child='subdocuments/global_knitr_options.Rnw', eval=TRUE>>=
+@
+
+
+%%%--------------------------------------------------------------%%%
+%%% Document content %%%
+%%%--------------------------------------------------------------%%%
+%%
+%
+
+%%%-------------------------------------------------%%%
+%%% Include header %%%
+%%%-------------------------------------------------%%%
+
+<<body_mainmatter_chapter_one, child='subdocuments/header.Rnw', eval=T>>=
+@
+
+%%%-------------------------------------------------%%%
+%%% Include abstract %%%
+%%%-------------------------------------------------%%%
+
+<<body_mainmatter_chapter_one, child='subdocuments/abstract.Rnw', eval=T>>=
+@
+
+% Start 2 column layout %
 \begin{multicols}{2}
 
-	%% Load paper text %%
-	\input{subdocuments/papertext.tex}
+%%%-------------------------------------------------%%%
+%%% Include introduction %%%
+%%%-------------------------------------------------%%%
 
-	%% Print bibliography %%
-	\nocite{*}
-	\printbibliography
+<<body_mainmatter_chapter_one, child='subdocuments/introduction.Rnw', eval=T>>=
+@
+
+%%%-------------------------------------------------%%%
+%%% Include material and methods %%%
+%%%-------------------------------------------------%%%
+
+<<body_mainmatter_chapter_one, child='subdocuments/introduction.Rnw', eval=T>>=
+@
+
+%%%-------------------------------------------------%%%
+%%% Include results %%%
+%%%-------------------------------------------------%%%
+
+<<body_mainmatter_chapter_one, child='subdocuments/results.Rnw', eval=T>>=
+@
+
+%%%-------------------------------------------------%%%
+%%% Include results %%%
+%%%-------------------------------------------------%%%
+
+<<body_mainmatter_chapter_one, child='subdocuments/discussion.Rnw', eval=T>>=
+@
+
+
+%%%-------------------------------------------------%%%
+%%% Print the bibliography %%%
+%%%-------------------------------------------------%%%
+
+\nocite{*}
+\printbibliography
 
 %% End 2 column layout
 \end{multicols}
 
+%%%------------------------------------------------------------------------------%%%
+%%% End of document %%%
+%%%------------------------------------------------------------------------------%%%
+
 \end{document}
-%%%------------------------------------------------------------------------------%%%
-%%% EOF %%%
-%%%------------------------------------------------------------------------------%%%
+

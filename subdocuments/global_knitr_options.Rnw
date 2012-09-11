@@ -1,0 +1,56 @@
+<<setup, tidy=FALSE, highlight=FALSE, include=FALSE, cache=FALSE, eval=T>>=
+  #messages options
+  opts_chunk$set(warning=FALSE)
+  #code evaluation options
+  opts_chunk$set(eval=TRUE)
+  #code decoration
+  opts_chunk$set(tidy=TRUE, prompt=TRUE, comment='##', highlight=TRUE, size='normalsize')
+  #cache options
+  opts_chunk$set(cache.path='cache/')
+  #plot options
+  opts_chunk$set(fig.path='pictures/', dev='tikz', fig.keep='high', fig.show='hold')#, fig.pos='htbp', , fig.align='center', fig.cap='Please add a caption here', fig.lp='fig:')
+  #tune details of base graphics 
+  knit_hooks$set(par=function(before, options, envir){
+    if (before && options$fig.show!='none') par(mar=c(4,4,.1,.1),cex.lab=.95,cex.axis=.9,mgp=c(2,.7,0),tcl=-.3)
+  })
+  options(replace.assign=TRUE, width=60)
+  options(tikzSanitizeCharacters = c('%','$','}','{','^', '_'))
+  options(tikzReplacementCharacters = c('\\%','\\$','\\}','\\{','\\^{}', '\\textunderscore'))
+
+
+format_si <- function(...) {
+  # Format a vector of numeric values according
+  # to the International System of Units.
+  # http://en.wikipedia.org/wiki/SI_prefix
+  # Args:
+  #   ...: Args passed to format()
+  #
+  # Returns:
+  #   A function to format a vector of strings using
+  #   SI prefix notation
+  #
+  
+  function(x) {
+    limits <- c(1e-24, 1e-21, 1e-18, 1e-15, 1e-12,
+                1e-9,  1e-6,  1e-3,  1e0,   1e3,
+                1e6,   1e9,   1e12,  1e15,  1e18,
+                1e21,  1e24)
+    prefix <- c("y",   "z",   "a",   "f",   "p",
+                "n",   "µ",   "m",   " ",   "k",
+                "M",   "G",   "T",   "P",   "E",
+                "Z",   "Y")
+    
+    # Vector with array indices according to position in intervals
+    i <- findInterval(abs(x), limits)
+    
+    # Set prefix to " " for very small values < 1e-24
+    i <- ifelse(i==0, which(limits == 1e0), i)
+    
+    paste(format(round(x/limits[i], 1),
+                 trim=TRUE, scientific=FALSE, ...),
+          prefix[i])
+  }
+}
+
+@
+
