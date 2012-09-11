@@ -6,49 +6,74 @@
 %%------------------------------------------------------------------------------------%%
 %%------------------------------------------------------------------------------------%%
 
+%%%-------------------------------------------------%%%
+%%% Class requires format %%%
+%%%-------------------------------------------------%%%
+
 \NeedsTeXFormat{LaTeX2e}
+
+%%%-------------------------------------------------%%%
+%%% Provides class. Load options from class call %%%
+%%%-------------------------------------------------%%%
 
 \ProvidesClass{open-science-paper}[2012/09/10 version 0.1 LaTeX class Open-Science-Paper]
 
 \LoadClassWithOptions{scrartcl}
 
-%% Font and input encodings %%
+%%%-------------------------------------------------%%%
+%%% Input encodings fonts and symbols %%%
+%%%-------------------------------------------------%%%
+
+%% input and font encoding %%
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 
-%% Font %%
+%% Fonts and math symbols %%
 \RequirePackage{lmodern}
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+\RequirePackage{textcomp}
 
-%% patch old LaTeX problems %%
+%%%-------------------------------------------------%%%
+%%% Patch some LaTeX problems %%%
+%%%-------------------------------------------------%%%
+
 \RequirePackage{fixltx2e}
 \RequirePackage{scrhack}
 \RequirePackage{etex}
 \reserveinserts{30}
 
-%% Language options %%
+%%%-------------------------------------------------%%%
+%%% Language adaption of the document %%%
+%%%-------------------------------------------------%%%
+
 \RequirePackage[ngerman,english]{babel} 
 \RequirePackage[autostyle]{csquotes}
 
-% correction of white spaces 
-\RequirePackage{ellipsis}
-\RequirePackage{xspace}
+%%%-------------------------------------------------%%%
+%%% Blindtext %%%
+%%%-------------------------------------------------%%%
 
-%% Lorem ipsum dolor sit amet ... %%
 \RequirePackage{lipsum}
 
-%% Paper abstract %%
-\RequirePackage{abstract}
+%%%-------------------------------------------------%%%
+%%% Color options %%%
+%%%-------------------------------------------------%%%
 
-%% Calculate with latex sizes %%
-\RequirePackage{calc}
-
-%% Upper and lower case text %% 
-\RequirePackage{textcase}
-
-%% use color %%
 \RequirePackage{xcolor} 
-% Standards
-% green, blue, cyan, magenta, red, yellow, black, white, darkgray, gray, lightgray
+% Some standards
+% 	green 
+%  blue
+%  cyan
+%  magenta
+%  red
+%  yellow
+%  black
+%  white
+%  darkgray
+%  gray
+%  lightgray
 
 %% Color definitions %%
 \xdefinecolor{ListingBackgroundColor}{gray}{.95}
@@ -58,37 +83,45 @@
 \xdefinecolor{ListingBackgroundColor}{gray}{.95}
 \xdefinecolor{ListingCommentstyleColor}{gray}{.60}
 
-\xdefinecolor{gray}{rgb}{0.4,0.4,0.4}
-\xdefinecolor{darkblue}{rgb}{0.0,0.0,0.6}
-\xdefinecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+%%%-------------------------------------------------%%%
+%%% Graphics options %%%
+%%%-------------------------------------------------%%%
 
 %% Use and create graphics %%
 \RequirePackage{graphicx}
 \RequirePackage{overpic}
 \RequirePackage{tikz}
-% Some tikz-library's, extend tikz functionality
+
+%% Load tikz-libraries, extend the functionality %%
 \usetikzlibrary{spy,external,automata,patterns,shadows,trees,mindmap,arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
 \pgfdeclarelayer{background}
 \pgfdeclarelayer{foreground}
 \pgfsetlayers{background,main,foreground}
-% Define block styles
+
+%% Define block styles %%
 \tikzstyle{pictureframe} = [rectangle, rounded corners, draw]
 \tikzstyle{signbackground}=[rectangle, fill=gray!3, rounded corners, draw=gray, very thin]
-
-%% Control floating placement %%
-\RequirePackage{float} 
-% Note:
-% The parameter "H" must be used in "multicol" environments because they
-% do not allow floating	
-
-%% Control caption layout %%
-\RequirePackage[margin=10pt, font={small,it}, format=hang, labelformat=default, labelsep=endash, justification=centering, singlelinecheck=false]{caption}
 
 %% Create subfigures (check if already obsolete!) %%
 \RequirePackage{subfig}
 
-%%% Symbols %%%
-\RequirePackage{textcomp}
+%%%-------------------------------------------------%%%
+%%% Control floatings and captions %%%
+%%%-------------------------------------------------%%%
+
+%% Control floating placement %%
+\RequirePackage{float} 
+% Note:
+%  This packages introduces the float parameter "H" which must be used in "multicol" 
+%  environments because they do not allow floating	
+
+%% Control caption layout %%
+\RequirePackage[margin=10pt, font={small,it}, format=hang, labelformat=default, labelsep=endash, justification=centering, singlelinecheck=false]{caption}
+
+%%%-------------------------------------------------%%%
+%%% Table related options %%%
+%%%-------------------------------------------------%%%
 
 %% Professional tables
 \RequirePackage{booktabs}
@@ -123,10 +156,10 @@
 %%% Bibliography Options %%%
 %%%-------------------------------------------------%%%
 
-% citation management
+%% citation management %%
 \RequirePackage[backend=biber, natbib=true,style=authoryear,bibstyle=authoryear,hyperref=true]{biblatex}
 
-% additional options
+%% additional options %%
 \ExecuteBibliographyOptions{
 url=false,
 isbn=false,
@@ -135,10 +168,10 @@ firstinits=false,
 bibencoding=utf8
 }
 
-% add a BibTeX file 
+%% add a BibTeX file %%
 \addbibresource{subdocuments/paper_bibliography.bib}
 
-% citate:
+% usage:
 %  \citet{jon90} ⇒ Jones et al. (1990)
 %  \citet[chap.~2]{jon90} ⇒ Jones et al. (1990, chap. 2)
 %  \citep{jon90} ⇒ (Jones et al., 1990)
@@ -148,63 +181,32 @@ bibencoding=utf8
 %  \citet*{jon90} ⇒ Jones, Baker, and Williams (1990)
 %  \citep*{jon90} ⇒ (Jones, Baker, and Williams, 1990)
 
-
 %%%-------------------------------------------------%%%
-%%% Math Options %%%
+%%% Typesetting of units %%%
 %%%-------------------------------------------------%%%
 
-%Für alle Mathematischen Symbole und Fonts
-\RequirePackage{amsmath}
-\RequirePackage{amsfonts}
-\RequirePackage{amssymb}
-
-%Nice typesetting of SI units
 \RequirePackage{siunitx}
-%examples
-%\si{kg.m/s^2}
-%\num{12345}
-%\num{0,1234}
-%\num{.12345}
-%\ang{12.3}
-%\ang{1;2;3}
-%\ang{;;-1}
-%\SI{-29}{\degreeCelsius}   
-%\SI{30000}{\kilogram}
+% usage:
+%  \si{kg.m/s^2}
+%  \num{12345}
+%  \num{0,1234}
+%  \num{.12345}
+%  \ang{12.3}
+%  \ang{1;2;3}
+%  \ang{;;-1}
+%  \SI{-29}{\degreeCelsius}   
+%  \SI{30000}{\kilogram}
+
 
 %%%-------------------------------------------------%%%
-%%% PDF Options %%%
+%%% Teaching LaTeX %%%
 %%%-------------------------------------------------%%%
 
-% Define colors hyperref 
-\xdefinecolor{LinkColor}{rgb}{0,0,0.4}
-
-\RequirePackage[%
-  %plainpages=false,%
-  bookmarks=true,%
-  bookmarksopen=true,%
-  pdfborder={0 0 0},%
-  %pdfpagemode=UseNone,%
-  colorlinks=false,%
-  linkcolor=LinkColor,
-  citecolor=LinkColor,%
-  filecolor=LinkColor,%
-  menucolor=LinkColor,%	
-  urlcolor=LinkColor,%
-  breaklinks=true,%
-  raiselinks=true,%
-  pdfauthor={Your name here},
-  pdfcreator={Your name here},
-  pdfsubject={Your subject here},
-  pdfkeywords={LaTeX, Tikz, Knitr, Scientific paper, Open science}
-  ]{hyperref}
-
-%% Examples:
-% \href{URL}{text} 
-% \url{URL}
-% \nolinkurl{URL}
+%% Source code and compiled LaTeX document next to each other %%
+\RequirePackage{showexpl}
 
 %%%-------------------------------------------------%%%
-%%% References with prettyref %%%
+%%% Options for references in the document %%%
 %%%-------------------------------------------------%%%
 
 \RequirePackage{prettyref}
@@ -226,20 +228,14 @@ bibencoding=utf8
 \newrefformat{equ}{equation~\ref{#1}}
 \newrefformat{Equ}{Equation~\lowercase{\ref{#1}}}
 
-
 %%%-------------------------------------------------%%%
-%%% References with prettyref %%%
+%%% Options for code listings in your document %%%
 %%%-------------------------------------------------%%%
-
-%Source code and compiled LaTeX next to each other
-\RequirePackage{showexpl}
 
 \RequirePackage{listings}
 
-
 \lstset{
    backgroundcolor=\color{ListingBackgroundColor},
-   language=[LaTeX]TeX,
    basicstyle=\scriptsize\ttfamily,
    keywordstyle=\bfseries\ttfamily\color{ListingKeywordstyleColor},
    stringstyle=\color{ListingStringstyleColor}\ttfamily,
@@ -260,18 +256,7 @@ bibencoding=utf8
    xleftmargin=15pt
  }
 
-%highlight definition for XML in listings 
-\lstdefinelanguage{XML}
-{
-  morestring=[b]",
-  morestring=[s]{>}{<},
-  morecomment=[s]{<?}{?>},
-  stringstyle=\color{black},
-  identifierstyle=\color{darkblue},
-  keywordstyle=\color{cyan},
-  morekeywords={xmlns,version,type}% list your attributes here
-}
-
+%% Note: Only needed when writing in German 
 \lstset{literate=%
 {Ö}{{\"O}}1
 {Ä}{{\"A}}1
@@ -284,26 +269,47 @@ bibencoding=utf8
 }
 
 %%%-------------------------------------------------%%%
+%%% Definition of environments %%%
+%%%-------------------------------------------------%%%
 
-\setlength{\parskip}{0.5ex plus0.0ex minus0ex} % Enlarge the skip between paragraphs 
-\setlength{\itemsep}{0ex minus0.2ex} % Slightly smaller listing element distance
-\setlength{\parindent}{0em} % No indent for new paragraph 
+%% Defines the abstract %%
+\RequirePackage{abstract}
+
+%%%-------------------------------------------------%%%
+%%% Typographical options of the headings %%%
+%%%-------------------------------------------------%%%
 
 \RequirePackage[noindentafter,calcwidth]{titlesec}  
 
 %%%-------------------------------------------------%%%
-%%% Suppress errors and typographical finetuning %%%
+%%% Typographical fine-tuning %%%
 %%%-------------------------------------------------%%%
 
-\clubpenalty = 9999	           % No "Schusterjungen"
-\widowpenalty = 9999         % No "Hurenkinder"
+%% Enlarge the skip between paragraphs %%
+\setlength{\parskip}{0.5ex plus0.0ex minus0ex}  
+
+%% Slightly smaller listing element distance %%
+\setlength{\itemsep}{0ex minus0.2ex} 
+
+%% No indent for new paragraph %%
+\setlength{\parindent}{0em} 
+
+%% correction of white spaces %%
+\RequirePackage{ellipsis}
+
+%% right spaces after macros %%
+\RequirePackage{xspace}
+
+%% TeX typesetting parameters %%
+\clubpenalty = 9999 % No "Schusterjungen"
+\widowpenalty = 9999 % No "Hurenkinder"
 \displaywidowpenalty = 9999
 \tolerance = 200
 \hbadness = 1414
 \emergencystretch = 1.5em
 \hfuzz = 0.3pt
 
-% Typographic finetuning
+%% Micro type fine-tuning of typesetting %%
 \RequirePackage[protrusion=true,%
 expansion=true,%
 babel=true,%
@@ -313,3 +319,42 @@ spacing=false]{microtype}
 \DeclareMicrotypeSet*[tracking]{my}% 
        { font = */*/*/sc/* }% 
 \SetTracking{ encoding = *, shape = sc }{40}
+
+%%%-------------------------------------------------%%%
+%%% PDF Options %%%
+%%%-------------------------------------------------%%%
+
+% Define the hyperref link color 
+\xdefinecolor{LinkColor}{rgb}{0,0,0.4}
+
+\RequirePackage[%
+  plainpages=false,%
+  bookmarks=true,%
+  bookmarksopen=true,%
+  pdfborder={0 0 0},%
+  pdfpagemode=UseNone,%
+  colorlinks=false,%
+  linkcolor=LinkColor,
+  citecolor=LinkColor,%
+  filecolor=LinkColor,%
+  menucolor=LinkColor,%	
+  urlcolor=LinkColor,%
+  breaklinks=true,%
+  raiselinks=true,%
+  pdfauthor={Your name here},
+  pdfcreator={Your name here},
+  pdfsubject={Your subject here},
+  pdfkeywords={LaTeX, Tikz, Knitr, Scientific paper, Open science}
+  ]{hyperref}
+
+%% Examples:
+% \href{URL}{text} 
+% \url{URL}
+% \nolinkurl{URL}
+
+%%%-------------------------------------------------%%%
+%%% Todo before the document starts %%%
+%%%-------------------------------------------------%%%
+
+%% Set typesetting area with last chosen options
+\KOMAoptions{DIV=last}
