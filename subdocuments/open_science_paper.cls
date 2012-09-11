@@ -10,7 +10,7 @@
 
 \ProvidesClass{open-science-paper}[2012/09/10 version 0.1 LaTeX class Open-Science-Paper]
 
-\LoadClassWithOptions{scrreprt}
+\LoadClassWithOptions{scrartcl}
 
 %% Font and input encodings %%
 \RequirePackage[T1]{fontenc}
@@ -136,7 +136,7 @@ bibencoding=utf8
 }
 
 % add a BibTeX file 
-\addbibresource{subdocuments/paper.bib}
+\addbibresource{subdocuments/paper_bibliography.bib}
 
 % citate:
 %  \citet{jon90} ⇒ Jones et al. (1990)
@@ -285,9 +285,9 @@ bibencoding=utf8
 
 %%%-------------------------------------------------%%%
 
-\setlength{\parskip}{0.5ex plus0.0ex minus0ex} % Absatzabstand etwas groesser
-\setlength{\itemsep}{0ex minus0.2ex} % Abstand zweier Listenelemente kleiner
-\setlength{\parindent}{0em} % Kein Absatzeinzug kann eingestellt werden nach Bedarf
+\setlength{\parskip}{0.5ex plus0.0ex minus0ex} % Enlarge the skip between paragraphs 
+\setlength{\itemsep}{0ex minus0.2ex} % Slightly smaller listing element distance
+\setlength{\parindent}{0em} % No indent for new paragraph 
 
 \RequirePackage[noindentafter,calcwidth]{titlesec}  
 
@@ -313,39 +313,3 @@ spacing=false]{microtype}
 \DeclareMicrotypeSet*[tracking]{my}% 
        { font = */*/*/sc/* }% 
 \SetTracking{ encoding = *, shape = sc }{40}
-
-
-%%%-------------------------------------------------%%%
-%%% Refine environments %%%
-%%%-------------------------------------------------%%%
-
-%Umdefinition der Literatur Umgebung
-\makeatletter
-\renewenvironment{thebibliography}[1]
-{\subsection*{\refname}%
-\@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
-\list{\@biblabel{\@arabic\c@enumiv}}%
-{\settowidth\labelwidth{\@biblabel{#1}}%
-\leftmargin\labelwidth
-\setlength{\bibhang}{2em}
-\setlength{\bibindent}{3em}
-%\advance\leftmargin\labelsep
-\@openbib@code
-\usecounter{enumiv}%
-\let\p@enumiv\@empty
-\renewcommand\theenumiv{\@arabic\c@enumiv}}%
-\clubpenalty4000
-\@clubpenalty \clubpenalty
-\widowpenalty4000%
-\sfcode`\.\@m}
-{\def\@noitemerr
-{\@latex@warning{Empty `thebibliography' environment}}%
-\endlist}
-\makeatother
-
-\makeatletter
-\renewcommand*\bib@heading{%
-  \subsection{\refname}%
-}
-\makeatother
-
