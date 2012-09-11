@@ -1,10 +1,8 @@
 %%%-------------------------------------------------%%%
-%%% Sub document results %%%
+%%% Sub document for discussion %%%
 %%%-------------------------------------------------%%%
 
-\subsection*{Results}
+\subsection*{Discussion}
 
-% Fill in your results here
-\paragraph{subheading}
-
-\lipsum[3]
+% Fill in your discussion text here
+\lipsum[4]

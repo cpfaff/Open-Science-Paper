@@ -1,0 +1,8 @@
+%%%-------------------------------------------------%%%
+%%% Sub document for acknowledgement %%%
+%%%-------------------------------------------------%%%
+
+\subsection*{Acknowledgements}
+
+% Fill in your acknowledgements here
+\lipsum[4]

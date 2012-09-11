@@ -32,7 +32,7 @@ DIV=20, notitlepage, final]{subdocuments/open_science_paper}
 %%%-------------------------------------------------%%%
 
 % This code chunk is used to include global Knitr options 
-<<child-body_prefs_knitr, child='subdocuments/global_knitr_options.Rnw', eval=TRUE>>=
+<<global_knitr_options, child='subdocuments/global_knitr_options.Rnw', eval=TRUE>>=
 @
 
 
@@ -46,61 +46,70 @@ DIV=20, notitlepage, final]{subdocuments/open_science_paper}
 %%% Include header %%%
 %%%-------------------------------------------------%%%
 
-<<body_mainmatter_chapter_one, child='subdocuments/header.Rnw', eval=T>>=
+<<subdoc_content_header, child='subdocuments/header.Rnw', eval=T>>=
 @
 
 %%%-------------------------------------------------%%%
 %%% Include abstract %%%
 %%%-------------------------------------------------%%%
 
-<<body_mainmatter_chapter_one, child='subdocuments/abstract.Rnw', eval=T>>=
+<<subdoc_content_abstract, child='subdocuments/abstract.Rnw', eval=T>>=
 @
+
 
 % Start 2 column layout %
 \begin{multicols}{2}
+
 
 %%%-------------------------------------------------%%%
 %%% Include introduction %%%
 %%%-------------------------------------------------%%%
 
-<<body_mainmatter_chapter_one, child='subdocuments/introduction.Rnw', eval=T>>=
+<<subdoc_content_introduction, child='subdocuments/introduction.Rnw', eval=T>>=
 @
 
 %%%-------------------------------------------------%%%
 %%% Include material and methods %%%
 %%%-------------------------------------------------%%%
 
-<<body_mainmatter_chapter_one, child='subdocuments/introduction.Rnw', eval=T>>=
+<<subdoc_content_material_methods, child='subdocuments/material_methods.Rnw', eval=T>>=
 @
 
 %%%-------------------------------------------------%%%
 %%% Include results %%%
 %%%-------------------------------------------------%%%
 
-<<body_mainmatter_chapter_one, child='subdocuments/results.Rnw', eval=T>>=
+<<subdoc_content_results, child='subdocuments/results.Rnw', eval=T>>=
 @
 
 %%%-------------------------------------------------%%%
-%%% Include results %%%
+%%% Include discussion %%%
 %%%-------------------------------------------------%%%
 
-<<body_mainmatter_chapter_one, child='subdocuments/discussion.Rnw', eval=T>>=
+<<subdoc_content_discussion, child='subdocuments/discussion.Rnw', eval=T>>=
 @
 
+%%%-------------------------------------------------%%%
+%%% Include acknowledgements %%%
+%%%-------------------------------------------------%%%
+
+<<subdoc_content_acknowledgement, child='subdocuments/acknowledgement.Rnw', eval=T>>=
+@
 
 %%%-------------------------------------------------%%%
-%%% Print the bibliography %%%
+%%% Include the bibliography %%%
 %%%-------------------------------------------------%%%
 
-\nocite{*}
-\printbibliography
+<<options_bibliography, child='subdocuments/options_bibliography.Rnw', eval=T>>=
+@
+
 
 %% End 2 column layout
 \end{multicols}
+
 
 %%%------------------------------------------------------------------------------%%%
 %%% End of document %%%
 %%%------------------------------------------------------------------------------%%%
 
 \end{document}
-

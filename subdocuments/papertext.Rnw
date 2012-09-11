@@ -1,17 +1,1 @@
-\subsection*{Introduction}
 
-\lipsum[1-3]
-
-\subsection*{Material And Methods}
-
-\lipsum
-
-\subsection*{Results}
-
-\paragraph{test}
-
-\lipsum[3]
-
-\subsection*{Discussion}
-
-\lipsum[4]
