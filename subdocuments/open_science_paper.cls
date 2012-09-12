@@ -50,6 +50,9 @@
 
 \RequirePackage[ngerman,english]{babel} 
 \RequirePackage[autostyle]{csquotes}
+% usage:
+%  \enquote{} to put a text in the right quotes
+
 
 %%%-------------------------------------------------%%%
 %%% Blindtext %%%
@@ -79,6 +82,24 @@
 \xdefinecolor{ListingBackgroundColor}{gray}{.95}
 \xdefinecolor{ListingCommentstyleColor}{gray}{.60}
 \xdefinecolor{LinkColor}{rgb}{0,0,0.4}
+
+%%%-------------------------------------------------%%%
+%%% List options %%%
+%%%-------------------------------------------------%%%
+
+\RequirePackage[neverdecrease]{paralist}
+
+\let\itemize\compactitem
+\let\enditemize\endcompactitem
+\let\enumerate\compactenum
+\let\endenumerate\endcompactenum
+\let\description\compactdesc
+\let\enddescription\endcompactdesc
+
+\pltopsep=\medskipamount
+\setdefaultenum{1.}{a)~}{i.~}{A)~}%
+\setdefaultleftmargin{1.5em}{1.2em}{1.2em}{1.2em}{1.2em}{1.2em}%
+\setdefaultitem{$\circ$}{\textbullet}{\textperiodcentered}{--}%
 
 %%%-------------------------------------------------%%%
 %%% Graphics options %%%
@@ -268,15 +289,40 @@ bibencoding=utf8
 
 \RequirePackage[noindentafter,calcwidth]{titlesec}  
 
+%\titleformat{\chapter}
+%{\normalfont\sffamily\huge\bfseries}{%\chaptertitlename\ 
+%\thechapter}{20pt}{\Huge}
+
+%\titleformat{\section}
+%{\normalfont\sffamily\Large\bfseries}{\thesection}{1em}{}
+
+\titleformat{\subsection}
+{\normalfont\sffamily\large\bfseries}{\thesubsection}{1em}{}
+
+%\titleformat{\subsubsection}
+%{\normalfont\sffamily\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+\titleformat{\paragraph}[runin]
+{\normalfont\sffamily\normalsize\bfseries}{\theparagraph}{1em}{}
+
+%\titleformat{\subparagraph}[runin]
+%{\normalfont\sffamily\normalsize\bfseries}{\thesubparagraph}{1em}{}
+
+%\titlespacing*{\chapter}
+% {0pt}{50pt}{40pt}
+%\titlespacing*{\section}
+% {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing*{\subsection}
+ {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+%\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\paragraph}
+ {0pt}{3.25ex plus 1ex minus .2ex}{1em}
+%\titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}
+
+
 %%%-------------------------------------------------%%%
 %%% Typographical fine-tuning %%%
 %%%-------------------------------------------------%%%
-
-%% Enlarge the skip between paragraphs %%
-\setlength{\parskip}{0.5ex plus0.0ex minus0ex}  
-
-%% Slightly smaller listing element distance %%
-\setlength{\itemsep}{0ex minus0.2ex} 
 
 %% No indent for new paragraph %%
 \setlength{\parindent}{0em} 
