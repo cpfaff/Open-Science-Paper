@@ -80,10 +80,6 @@
 \xdefinecolor{ListingCommentstyleColor}{gray}{.60}
 \xdefinecolor{LinkColor}{rgb}{0,0,0.4}
 
-\xdefinecolor{ListingBackgroundColor}{gray}{.95}
-\xdefinecolor{ListingCommentstyleColor}{gray}{.60}
-
-
 %%%-------------------------------------------------%%%
 %%% Graphics options %%%
 %%%-------------------------------------------------%%%
@@ -93,17 +89,17 @@
 \RequirePackage{overpic}
 \RequirePackage{tikz}
 
-%% Load tikz-libraries, extend the functionality %%
+%% Load some tikz libraries %%
 \usetikzlibrary{spy,external,automata,patterns,shadows,trees,mindmap,arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
 \pgfdeclarelayer{background}
 \pgfdeclarelayer{foreground}
 \pgfsetlayers{background,main,foreground}
 
-%% Define block styles %%
+%% Define tikz styles %%
 \tikzstyle{pictureframe} = [rectangle, rounded corners, draw]
 \tikzstyle{signbackground} = [rectangle, fill=gray!3, rounded corners, draw=gray, very thin]
 
-%% Create subfigures (check if already obsolete!) %%
+%% Create sub figures (check if already obsolete!) %%
 \RequirePackage{subfig}
 
 %%%-------------------------------------------------%%%
@@ -112,19 +108,15 @@
 
 %% Control floating placement %%
 \RequirePackage{float} 
-% Note:
-%  This packages introduces the float parameter "H" which must be used in "multicol" 
-%  environments because they do not allow floating	
 
 %% Control caption layout %%
-% \RequirePackage[margin=10pt, font={small,it}, format=hang, labelformat=default, labelsep=endash, justification=centering, singlelinecheck=false]{caption}
 \RequirePackage[format=plain, margin=7pt, font={small,it}, labelformat=default, labelfont=bf]{caption}
 
 %%%-------------------------------------------------%%%
 %%% Table related options %%%
 %%%-------------------------------------------------%%%
 
-%% Professional tables
+%% Professional tables %%
 \RequirePackage{booktabs}
 % useage:
 %	\toprule
@@ -132,11 +124,8 @@
 %	\bottomrule
 % 	\cmidrule{from column #. - to column #}
 
-%% Extended table functions
+%% Extended table functions %%
 \RequirePackage{tabularx}
-%implementiert:
-%	Spaltentyp (X)
-%	etc...
 
 %% Aggregate column cells %%
 \RequirePackage{multirow}
@@ -146,21 +135,20 @@
 %  Vertical aggregation of table cells  
 %	 \multirow{rows}{width}{text}
 
-% Use color in tables 
-%\RequirePackage{array}          
-%\RequirePackage{colortbl}       
+%%%-------------------------------------------------%%%
+%%% Multi column documents %%%
+%%%-------------------------------------------------%%%
 
-%% Multi column documents %%
 \RequirePackage{multicol}
 
 %%%-------------------------------------------------%%%
-%%% Bibliography Options %%%
+%%% Bibliography options %%%
 %%%-------------------------------------------------%%%
 
 %% citation management %%
 \RequirePackage[backend=biber, natbib=true,style=authoryear,bibstyle=authoryear,hyperref=true]{biblatex}
 
-%% additional options %%
+%% additional bib options %%
 \ExecuteBibliographyOptions{
 url=false,
 isbn=false,
@@ -169,7 +157,7 @@ firstinits=false,
 bibencoding=utf8
 }
 
-%% add a BibTeX file %%
+%% add a BibTeX bibliography file %%
 \addbibresource{subdocuments/paper_bibliography.bib}
 
 % usage:
@@ -198,9 +186,8 @@ bibencoding=utf8
 %  \SI{-29}{\degreeCelsius}   
 %  \SI{30000}{\kilogram}
 
-
 %%%-------------------------------------------------%%%
-%%% Teaching LaTeX %%%
+%%% Display LaTeX code compiled %%%
 %%%-------------------------------------------------%%%
 
 %% Source code and compiled LaTeX document next to each other %%
@@ -257,7 +244,6 @@ bibencoding=utf8
    xleftmargin=15pt
  }
 
-%% Note: Only needed when writing in German 
 \lstset{literate=%
 {Ö}{{\"O}}1
 {Ä}{{\"A}}1
@@ -310,7 +296,7 @@ bibencoding=utf8
 \emergencystretch = 1.5em
 \hfuzz = 0.3pt
 
-%% Micro type fine-tuning of typesetting %%
+%% Microtype fine-tuning of typesetting %%
 \RequirePackage[protrusion=true,%
 expansion=true,%
 babel=true,%
