@@ -4,7 +4,9 @@
 
 \subsection*{Material And Methods}
 
-% example for a table %
+\lipsum[1]
+
+% example for a one column table %
 
 \begin{table}[H]
 	\centering
@@ -14,10 +16,11 @@
 	 dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
 	 pellentesque eu, pretium quis, sem.}
 	   {\small
-			\begin{tabular}{ccccccccc}
+			\begin{tabular}{p{0.055\columnwidth}p{0.055\columnwidth}p{0.055\columnwidth}p{0.055\columnwidth}p{0.055\columnwidth}p{0.055\columnwidth}p{0.055\columnwidth}p{0.055\columnwidth}p{0.055\columnwidth}}
 				\toprule
 					A & B & C & D & E & F & G & H & I\\ 
 				\midrule
+					1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\ 
 					1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\ 
 					1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\ 
 				\bottomrule
@@ -26,4 +29,4 @@
 \end{table}
 
 % Fill in your material and methods text here
-\lipsum[1-3]
+\lipsum[1-2]

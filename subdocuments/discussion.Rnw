@@ -5,4 +5,4 @@
 \subsection*{Discussion}
 
 % Fill in your discussion text here
-\lipsum[4]
+\lipsum[1-4]

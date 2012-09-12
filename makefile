@@ -15,7 +15,7 @@ DEPENDENCIES = $(DOCUMENT).Rnw subdocuments/open_science_paper.cls subdocuments/
 # Used Programs
 KNITR = knit
 BIBTEX = biber
-PDFLATEX = pdflatex 
+PDFLATEX = pdflatex
 PACKER= zip -r
 REMOVER = @-rm -r
 PRINTER = @-echo 
