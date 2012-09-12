@@ -4,5 +4,26 @@
 
 \subsection*{Material And Methods}
 
+% example for a table %
+
+\begin{table}[H]
+	\centering
+	\label{tab:tablabel}
+	\caption{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+	 commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+	 dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+	 pellentesque eu, pretium quis, sem.}
+	   {\small
+			\begin{tabular}{ccccccccc}
+				\toprule
+					A & B & C & D & E & F & G & H & I\\ 
+				\midrule
+					1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\ 
+					1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\ 
+				\bottomrule
+			\end{tabular}
+		}
+\end{table}
+
 % Fill in your material and methods text here
-\lipsum
+\lipsum[1-3]

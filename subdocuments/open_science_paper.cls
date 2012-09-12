@@ -101,7 +101,7 @@
 
 %% Define block styles %%
 \tikzstyle{pictureframe} = [rectangle, rounded corners, draw]
-\tikzstyle{signbackground}=[rectangle, fill=gray!3, rounded corners, draw=gray, very thin]
+\tikzstyle{signbackground} = [rectangle, fill=gray!3, rounded corners, draw=gray, very thin]
 
 %% Create subfigures (check if already obsolete!) %%
 \RequirePackage{subfig}
@@ -117,7 +117,8 @@
 %  environments because they do not allow floating	
 
 %% Control caption layout %%
-\RequirePackage[margin=10pt, font={small,it}, format=hang, labelformat=default, labelsep=endash, justification=centering, singlelinecheck=false]{caption}
+% \RequirePackage[margin=10pt, font={small,it}, format=hang, labelformat=default, labelsep=endash, justification=centering, singlelinecheck=false]{caption}
+\RequirePackage[format=plain, margin=7pt, font={small,it}, labelformat=default, labelfont=bf]{caption}
 
 %%%-------------------------------------------------%%%
 %%% Table related options %%%

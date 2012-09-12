@@ -4,7 +4,35 @@
 
 \subsection*{Results}
 
-% Fill in your results here
 \paragraph{subheading}
 
-\lipsum[3]
+\lipsum[1-2]
+
+\begin{figure}[H] % {{{
+% Label fig:test_plot
+	\centering
+	\begin{tikzpicture}
+		\node[pictureframe]{%    
+			\begin{minipage}{0.45\textwidth}%
+				\begin{center}
+
+<<test_plot, cache=T, fig.width=3, fig.height=2.5, out.width='\\textwidth', echo=FALSE>>=
+	suppressPackageStartupMessages(library(ggplot2))
+
+	ggplot(cars, aes(x=dist, y=speed)) +
+		geom_point(shape=1) + geom_smooth(method = "lm", size = 1) +
+		theme_bw() +
+		opts(panel.grid.major=theme_blank(), panel.grid.minor=theme_blank()) 
+@
+				\end{center}
+			\end{minipage}
+		};
+	\end{tikzpicture}
+	 \caption{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+	 commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+	 dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+	 pellentesque eu, pretium quis, sem.}
+\label{fig:test_plot}
+\end{figure} % }}}
+
+\lipsum[1]

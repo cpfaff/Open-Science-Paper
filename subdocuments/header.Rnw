@@ -6,7 +6,7 @@
 \rule{\textwidth}{0.8pt}\\[0.5\baselineskip]
 \begin{tabular}{cc}
 \begin{minipage}{0.25\textwidth}
-	\includegraphics[scale=0.3]{graphics/open-science-papers-logo.png} 
+	\includegraphics[scale=0.3]{graphics/open-science-papers-logo-frameless.png} 
 \end{minipage}&	
 \begin{minipage}{0.75\textwidth} 
 	\begin{Huge}Open Science Paper Title\end{Huge}\hfill\\[.5\baselineskip]
