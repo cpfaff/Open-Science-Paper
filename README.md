@@ -62,13 +62,14 @@ documented in the github wiki of this repository.
 
 To use the Open-Science-Paper document with github for collaborative writing
 is easy and requires only some small steps. Get a github account and turn it
-into an organization account under your account settings which is required for
-collaboration. You can now visit the Open-Science-Paper repository and click
-on the fork button to get your own copy of the document. After forking you can
-checkout your copy to a local repository and start to write and invite other
-researchers for collaboration.
+into an organization account under your account settings which is required
+for collaboration. You can now visit the Open-Science-Paper repository and
+click on the fork button in the top right corner to get your own copy of the
+document under your account. After forking you can checkout your copy to a local
+repository and start to write and invite other researchers for paper writing
+collaboration.
 
 ## Self promotion
 
 Do you like the Open-Science-Paper repository? You are welcome to follow me on
-github and twitter (http://twitter.com/sabsirro).
+github and or twitter (http://twitter.com/sabsirro).
