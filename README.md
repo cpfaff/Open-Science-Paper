@@ -6,22 +6,22 @@ common paper formats (see PDF in repository) which helps to prepare figures and
 tables for publication. The document combines the LaTeX typesetting capabilities
 with the power of R for statistic programming by using the Knitr package
 (http://yihui.name/knitr/). This combination has the advantage to enable a
-better reproducibility of your research by producing executable documents which
+better reproducibility of your research by creating executable documents which
 you can offer to others. Open-Science-Paper comes with some examples for typical
 things to typeset like tables and plots spanning one or two of the columns of
 the paper and a makefile which helps you to compile the document to get a PDF.
+There is also a documentation in the wiki of this repository which helps you to
+use the makefile and the document as well as to adopt it to your needs.
 
 ## Prerequisites
 
 To get started with this document a working installation of LaTeX and R is
 required. Depending on your LaTeX distribution and the type of installation
 (full/subset), packages required for the document might have to be installed
-additionally. You can have a look into the class file to see which packages are
-required for the document, or have a look into the wiki where the class file is
-documented with examples. Rather than installing the packages manually I would
-recommend you to use a LaTeX distribution with a package manager (e.g MiKTeX,
-TeX Live). For example MiKTeX can install packages automatically if they are
-required from a document.
+additionally. You can find the packages needed if you look into the class file.
+Rather than installing the packages manually I would recommend you to use a
+LaTeX distribution with a package manager (e.g MiKTeX, TeX Live). For example
+MiKTeX can install packages automatically if they are required from a document.
 
 In R you have to install the Knitr package which is documented here:
 https://github.com/yihui/knitr. To use the knit command directly from the
