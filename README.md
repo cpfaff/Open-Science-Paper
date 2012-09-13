@@ -1,14 +1,15 @@
 # Open-Science-Paper
 
-This repository contains a LaTeX document which can be used for collaborative
-scientific paper writing. The layout is close to common paper formats which
-helps to prepare figures and tables for publication. The document combines the
-LaTeX typesetting capabilities with the power of R for statistic programming by
-using the Knitr package (http://yihui.name/knitr/). This combination has the
-advantage to enable better reproducibility of your research offering executable
-documents to others. Open-Science-Paper comes with some examples for typical
-things to typeset like tables and plots spanning one or two columns of the paper
-and a makefile helps you compiling the document to get a pdf file.
+This repository contains a LaTeX document which can be forked to use in
+collaborative scientific paper writing with github. The layout is close to
+common paper formats which helps to prepare figures and tables for publication.
+The document combines the LaTeX typesetting capabilities with the power of R for
+statistic programming by using the Knitr package (http://yihui.name/knitr/).
+This combination has the advantage to enable a better reproducibility of your
+research offering executable documents to others. Open-Science-Paper comes with
+some examples for typical things to typeset like tables and plots spanning
+one or two of the columns of the paper and a makefile helps you compiling the
+document to get a PDF file.
 
 ## Prerequisites
 
@@ -19,16 +20,15 @@ additionally. You can have a look into the class file to see which packages are
 required for the document, or have a look into the wiki where the class file is
 documented with examples. Rather than installing the packages manually I would
 recommend you to use a LaTeX distribution with a package manager (e.g MiKTeX,
-TeX Live). MiKTeX can install packages automatically if they are required from a
-document.
+TeX Live). For example MiKTeX can install packages automatically if they are
+required from a document.
 
 In R you have to install the Knitr package which is documented here:
 https://github.com/yihui/knitr. To use the knit command directly from the
-console as it is defined in the documents makefile you have to ensure that the
-directory of Knitr is in you systems path. For Unix like systems you could add
-some code to your ~.bashrc or the configuration of the shell you are using.
-For other systems you may find helpful informations about path changes here
-http://www.java.com/en/download/help/path.xml.
+console you have to ensure that the directory where you installed the Knitr
+package is in your systems path. For Unix like systems you could add some code
+to your ~.bashrc or the configuration file of the console you use in your home
+directory.
 
 ```
 PATH=$PATH:/path/to/your/R_libs/knitr/bin 
@@ -40,7 +40,8 @@ command like the following to knit the .Rnw document.
 ```
 Rscript -e "library(knitr); knit('open_science_paper.Rnw')"
 ```
-
+For other systems you may find helpful informations about adding a
+direcoty to the system path under http://www.java.com/en/download/help/path.xml.
 On Windows you need to install GNU make (link: fixme) to use the makefile which compiles
 the document for you. The make commands are documented below.
 
