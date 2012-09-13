@@ -89,6 +89,7 @@
 
 \RequirePackage[neverdecrease]{paralist}
 
+%% Overwrite the listing environments with the ones from paralist
 \let\itemize\compactitem
 \let\enditemize\endcompactitem
 \let\enumerate\compactenum
@@ -120,8 +121,14 @@
 \tikzstyle{pictureframe} = [rectangle, rounded corners, draw]
 \tikzstyle{signbackground} = [rectangle, fill=gray!3, rounded corners, draw=gray, very thin]
 
-%% Create sub figures (check if already obsolete!) %%
-\RequirePackage{subfig}
+\RequirePackage{subcaption} 
+% usage:
+%  \begin{figure}
+%    \begin{subfigure}{Breite}
+%      Bild
+%      \caption{Text}
+%    \end{subfigure}
+%  \end{figure}
 
 %%%-------------------------------------------------%%%
 %%% Control floatings and captions %%%
@@ -148,6 +155,9 @@
 %% Extended table functions %%
 \RequirePackage{tabularx}
 
+\newcolumntype{R}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
 %% Aggregate column cells %%
 \RequirePackage{multirow}
 % usage:
@@ -155,6 +165,10 @@
 %	 \multicolumn{columns}{alignment}{text}
 %  Vertical aggregation of table cells  
 %	 \multirow{rows}{width}{text}
+
+%% Tables spanning multiple pages 
+\RequirePackage{longtable}
+
 
 %%%-------------------------------------------------%%%
 %%% Multi column documents %%%
@@ -356,9 +370,6 @@ spacing=false]{microtype}
 %%%-------------------------------------------------%%%
 %%% PDF Options %%%
 %%%-------------------------------------------------%%%
-
-% Define the hyperref link color 
-\xdefinecolor{LinkColor}{rgb}{0,0,0.4}
 
 \RequirePackage[%
   plainpages=false,%

@@ -1,21 +1,26 @@
 # Open-Science-Paper
 
-This repository contains a LaTeX document with a two column layout which
-can be used for collaborative paper writing. The layout is close to
-common paper formats which helps to prepare the figures and tables for
-publication. The document combines the LaTeX typesetting capabilities with
-the power of the statistic programming language R using the Knitr package
-(http://yihui.name/knitr/). This combination has the advantage to enable better
-reproducibility of your research offering executable documents to others.
+This repository contains a LaTeX document which can be used for collaborative
+scientific paper writing. The layout is close to common paper formats which
+helps to prepare figures and tables for publication. The document combines the
+LaTeX typesetting capabilities with the power of R for statistic programming by
+using the Knitr package (http://yihui.name/knitr/). This combination has the
+advantage to enable better reproducibility of your research offering executable
+documents to others. Open-Science-Paper comes with some examples for typical
+things to typeset like tables and plots spanning one or two columns of the paper
+and a makefile helps you compiling the document to get a pdf file.
 
 ## Prerequisites
 
 To get started with this document a working installation of LaTeX and R is
 required. Depending on your LaTeX distribution and the type of installation
 (full/subset), packages required for the document might have to be installed
-additionally. Some LaTeX distributions (e.g MiKTeX, TeX Live) offer package
-managers which help you with this task (MiKTeX can install packages
-automatically if they are required from a document).
+additionally. You can have a look into the class file to see which packages are
+required for the document, or have a look into the wiki where the class file is
+documented with examples. Rather than installing the packages manually I would
+recommend you to use a LaTeX distribution with a package manager (e.g MiKTeX,
+TeX Live). MiKTeX can install packages automatically if they are required from a
+document.
 
 In R you have to install the Knitr package which is documented here:
 https://github.com/yihui/knitr. To use the knit command directly from the
