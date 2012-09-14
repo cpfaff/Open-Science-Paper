@@ -15,11 +15,11 @@ typeset like tables and plots covering the cases of one and two column
 overarching content. The makefile of the document assists you to compile the
 LaTeX document to PDF, archive your document and with some other tasks.
 
-The [wiki](https://github.com/cpfaff/Open-Science-Paper/wiki) Open-Science-Paper
-can be found in the top menu bar of this repository. It covers information about
-how to get started with the document, collaborative writing on GitHub and a
-detailed documentation of all the components contained in the Open-Science-Paper
-document.
+The [wiki](https://github.com/cpfaff/Open-Science-Paper/wiki) of the
+Open-Science-Paper can be found in the top menu bar of this repository. It
+covers information about how to get started with the document, collaborative
+writing on GitHub and a detailed documentation of all the components contained
+in the Open-Science-Paper document.
 
 ## Self promotion
 
