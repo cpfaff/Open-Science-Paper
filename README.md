@@ -1,12 +1,12 @@
 ## About Open-Science-Paper
 
 This repository contains a LaTeX document which can be used for scientific
-collaborative paper writing on GitHub. The layout of the document is close to
-common scientific paper formats (see PDF in repository) which helps you to
-prepare figures and tables for publication or simple to produce nice looking
-paper like documents. The Open-Science-Paper combines LaTeX typesetting
-capabilities with the power of R for statistic programming using the Knitr
-package (http://yihui.name/knitr/).
+collaborative paper writing on GitHub. The layout of the document is close
+to common scientific paper formats (see PDF in repository) which helps
+you to prepare figures and tables for publication or simple to produce
+nice looking paper like documents. The Open-Science-Paper combines LaTeX
+typesetting capabilities with the power of R for statistic programming using the
+[Knitr](http://yihui.name/knitr/) package.
 
 This combination gives you the advantage of better reproducibility of
 your research, creating executable documents you can offer to others. The
