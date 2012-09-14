@@ -8,9 +8,10 @@
 
 % example for a one column table %
 
-\begin{table}[H]
+\begin{table}[H] % {{{
+% Label tab:test_table_one
 	\centering
-	\label{tab:tablabel}
+	\label{tab:test_table_one}
 	\caption{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
 	 commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
 	 dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
@@ -26,7 +27,7 @@
 				\bottomrule
 			\end{tabular}
 		}
-\end{table}
+\end{table} % }}}
 
 % Fill in your material and methods text here
 \lipsum[1-2]
