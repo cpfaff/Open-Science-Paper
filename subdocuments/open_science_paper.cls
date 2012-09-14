@@ -53,7 +53,6 @@
 % usage:
 %  \enquote{} to put a text in the right quotes
 
-
 %%%-------------------------------------------------%%%
 %%% Blindtext %%%
 %%%-------------------------------------------------%%%
@@ -65,7 +64,7 @@
 %%%-------------------------------------------------%%%
 
 \RequirePackage{xcolor} 
-% Some standards
+% Some standards:
 % 	green 
 %  blue
 %  cyan
@@ -78,7 +77,7 @@
 %  gray
 %  lightgray
 
-%% Color definitions %%
+%% definitions %%
 \xdefinecolor{ListingBackgroundColor}{gray}{.95}
 \xdefinecolor{ListingCommentstyleColor}{gray}{.60}
 \xdefinecolor{LinkColor}{rgb}{0,0,0.4}
@@ -134,7 +133,7 @@
 %%% Control floatings and captions %%%
 %%%-------------------------------------------------%%%
 
-%% Control floating placement %%
+%% Control float placement %%
 \RequirePackage{float} 
 
 %% Control caption layout %%
@@ -157,18 +156,20 @@
 
 \newcolumntype{R}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+% usage:
+%  R{width} for raggedright column in certain width
+%  C{width} for centered column in certain width
 
-%% Aggregate column cells %%
+%% Aggregate cells column and row wise %%
 \RequirePackage{multirow}
 % usage:
 %  Horizontal aggregation of table cells
-%	 \multicolumn{columns}{alignment}{text}
+%	 \multicolumn{count of columns}{alignment}{text}
 %  Vertical aggregation of table cells  
-%	 \multirow{rows}{width}{text}
+%	 \multirow{count of rows}{width}{text}
 
 %% Tables spanning multiple pages 
 \RequirePackage{longtable}
-
 
 %%%-------------------------------------------------%%%
 %%% Multi column documents %%%
@@ -332,7 +333,6 @@ bibencoding=utf8
 \titlespacing*{\paragraph}
  {0pt}{3.25ex plus 1ex minus .2ex}{1em}
 %\titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}
-
 
 %%%-------------------------------------------------%%%
 %%% Typographical fine-tuning %%%
