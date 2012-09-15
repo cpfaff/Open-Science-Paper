@@ -23,14 +23,14 @@ started with the document, collaborative writing on GitHub and a detailed
 documentation of all the components contained in the Open-Science-Paper
 document.
 
-## Logo
-
-![open-science-paper-logo.png](https://github.com/cpfaff/Open-Science-Paper/blob/master/graphics/open-science-papers-logo.png)
-
 ## Self-promotion
 
 Do you like the Open-Science-Paper repository? You are welcome to follow me on
 GitHub and or twitter (http://twitter.com/sabsirro).
+
+## Logo
+
+![Open-Science-Paper-PDF-Header](https://dl.dropbox.com/u/844606/Open-Science-Paper-Documentation/open-science-papers-logo.png)
 
 ## License
 
