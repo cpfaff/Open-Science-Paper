@@ -4,5 +4,5 @@
 
 \subsection*{Discussion}
 
-% Fill in your discussion text here
+% Remove the lipsum and fill in your discussion text here
 \lipsum[1-4]

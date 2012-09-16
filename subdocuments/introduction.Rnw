@@ -4,7 +4,7 @@
 
 \subsection*{Introduction}
 
-% Fill in your introductory text here
+% Remove the lipsum and the list example and fill in your introductin text here
 \lipsum[1]
 
 \begin{itemize}

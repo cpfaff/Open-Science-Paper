@@ -4,5 +4,5 @@
 
 \subsection*{Acknowledgements}
 
-% Fill in your acknowledgements here
+% Remove the lipsum and fill in your acknowledgements here
 \lipsum[4-5]

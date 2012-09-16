@@ -4,7 +4,7 @@
 
 \begin{abstract}
 
-% Fill in your abstract text here
+% Remove the lipsum and fill in your abstract text here
 \lipsum[1]
 
 \end{abstract}

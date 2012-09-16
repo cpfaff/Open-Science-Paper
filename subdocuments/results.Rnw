@@ -4,6 +4,8 @@
 
 \subsection*{Results}
 
+% Remove the lipsum and the example plots and tables to fill in your abstract text here
+
 \paragraph{subheading}
 
 \lipsum[1-2]

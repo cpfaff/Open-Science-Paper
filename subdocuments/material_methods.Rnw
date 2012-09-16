@@ -4,7 +4,11 @@
 
 \subsection*{Material And Methods}
 
+% Remove the lipsum and example table fill in your material and methods text here
+
+
 \lipsum[1]
+
 
 % example for a one column table %
 
@@ -29,5 +33,5 @@
 		}
 \end{table} % }}}
 
-% Fill in your material and methods text here
+
 \lipsum[1-2]
