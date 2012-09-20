@@ -16,7 +16,7 @@
 %%% Provides class. Load options from class call %%%
 %%%-------------------------------------------------%%%
 
-\ProvidesClass{open-science-paper}[2012/09/10 version 0.1 LaTeX class Open-Science-Paper]
+\ProvidesClass{open-science-paper}[2012/09/10 version 0.2 LaTeX class of the Open-Science-Paper]
 
 \LoadClassWithOptions{scrartcl}
 
@@ -78,9 +78,18 @@
 %  lightgray
 
 %% definitions %%
-\xdefinecolor{ListingBackgroundColor}{gray}{.95}
+\definecolorset{cmyk}{roy}{}{%
+    yellow,0,0.20,1.00,0;%
+    orange,0,0.35,1.00,0;%
+    red,   0,0.85,0.86,0}%
+
+\xdefinecolor{vistingBackgroundColor}{gray}{.95}
 \xdefinecolor{ListingCommentstyleColor}{gray}{.60}
 \xdefinecolor{LinkColor}{rgb}{0,0,0.4}
+
+\colorlet{ListingStringstyleColor}{green!25} 
+\colorlet{ListingEmphstyleColor}{blue}
+\colorlet{ListingKeywordstyleColor}{orange!70}
 
 %%%-------------------------------------------------%%%
 %%% List options %%%
@@ -157,8 +166,8 @@
 \newcolumntype{R}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 % usage:
-%  R{width} for raggedright column in certain width
-%  C{width} for centered column in certain width
+%  R{column width} for raggedright column in certain width
+%  C{column width} for centered column in certain width
 
 %% Aggregate cells column and row wise %%
 \RequirePackage{multirow}
@@ -182,7 +191,7 @@
 %%%-------------------------------------------------%%%
 
 %% citation management %%
-\RequirePackage[backend=biber, natbib=true,style=authoryear,bibstyle=authoryear,hyperref=true]{biblatex}
+\RequirePackage[backend=biber, natbib=true, style=authoryear, bibstyle=authoryear, hyperref=true]{biblatex}
 
 %% additional bib options %%
 \ExecuteBibliographyOptions{
@@ -252,6 +261,10 @@ bibencoding=utf8
 \newrefformat{equ}{equation~\ref{#1}}
 \newrefformat{Equ}{Equation~\lowercase{\ref{#1}}}
 
+% Usage:
+%  \prettyref{fig:my_figure_label}
+%  \prettyref{Fig:my_figure_label}
+
 %%%-------------------------------------------------%%%
 %%% Options for code listings in your document %%%
 %%%-------------------------------------------------%%%
@@ -278,7 +291,7 @@ bibencoding=utf8
    stepnumber=1,
    numbersep=10pt,
    xleftmargin=15pt
- }
+}
 
 \lstset{literate=%
 {Ö}{{\"O}}1
@@ -344,7 +357,7 @@ bibencoding=utf8
 %% correction of white spaces %%
 \RequirePackage{ellipsis}
 
-%% right spaces after macros %%
+%% set right space after macros %%
 \RequirePackage{xspace}
 
 %% TeX typesetting parameters %%
@@ -356,7 +369,7 @@ bibencoding=utf8
 \emergencystretch = 1.5em
 \hfuzz = 0.3pt
 
-%% Microtype fine-tuning of typesetting %%
+%% Microtype for fine-tuning of typesetting %%
 \RequirePackage[protrusion=true,%
 expansion=true,%
 babel=true,%
@@ -385,20 +398,23 @@ spacing=false]{microtype}
   urlcolor=LinkColor,%
   breaklinks=true,%
   raiselinks=true,%
-  pdfauthor={Your name here},
-  pdfcreator={Your name here},
-  pdfsubject={Your subject here},
+  pdfauthor={Open-Science-Paper},
+  pdfcreator={Open-Science-Paper},
+  pdfsubject={Open-Science-Paper},
   pdfkeywords={LaTeX, Tikz, Knitr, Scientific paper, Open science}
   ]{hyperref}
 
-%% Examples:
-% \href{URL}{text} 
-% \url{URL}
-% \nolinkurl{URL}
+% Usage:
+%  \href{URL}{text} 
+%  \url{URL}
+%  \nolinkurl{URL}
+
 
 %%%-------------------------------------------------%%%
-%%% Todo before the document starts %%%
+%%% Do before the document starts %%%
 %%%-------------------------------------------------%%%
 
 %% Set typesetting area with last chosen options
 \KOMAoptions{DIV=last}
+
+

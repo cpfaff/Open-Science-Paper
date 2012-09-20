@@ -1,4 +1,4 @@
-% Created by tikzDevice version 0.6.2 on 2012-09-17 19:50:06
+% Created by tikzDevice version 0.6.2 on 2012-09-20 20:06:15
 % !TEX encoding = UTF-8 Unicode
 
 
@@ -19,6 +19,12 @@ DIV=20, notitlepage, final]{subdocuments/open_science_paper}
 \newcommand{\Sexpr}[1]{}       % will only be parsed by R
 
 
+
+%%%------------------------------------------------------------------------------%%%
+%%% Load user options %%%
+%%%------------------------------------------------------------------------------%%%
+
+%\usepackage{subdocuments/open_science_paper.sty} 
 
 %%%------------------------------------------------------------------------------%%%
 %%% Begin the document %%%
