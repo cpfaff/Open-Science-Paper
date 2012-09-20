@@ -16,14 +16,15 @@ DEPENDENCIES = $(DOCUMENT).Rnw subdocuments/open_science_paper.cls subdocuments/
 KNITR = knit
 BIBTEX = biber
 PDFLATEX = pdflatex
-PACKER= zip -r
+PACKER= tar -czf
 REMOVER = @-rm -r
 PRINTER = @-echo 
 GREPPER = @-grep
-PDFVIEWER = okular 
+PDFVIEWER = okular
+DATE = $(shell date +%y%m%d)
 
 # Archive document
-ARCHNAME = $(DOCUMENT)-$(shell date +%y%m%d)
+ARCHNAME = $(DOCUMENT)_$(DATE).tar.gz
 ARCHFILES = $(DOCUMENT).pdf $(DOCUMENT).Rnw subdocuments data graphics makefile
 
 # Clean up the document folder
