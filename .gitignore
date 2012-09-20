@@ -32,4 +32,4 @@
 cache/*.RData
 cache/*.rdb
 cache/*.rdx
-cache/__packages
+cache/*packages
