@@ -1,4 +1,4 @@
-% Created by tikzDevice version 0.6.2 on 2012-09-20 20:06:36
+% Created by tikzDevice version 0.6.2 on 2012-09-20 21:08:56
 % !TEX encoding = UTF-8 Unicode
 
 
@@ -24,7 +24,7 @@ DIV=20, notitlepage, final]{subdocuments/open_science_paper}
 %%% Load user options %%%
 %%%------------------------------------------------------------------------------%%%
 
-%\usepackage{subdocuments/open_science_paper.sty} 
+\input{subdocuments/open_science_paper.sty} 
 
 %%%------------------------------------------------------------------------------%%%
 %%% Begin the document %%%
