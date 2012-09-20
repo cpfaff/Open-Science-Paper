@@ -29,4 +29,7 @@
 *.mtc
 *.mtc0
 *tikzDictionary
-cache/*.*
+cache/*.RData
+cache/*.rdb
+cache/*.rdx
+cache/__packages
