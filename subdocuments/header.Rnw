@@ -3,7 +3,7 @@
 %%%-------------------------------------------------%%%
 
 \noindent
-\rule{\textwidth}{0.8pt}\\[0.2\baselineskip]
+\rule{\textwidth}{0.8pt}\\[0.01\baselineskip]
 \begin{tabular}{p{0.23\textwidth}p{0.55\textwidth}}
 \begin{minipage}{0.25\textwidth}
 	\includegraphics[scale=0.3]{graphics/open-science-papers-logo-frameless.png} 
@@ -15,6 +15,6 @@
 	\begin{footnotesize}Affiliation: 1 University of Leipzig, Departement of Special Botany and Functional Biodiversity\end{footnotesize}\hfill\\
 	\begin{footnotesize}Keywords: Kepler, Scientific Worfklows, Open science \end{footnotesize}\hfill\\[.5\baselineskip]
 \end{minipage}\\
-\end{tabular}\\[0.2\baselineskip]
+\end{tabular}\\[0.01\baselineskip]
 \noindent
 \rule{\textwidth}{0.8pt}
