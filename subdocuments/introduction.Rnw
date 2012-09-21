@@ -4,19 +4,3 @@
 
 \subsection*{Introduction}
 
-% Remove the lipsum and the list example and fill in your introductin text here
-\lipsum[1]
-
-\begin{itemize}
-	\item One
-		\begin{itemize}
-			\item One One
-				\begin{itemize}
-					\item One One One
-				\end{itemize}
-		\end{itemize}
-	\item Two
-	\item Three
-\end{itemize}
-
-\lipsum[1-2]
