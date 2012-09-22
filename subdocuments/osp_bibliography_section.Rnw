@@ -1,5 +1,5 @@
 %%%-------------------------------------------------%%%
-%%% Sub document bibliography inclusion and options %%%
+%%% Sub document bibliography inclusion %%%
 %%%-------------------------------------------------%%%
 
 \nocite{*}
