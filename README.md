@@ -1,11 +1,16 @@
 ## About
 
+<<<<<<< HEAD
 ### Kepler-Workflow-Paper
 
 Abstract of the Paper goes here
 
 ### Open-Science-Paper 
 
+=======
+### Open-Science-Paper 
+
+>>>>>>> upstream/master
 The Open-Science-Paper
 [repository](https://github.com/cpfaff/Open-Science-Paper) contains a LaTeX
 document which is thought to be forked and used for scientific, collaborative

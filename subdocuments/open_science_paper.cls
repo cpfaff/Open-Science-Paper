@@ -193,18 +193,6 @@
 %% citation management %%
 \RequirePackage[backend=biber, natbib=true, style=authoryear, bibstyle=authoryear, hyperref=true]{biblatex}
 
-%% additional bib options %%
-\ExecuteBibliographyOptions{
-url=false,
-isbn=false,
-doi=false,
-firstinits=false,
-bibencoding=utf8
-}
-
-%% add a BibTeX bibliography file %%
-\addbibresource{subdocuments/paper_bibliography.bib}
-
 % usage:
 %  \citet{jon90} ⇒ Jones et al. (1990)
 %  \citet[chap.~2]{jon90} ⇒ Jones et al. (1990, chap. 2)
