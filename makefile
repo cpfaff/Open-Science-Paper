@@ -20,15 +20,21 @@ PACKER= tar -czf
 REMOVER = @-rm -r
 PRINTER = @-echo 
 GREPPER = @-grep
+COPY = @-cp
 PDFVIEWER = okular
 DATE = $(shell date +%y%m%d)
+
+# Example and Empty files  
+AIMFOLDER = subdocuments/
+EXMPLDOCS = subdocuments/exmpl/* 
+TEMPDOCS = subdocuments/temp/*
 
 # Archive document
 ARCHNAME = $(DOCUMENT)_$(DATE).tar.gz
 ARCHFILES = $(DOCUMENT).pdf $(DOCUMENT).Rnw subdocuments data graphics makefile
 
 # Clean up the document folder
-CLEANFILES = Bilder/*.tikz cache/* *.xdy *tikzDictionary *.idx *.mtc* *.glo *.maf *.ptc *.tikz *.lot *.dpth *.figlist *.dep *.log *.makefile *.out *.map *.tex *.toc *.aux *.tmp *.bbl *.blg *.lof *.acn *.acr *.alg *.glg *.gls *.ilg *.ind *.ist *.slg *.syg *.syi minimal.acn minimal.dvi minimal.ist minimal.syg minimal.synctex.gz *.bcf *.run.xml *-blx.bib  
+CLEANFILES = graphics/*.tikz cache/* *.xdy *tikzDictionary *.idx *.mtc* *.glo *.maf *.ptc *.tikz *.lot *.dpth *.figlist *.dep *.log *.makefile *.out *.map *.tex *.toc *.aux *.tmp *.bbl *.blg *.lof *.acn *.acr *.alg *.glg *.gls *.ilg *.ind *.ist *.slg *.syg *.syi minimal.acn minimal.dvi minimal.ist minimal.syg minimal.synctex.gz *.bcf *.run.xml *-blx.bib  
 
 # General rule
 all: $(DOCUMENT).pdf 
@@ -68,3 +74,9 @@ archive:
 
 clean:
 	$(REMOVER) $(CLEANFILES)	
+
+expldoc:
+	$(COPY) $(EXMPLDOCS) $(AIMFOLDER) 
+
+tmpdoc:
+	$(COPY) $(TEMPDOCS) $(AIMFOLDER) 
