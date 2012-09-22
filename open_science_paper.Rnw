@@ -58,7 +58,7 @@ DIV=20, notitlepage, final]{subdocuments/open_science_paper}
 %%% Include abstract %%%
 %%%-------------------------------------------------%%%
 
-<<subdoc_content_abstract, child='subdocuments/osp_abstract.Rnw', eval=T>>=
+<<subdoc_content_abstract, child='subdocuments/osp_abstract_section.Rnw', eval=T>>=
 @
 
 
@@ -70,35 +70,35 @@ DIV=20, notitlepage, final]{subdocuments/open_science_paper}
 %%% Include introduction %%%
 %%%-------------------------------------------------%%%
 
-<<subdoc_content_introduction, child='subdocuments/osp_introduction.Rnw', eval=T>>=
+<<subdoc_content_introduction, child='subdocuments/osp_introduction_section.Rnw', eval=T>>=
 @
 
 %%%-------------------------------------------------%%%
 %%% Include material and methods %%%
 %%%-------------------------------------------------%%%
 
-<<subdoc_content_material_methods, child='subdocuments/osp_material_methods.Rnw', eval=T>>=
+<<subdoc_content_material_methods, child='subdocuments/osp_material_methods_section.Rnw', eval=T>>=
 @
 
 %%%-------------------------------------------------%%%
 %%% Include results %%%
 %%%-------------------------------------------------%%%
 
-<<subdoc_content_results, child='subdocuments/osp_results.Rnw', eval=T>>=
+<<subdoc_content_results, child='subdocuments/osp_results_section.Rnw', eval=T>>=
 @
 
 %%%-------------------------------------------------%%%
 %%% Include discussion %%%
 %%%-------------------------------------------------%%%
 
-<<subdoc_content_discussion, child='subdocuments/osp_discussion.Rnw', eval=T>>=
+<<subdoc_content_discussion, child='subdocuments/osp_discussion_section.Rnw', eval=T>>=
 @
 
 %%%-------------------------------------------------%%%
 %%% Include acknowledgements %%%
 %%%-------------------------------------------------%%%
 
-<<subdoc_content_acknowledgement, child='subdocuments/osp_acknowledgements.Rnw', eval=T>>=
+<<subdoc_content_acknowledgement, child='subdocuments/osp_acknowledgements_section.Rnw', eval=T>>=
 @
 
 %%%-------------------------------------------------%%%
