@@ -31,9 +31,9 @@ collaborative paper writing on GitHub and much more.
 
 ## Self-promotion
 
-Do you like the Open-Science-Paper repository? You are welcome to
-follow [me](https://github.com/cpfaff) on GitHub and or twitter
-(http://twitter.com/ctpfaff).
+Do you like the Open-Science-Paper repository? You are welcome
+to follow me on [GitHub](https://github.com/cpfaff) and or
+[Twitter](http://twitter.com/ctpfaff).
 
 ## License
 
