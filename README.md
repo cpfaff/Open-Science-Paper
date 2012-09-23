@@ -17,10 +17,10 @@ layout of the document is close to common scientific paper formats. For
 an example see the PDF file in the repository or the documentation in the
 [wiki](https://github.com/cpfaff/Open-Science-Paper/wiki). The layout can help
 to prepare figures and tables for publication. But you can also use the document
-just to produce nice looking, paper like formatted documents. 
+just to produce nice looking, paper like formatted documents.
 
-A makefile helps you to compile, clean and archive the document
-and a documentation you can find on the Open-Science-Paper
+A makefile helps you to compile, clean and archive the document.
+The project is documented in detail on the Open-Science-Paper
 [wiki](https://github.com/cpfaff/Open-Science-Paper/wiki). The wiki covers
 information about how to get started with the document, a workflow for
 collaborative paper writing on GitHub and much more.
