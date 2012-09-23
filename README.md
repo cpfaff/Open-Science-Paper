@@ -32,7 +32,7 @@ collaborative paper writing on GitHub and much more.
 ## Self-promotion
 
 Do you like the Open-Science-Paper repository? You are welcome to follow me on
-GitHub and or twitter (http://twitter.com/sabsirro).
+GitHub and or twitter (http://twitter.com/ctpfaff).
 
 ## License
 
