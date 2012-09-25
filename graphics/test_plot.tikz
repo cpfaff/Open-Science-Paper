@@ -1,0 +1,544 @@
+% Created by tikzDevice version 0.6.2 on 2012-09-25 13:36:05
+% !TEX encoding = UTF-8 Unicode
+
+
+\documentclass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto,
+DIV=20, notitlepage, final]{subdocuments/open_science_paper}
+\nonstopmode
+
+\usepackage{tikz}
+
+\usepackage[active,tightpage,psfixbb]{preview}
+
+\PreviewEnvironment{pgfpicture}
+
+\setlength\PreviewBorder{0pt}
+
+\newcommand{\SweaveOpts}[1]{}  % do not interfere with LaTeX
+\newcommand{\SweaveInput}[1]{} % because they are not real TeX commands
+\newcommand{\Sexpr}[1]{}       % will only be parsed by R
+
+
+
+%%%------------------------------------------------------------------------------%%%
+%%% Load user options %%%
+%%%------------------------------------------------------------------------------%%%
+
+\input{subdocuments/open_science_paper.sty} 
+
+%%%------------------------------------------------------------------------------%%%
+%%% Begin the document %%%
+%%%------------------------------------------------------------------------------%%%
+
+
+\begin{document}
+
+\begin{tikzpicture}[x=1pt,y=1pt]
+\definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
+\definecolor[named]{fillColor}{rgb}{1.00,1.00,1.00}
+\fill[color=fillColor,fill opacity=0.00,] (0,0) rectangle (216.81,180.67);
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\definecolor[named]{drawColor}{rgb}{1.00,1.00,1.00}
+\definecolor[named]{fillColor}{rgb}{1.00,1.00,1.00}
+
+\draw[color=drawColor,line width= 0.6pt,line cap=round,line join=round,fill=fillColor,] (  0.00,  0.00) rectangle (216.81,180.68);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] ( 38.15, 35.17) rectangle (203.56,167.43);
+\definecolor[named]{fillColor}{rgb}{1.00,1.00,1.00}
+
+\draw[fill=fillColor,draw opacity=0.00,] ( 38.15, 35.17) rectangle (203.56,167.43);
+\definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 45.67, 41.19) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 55.86, 41.19) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 48.22, 54.54) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 71.15, 54.54) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 63.51, 58.99) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 55.86, 63.45) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 66.06, 67.90) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 76.25, 67.90) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 86.45, 67.90) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 64.78, 72.35) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 78.80, 72.35) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 60.96, 76.80) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 68.61, 76.80) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 73.70, 76.80) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 78.80, 76.80) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 76.25, 81.25) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 86.45, 81.25) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 86.45, 81.25) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] (101.74, 81.25) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 76.25, 85.71) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 89.00, 85.71) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] (119.58, 85.71) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] (145.07, 85.71) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 68.61, 90.16) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 76.25, 90.16) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] (111.93, 90.16) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 83.90, 94.61) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 94.09, 94.61) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 83.90, 99.06) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 94.09, 99.06) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] (106.84, 99.06) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 96.64,103.51) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] (114.48,103.51) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] (139.97,103.51) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] (150.16,103.51) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 89.00,107.96) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] (101.74,107.96) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] (129.77,107.96) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] ( 83.90,112.42) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] (104.29,112.42) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] (109.38,112.42) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] (114.48,112.42) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] (124.68,112.42) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] (127.23,121.32) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] (111.93,125.77) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] (132.32,130.22) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] (160.36,130.22) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] (161.63,130.22) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] (196.04,130.22) circle (  2.13);
+
+\draw[color=drawColor,line cap=round,line join=round,fill opacity=0.00,] (151.44,134.68) circle (  2.13);
+\definecolor[named]{fillColor}{rgb}{0.60,0.60,0.60}
+
+\draw[fill=fillColor,fill opacity=0.40,draw opacity=0.00,] ( 45.67, 69.29) --
+	( 47.57, 70.19) --
+	( 49.47, 71.10) --
+	( 51.38, 72.01) --
+	( 53.28, 72.92) --
+	( 55.18, 73.83) --
+	( 57.09, 74.75) --
+	( 58.99, 75.67) --
+	( 60.89, 76.59) --
+	( 62.80, 77.52) --
+	( 64.70, 78.45) --
+	( 66.60, 79.39) --
+	( 68.51, 80.33) --
+	( 70.41, 81.28) --
+	( 72.32, 82.23) --
+	( 74.22, 83.19) --
+	( 76.12, 84.16) --
+	( 78.03, 85.13) --
+	( 79.93, 86.11) --
+	( 81.83, 87.11) --
+	( 83.74, 88.11) --
+	( 85.64, 89.12) --
+	( 87.54, 90.15) --
+	( 89.45, 91.18) --
+	( 91.35, 92.23) --
+	( 93.25, 93.29) --
+	( 95.16, 94.37) --
+	( 97.06, 95.45) --
+	( 98.96, 96.56) --
+	(100.87, 97.67) --
+	(102.77, 98.80) --
+	(104.67, 99.94) --
+	(106.58,101.10) --
+	(108.48,102.27) --
+	(110.39,103.44) --
+	(112.29,104.64) --
+	(114.19,105.84) --
+	(116.10,107.05) --
+	(118.00,108.27) --
+	(119.90,109.49) --
+	(121.81,110.73) --
+	(123.71,111.97) --
+	(125.61,113.22) --
+	(127.52,114.48) --
+	(129.42,115.74) --
+	(131.32,117.01) --
+	(133.23,118.28) --
+	(135.13,119.55) --
+	(137.03,120.83) --
+	(138.94,122.11) --
+	(140.84,123.40) --
+	(142.74,124.69) --
+	(144.65,125.98) --
+	(146.55,127.27) --
+	(148.45,128.57) --
+	(150.36,129.87) --
+	(152.26,131.17) --
+	(154.17,132.47) --
+	(156.07,133.78) --
+	(157.97,135.08) --
+	(159.88,136.39) --
+	(161.78,137.70) --
+	(163.68,139.01) --
+	(165.59,140.32) --
+	(167.49,141.63) --
+	(169.39,142.95) --
+	(171.30,144.26) --
+	(173.20,145.58) --
+	(175.10,146.89) --
+	(177.01,148.21) --
+	(178.91,149.53) --
+	(180.81,150.85) --
+	(182.72,152.16) --
+	(184.62,153.48) --
+	(186.52,154.80) --
+	(188.43,156.13) --
+	(190.33,157.45) --
+	(192.23,158.77) --
+	(194.14,160.09) --
+	(196.04,161.41) --
+	(196.04,136.00) --
+	(194.14,135.12) --
+	(192.23,134.24) --
+	(190.33,133.36) --
+	(188.43,132.48) --
+	(186.52,131.60) --
+	(184.62,130.72) --
+	(182.72,129.84) --
+	(180.81,128.96) --
+	(178.91,128.07) --
+	(177.01,127.19) --
+	(175.10,126.30) --
+	(173.20,125.42) --
+	(171.30,124.53) --
+	(169.39,123.64) --
+	(167.49,122.75) --
+	(165.59,121.87) --
+	(163.68,120.97) --
+	(161.78,120.08) --
+	(159.88,119.19) --
+	(157.97,118.29) --
+	(156.07,117.40) --
+	(154.17,116.50) --
+	(152.26,115.60) --
+	(150.36,114.70) --
+	(148.45,113.80) --
+	(146.55,112.89) --
+	(144.65,111.98) --
+	(142.74,111.07) --
+	(140.84,110.16) --
+	(138.94,109.25) --
+	(137.03,108.33) --
+	(135.13,107.40) --
+	(133.23,106.48) --
+	(131.32,105.55) --
+	(129.42,104.61) --
+	(127.52,103.67) --
+	(125.61,102.72) --
+	(123.71,101.77) --
+	(121.81,100.81) --
+	(119.90, 99.85) --
+	(118.00, 98.87) --
+	(116.10, 97.89) --
+	(114.19, 96.90) --
+	(112.29, 95.90) --
+	(110.39, 94.89) --
+	(108.48, 93.86) --
+	(106.58, 92.83) --
+	(104.67, 91.78) --
+	(102.77, 90.72) --
+	(100.87, 89.65) --
+	( 98.96, 88.56) --
+	( 97.06, 87.46) --
+	( 95.16, 86.35) --
+	( 93.25, 85.22) --
+	( 91.35, 84.08) --
+	( 89.45, 82.93) --
+	( 87.54, 81.76) --
+	( 85.64, 80.58) --
+	( 83.74, 79.39) --
+	( 81.83, 78.19) --
+	( 79.93, 76.99) --
+	( 78.03, 75.77) --
+	( 76.12, 74.54) --
+	( 74.22, 73.30) --
+	( 72.32, 72.06) --
+	( 70.41, 70.81) --
+	( 68.51, 69.56) --
+	( 66.60, 68.30) --
+	( 64.70, 67.03) --
+	( 62.80, 65.76) --
+	( 60.89, 64.49) --
+	( 58.99, 63.21) --
+	( 57.09, 61.93) --
+	( 55.18, 60.64) --
+	( 53.28, 59.35) --
+	( 51.38, 58.06) --
+	( 49.47, 56.77) --
+	( 47.57, 55.47) --
+	( 45.67, 54.17) --
+	cycle;
+\definecolor[named]{drawColor}{rgb}{0.20,0.40,1.00}
+\definecolor[named]{fillColor}{rgb}{0.20,0.40,1.00}
+
+\draw[color=drawColor,line width= 1.1pt,line join=round,] ( 45.67, 61.73) --
+	( 47.57, 62.83) --
+	( 49.47, 63.93) --
+	( 51.38, 65.03) --
+	( 53.28, 66.14) --
+	( 55.18, 67.24) --
+	( 57.09, 68.34) --
+	( 58.99, 69.44) --
+	( 60.89, 70.54) --
+	( 62.80, 71.64) --
+	( 64.70, 72.74) --
+	( 66.60, 73.84) --
+	( 68.51, 74.94) --
+	( 70.41, 76.04) --
+	( 72.32, 77.15) --
+	( 74.22, 78.25) --
+	( 76.12, 79.35) --
+	( 78.03, 80.45) --
+	( 79.93, 81.55) --
+	( 81.83, 82.65) --
+	( 83.74, 83.75) --
+	( 85.64, 84.85) --
+	( 87.54, 85.95) --
+	( 89.45, 87.05) --
+	( 91.35, 88.16) --
+	( 93.25, 89.26) --
+	( 95.16, 90.36) --
+	( 97.06, 91.46) --
+	( 98.96, 92.56) --
+	(100.87, 93.66) --
+	(102.77, 94.76) --
+	(104.67, 95.86) --
+	(106.58, 96.96) --
+	(108.48, 98.06) --
+	(110.39, 99.16) --
+	(112.29,100.27) --
+	(114.19,101.37) --
+	(116.10,102.47) --
+	(118.00,103.57) --
+	(119.90,104.67) --
+	(121.81,105.77) --
+	(123.71,106.87) --
+	(125.61,107.97) --
+	(127.52,109.07) --
+	(129.42,110.17) --
+	(131.32,111.28) --
+	(133.23,112.38) --
+	(135.13,113.48) --
+	(137.03,114.58) --
+	(138.94,115.68) --
+	(140.84,116.78) --
+	(142.74,117.88) --
+	(144.65,118.98) --
+	(146.55,120.08) --
+	(148.45,121.18) --
+	(150.36,122.29) --
+	(152.26,123.39) --
+	(154.17,124.49) --
+	(156.07,125.59) --
+	(157.97,126.69) --
+	(159.88,127.79) --
+	(161.78,128.89) --
+	(163.68,129.99) --
+	(165.59,131.09) --
+	(167.49,132.19) --
+	(169.39,133.30) --
+	(171.30,134.40) --
+	(173.20,135.50) --
+	(175.10,136.60) --
+	(177.01,137.70) --
+	(178.91,138.80) --
+	(180.81,139.90) --
+	(182.72,141.00) --
+	(184.62,142.10) --
+	(186.52,143.20) --
+	(188.43,144.30) --
+	(190.33,145.41) --
+	(192.23,146.51) --
+	(194.14,147.61) --
+	(196.04,148.71);
+\definecolor[named]{drawColor}{rgb}{0.50,0.50,0.50}
+
+\draw[color=drawColor,line width= 0.6pt,line cap=round,line join=round,fill opacity=0.00,] ( 38.15, 35.17) rectangle (203.56,167.43);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
+
+\node[color=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.87] at ( 31.03, 64.61) {10};
+
+\node[color=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.87] at ( 31.03,109.13) {20};
+
+\node[color=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.87] at ( 31.03,153.64) {30};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
+
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 33.88, 67.90) --
+	( 38.15, 67.90);
+
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 33.88,112.42) --
+	( 38.15,112.42);
+
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 33.88,156.94) --
+	( 38.15,156.94);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
+
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 43.12, 30.91) --
+	( 43.12, 35.17);
+
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 74.98, 30.91) --
+	( 74.98, 35.17);
+
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] (106.84, 30.91) --
+	(106.84, 35.17);
+
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] (138.70, 30.91) --
+	(138.70, 35.17);
+
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] (170.55, 30.91) --
+	(170.55, 35.17);
+
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] (202.41, 30.91) --
+	(202.41, 35.17);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
+
+\node[color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.87] at ( 43.12, 21.48) {0};
+
+\node[color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.87] at ( 74.98, 21.48) {25};
+
+\node[color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.87] at (106.84, 21.48) {50};
+
+\node[color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.87] at (138.70, 21.48) {75};
+
+\node[color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.87] at (170.55, 21.48) {100};
+
+\node[color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.87] at (202.41, 21.48) {125};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
+
+\node[color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  1.09] at (120.85,  9.94) {dist};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
+
+\node[rotate= 90.00,color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  1.09] at ( 18.17,101.30) {speed};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\end{tikzpicture}
+
+\end{document}
