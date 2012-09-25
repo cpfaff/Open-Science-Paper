@@ -3,6 +3,3 @@
 %%%-------------------------------------------------%%%
 
 \subsection*{Acknowledgements}
-
-% Remove the lipsum and fill in your acknowledgements here
-\lipsum[4-5]

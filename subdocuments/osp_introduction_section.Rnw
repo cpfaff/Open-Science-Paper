@@ -4,19 +4,34 @@
 
 \subsection*{Introduction}
 
-% Remove the lipsum and the list example and fill in your introductin text here
-\lipsum[1]
+\paragraph{Scope}
+
+Under ever increasing pressure on ecosystems by climate and land use change,
+biodiversity continues to decline. At the same time, there is a growing
+evidence, that biodiversity is crucial for ecosystem functioning. To inform
+decision makers, scientists from different disciplines increasingly collaborate
+to show the impact of decreasing biodiversity on ecosystem functioning. However,
+data describing biodiversity and ecosystem functioning are complex in structure
+and distributed across different repositories and research groups. To make use
+of the opportunities of accessing data online, biodiversity scientists are
+exploring how semantic tools can help in the automatic assembly of data from
+distributed resources. Due to the complexity of the data, semantic tools will
+be of highest use and generality, when the complexity involved in analytic
+operations is low.
+
+\paragraph{Aim}
+
+We want to analyse a typical scientific workflow that combines datasets from
+different research groups and look for an optimal entry point for semantic
+tools.
+
+\paragraph{Questions}
 
 \begin{itemize}
-	\item One
-		\begin{itemize}
-			\item One One
-				\begin{itemize}
-					\item One One One
-				\end{itemize}
-		\end{itemize}
-	\item Two
-	\item Three
+	\item How can complexity be quantified for finite operations calculated within a scientific workflow?
+	\item Does the complexity of operations stay constant throughout the scientific workflow?
+	\item Can workflow operations be grouped meaningfully into tasks?
+	\item Do tasks differ in complexity?
+	\item Are all tasks used similarly in the course of the workflow?
+	\item Do datasets differ in the usage of their variables?
 \end{itemize}
-
-\lipsum[1-2]
