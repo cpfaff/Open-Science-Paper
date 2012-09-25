@@ -25,7 +25,7 @@ We want to analyse a typical scientific workflow that combines datasets from
 different research groups and look for an optimal entry point for semantic
 tools.
 
-\praragraph{Questions}
+\paragraph{Questions}
 
 \begin{itemize}
 	\item How can complexity be quantified for finite operations calculated within a scientific workflow?
