@@ -1,4 +1,4 @@
-% Created by tikzDevice version 0.6.2 on 2012-09-25 22:12:13
+% Created by tikzDevice version 0.6.2 on 2012-09-25 22:29:40
 % !TEX encoding = UTF-8 Unicode
 
 
@@ -39,11 +39,9 @@ DIV=20, notitlepage, final]{subdocuments/open_science_paper}
 \fill[color=fillColor,fill opacity=0.00,] (0,0) rectangle (216.81,180.67);
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \definecolor[named]{drawColor}{rgb}{1.00,1.00,1.00}
 \definecolor[named]{fillColor}{rgb}{1.00,1.00,1.00}
 
@@ -51,19 +49,15 @@ DIV=20, notitlepage, final]{subdocuments/open_science_paper}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \begin{scope}
 \path[clip] ( 40.80, 35.17) rectangle (203.56,167.43);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \definecolor[named]{fillColor}{rgb}{1.00,1.00,1.00}
 
 \draw[fill=fillColor,draw opacity=0.00,] ( 40.80, 35.17) rectangle (203.56,167.43);
@@ -1100,15 +1094,12 @@ DIV=20, notitlepage, final]{subdocuments/open_science_paper}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
 
 \node[color=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.87] at ( 33.69, 37.89) {0.0};
@@ -1119,11 +1110,9 @@ DIV=20, notitlepage, final]{subdocuments/open_science_paper}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
 
 \draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 36.53, 41.19) --
@@ -1137,27 +1126,21 @@ DIV=20, notitlepage, final]{subdocuments/open_science_paper}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
 
 \draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 72.86, 30.91) --
@@ -1174,11 +1157,9 @@ DIV=20, notitlepage, final]{subdocuments/open_science_paper}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
 
 \node[color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.87] at ( 72.86, 21.48) {2.5};
@@ -1191,53 +1172,42 @@ DIV=20, notitlepage, final]{subdocuments/open_science_paper}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
 
 \node[color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  1.09] at (122.18,  9.94) {rating};
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
 
 \node[rotate= 90.00,color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  1.09] at ( 18.17,101.30) {density};
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.53,0.28,0.76}
 \end{scope}
 \end{tikzpicture}
 
