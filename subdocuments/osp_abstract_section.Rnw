@@ -2,9 +2,16 @@
 %%% Sub document abstract %%%
 %%%-------------------------------------------------%%%
 
-\begin{abstract}
-We investigate the workflow for an ecological analysis on plot level carbon stocks. We ask, if the complexity of calculations needed in finite operations that make up the workflow change in the course of the workflow. We further investigate if all datasets are used in the same way.
-We find that complexity of operations decreases in the course of the workflow. Thus, semantic tools may be best suited to be used towards the end of workflows. For research cooperations we recommend to provide data in several levels, as primary data as collected in the field but at the same time at an aggregated level at plot or species level.
+\begin{abstract} 
+We investigate the workflow for an ecological analysis on plot
+level carbon stocks. We ask, if the complexity of calculations needed in finite
+operations that make up the workflow change in the course of the workflow. We
+further investigate if all datasets are used in the same way. We find that
+complexity of operations decreases in the course of the workflow. Thus, semantic
+tools may be best suited to be used towards the end of workflows. For research
+cooperations we recommend to provide data in several levels, as primary data as
+collected in the field but at the same time at an aggregated level at plot or
+species level. 
 \end{abstract}
 
 
