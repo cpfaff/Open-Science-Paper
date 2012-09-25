@@ -1,0 +1,26 @@
+%%%-------------------------------------------------%%%
+%%% Sub document global preferences for Knitr %%%
+%%%-------------------------------------------------%%%
+
+<<global_knitr_options, tidy=FALSE, highlight=FALSE, include=FALSE, cache=FALSE, eval=TRUE>>=
+  # messages 
+  opts_chunk$set(warning=FALSE)
+  # code evaluation 
+  opts_chunk$set(eval=TRUE)
+  # code decoration
+  opts_chunk$set(tidy=TRUE, prompt=TRUE, comment='##', highlight=TRUE, size='normalsize')
+  # cache options
+  opts_chunk$set(cache.path='cache/')
+  # plot options
+  opts_chunk$set(fig.path='graphics/', dev='tikz', fig.keep='high', fig.show='hold')  
+  # tune details of graphics appearance 
+  knit_hooks$set(par=function(before, options, envir){
+    if (before && options$fig.show!='none') par(mar=c(4,4,.1,.1),cex.lab=.95,cex.axis=.9,mgp=c(2,.7,0),tcl=-.3)
+    }
+  )
+  # tikz options
+  options(replace.assign=TRUE, width=60)
+  options(tikzSanitizeCharacters = c('%','$','}','{','^', '_'))
+  options(tikzReplacementCharacters = c('\\%','\\$','\\}','\\{','\\^{}', '\\textunderscore'))
+@
+
