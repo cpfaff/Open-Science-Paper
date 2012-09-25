@@ -25,7 +25,7 @@ PDFVIEWER = okular
 DATE = $(shell date +%y%m%d)
 
 # Example and Empty files  
-AIMFOLDER = subdocuments/
+SUBDOCFOLDER = subdocuments/
 EXMPLDOCS = subdocuments/exmpl/* 
 TEMPDOCS = subdocuments/temp/*
 
@@ -76,7 +76,7 @@ clean:
 	$(REMOVER) $(CLEANFILES)	
 
 expldoc:
-	$(COPY) $(EXMPLDOCS) $(AIMFOLDER) 
+	$(COPY) $(EXMPLDOCS) $(SUBDOCFOLDER) 
 
 tmpdoc:
-	$(COPY) $(TEMPDOCS) $(AIMFOLDER) 
+	$(COPY) $(TEMPDOCS) $(SUBDOCFOLDER) 
