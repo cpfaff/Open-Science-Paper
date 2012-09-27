@@ -107,7 +107,7 @@
 
 \pltopsep=\medskipamount
 \setdefaultenum{1.}{a)~}{i.~}{A)~}%
-\setdefaultleftmargin{1em}{1.2em}{1.2em}{1.2em}{1.2em}{1.2em}%
+\setdefaultleftmargin{1.5em}{1.2em}{1.2em}{1.2em}{1.2em}{1.2em}%
 \setdefaultitem{$\circ$}{\textbullet}{\textperiodcentered}{--}%
 
 %%%-------------------------------------------------%%%
