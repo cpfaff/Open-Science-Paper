@@ -12,19 +12,18 @@ production of executable documents which enhances the reproducibility of your
 research.
 
 The Open-Science-Paper offers a clean and logical folder structure and
-some example data of typical things required to typeset your paper. A
-makefile helps you to compile, clean and archive the document. The layout
-of the document is close to common scientific paper formats. For an
-example see the PDF file in the repository or the documentation in the
+some examples of typical typesetting requirements to typeset your paper.
+A makefile helps you to compile, clean and archive the document. The
+layout of the document is close to common scientific paper formats. For
+an example see the PDF file in the repository or the documentation in the
 [wiki](https://github.com/cpfaff/Open-Science-Paper/wiki). The layout can help
-to prepare figures and tables for publication. But you can also use the document
-just to produce nice looking, paper like formatted documents.
-
+you to prepare figures and tables for publication. But you can also use the
+Open-Science-Paper to just produce nice looking, paper like formatted documents.
 
 The project is documented in detail on the Open-Science-Paper
-[wiki](https://github.com/cpfaff/Open-Science-Paper/wiki). It covers information
-about how to get started with the document, a workflow for collaborative paper
-writing on GitHub and much more.
+[wiki](https://github.com/cpfaff/Open-Science-Paper/wiki) page. The wiki
+covers information about how to get started with the document, a workflow for
+collaborative paper writing on GitHub and much more.
 
 ### Logo
 
