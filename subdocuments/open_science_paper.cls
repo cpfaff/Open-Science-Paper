@@ -48,7 +48,7 @@
 %%% Language adaption of the document %%%
 %%%-------------------------------------------------%%%
 
-\RequirePackage[ngerman,english]{babel} 
+\RequirePackage[english, ngerman]{babel} 
 \RequirePackage[autostyle]{csquotes}
 % usage:
 %  \enquote{} to put a text in the right quotes
@@ -342,10 +342,10 @@
 %% No indent for new paragraph %%
 \setlength{\parindent}{0em} 
 
-%% correction of white spaces %%
+%% Correction of white spaces %%
 \RequirePackage{ellipsis}
 
-%% set right space after macros %%
+%% To set right space after macros %%
 \RequirePackage{xspace}
 
 %% TeX typesetting parameters %%

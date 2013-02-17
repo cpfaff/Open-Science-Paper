@@ -78,7 +78,7 @@
 % example for a two column table %
 
 \begin{table*} % {{{
-% Label tab:test_table_two 
+% Label tab:test_plot_two 
 	\centering
 	\label{tab:test_table_two}
 	\caption{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
