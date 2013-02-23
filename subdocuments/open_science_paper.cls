@@ -29,10 +29,10 @@
 \RequirePackage[utf8]{inputenc}
 
 %% Fonts and math symbols %%
-\RequirePackage{lmodern}
+\RequirePackage{lmodern} 
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
-\RequirePackage{amssymb}
+\RequirePackage{amssymb} 
 \RequirePackage{textcomp}
 
 %%%-------------------------------------------------%%%
@@ -48,7 +48,7 @@
 %%% Language adaption of the document %%%
 %%%-------------------------------------------------%%%
 
-\RequirePackage[english, ngerman]{babel} 
+\RequirePackage[ngerman, english]{babel} 
 \RequirePackage[autostyle]{csquotes}
 % usage:
 %  \enquote{} to put a text in the right quotes
@@ -63,8 +63,8 @@
 %%% Color options %%%
 %%%-------------------------------------------------%%%
 
-\RequirePackage{xcolor} 
-% Some standards:
+\RequirePackage[svgnames]{xcolor} 
+% Some defaults:
 % 	green 
 %  blue
 %  cyan
@@ -77,19 +77,37 @@
 %  gray
 %  lightgray
 
-%% definitions %%
-\definecolorset{cmyk}{roy}{}{%
-    yellow,0,0.20,1.00,0;%
-    orange,0,0.35,1.00,0;%
-    red,   0,0.85,0.86,0}%
+\colorlet{TitleColor}{DarkRed}
+\colorlet{SubsectionColor}{DarkOrange}
+\colorlet{ParagraphColor}{DarkOrange}
+\colorlet{AbstractSectionColor}{DarkOrange} 
+\colorlet{BibliographySectionColor}{DarkOrange}
 
-\xdefinecolor{vistingBackgroundColor}{gray}{.95}
+\colorlet{PageNumbering}{DarkGray}
+\colorlet{PageNumberingDashes}{LightGray}
+\colorlet{HeaderRuleColor}{LightGray}
+
+% \xdefinecolor{vistingBackgroundColor}{gray}{.95}
 \xdefinecolor{ListingCommentstyleColor}{gray}{.60}
-\xdefinecolor{LinkColor}{rgb}{0,0,0.4}
+\xdefinecolor{LinkColor}{rgb}{0,0,0.4} 
 
 \colorlet{ListingStringstyleColor}{green!25} 
 \colorlet{ListingEmphstyleColor}{blue}
 \colorlet{ListingKeywordstyleColor}{orange!70}
+
+%%%-------------------------------------------------%%%
+%%% Define header and footer %%%
+%%%-------------------------------------------------%%%
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot[C]{\textcolor{PageNumberingDashes}{--} \textbf{\textcolor{PageNumbering}{\textsl{{\large \thepage}}}} \textcolor{PageNumberingDashes}{--}}
 
 %%%-------------------------------------------------%%%
 %%% List options %%%
@@ -259,7 +277,7 @@
 
 \RequirePackage{listings}
 
-\lstset{
+\lstset{%
    backgroundcolor=\color{ListingBackgroundColor},
    basicstyle=\scriptsize\ttfamily,
    keywordstyle=\bfseries\ttfamily\color{ListingKeywordstyleColor},
@@ -296,8 +314,14 @@
 %%% Definition of environments %%%
 %%%-------------------------------------------------%%%
 
+% Define Header %% 
+\newcommand{\HeaderRule}{\color{HeaderRuleColor} \rule{\linewidth}{1.7pt}}
+
 %% Defines the abstract %%
 \RequirePackage{abstract}
+\renewcommand{\abstractnamefont}{\color{AbstractSectionColor}\normalfont\sffamily\large\bfseries}
+\renewcommand{\abstracttextfont}{\normalfont} 
+
 
 %%%-------------------------------------------------%%%
 %%% Typographical options of the headings %%%
@@ -309,17 +333,17 @@
 %{\normalfont\sffamily\huge\bfseries}{%\chaptertitlename\ 
 %\thechapter}{20pt}{\Huge}
 
-%\titleformat{\section}
-%{\normalfont\sffamily\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\section}
+{\color{BibliographySectionColor}\normalfont\sffamily\large\bfseries}{\thesection}{1em}{}
 
 \titleformat{\subsection}
-{\normalfont\sffamily\large\bfseries}{\thesubsection}{1em}{}
+{\color{SubsectionColor}\normalfont\sffamily\large\bfseries}{\thesubsection}{1em}{}
 
 %\titleformat{\subsubsection}
 %{\normalfont\sffamily\normalsize\bfseries}{\thesubsubsection}{1em}{}
 
 \titleformat{\paragraph}[runin]
-{\normalfont\sffamily\normalsize\bfseries}{\theparagraph}{1em}{}
+{\color{ParagraphColor}\normalfont\sffamily\normalsize\bfseries}{\theparagraph}{1em}{}
 
 %\titleformat{\subparagraph}[runin]
 %{\normalfont\sffamily\normalsize\bfseries}{\thesubparagraph}{1em}{}
@@ -328,12 +352,15 @@
 % {0pt}{50pt}{40pt}
 %\titlespacing*{\section}
 % {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing*{\section}
+ {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
 \titlespacing*{\subsection}
- {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+ {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
 %\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 \titlespacing*{\paragraph}
- {0pt}{3.25ex plus 1ex minus .2ex}{1em}
+ {0pt}{3.25ex plus 1ex minus 0.2ex}{1em}
 %\titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}
+
 
 %%%-------------------------------------------------%%%
 %%% Typographical fine-tuning %%%
@@ -365,8 +392,8 @@ tracking=true,%
 spacing=false]{microtype}     
 
 \DeclareMicrotypeSet*[tracking]{my}% 
-       { font = */*/*/sc/* }% 
-\SetTracking{ encoding = *, shape = sc }{40}
+       {font = */*/*/sc/*}% 
+\SetTracking{encoding = *, shape = sc}{40}
 
 %%%-------------------------------------------------%%%
 %%% PDF Options %%%

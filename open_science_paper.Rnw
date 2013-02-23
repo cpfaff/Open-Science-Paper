@@ -13,7 +13,7 @@
 %
 
 \documentclass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto,
-DIV=20, notitlepage, final]{subdocuments/open_science_paper}
+DIV=20, notitlepage, oneside, final]{subdocuments/open_science_paper}
 
 %%%------------------------------------------------------------------------------%%%
 %%% Load user options %%%
