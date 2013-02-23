@@ -34,4 +34,4 @@
 \end{table} % }}}
 
 
-\lipsum[1-2]
+\lipsum[1]

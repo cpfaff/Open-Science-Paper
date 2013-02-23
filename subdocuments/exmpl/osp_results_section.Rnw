@@ -6,7 +6,7 @@
 
 % Remove the lipsum and the example plots and tables to fill in your abstract text here
 
-\paragraph{subheading}
+\paragraph{Subheading}
 
 \lipsum[1-2]
 
@@ -24,7 +24,7 @@
 	ggplot(cars, aes(x=dist, y=speed)) +
 		geom_point(shape=1) + geom_smooth(method = "lm", size = 1) +
 		theme_bw() +
-		opts(panel.grid.major=theme_blank(), panel.grid.minor=theme_blank()) 
+		theme(panel.grid.major=element_blank(), panel.grid.minor=element_blank()) 
 @
 				\end{center}
 			\end{minipage}
@@ -78,7 +78,7 @@
 % example for a two column table %
 
 \begin{table*} % {{{
-% Label tab:test_table_two 
+% Label tab:test_plot_two 
 	\centering
 	\label{tab:test_table_two}
 	\caption{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
