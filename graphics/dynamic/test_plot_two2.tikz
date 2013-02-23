@@ -1,9 +1,9 @@
-% Created by tikzDevice version 0.6.2 on 2012-09-26 13:10:32
+% Created by tikzDevice version 0.6.2 on 2013-02-23 19:46:38
 % !TEX encoding = UTF-8 Unicode
 
 
 \documentclass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto,
-DIV=20, notitlepage, final]{subdocuments/open_science_paper}
+DIV=20, notitlepage, oneside, final]{subdocuments/open_science_paper}
 \nonstopmode
 
 \usepackage{tikz}
