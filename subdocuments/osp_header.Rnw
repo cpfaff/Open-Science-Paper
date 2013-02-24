@@ -2,6 +2,8 @@
 %%% Sub document header %%%
 %%%-------------------------------------------------%%%
 
+%% Please do not edit the header information in here 
+%% this can be done via commands from  the style file.
 \noindent
 {\HeaderRule}\\[0.01\baselineskip] 
 \begin{tabular}{p{0.23\textwidth}p{0.55\textwidth}}
