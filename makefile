@@ -10,7 +10,7 @@
 DOCUMENT = open_science_paper
 
 # Dependencies maindocument
-DEPENDENCIES = $(DOCUMENT).Rnw subdocuments/open_science_paper.cls subdocuments/*.Rnw 
+DEPENDENCIES = $(DOCUMENT).Rnw subdocuments/open_science_paper.* subdocuments/*.Rnw 
 
 # Used Programs
 KNITR = knit

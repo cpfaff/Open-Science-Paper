@@ -41,7 +41,8 @@
 
 \RequirePackage{fixltx2e}
 \RequirePackage{scrhack}
-\RequirePackage{etex}
+\RequirePackage{etex} 
+\RequirePackage{etoolbox}
 \reserveinserts{30}
 
 %%%-------------------------------------------------%%%
@@ -94,6 +95,15 @@
 \colorlet{ListingStringstyleColor}{green!25} 
 \colorlet{ListingEmphstyleColor}{blue}
 \colorlet{ListingKeywordstyleColor}{orange!70}
+
+%%%-------------------------------------------------%%%
+%%% Title header defaults %%%
+%%%-------------------------------------------------%%%
+
+\providecommand{\ospTitle}{Here comes the osp title}
+\providecommand{\ospAuthors}{Author one\textsuperscript{1 2}, Author two\textsuperscript{2}, \ldots}
+\providecommand{\ospAffiliations}{University of XY departement of Z\textsuperscript{1}, \ldots}
+\providecommand{\ospKeywords}{Open Science, Git, R, Knitr, ggplot2, tikz}
 
 %%%-------------------------------------------------%%%
 %%% Define header and footer %%%

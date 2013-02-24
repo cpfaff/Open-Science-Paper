@@ -3,20 +3,18 @@
 %%%-------------------------------------------------%%%
 
 \noindent
-% \rule{\textwidth}{2pt}\\[0.01\baselineskip] 
 {\HeaderRule}\\[0.01\baselineskip] 
 \begin{tabular}{p{0.23\textwidth}p{0.55\textwidth}}
 \begin{minipage}{0.25\textwidth}
-	\includegraphics[scale=0.3]{graphics/open-science-papers-logo-frameless.png} 
+   \includegraphics[scale=0.3]{graphics/open-science-papers-logo-frameless.png} 
 \end{minipage}&	
 \begin{minipage}{0.7\textwidth} 
 \vspace{\baselineskip}
-	{\color{TitleColor}{{\normalfont\sffamily\Huge\bfseries Open Science Paper Title}}} \hfill\\[\baselineskip]
-	\begin{normalsize}\textbf{Author One\textsuperscript{1}}, \textbf{Author Two\textsuperscript{1}}, ...\end{normalsize}\hfill\\
-	\begin{normalsize}\textbf{Affiliation:} 1 University X; ..\end{normalsize}\hfill\\
-	\begin{normalsize}\textbf{Keywords:} Open science, Git, R, Knitr, ggplot2, tikz \end{normalsize}\hfill\\[.5\baselineskip]
+{\color{TitleColor}{{\normalfont\sffamily\Huge\bfseries \ospTitle }}} \hfill\\[\baselineskip]
+   \begin{normalsize}\textbf{\ospAuthors}\end{normalsize}\hfill\\
+   \begin{normalsize}\textbf{Affiliation:} \ospAffiliations\end{normalsize}\hfill\\
+   \begin{normalsize}\textbf{Keywords:} \ospKeywords\end{normalsize}\hfill\\[.5\baselineskip]
 \end{minipage}\\
 \end{tabular}\\[0.01\baselineskip]
 \noindent
-% \rule{\textwidth}{2pt}  
-{\HeaderRule} 
+{\HeaderRule}  

@@ -7,6 +7,16 @@
 %%%------------------------------------------------------------------------------------%%
 
 %%%-------------------------------------------------%%%
+%%% Define titlel authors and affiliation %%%
+%%%-------------------------------------------------%%%
+
+% Examples on how to change the title header
+\renewcommand{\ospTitle}{The open science paper title}
+\renewcommand{\ospAuthors}{Author one\textsuperscript{1 2}, Author two\textsuperscript{2}}
+\renewcommand{\ospAffiliations}{University of XY departement of Z\textsuperscript{1}, University of \ldots}
+\renewcommand{\ospKeywords}{Open Science, Git, R, Knitr, ggplot2, tikz}
+
+%%%-------------------------------------------------%%%
 %%% Define own colors %%%
 %%%-------------------------------------------------%%%
 
@@ -51,7 +61,5 @@ isbn=false,
 doi=false,
 firstinits=false,
 bibencoding=utf8
-}
+} 
 
-%% add a BibTeX bibliography file %%
-\addbibresource{subdocuments/open_science_paper.bib}
