@@ -78,17 +78,20 @@
 %  gray
 %  lightgray
 
+\colorlet{HeaderRuleColor}{LightGray}
 \colorlet{TitleColor}{DarkRed}
+\colorlet{AbstractSectionColor}{DarkGray}  
+
 \colorlet{SubsectionColor}{DarkOrange}
 \colorlet{ParagraphColor}{gray}
-\colorlet{AbstractSectionColor}{DarkGray} 
 \colorlet{BibliographySectionColor}{DarkOrange}
+
+\colorlet{CapitalLetterColor}{gray}
+
 \colorlet{FootRuleColor}{LightGray}
-\colorlet{FootContentColor}{DarkGray}
+\colorlet{FootContentColor}{DarkGray} 
 
 \colorlet{PageNumberingColor}{DarkGray}
-\colorlet{PageNumberingDashes}{white}
-\colorlet{HeaderRuleColor}{LightGray}
 
 % \xdefinecolor{vistingBackgroundColor}{gray}{.95}
 \xdefinecolor{ListingCommentstyleColor}{gray}{.60}
@@ -116,16 +119,9 @@
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0.3pt}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{} 
-% \fancyfoot[R]{\textcolor{PageNumberingDashes}{--} \textbf{\textcolor{PageNumbering}{\textit{{\large \thepage}}}} \textcolor{PageNumberingDashes}{--}}
 \fancyfoot[R]{\textbf{\textcolor{PageNumberingColor}{{\thepage}}}}
 \fancyfoot[L]{\textcolor{FootContentColor}{{\small Open-Science-Papers Journal \textcolor{LightGray}{$\circ$} Compiled on \today}}}
 \makeatletter
-% \patchcmd{\@fancyhead}{\rlap}{\color{color}\rlap}{}{}
-% \patchcmd{\headrule}{\hrule}{\color{color}\hrule}{}{}
-% \patchcmd{\@fancyfoot}{\rlap}{\color{color}\rlap}{}{}
 \patchcmd{\footrule}{\hrule}{\color{FootRuleColor}\hrule}{}{}
 \makeatother
 
@@ -134,6 +130,7 @@
 %%%-------------------------------------------------%%%
 
 \usepackage{lettrine}
+\newcommand{\capital}[1]{\lettrine[nindent=0em, findent=0.2em, lines=2]{\textcolor{CapitalLetterColor}{#1}}}    
 
 %%%-------------------------------------------------%%%
 %%% List options %%%
