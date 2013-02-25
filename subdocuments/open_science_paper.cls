@@ -81,7 +81,7 @@
 \colorlet{TitleColor}{DarkRed}
 \colorlet{SubsectionColor}{DarkOrange}
 \colorlet{ParagraphColor}{gray}
-\colorlet{AbstractSectionColor}{DarkOrange} 
+\colorlet{AbstractSectionColor}{DarkGray} 
 \colorlet{BibliographySectionColor}{DarkOrange}
 \colorlet{FootRuleColor}{LightGray}
 \colorlet{FootContentColor}{DarkGray}
