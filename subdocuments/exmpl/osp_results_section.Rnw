@@ -15,7 +15,7 @@
 	\centering
 	\begin{tikzpicture}
 		\node[pictureframe]{%    
-			\begin{minipage}{0.45\textwidth}%
+			\begin{minipage}{0.47\textwidth}%
 				\begin{center}
 
 <<test_plot, cache=T, fig.width=3, fig.height=2.5, out.width='\\textwidth', echo=FALSE>>=
@@ -44,7 +44,7 @@
 	\centering
 	\begin{tikzpicture}
 		\node[pictureframe]{%    
-			\begin{minipage}{0.97\textwidth}%
+			\begin{minipage}{0.98\textwidth}%
 				\begin{center}
 
 <<test_plot_two, cache=T, fig.width=3, fig.height=2.5, out.width='0.45\\textwidth', echo=FALSE>>=

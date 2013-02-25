@@ -161,13 +161,13 @@
 \RequirePackage{tikz}
 
 %% Load some tikz libraries %%
-\usetikzlibrary{spy,external,automata,patterns,shadows,trees,mindmap,arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
+\usetikzlibrary{spy,external,automata,patterns,shadows.blur,trees,mindmap,arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
 \pgfdeclarelayer{background}
 \pgfdeclarelayer{foreground}
 \pgfsetlayers{background,main,foreground}
 
 %% Define tikz styles %%
-\tikzstyle{pictureframe} = [rectangle, rounded corners, draw]
+\tikzstyle{pictureframe} = [rectangle, rounded corners, draw=gray!10, fill=white, blur shadow={shadow blur steps=5,shadow blur extra rounding=1.3pt}]
 \tikzstyle{signbackground} = [rectangle, fill=gray!3, rounded corners, draw=gray, very thin]
 
 \RequirePackage{subcaption} 
