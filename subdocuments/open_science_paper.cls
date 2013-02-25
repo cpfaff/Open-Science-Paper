@@ -121,7 +121,7 @@
 \fancyhf{} 
 % \fancyfoot[R]{\textcolor{PageNumberingDashes}{--} \textbf{\textcolor{PageNumbering}{\textit{{\large \thepage}}}} \textcolor{PageNumberingDashes}{--}}
 \fancyfoot[R]{\textbf{\textcolor{PageNumberingColor}{{\thepage}}}}
-\fancyfoot[L]{\textcolor{FootContentColor}{{\small Open-Science-Papers Journal \textcolor{LightGray}{$\circ$} \today}}}
+\fancyfoot[L]{\textcolor{FootContentColor}{{\small Open-Science-Papers Journal \textcolor{LightGray}{$\circ$} Compiled on \today}}}
 \makeatletter
 % \patchcmd{\@fancyhead}{\rlap}{\color{color}\rlap}{}{}
 % \patchcmd{\headrule}{\hrule}{\color{color}\hrule}{}{}
