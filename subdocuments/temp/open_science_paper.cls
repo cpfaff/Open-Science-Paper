@@ -29,8 +29,10 @@
 \RequirePackage[utf8]{inputenc}
 
 %% Fonts and math symbols %%
-\RequirePackage{lmodern} 
+% \RequirePackage{lmodern}  
+\RequirePackage{libertine}
 \RequirePackage{amsmath}
+\RequirePackage[libertine]{newtxmath}
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb} 
 \RequirePackage{textcomp}
@@ -93,13 +95,9 @@
 
 \colorlet{PageNumberingColor}{DarkGray}
 
-% \xdefinecolor{vistingBackgroundColor}{gray}{.95}
-\xdefinecolor{ListingCommentstyleColor}{gray}{.60}
-\xdefinecolor{LinkColor}{rgb}{0,0,0.4} 
+\xdefinecolor{ListingBackgroundColor}{gray}{.90}
 
-\colorlet{ListingStringstyleColor}{green!25} 
-\colorlet{ListingEmphstyleColor}{blue}
-\colorlet{ListingKeywordstyleColor}{orange!70}
+\xdefinecolor{LinkColor}{rgb}{0,0,0.4} 
 
 %%%-------------------------------------------------%%%
 %%% Title header defaults %%%
@@ -300,26 +298,45 @@
 
 \RequirePackage{listings}
 
+\definecolor{solarized@base03}{HTML}{002B36}
+\definecolor{solarized@base02}{HTML}{073642}
+\definecolor{solarized@base01}{HTML}{586e75}
+\definecolor{solarized@base00}{HTML}{657b83}
+\definecolor{solarized@base0}{HTML}{839496}
+\definecolor{solarized@base1}{HTML}{93a1a1}
+\definecolor{solarized@base2}{HTML}{EEE8D5}
+\definecolor{solarized@base3}{HTML}{FDF6E3}
+\definecolor{solarized@yellow}{HTML}{B58900}
+\definecolor{solarized@orange}{HTML}{CB4B16}
+\definecolor{solarized@red}{HTML}{DC322F}
+\definecolor{solarized@magenta}{HTML}{D33682}
+\definecolor{solarized@violet}{HTML}{6C71C4}
+\definecolor{solarized@blue}{HTML}{268BD2}
+\definecolor{solarized@cyan}{HTML}{2AA198}
+\definecolor{solarized@green}{HTML}{859900}
+ 
 \lstset{%
-   backgroundcolor=\color{ListingBackgroundColor},
-   basicstyle=\scriptsize\ttfamily,
-   keywordstyle=\bfseries\ttfamily\color{ListingKeywordstyleColor},
-   stringstyle=\color{ListingStringstyleColor}\ttfamily,
-   commentstyle=\color{ListingCommentstyleColor}\ttfamily,
-   emph={word1}, 
-   emphstyle=\color{ListingEmphstyleColor}\texttt, %for word 1
-   emph={[2]word2,word3},
-   emphstyle={[2]\color{ListingEmphstyleColor}\texttt}, %for word 2
-   showstringspaces=false,
-   flexiblecolumns=false,
-   tabsize=3,
-   numbers=left,
-   breaklines=true,
-   numberstyle=\tiny,
-   numberblanklines=true,
-   stepnumber=1,
-   numbersep=10pt,
-   xleftmargin=15pt
+upquote=true,
+columns=fixed,
+tabsize=2,
+showstringspaces=false,
+flexiblecolumns=true,
+extendedchars=true,
+breaklines=true,
+numbers=left, 
+backgroundcolor=\color{ListingBackgroundColor},
+stepnumber=1,
+numbersep=7pt,
+xleftmargin=10pt,
+% rulesepcolor=\color{solarized@base03},
+% numberblanklines=true,
+numberstyle=\tiny\color{solarized@base01},
+basicstyle=\footnotesize\ttfamily,
+keywordstyle=\color{solarized@green},
+stringstyle=\color{solarized@cyan}\ttfamily,
+identifierstyle=\color{solarized@blue},
+commentstyle=\color{solarized@base01},
+emphstyle=\color{solarized@red}
 }
 
 \lstset{literate=%

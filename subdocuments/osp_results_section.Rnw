@@ -37,7 +37,21 @@
 \label{fig:test_plot}
 \end{figure} % }}}
 
-\lipsum
+\lipsum 
+
+\begin{equation}
+   \sqrt[3]{1-y^2}
+\end{equation}
+
+\setlength\multlinegap{0pt}
+\begin{multline} \tag{2}
+   \sum_{t \in \mathbf{T}} \int_a^t
+   \biggl\lbrace \int_a^t f(t - x)^2 \,
+   g(y)^2 \,dx \biggr\rbrace \,dy \\
+   = \sum_{t \notin \mathbf{T}} \int_t^a
+   \biggl\lbrace g(y)^2 \int_t^a
+   f(x)^2 \,dx \biggr\rbrace \,dy
+\end{multline}
 
 \begin{figure*} % {{{
 % Label fig:test_plot_two
@@ -73,7 +87,19 @@
 \label{fig:test_plot_two}
 \end{figure*} % }}}
 
-\lipsum[1-3]
+\lipsum[1-4]
+
+\begin{lstlisting}[language=Ruby]
+#!/usr/bin/ruby
+
+$i = 0
+$num = 5
+
+while $i < $num  do
+   puts("Inside the loop i = #$i" )
+   $i +=1
+end
+\end{lstlisting}
 
 % example for a two column table %
 
