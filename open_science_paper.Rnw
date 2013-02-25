@@ -12,8 +12,7 @@
 %%
 %
 
-\documentclass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto,
-DIV=20, notitlepage, oneside, final]{subdocuments/open_science_paper}
+\documentclass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto, DIV=20, notitlepage, oneside, final]{subdocuments/open_science_paper}
 
 %%%------------------------------------------------------------------------------%%%
 %%% Load user options %%%
@@ -60,7 +59,8 @@ DIV=20, notitlepage, oneside, final]{subdocuments/open_science_paper}
 
 <<subdoc_content_abstract, child='subdocuments/osp_abstract_section.Rnw', eval=T>>=
 @
-
+\noindent
+{\HeaderRule}  
 
 % Start 2 column layout %
 \begin{multicols}{2}

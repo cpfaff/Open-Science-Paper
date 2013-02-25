@@ -22,7 +22,7 @@
 
 %%%-------------------------------------------------%%%
 %%% Input encodings fonts and symbols %%%
-%%%-------------------------------------------------%%%
+%%%-------------------------------------------------%%% 
 
 %% input and font encoding %%
 \RequirePackage[T1]{fontenc}
@@ -80,12 +80,14 @@
 
 \colorlet{TitleColor}{DarkRed}
 \colorlet{SubsectionColor}{DarkOrange}
-\colorlet{ParagraphColor}{DarkOrange}
+\colorlet{ParagraphColor}{gray}
 \colorlet{AbstractSectionColor}{DarkOrange} 
 \colorlet{BibliographySectionColor}{DarkOrange}
+\colorlet{FootRuleColor}{LightGray}
+\colorlet{FootContentColor}{DarkGray}
 
-\colorlet{PageNumbering}{DarkGray}
-\colorlet{PageNumberingDashes}{LightGray}
+\colorlet{PageNumberingColor}{DarkGray}
+\colorlet{PageNumberingDashes}{white}
 \colorlet{HeaderRuleColor}{LightGray}
 
 % \xdefinecolor{vistingBackgroundColor}{gray}{.95}
@@ -113,11 +115,25 @@
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.3pt}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{} 
-\fancyfoot[C]{\textcolor{PageNumberingDashes}{--} \textbf{\textcolor{PageNumbering}{\textsl{{\large \thepage}}}} \textcolor{PageNumberingDashes}{--}}
+% \fancyfoot[R]{\textcolor{PageNumberingDashes}{--} \textbf{\textcolor{PageNumbering}{\textit{{\large \thepage}}}} \textcolor{PageNumberingDashes}{--}}
+\fancyfoot[R]{\textbf{\textcolor{PageNumberingColor}{{\thepage}}}}
+\fancyfoot[L]{\textcolor{FootContentColor}{{\small Open-Science-Papers Journal \textcolor{LightGray}{$\circ$} \today}}}
+\makeatletter
+% \patchcmd{\@fancyhead}{\rlap}{\color{color}\rlap}{}{}
+% \patchcmd{\headrule}{\hrule}{\color{color}\hrule}{}{}
+% \patchcmd{\@fancyfoot}{\rlap}{\color{color}\rlap}{}{}
+\patchcmd{\footrule}{\hrule}{\color{FootRuleColor}\hrule}{}{}
+\makeatother
+
+%%%-------------------------------------------------%%%
+%%% Control runin big letters %%%
+%%%-------------------------------------------------%%%
+
+\usepackage{lettrine}
 
 %%%-------------------------------------------------%%%
 %%% List options %%%
@@ -325,7 +341,7 @@
 %%%-------------------------------------------------%%%
 
 % Define Header %% 
-\newcommand{\HeaderRule}{\color{HeaderRuleColor} \rule{\linewidth}{1.7pt}}
+\newcommand{\HeaderRule}{\color{HeaderRuleColor} \rule{\linewidth}{1.6pt}}
 
 %% Defines the abstract %%
 \RequirePackage{abstract}

@@ -5,6 +5,8 @@
 \subsection*{Introduction}
 
 % Remove the lipsum and the list example and fill in your introductin text here
+
+\lettrine[nindent=0em, findent=0.2em,lines=2]{\textcolor{gray}{T}} his is just an introduction text snippet to show how drop caps look in this document. 
 \lipsum[1]
 
 \begin{itemize}

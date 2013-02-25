@@ -18,5 +18,5 @@
    \begin{normalsize}\textbf{Keywords:} \ospKeywords\end{normalsize}\hfill\\[.5\baselineskip]
 \end{minipage}\\
 \end{tabular}\\[0.01\baselineskip]
-\noindent
-{\HeaderRule}  
+% \noindent
+% {\HeaderRule}  
