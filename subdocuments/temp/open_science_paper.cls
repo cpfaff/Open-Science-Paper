@@ -44,7 +44,8 @@
 \RequirePackage{fixltx2e}
 \RequirePackage{scrhack}
 \RequirePackage{etex} 
-\RequirePackage{etoolbox}
+\RequirePackage{etoolbox} 
+\RequirePackage{calc}
 \reserveinserts{30}
 
 %%%-------------------------------------------------%%%
@@ -82,7 +83,7 @@
 
 \colorlet{HeaderRuleColor}{LightGray}
 \colorlet{TitleColor}{DarkRed}
-\colorlet{AbstractSectionColor}{DarkGray}  
+\colorlet{AbstractSectionColor}{gray}  
 
 \colorlet{SubsectionColor}{DarkOrange}
 \colorlet{ParagraphColor}{gray}
@@ -118,7 +119,7 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0.3pt}
 \fancyfoot[R]{\textbf{\textcolor{PageNumberingColor}{{\thepage}}}}
-\fancyfoot[L]{\textcolor{FootContentColor}{{\small Open-Science-Papers Journal \textcolor{LightGray}{$\circ$} Compiled on \today}}}
+\fancyfoot[L]{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{graphics/open-science-papers-logo-footer.png}} \textcolor{FootContentColor}{{\small Open-Science-Papers Journal \textcolor{LightGray}{$\circ$} Compiled on \today}}}
 \makeatletter
 \patchcmd{\footrule}{\hrule}{\color{FootRuleColor}\hrule}{}{}
 \makeatother
