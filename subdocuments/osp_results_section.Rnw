@@ -17,15 +17,14 @@
 		\node[pictureframe]{%    
 			\begin{minipage}{0.47\textwidth}%
 				\begin{center}
+               <<test_plot, cache=T, fig.width=3, fig.height=2.5, out.width='\\textwidth', echo=FALSE>>=
+                  suppressPackageStartupMessages(library(ggplot2))
 
-<<test_plot, cache=T, fig.width=3, fig.height=2.5, out.width='\\textwidth', echo=FALSE>>=
-	suppressPackageStartupMessages(library(ggplot2))
-
-	ggplot(cars, aes(x=dist, y=speed)) +
-		geom_point(shape=1) + geom_smooth(method = "lm", size = 1) +
-		theme_bw() +
-		theme(panel.grid.major=element_blank(), panel.grid.minor=element_blank()) 
-@
+                  ggplot(cars, aes(x=dist, y=speed)) +
+                     geom_point(shape=1) + geom_smooth(method = "lm", size = 1) +
+                     theme_bw() +
+                     theme(panel.grid.major=element_blank(), panel.grid.minor=element_blank()) 
+               @
 				\end{center}
 			\end{minipage}
 		};
@@ -60,22 +59,21 @@
 		\node[pictureframe]{%    
 			\begin{minipage}{0.98\textwidth}%
 				\begin{center}
+               <<test_plot_two, cache=T, fig.width=3, fig.height=2.5, out.width='0.45\\textwidth', echo=FALSE>>=
+                  suppressPackageStartupMessages(library(ggplot2))
+                  #plotting
+                  par(mar=c(4,4,.1,.1),cex.lab=.95,cex.axis=.9,mgp=c(2,.7,0),tcl=-.3)
 
-<<test_plot_two, cache=T, fig.width=3, fig.height=2.5, out.width='0.45\\textwidth', echo=FALSE>>=
-	suppressPackageStartupMessages(library(ggplot2))
-	#plotting
-	par(mar=c(4,4,.1,.1),cex.lab=.95,cex.axis=.9,mgp=c(2,.7,0),tcl=-.3)
+                  ggplot(movies, aes(x=rating)) +
+                  geom_density() +
+                  theme_bw() +
+                  theme(panel.grid.major=element_blank(), panel.grid.minor=element_blank()) 
 
-	ggplot(movies, aes(x=rating)) +
-	geom_density() +
-	theme_bw() +
-	theme(panel.grid.major=element_blank(), panel.grid.minor=element_blank()) 
-
-	ggplot(mtcars, aes(factor(cyl), mpg)) +
-	geom_boxplot() +
-	theme_bw() +
-	theme(panel.grid.major=element_blank(), panel.grid.minor=element_blank()) 
-@
+                  ggplot(mtcars, aes(factor(cyl), mpg)) +
+                  geom_boxplot() +
+                  theme_bw() +
+                  theme(panel.grid.major=element_blank(), panel.grid.minor=element_blank()) 
+               @
 				\end{center}
 			\end{minipage}
 		};

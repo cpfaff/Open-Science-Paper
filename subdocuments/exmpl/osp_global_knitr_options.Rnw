@@ -22,5 +22,4 @@
   options(replace.assign=TRUE, width=60)
   options(tikzSanitizeCharacters = c('%','$','}','{','^', '_'))
   options(tikzReplacementCharacters = c('\\%','\\$','\\}','\\{','\\^{}', '\\textunderscore'))
-@
-
+@ 
