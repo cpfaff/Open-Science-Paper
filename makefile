@@ -40,7 +40,8 @@ CLEANFILES = graphics/dynamic/* cache/* *.xdy *tikzDictionary *.idx *.mtc* *.glo
 all: $(DOCUMENT).pdf 
 
 $(DOCUMENT).pdf: $(DEPENDENCIES)  
-	$(KNITR) $(DOCUMENT).Rnw $(DOCUMENT).tex --pdf
+	$(KNITR) $(DOCUMENT).Rnw $(DOCUMENT).tex --no-convert
+	$(PDFLATEX) $(DOCUMENT).tex
 	$(PDFLATEX) $(DOCUMENT).tex
 	$(BIBTEX) $(DOCUMENT)
 	$(PDFLATEX) $(DOCUMENT).tex

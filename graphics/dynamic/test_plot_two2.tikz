@@ -1,9 +1,8 @@
-% Created by tikzDevice version 0.6.2 on 2013-02-23 20:09:40
+% Created by tikzDevice version 0.6.2 on 2013-02-27 08:27:50
 % !TEX encoding = UTF-8 Unicode
 
 
-\documentclass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto,
-DIV=20, notitlepage, oneside, final]{subdocuments/open_science_paper}
+\documentclass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto, DIV=20, notitlepage, oneside, final]{subdocuments/open_science_paper}
 \nonstopmode
 
 \usepackage{tikz}
@@ -57,68 +56,68 @@ DIV=20, notitlepage, oneside, final]{subdocuments/open_science_paper}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
 \end{scope}
 \begin{scope}
-\path[clip] ( 38.15, 35.17) rectangle (203.56,167.43);
+\path[clip] ( 37.12, 34.53) rectangle (203.56,167.43);
 \definecolor[named]{fillColor}{rgb}{1.00,1.00,1.00}
 
-\draw[fill=fillColor,draw opacity=0.00,] ( 38.15, 35.17) rectangle (203.56,167.43);
+\draw[fill=fillColor,draw opacity=0.00,] ( 37.12, 34.53) rectangle (203.56,167.43);
 \definecolor[named]{drawColor}{rgb}{0.20,0.20,0.20}
 \definecolor[named]{fillColor}{rgb}{0.20,0.20,0.20}
 
-\draw[color=drawColor,line width= 0.6pt,line join=round,fill=fillColor,] ( 69.16,143.51) -- ( 69.16,161.41);
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill=fillColor,] ( 68.33,143.39) -- ( 68.33,161.38);
 
-\draw[color=drawColor,line width= 0.6pt,line join=round,fill=fillColor,] ( 69.16,104.63) -- ( 69.16, 97.46);
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill=fillColor,] ( 68.33,104.32) -- ( 68.33, 97.12);
 \definecolor[named]{fillColor}{rgb}{1.00,1.00,1.00}
 
-\draw[color=drawColor,line width= 0.6pt,line cap=round,line join=round,fill=fillColor,] ( 49.78,143.51) --
-	( 49.78,104.63) --
-	( 88.55,104.63) --
-	( 88.55,143.51) --
-	( 49.78,143.51) --
+\draw[color=drawColor,line width= 0.6pt,line cap=round,line join=round,fill=fillColor,] ( 48.82,143.39) --
+	( 48.82,104.32) --
+	( 87.83,104.32) --
+	( 87.83,143.39) --
+	( 48.82,143.39) --
 	cycle;
 \definecolor[named]{fillColor}{rgb}{0.20,0.20,0.20}
 
-\draw[color=drawColor,line width= 1.1pt,line join=round,fill=fillColor,] ( 49.78,121.00) -- ( 88.55,121.00);
+\draw[color=drawColor,line width= 1.1pt,line join=round,fill=fillColor,] ( 48.82,120.77) -- ( 87.83,120.77);
 
-\draw[color=drawColor,line width= 0.6pt,line join=round,fill=fillColor,] (120.85, 95.42) -- (120.85, 97.46);
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill=fillColor,] (120.34, 95.07) -- (120.34, 97.12);
 
-\draw[color=drawColor,line width= 0.6pt,line join=round,fill=fillColor,] (120.85, 83.39) -- (120.85, 79.05);
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill=fillColor,] (120.34, 82.99) -- (120.34, 78.62);
 \definecolor[named]{fillColor}{rgb}{1.00,1.00,1.00}
 
-\draw[color=drawColor,line width= 0.6pt,line cap=round,line join=round,fill=fillColor,] (101.47, 95.42) --
-	(101.47, 83.39) --
-	(140.24, 83.39) --
-	(140.24, 95.42) --
-	(101.47, 95.42) --
+\draw[color=drawColor,line width= 0.6pt,line cap=round,line join=round,fill=fillColor,] (100.84, 95.07) --
+	(100.84, 82.99) --
+	(139.85, 82.99) --
+	(139.85, 95.07) --
+	(100.84, 95.07) --
 	cycle;
 \definecolor[named]{fillColor}{rgb}{0.20,0.20,0.20}
 
-\draw[color=drawColor,line width= 1.1pt,line join=round,fill=fillColor,] (101.47, 88.77) -- (140.24, 88.77);
+\draw[color=drawColor,line width= 1.1pt,line join=round,fill=fillColor,] (100.84, 88.38) -- (139.85, 88.38);
 \definecolor[named]{fillColor}{rgb}{0.00,0.00,0.00}
 
-\draw[fill=fillColor,draw opacity=0.00,] (172.55, 41.19) circle (  2.13);
+\draw[fill=fillColor,draw opacity=0.00,] (172.35, 40.57) circle (  2.13);
 
-\draw[fill=fillColor,draw opacity=0.00,] (172.55, 41.19) circle (  2.13);
+\draw[fill=fillColor,draw opacity=0.00,] (172.35, 40.57) circle (  2.13);
 
-\draw[fill=fillColor,draw opacity=0.00,] (172.55, 86.21) circle (  2.13);
+\draw[fill=fillColor,draw opacity=0.00,] (172.35, 85.81) circle (  2.13);
 \definecolor[named]{fillColor}{rgb}{0.20,0.20,0.20}
 
-\draw[color=drawColor,line width= 0.6pt,line join=round,fill=fillColor,] (172.55, 71.12) -- (172.55, 83.65);
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill=fillColor,] (172.35, 70.65) -- (172.35, 83.24);
 
-\draw[color=drawColor,line width= 0.6pt,line join=round,fill=fillColor,] (172.55, 61.65) -- (172.55, 56.02);
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill=fillColor,] (172.35, 61.14) -- (172.35, 55.48);
 \definecolor[named]{fillColor}{rgb}{1.00,1.00,1.00}
 
-\draw[color=drawColor,line width= 0.6pt,line cap=round,line join=round,fill=fillColor,] (153.16, 71.12) --
-	(153.16, 61.65) --
-	(191.93, 61.65) --
-	(191.93, 71.12) --
-	(153.16, 71.12) --
+\draw[color=drawColor,line width= 0.6pt,line cap=round,line join=round,fill=fillColor,] (152.85, 70.65) --
+	(152.85, 61.14) --
+	(191.86, 61.14) --
+	(191.86, 70.65) --
+	(152.85, 70.65) --
 	cycle;
 \definecolor[named]{fillColor}{rgb}{0.20,0.20,0.20}
 
-\draw[color=drawColor,line width= 1.1pt,line join=round,fill=fillColor,] (153.16, 65.74) -- (191.93, 65.74);
+\draw[color=drawColor,line width= 1.1pt,line join=round,fill=fillColor,] (152.85, 65.25) -- (191.86, 65.25);
 \definecolor[named]{drawColor}{rgb}{0.50,0.50,0.50}
 
-\draw[color=drawColor,line width= 0.6pt,line cap=round,line join=round,fill opacity=0.00,] ( 38.15, 35.17) rectangle (203.56,167.43);
+\draw[color=drawColor,line width= 0.6pt,line cap=round,line join=round,fill opacity=0.00,] ( 37.12, 34.53) rectangle (203.56,167.43);
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
@@ -130,17 +129,17 @@ DIV=20, notitlepage, oneside, final]{subdocuments/open_science_paper}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
 \definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
 
-\node[color=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.87] at ( 31.03, 35.85) {10};
+\node[color=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.87] at ( 30.01, 35.37) {10};
 
-\node[color=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.87] at ( 31.03, 61.43) {15};
+\node[color=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.87] at ( 30.01, 61.07) {15};
 
-\node[color=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.87] at ( 31.03, 87.01) {20};
+\node[color=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.87] at ( 30.01, 86.78) {20};
 
-\node[color=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.87] at ( 31.03,112.59) {25};
+\node[color=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.87] at ( 30.01,112.48) {25};
 
-\node[color=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.87] at ( 31.03,138.17) {30};
+\node[color=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.87] at ( 30.01,138.19) {30};
 
-\node[color=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.87] at ( 31.03,163.75) {35};
+\node[color=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.87] at ( 30.01,163.89) {35};
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
@@ -149,64 +148,26 @@ DIV=20, notitlepage, oneside, final]{subdocuments/open_science_paper}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
 \definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
 
-\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 33.88, 39.14) --
-	( 38.15, 39.14);
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 32.85, 38.52) --
+	( 37.12, 38.52);
 
-\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 33.88, 64.72) --
-	( 38.15, 64.72);
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 32.85, 64.22) --
+	( 37.12, 64.22);
 
-\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 33.88, 90.30) --
-	( 38.15, 90.30);
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 32.85, 89.93) --
+	( 37.12, 89.93);
 
-\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 33.88,115.88) --
-	( 38.15,115.88);
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 32.85,115.63) --
+	( 37.12,115.63);
 
-\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 33.88,141.46) --
-	( 38.15,141.46);
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 32.85,141.34) --
+	( 37.12,141.34);
 
-\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 33.88,167.04) --
-	( 38.15,167.04);
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 32.85,167.04) --
+	( 37.12,167.04);
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\end{scope}
-\begin{scope}
-\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\end{scope}
-\begin{scope}
-\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\end{scope}
-\begin{scope}
-\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\end{scope}
-\begin{scope}
-\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\end{scope}
-\begin{scope}
-\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
-
-\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 69.16, 30.91) --
-	( 69.16, 35.17);
-
-\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] (120.85, 30.91) --
-	(120.85, 35.17);
-
-\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] (172.55, 30.91) --
-	(172.55, 35.17);
-\end{scope}
-\begin{scope}
-\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\end{scope}
-\begin{scope}
-\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
-\definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
-
-\node[color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.87] at ( 69.16, 21.48) {4};
-
-\node[color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.87] at (120.85, 21.48) {6};
-
-\node[color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.87] at (172.55, 21.48) {8};
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
@@ -224,7 +185,14 @@ DIV=20, notitlepage, oneside, final]{subdocuments/open_science_paper}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
 \definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
 
-\node[color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  1.09] at (120.85,  9.94) {factor(cyl)};
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 68.33, 30.26) --
+	( 68.33, 34.53);
+
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] (120.34, 30.26) --
+	(120.34, 34.53);
+
+\draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] (172.35, 30.26) --
+	(172.35, 34.53);
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
@@ -233,7 +201,38 @@ DIV=20, notitlepage, oneside, final]{subdocuments/open_science_paper}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
 \definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
 
-\node[rotate= 90.00,color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  1.09] at ( 18.17,101.30) {mpg};
+\node[color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.87] at ( 68.33, 21.12) {4};
+
+\node[color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.87] at (120.34, 21.12) {6};
+
+\node[color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.87] at (172.35, 21.12) {8};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
+
+\node[color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  1.09] at (120.34,  9.94) {factor(cyl)};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
+\definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
+
+\node[rotate= 90.00,color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  1.09] at ( 17.81,100.98) {mpg};
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (216.81,180.67);
