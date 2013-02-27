@@ -45,8 +45,13 @@
 \RequirePackage{scrhack}
 \RequirePackage{etex} 
 \RequirePackage{etoolbox} 
-\RequirePackage{calc}
 \reserveinserts{30}
+
+%%%-------------------------------------------------%%%
+%%% Useful tools %%%
+%%%-------------------------------------------------%%%
+
+\RequirePackage{calc}
 
 %%%-------------------------------------------------%%%
 %%% Language adaption of the document %%%

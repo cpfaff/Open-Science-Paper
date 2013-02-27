@@ -3,12 +3,12 @@
 ### Open-Science-Paper 
 
 The Open-Science-Paper
-[repository](https://github.com/cpfaff/Open-Science-Paper) contains a LaTeX
-document which is thought to be forked and used for scientific, collaborative
-paper writing on GitHub. The Open-Science-Paper combines the LaTeX typesetting
-capabilities with the power of the R programming language for statistics, using
-the [Knitr](http://yihui.name/knitr/) package. This combination allows for the
-production of executable documents which enhances the reproducibility of your
+[repository](https://github.com/cpfaff/Open-Science-Paper) contains a
+LaTeX document which is thought to be forked and used for scientific,
+collaborative paper writing on GitHub. It combines the LaTeX typesetting
+capabilities with the R programming language for statistics, using the
+[Knitr](http://yihui.name/knitr/) R package. This combination allows for the
+production of executable documents to enhance the reproducibility of your
 research.
 
 The Open-Science-Paper offers a clean and logical folder structure and
@@ -16,9 +16,10 @@ some examples of typical typesetting requirements to typeset your paper.
 A makefile helps you to compile, clean and archive the document. The
 layout of the document is close to common scientific paper formats. For
 an example see the PDF file in the repository or the documentation in the
-[wiki](https://github.com/cpfaff/Open-Science-Paper/wiki). The layout can help
-you to prepare figures and tables for publication. But you can also use the
-Open-Science-Paper to just produce nice looking, paper like formatted documents.
+[wiki](https://github.com/cpfaff/Open-Science-Paper/wiki). The document layout
+can help you to prepare figures and tables for publication. But you can also
+use the Open-Science-Paper to just produce nice looking, paper like formatted
+documents.
 
 The project is documented in detail on the Open-Science-Paper
 [wiki](https://github.com/cpfaff/Open-Science-Paper/wiki) page. The wiki
