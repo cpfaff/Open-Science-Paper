@@ -424,7 +424,7 @@ emphstyle=\color{listing@red}
 %%%-------------------------------------------------%%%
 
 % Define Header %% 
-\providecommand{\ospTitleRule}{\color{ospColorTitleRule} \noindent\rule{\linewidth}{1.6pt}}
+\providecommand{\ospTitleRule}{\textcolor{ospColorTitleRule}{\noindent\rule{\linewidth}{1.6pt}}}
 
 \providecommand{\ospMakeTitle}{%
 {\ospTitleRule}\\[0.01\baselineskip] 
