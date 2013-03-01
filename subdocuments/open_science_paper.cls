@@ -38,7 +38,7 @@
 \RequirePackage{textcomp}
 
 %%%-------------------------------------------------%%%
-%%% Patch some LaTeX problems %%%
+%%% Patch some LaTeX shortcommings %%%
 %%%-------------------------------------------------%%%
 
 \RequirePackage{fixltx2e}
@@ -101,18 +101,41 @@
 
 \colorlet{PageNumberingColor}{DarkGray}
 
-\xdefinecolor{ListingBackgroundColor}{gray}{.90}
-
 \xdefinecolor{LinkColor}{rgb}{0,0,0.4} 
+
+\xdefinecolor{listing@background}{gray}{.90}
+\xdefinecolor{listing@base03}{HTML}{002B36}
+\xdefinecolor{listing@base02}{HTML}{073642}
+\xdefinecolor{listing@base01}{HTML}{586e75}
+\xdefinecolor{listing@base00}{HTML}{657b83}
+\xdefinecolor{listing@base0}{HTML}{839496}
+\xdefinecolor{listing@base1}{HTML}{93a1a1}
+\xdefinecolor{listing@base2}{HTML}{EEE8D5}
+\xdefinecolor{listing@base3}{HTML}{FDF6E3}
+\xdefinecolor{listing@yellow}{HTML}{B58900}
+\xdefinecolor{listing@orange}{HTML}{CB4B16}
+\xdefinecolor{listing@red}{HTML}{DC322F}
+\xdefinecolor{listing@magenta}{HTML}{D33682}
+\xdefinecolor{listing@violet}{HTML}{6C71C4}
+\xdefinecolor{listing@blue}{HTML}{268BD2}
+\xdefinecolor{listing@cyan}{HTML}{2AA198}
+\xdefinecolor{listing@green}{HTML}{859900}
 
 %%%-------------------------------------------------%%%
 %%% Title header defaults %%%
 %%%-------------------------------------------------%%%
 
-\providecommand{\ospTitle}{Here comes the osp title}
-\providecommand{\ospAuthors}{Author one\textsuperscript{1 2}, Author two\textsuperscript{2}, \ldots}
-\providecommand{\ospAffiliations}{University of XY departement of Z\textsuperscript{1}, \ldots}
+\providecommand{\ospTitle}{The open science paper title} 
+\providecommand{\ospSetTitle}[1]{\gdef\ospTitle{#1}}
+
+\providecommand{\ospAuthors}{Author one\textsuperscript{1 2}, Author two\textsuperscript{2}, \ldots} 
+\providecommand{\ospSetAuthors}[1]{\gdef\ospAuthors{#1}}
+
+\providecommand{\ospAffiliations}{University of XY departement of Z\textsuperscript{1}, \ldots} 
+\providecommand{\ospSetAffiliations}[1]{\gdef\ospAffiliations{#1}}
+
 \providecommand{\ospKeywords}{Open Science, Git, R, Knitr, ggplot2, tikz}
+\providecommand{\ospSetKeywords}[1]{\gdef\ospKeywords{#1}}
 
 %%%-------------------------------------------------%%%
 %%% Define header and footer %%%
@@ -303,23 +326,6 @@
 %%%-------------------------------------------------%%%
 
 \RequirePackage{listings}
-
-\definecolor{solarized@base03}{HTML}{002B36}
-\definecolor{solarized@base02}{HTML}{073642}
-\definecolor{solarized@base01}{HTML}{586e75}
-\definecolor{solarized@base00}{HTML}{657b83}
-\definecolor{solarized@base0}{HTML}{839496}
-\definecolor{solarized@base1}{HTML}{93a1a1}
-\definecolor{solarized@base2}{HTML}{EEE8D5}
-\definecolor{solarized@base3}{HTML}{FDF6E3}
-\definecolor{solarized@yellow}{HTML}{B58900}
-\definecolor{solarized@orange}{HTML}{CB4B16}
-\definecolor{solarized@red}{HTML}{DC322F}
-\definecolor{solarized@magenta}{HTML}{D33682}
-\definecolor{solarized@violet}{HTML}{6C71C4}
-\definecolor{solarized@blue}{HTML}{268BD2}
-\definecolor{solarized@cyan}{HTML}{2AA198}
-\definecolor{solarized@green}{HTML}{859900}
  
 \lstset{%
 upquote=true,
@@ -330,19 +336,19 @@ flexiblecolumns=true,
 extendedchars=true,
 breaklines=true,
 numbers=left, 
-backgroundcolor=\color{ListingBackgroundColor},
+backgroundcolor=\color{listing@background},
 stepnumber=1,
 numbersep=7pt,
 xleftmargin=10pt,
-% rulesepcolor=\color{solarized@base03},
+% rulesepcolor=\color{listing@base03},
 % numberblanklines=true,
-numberstyle=\tiny\color{solarized@base01},
+numberstyle=\tiny\color{listing@base01},
 basicstyle=\footnotesize\ttfamily,
-keywordstyle=\color{solarized@green},
-stringstyle=\color{solarized@cyan}\ttfamily,
-identifierstyle=\color{solarized@blue},
-commentstyle=\color{solarized@base01},
-emphstyle=\color{solarized@red}
+keywordstyle=\color{listing@green},
+stringstyle=\color{listing@cyan}\ttfamily,
+identifierstyle=\color{listing@blue},
+commentstyle=\color{listing@base01},
+emphstyle=\color{listing@red}
 }
 
 \lstset{literate=%
