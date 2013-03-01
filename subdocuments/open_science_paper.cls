@@ -18,6 +18,21 @@
 
 \ProvidesClass{open-science-paper}[2012/09/10 version 0.2 LaTeX class of the Open-Science-Paper]
 
+%% Provide class otions 
+\newif\if@color
+\DeclareOption{color}{\@colortrue}
+\DeclareOption{nocolor}{\@colorfalse}
+
+\ExecuteOptions{% 
+   % colored version as default
+   color,%
+} 
+
+%% process options
+\ProcessOptions*\relax
+
+\providecommand{\ifcolor}[2]{\if@color#1\else#2\fi}
+
 \LoadClassWithOptions{scrartcl}
 
 %%%-------------------------------------------------%%%
@@ -29,7 +44,6 @@
 \RequirePackage[utf8]{inputenc}
 
 %% Fonts and math symbols %%
-% \RequirePackage{lmodern}  
 \RequirePackage{libertine}
 \RequirePackage{amsmath}
 \RequirePackage[libertine]{newtxmath}
@@ -58,7 +72,7 @@
 %%%-------------------------------------------------%%%
 
 \RequirePackage[ngerman, english]{babel} 
-\RequirePackage[autostyle]{csquotes}
+\RequirePackage[autostyle]{csquotes} 
 % usage:
 %  \enquote{} to put a text in the right quotes
 
@@ -73,53 +87,74 @@
 %%%-------------------------------------------------%%%
 
 \RequirePackage[svgnames]{xcolor} 
-% Some defaults:
-% 	green 
-%  blue
-%  cyan
-%  magenta
-%  red
-%  yellow
-%  black
-%  white
-%  darkgray
-%  gray
-%  lightgray
-
-\colorlet{HeaderRuleColor}{LightGray}
-\colorlet{TitleColor}{DarkRed}
-\colorlet{AbstractSectionColor}{gray}  
-
-\colorlet{SubsectionColor}{DarkOrange}
-\colorlet{ParagraphColor}{gray}
-\colorlet{BibliographySectionColor}{DarkOrange}
-
-\colorlet{CapitalLetterColor}{gray}
-
-\colorlet{FootRuleColor}{LightGray}
-\colorlet{FootContentColor}{DarkGray} 
-
-\colorlet{PageNumberingColor}{DarkGray}
 
 \xdefinecolor{LinkColor}{rgb}{0,0,0.4} 
 
-\xdefinecolor{listing@background}{gray}{.90}
-\xdefinecolor{listing@base03}{HTML}{002B36}
-\xdefinecolor{listing@base02}{HTML}{073642}
-\xdefinecolor{listing@base01}{HTML}{586e75}
-\xdefinecolor{listing@base00}{HTML}{657b83}
-\xdefinecolor{listing@base0}{HTML}{839496}
-\xdefinecolor{listing@base1}{HTML}{93a1a1}
-\xdefinecolor{listing@base2}{HTML}{EEE8D5}
-\xdefinecolor{listing@base3}{HTML}{FDF6E3}
-\xdefinecolor{listing@yellow}{HTML}{B58900}
-\xdefinecolor{listing@orange}{HTML}{CB4B16}
-\xdefinecolor{listing@red}{HTML}{DC322F}
-\xdefinecolor{listing@magenta}{HTML}{D33682}
-\xdefinecolor{listing@violet}{HTML}{6C71C4}
-\xdefinecolor{listing@blue}{HTML}{268BD2}
-\xdefinecolor{listing@cyan}{HTML}{2AA198}
-\xdefinecolor{listing@green}{HTML}{859900}
+\ifcolor{%
+   \colorlet{ospColorTitleRule}{LightGray}
+   \colorlet{TitleColor}{DarkRed}
+   \colorlet{AbstractSectionColor}{gray}   
+
+   \colorlet{SubsectionColor}{DarkOrange}
+   \colorlet{ParagraphColor}{gray}
+   \colorlet{BibliographySectionColor}{DarkOrange}
+   
+   \colorlet{CapitalLetterColor}{gray} 
+   
+   \colorlet{ospColorFooterTextSeparator}{LightGray}
+   \colorlet{FootRuleColor}{LightGray}
+   \colorlet{ospColorCompleteLeftFooter}{DarkGray} 
+   \colorlet{PageNumberingColor}{DarkGray}
+   
+
+   \xdefinecolor{listing@background}{gray}{.90} 
+   \xdefinecolor{listing@base00}{HTML}{657b83}
+   \xdefinecolor{listing@base01}{HTML}{586e75}
+   \xdefinecolor{listing@base02}{HTML}{073642}
+   \xdefinecolor{listing@base03}{HTML}{002B36}
+   \xdefinecolor{listing@base0}{HTML}{839496}
+   \xdefinecolor{listing@base1}{HTML}{93a1a1}
+   \xdefinecolor{listing@base2}{HTML}{EEE8D5}
+   \xdefinecolor{listing@base3}{HTML}{FDF6E3}
+   \xdefinecolor{listing@yellow}{HTML}{B58900}
+   \xdefinecolor{listing@orange}{HTML}{CB4B16}
+   \xdefinecolor{listing@red}{HTML}{DC322F}
+   \xdefinecolor{listing@magenta}{HTML}{D33682}
+   \xdefinecolor{listing@violet}{HTML}{6C71C4}
+   \xdefinecolor{listing@blue}{HTML}{268BD2}
+   \xdefinecolor{listing@cyan}{HTML}{2AA198}
+   \xdefinecolor{listing@green}{HTML}{859900}
+}{% 
+   \colorlet{ospColorTitleRule}{black}
+   \colorlet{TitleColor}{black}
+   \colorlet{AbstractSectionColor}{black}  
+   \colorlet{SubsectionColor}{black}
+   \colorlet{ParagraphColor}{black}
+   \colorlet{BibliographySectionColor}{black}
+   \colorlet{CapitalLetterColor}{black}
+   \colorlet{FootRuleColor}{black}
+   \colorlet{ospColorCompleteLeftFooter}{black} 
+   \colorlet{PageNumberingColor}{black} 
+   \colorlet{ospColorFooterTextSeparator}{black}
+
+   \xdefinecolor{listing@background}{gray}{.90} 
+   \colorlet{listing@base00}{black}
+   \colorlet{listing@base01}{black}
+   \colorlet{listing@base02}{black}
+   \colorlet{listing@base03}{black}
+   \colorlet{listing@base0}{black}
+   \colorlet{listing@base1}{black}
+   \colorlet{listing@base2}{black}
+   \colorlet{listing@base3}{black}
+   \colorlet{listing@yellow}{black}
+   \colorlet{listing@orange}{black}
+   \colorlet{listing@red}{black}
+   \colorlet{listing@magenta}{black}
+   \colorlet{listing@violet}{black}
+   \colorlet{listing@blue}{black}
+   \colorlet{listing@cyan}{black}
+   \colorlet{listing@green}{black}
+}
 
 %%%-------------------------------------------------%%%
 %%% Title header defaults %%%
@@ -141,16 +176,38 @@
 %%% Define header and footer %%%
 %%%-------------------------------------------------%%%
 
+\providecommand{\ospFooterTextLeftOfSeparator}{Open-Science-Papers} 
+\providecommand{\ospSetFooterTextLeftOfSeparator}[1]{\gdef\ospFooterTextLeftOfSeparator{#1}}
+
+\providecommand{\ospFooterTextRightOfSeparator}{Compiled on \today} 
+\providecommand{\ospSetFooterTextRightOfSeparator}[1]{\gdef\ospFooterTextRightOfSeparator{#1}}
+
+\providecommand{\ospFooterLogo}{\relax}
+\providecommand{\ospSetFooterLogo}[1]{\gdef\ospFooterLogo{#1}}
+
+\ifcolor{ 
+   \ospSetFooterLogo{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{graphics/open-science-papers-logo-footer.png}}}
+}{ 
+   \ospSetFooterLogo{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{graphics/open-science-papers-logo-footer-black.png}}}
+}
+
+\providecommand{\ospFooterTextSeparator}{\textcolor{ospColorFooterTextSeparator}{$\circ$}} 
+\providecommand{\ospSetFooterTextSeparator}[1]{\gdef\ospFooterTextSeparator{#1}}
+
+\providecommand{\ospCompleteLeftFooter}{\ospFooterLogo\xspace \textcolor{ospColorCompleteLeftFooter}{{\small \ospFooterTextLeftOfSeparator\xspace \ospFooterTextSeparator\xspace \ospFooterTextRightOfSeparator}}} 
+\providecommand{\ospSetCompleteLeftFooter}[1]{\gdef\ospCompleteLeftFooter{#1}}
+
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0.3pt}
-\fancyfoot[R]{\textbf{\textcolor{PageNumberingColor}{{\thepage}}}}
-\fancyfoot[L]{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{graphics/open-science-papers-logo-footer.png}} \textcolor{FootContentColor}{{\small Open-Science-Papers Journal \textcolor{LightGray}{$\circ$} Compiled on \today}}}
-\makeatletter
+\renewcommand{\footrulewidth}{0.3pt} 
+
 \patchcmd{\footrule}{\hrule}{\color{FootRuleColor}\hrule}{}{}
-\makeatother
+
+\fancyfoot[R]{\textbf{\textcolor{PageNumberingColor}{{\thepage}}}} 
+\fancyfoot[L]{\ospCompleteLeftFooter}
+
 
 %%%-------------------------------------------------%%%
 %%% Control runin big letters %%%
@@ -367,7 +424,23 @@ emphstyle=\color{listing@red}
 %%%-------------------------------------------------%%%
 
 % Define Header %% 
-\newcommand{\HeaderRule}{\color{HeaderRuleColor} \rule{\linewidth}{1.6pt}}
+\providecommand{\ospTitleRule}{\color{ospColorTitleRule} \noindent\rule{\linewidth}{1.6pt}}
+
+\providecommand{\ospMakeTitle}{%
+{\ospTitleRule}\\[0.01\baselineskip] 
+\begin{tabular}{p{0.23\textwidth}p{0.55\textwidth}}
+\begin{minipage}{0.25\textwidth}
+   \includegraphics[scale=0.3]{graphics/open-science-papers-logo-frameless.png} 
+\end{minipage}&	
+\begin{minipage}{0.7\textwidth} 
+\vspace{\baselineskip}
+{\color{TitleColor}{{\normalfont\sffamily\Huge\bfseries \ospTitle }}} \hfill\\[\baselineskip]
+   \begin{normalsize}\textbf{\ospAuthors}\end{normalsize}\hfill\\
+   \begin{normalsize}\textbf{Affiliation:} \ospAffiliations\end{normalsize}\hfill\\
+   \begin{normalsize}\textbf{Keywords:} \ospKeywords\end{normalsize}\hfill\\[.5\baselineskip]
+\end{minipage}\\
+\end{tabular}\\[0.01\baselineskip]
+}
 
 %% Defines the abstract %%
 \RequirePackage{abstract}
@@ -482,6 +555,4 @@ spacing=false]{microtype}
 %%%-------------------------------------------------%%%
 
 %% Set typesetting area with last chosen options
-\KOMAoptions{DIV=last}
-
-
+\KOMAoptions{DIV=last} 

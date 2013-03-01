@@ -1,22 +1,5 @@
 %%%-------------------------------------------------%%%
 %%% Sub document header %%%
-%%%-------------------------------------------------%%%
+%%%-------------------------------------------------%%% 
 
-%% Please do not edit the header information in here 
-%% this can be done via commands from  the style file.
-\noindent
-{\HeaderRule}\\[0.01\baselineskip] 
-\begin{tabular}{p{0.23\textwidth}p{0.55\textwidth}}
-\begin{minipage}{0.25\textwidth}
-   \includegraphics[scale=0.3]{graphics/open-science-papers-logo-frameless.png} 
-\end{minipage}&	
-\begin{minipage}{0.7\textwidth} 
-\vspace{\baselineskip}
-{\color{TitleColor}{{\normalfont\sffamily\Huge\bfseries \ospTitle }}} \hfill\\[\baselineskip]
-   \begin{normalsize}\textbf{\ospAuthors}\end{normalsize}\hfill\\
-   \begin{normalsize}\textbf{Affiliation:} \ospAffiliations\end{normalsize}\hfill\\
-   \begin{normalsize}\textbf{Keywords:} \ospKeywords\end{normalsize}\hfill\\[.5\baselineskip]
-\end{minipage}\\
-\end{tabular}\\[0.01\baselineskip]
-% \noindent
-% {\HeaderRule}  
+\ospMakeTitle
