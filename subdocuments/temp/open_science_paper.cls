@@ -94,19 +94,18 @@
    \colorlet{ospColor@TitleRule}{LightGray}
    \colorlet{ospColor@Title}{DarkRed}
    
-   \colorlet{ospColor@AbstractHeader}{gray}   
+   \colorlet{ospColor@AbstractHeader}{DarkGray}   
    \colorlet{ospColor@SubsectionHeader}{DarkOrange}
-   \colorlet{ospColor@ParagraphHeader}{gray}
+   \colorlet{ospColor@ParagraphHeader}{DarkGray}
    \colorlet{ospColor@SectionHeader}{DarkOrange}
    
-   \colorlet{ospColor@Lettrine}{gray} 
+   \colorlet{ospColor@Lettrine}{DarkGray} 
    
-   \colorlet{ospColor@FooterTextSeparator}{LightGray}
+   \colorlet{ospColor@FooterTextSeparator}{DarkGray}
    \colorlet{ospColor@FooterRule}{LightGray}
    \colorlet{ospColor@FullLeftFooter}{DarkGray} 
    \colorlet{ospColor@FullRightFooter}{DarkGray} 
    \colorlet{ospColor@FooterPageNumbering}{DarkGray}
-   
 
    \xdefinecolor{ospColor@ListingBackground}{gray}{.90} 
    \xdefinecolor{ospColor@ListingBase00}{HTML}{657b83}
@@ -204,7 +203,7 @@
 \providecommand{\ospFooterTextSeparator}{\textcolor{ospColor@FooterTextSeparator}{$\circ$}} 
 \providecommand{\ospSetFooterTextSeparator}[1]{\gdef\ospFooterTextSeparator{#1}}
 
-\providecommand{\ospFullLeftFooter}{\ospFooterLogo\xspace \textcolor{ospColor@FullLeftFooter}{{\normalsize \ospFooterTextLeftOfSeparator\xspace \ospFooterTextSeparator\xspace \ospFooterTextRightOfSeparator}}} 
+\providecommand{\ospFullLeftFooter}{\ospFooterLogo\xspace~ \textcolor{ospColor@FullLeftFooter}{{\normalsize \ospFooterTextLeftOfSeparator\xspace \ospFooterTextSeparator\xspace \ospFooterTextRightOfSeparator}}} 
 \providecommand{\ospSetFullLeftFooter}[1]{\gdef\ospFullLeftFooter{#1}}
 
 %% Style the footer and header elements 
@@ -216,7 +215,7 @@
 \renewcommand{\headrulewidth}{\ospLengthHeaderRuleWidth}
 
 \newlength{\ospLengthFooterRuleWidth} 
-\setlength{\ospLengthFooterRuleWidth}{0.3pt} 
+\setlength{\ospLengthFooterRuleWidth}{0.4pt} 
 \renewcommand{\footrulewidth}{\ospLengthFooterRuleWidth} 
 
 \patchcmd{\footrule}{\hrule}{\color{\ospFooterRuleColor}\hrule}{}{}
@@ -276,7 +275,7 @@
 
 %% Define tikz styles %% 
 \ifcolor{%
-   \tikzstyle{pictureframe} = [rectangle, rounded corners, draw=gray!10, fill=white, blur shadow={shadow blur steps=5,shadow blur extra rounding=1.3pt}] 
+   \tikzstyle{pictureframe} = [rectangle, rounded corners, draw=LightGray, fill=white, blur shadow={shadow blur steps=5,shadow blur extra rounding=1.3pt}] 
 }{%
    \tikzstyle{pictureframe} = [rectangle, rounded corners, draw=black, fill=white]
 }
@@ -453,7 +452,7 @@ emphstyle=\color{ospColor@ListingRed}
 %%%-------------------------------------------------%%%
 
 % Define Header %% 
-\providecommand{\ospTitleRule}{\textcolor{ospColor@TitleRule}{\noindent\rule{\linewidth}{1.6pt}}}
+\providecommand{\ospTitleRule}{\textcolor{ospColor@TitleRule}{\noindent\rule{\linewidth}{1.7pt}}}
 
 \providecommand{\ospMakeTitle}{%
 {\ospTitleRule}\\[0.01\baselineskip] 
