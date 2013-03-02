@@ -25,7 +25,7 @@
 
 \ExecuteOptions{% 
    % colored as default
-   color
+   color,
 } 
 
 %% process options
