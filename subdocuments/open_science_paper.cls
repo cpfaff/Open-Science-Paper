@@ -24,8 +24,8 @@
 \DeclareOption{nocolor}{\@colorfalse}
 
 \ExecuteOptions{% 
-   % colored version as default
-   color,%
+   % colored as default
+   color
 } 
 
 %% process options
@@ -88,7 +88,7 @@
 
 \RequirePackage[svgnames,cmyk]{xcolor} 
 
-\xdefinecolor{LinkColor}{rgb}{0,0,0.4} 
+\xdefinecolor{ospColor@Links}{rgb}{0,0,0.4} 
 
 \ifcolor{%
    \colorlet{ospColor@TitleRule}{LightGray}
@@ -560,18 +560,18 @@ spacing=false]{microtype}
   pdfborder={0 0 0},%
   pdfpagemode=UseNone,%
   colorlinks=false,%
-  linkcolor=LinkColor,
-  citecolor=LinkColor,%
-  filecolor=LinkColor,%
-  menucolor=LinkColor,%	
-  urlcolor=LinkColor,%
+  linkcolor=ospColor@Links,
+  citecolor=ospColor@Links,%
+  filecolor=ospColor@Links,%
+  menucolor=ospColor@Links,%	
+  urlcolor=ospColor@Links,%
   breaklinks=true,%
   raiselinks=true,%
-  pdfauthor={Open-Science-Paper},
-  pdfcreator={Open-Science-Paper},
-  pdfsubject={Open-Science-Paper},
+  pdfauthor={Open-Science-Paper},%
+  pdfcreator={Open-Science-Paper},%
+  pdfsubject={Open-Science-Paper},%
   pdfkeywords={LaTeX, Tikz, Knitr, Scientific paper, Open science}
-  ]{hyperref}
+]{hyperref}
 
 % Usage:
 %  \href{URL}{text} 
