@@ -91,71 +91,74 @@
 \xdefinecolor{LinkColor}{rgb}{0,0,0.4} 
 
 \ifcolor{%
-   \colorlet{ospColorTitleRule}{LightGray}
-   \colorlet{TitleColor}{DarkRed}
-   \colorlet{AbstractSectionColor}{gray}   
+   \colorlet{ospColor@TitleRule}{LightGray}
+   \colorlet{ospColor@Title}{DarkRed}
+   
+   \colorlet{ospColor@AbstractHeader}{gray}   
+   \colorlet{ospColor@SubsectionHeader}{DarkOrange}
+   \colorlet{ospColor@ParagraphHeader}{gray}
+   \colorlet{ospColor@SectionHeader}{DarkOrange}
+   
+   \colorlet{ospColor@Lettrine}{gray} 
+   
+   \colorlet{ospColor@FooterTextSeparator}{LightGray}
+   \colorlet{ospColor@FooterRule}{LightGray}
+   \colorlet{ospColor@FullLeftFooter}{DarkGray} 
+   \colorlet{ospColor@FullRightFooter}{DarkGray} 
+   \colorlet{ospColor@FooterPageNumbering}{DarkGray}
+   
 
-   \colorlet{SubsectionColor}{DarkOrange}
-   \colorlet{ParagraphColor}{gray}
-   \colorlet{BibliographySectionColor}{DarkOrange}
-   
-   \colorlet{CapitalLetterColor}{gray} 
-   
-   \colorlet{ospColorFooterTextSeparator}{LightGray}
-   \colorlet{ospColorFooterRule}{LightGray}
-   \colorlet{ospColorFullLeftFooter}{DarkGray} 
-   \colorlet{ospColorFullRightFooter}{DarkGray} 
-   \colorlet{ospColorFooterPageNumbering}{DarkGray}
-   
-
-   \xdefinecolor{listing@background}{gray}{.90} 
-   \xdefinecolor{listing@base00}{HTML}{657b83}
-   \xdefinecolor{listing@base01}{HTML}{586e75}
-   \xdefinecolor{listing@base02}{HTML}{073642}
-   \xdefinecolor{listing@base03}{HTML}{002B36}
-   \xdefinecolor{listing@base0}{HTML}{839496}
-   \xdefinecolor{listing@base1}{HTML}{93a1a1}
-   \xdefinecolor{listing@base2}{HTML}{EEE8D5}
-   \xdefinecolor{listing@base3}{HTML}{FDF6E3}
-   \xdefinecolor{listing@yellow}{HTML}{B58900}
-   \xdefinecolor{listing@orange}{HTML}{CB4B16}
-   \xdefinecolor{listing@red}{HTML}{DC322F}
-   \xdefinecolor{listing@magenta}{HTML}{D33682}
-   \xdefinecolor{listing@violet}{HTML}{6C71C4}
-   \xdefinecolor{listing@blue}{HTML}{268BD2}
-   \xdefinecolor{listing@cyan}{HTML}{2AA198}
-   \xdefinecolor{listing@green}{HTML}{859900}
+   \xdefinecolor{ospColor@ListingBackground}{gray}{.90} 
+   \xdefinecolor{ospColor@ListingBase00}{HTML}{657b83}
+   \xdefinecolor{ospColor@ListingBase01}{HTML}{586e75}
+   \xdefinecolor{ospColor@ListingBase02}{HTML}{073642}
+   \xdefinecolor{ospColor@ListingBase03}{HTML}{002B36}
+   \xdefinecolor{ospColor@ListingBase0}{HTML}{839496}
+   \xdefinecolor{ospColor@ListingBase1}{HTML}{93a1a1}
+   \xdefinecolor{ospColor@ListingBase2}{HTML}{EEE8D5}
+   \xdefinecolor{ospColor@ListingBase3}{HTML}{FDF6E3}
+   \xdefinecolor{ospColor@ListingYellow}{HTML}{B58900}
+   \xdefinecolor{ospColor@ListingOrange}{HTML}{CB4B16}
+   \xdefinecolor{ospColor@ListingRed}{HTML}{DC322F}
+   \xdefinecolor{ospColor@ListingMagenta}{HTML}{D33682}
+   \xdefinecolor{ospColor@ListingViolet}{HTML}{6C71C4}
+   \xdefinecolor{ospColor@ListingBlue}{HTML}{268BD2}
+   \xdefinecolor{ospColor@ListingCyan}{HTML}{2AA198}
+   \xdefinecolor{ospColor@ListingGreen}{HTML}{859900}
 }{% 
-   \colorlet{ospColorTitleRule}{black}
-   \colorlet{TitleColor}{black}
-   \colorlet{AbstractSectionColor}{black}  
-   \colorlet{SubsectionColor}{black}
-   \colorlet{ParagraphColor}{black}
-   \colorlet{BibliographySectionColor}{black}
-   \colorlet{CapitalLetterColor}{black}
-   \colorlet{ospColorFooterRule}{black}
-   \colorlet{ospColorFullLeftFooter}{black}  
-   \colorlet{ospColorFullRightFooter}{black} 
-   \colorlet{ospColorFooterPageNumbering}{black} 
-   \colorlet{ospColorFooterTextSeparator}{black}
+   \colorlet{ospColor@TitleRule}{black}
+   \colorlet{ospColor@Title}{black} 
 
-   \xdefinecolor{listing@background}{gray}{.90} 
-   \colorlet{listing@base00}{black}
-   \colorlet{listing@base01}{black}
-   \colorlet{listing@base02}{black}
-   \colorlet{listing@base03}{black}
-   \colorlet{listing@base0}{black}
-   \colorlet{listing@base1}{black}
-   \colorlet{listing@base2}{black}
-   \colorlet{listing@base3}{black}
-   \colorlet{listing@yellow}{black}
-   \colorlet{listing@orange}{black}
-   \colorlet{listing@red}{black}
-   \colorlet{listing@magenta}{black}
-   \colorlet{listing@violet}{black}
-   \colorlet{listing@blue}{black}
-   \colorlet{listing@cyan}{black}
-   \colorlet{listing@green}{black}
+   \colorlet{ospColor@AbstractHeader}{black}  
+   \colorlet{ospColor@SubsectionHeader}{black}
+   \colorlet{ospColor@ParagraphHeader}{black}
+   \colorlet{ospColor@SectionHeader}{black}
+
+   \colorlet{ospColor@Lettrine}{black}
+   
+   \colorlet{ospColor@FooterRule}{black}
+   \colorlet{ospColor@FullLeftFooter}{black}   
+   \colorlet{ospColor@FullRightFooter}{black} 
+   \colorlet{ospColor@FooterPageNumbering}{black} 
+   \colorlet{ospColor@FooterTextSeparator}{black}
+
+   \xdefinecolor{ospColor@ListingBackground}{gray}{.90} 
+   \colorlet{ospColor@ListingBase00}{black}
+   \colorlet{ospColor@ListingBase01}{black}
+   \colorlet{ospColor@ListingBase02}{black}
+   \colorlet{ospColor@ListingBase03}{black}
+   \colorlet{ospColor@ListingBase0}{black}
+   \colorlet{ospColor@ListingBase1}{black}
+   \colorlet{ospColor@ListingBase2}{black}
+   \colorlet{ospColor@ListingBase3}{black}
+   \colorlet{ospColor@ListingYellow}{black}
+   \colorlet{ospColor@ListingOrange}{black}
+   \colorlet{ospColor@ListingRed}{black}
+   \colorlet{ospColor@ListingMagenta}{black}
+   \colorlet{ospColor@ListingViolet}{black}
+   \colorlet{ospColor@ListingBlue}{black}
+   \colorlet{ospColor@ListingCyan}{black}
+   \colorlet{ospColor@ListingGreen}{black}
 }
 
 %%%-------------------------------------------------%%%
@@ -163,16 +166,16 @@
 %%%-------------------------------------------------%%%
 
 \providecommand{\ospTitle}{The open science paper title} 
-\providecommand{\ospSetTitle}[1]{\gdef\ospTitle{#1}}
+\providecommand{\ospSetTitle}[1]{\def\ospTitle{#1}}
 
 \providecommand{\ospAuthors}{Author one\textsuperscript{1 2}, Author two\textsuperscript{2}, \ldots} 
-\providecommand{\ospSetAuthors}[1]{\gdef\ospAuthors{#1}}
+\providecommand{\ospSetAuthors}[1]{\def\ospAuthors{#1}}
 
 \providecommand{\ospAffiliations}{University of XY departement of Z\textsuperscript{1}, \ldots} 
-\providecommand{\ospSetAffiliations}[1]{\gdef\ospAffiliations{#1}}
+\providecommand{\ospSetAffiliations}[1]{\def\ospAffiliations{#1}}
 
 \providecommand{\ospKeywords}{Open Science, Git, R, Knitr, ggplot2, tikz}
-\providecommand{\ospSetKeywords}[1]{\gdef\ospKeywords{#1}}
+\providecommand{\ospSetKeywords}[1]{\def\ospKeywords{#1}}
 
 %%%-------------------------------------------------%%%
 %%% Define header and footer %%%
@@ -184,10 +187,10 @@
 
 %% Set the footer contents
 \providecommand{\ospFooterTextLeftOfSeparator}{Open-Science-Papers} 
-\providecommand{\ospSetFooterTextLeftOfSeparator}[1]{\gdef\ospFooterTextLeftOfSeparator{#1}}
+\providecommand{\ospSetFooterTextLeftOfSeparator}[1]{\def\ospFooterTextLeftOfSeparator{#1}}
 
 \providecommand{\ospFooterTextRightOfSeparator}{Compiled on \today} 
-\providecommand{\ospSetFooterTextRightOfSeparator}[1]{\gdef\ospFooterTextRightOfSeparator{#1}}
+\providecommand{\ospSetFooterTextRightOfSeparator}[1]{\def\ospFooterTextRightOfSeparator{#1}}
 
 \providecommand{\ospFooterLogo}{\relax}
 \providecommand{\ospSetFooterLogo}[1]{\gdef\ospFooterLogo{#1}}
@@ -198,14 +201,14 @@
    \ospSetFooterLogo{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{graphics/open-science-papers-logo-footer-black.png}}}
 }
 
-\providecommand{\ospFooterTextSeparator}{\textcolor{ospColorFooterTextSeparator}{$\circ$}} 
+\providecommand{\ospFooterTextSeparator}{\textcolor{ospColor@FooterTextSeparator}{$\circ$}} 
 \providecommand{\ospSetFooterTextSeparator}[1]{\gdef\ospFooterTextSeparator{#1}}
 
-\providecommand{\ospFullLeftFooter}{\ospFooterLogo\xspace \textcolor{ospColorFullLeftFooter}{{\normalsize \ospFooterTextLeftOfSeparator\xspace \ospFooterTextSeparator\xspace \ospFooterTextRightOfSeparator}}} 
+\providecommand{\ospFullLeftFooter}{\ospFooterLogo\xspace \textcolor{ospColor@FullLeftFooter}{{\normalsize \ospFooterTextLeftOfSeparator\xspace \ospFooterTextSeparator\xspace \ospFooterTextRightOfSeparator}}} 
 \providecommand{\ospSetFullLeftFooter}[1]{\gdef\ospFullLeftFooter{#1}}
 
 %% Style the footer and header elements 
-\providecommand{\ospFooterRuleColor}{ospColorFooterRule} 
+\providecommand{\ospFooterRuleColor}{ospColor@FooterRule} 
 \providecommand{\ospSetFooterRuleColor}[1]{\gdef\ospFooterRuleColor{#1}}
 
 \newlength{\ospLengthHeaderRuleWidth} 
@@ -218,7 +221,7 @@
 
 \patchcmd{\footrule}{\hrule}{\color{\ospFooterRuleColor}\hrule}{}{}
 
-\providecommand{\ospFooterPageNumberingColor}{ospColorFooterPageNumbering} 
+\providecommand{\ospFooterPageNumberingColor}{ospColor@FooterPageNumbering} 
 \providecommand{\ospSetFooterPageNumberingColor}[1]{\gdef\ospFooterPageNumberingColor{#1}} 
 
 \providecommand{\ospFooterPageNumberingStyle}{\normalsize\textbf} 
@@ -235,7 +238,7 @@
 %%%-------------------------------------------------%%%
 
 \usepackage{lettrine}
-\newcommand{\capital}[1]{\lettrine[nindent=0em, findent=0.2em, lines=2]{\textcolor{CapitalLetterColor}{#1}}}    
+\newcommand{\capital}[1]{\lettrine[nindent=0em, findent=0.2em, lines=2]{\textcolor{ospColor@Lettrine}{#1}}}    
 
 %%%-------------------------------------------------%%%
 %%% List options %%%
@@ -243,8 +246,7 @@
 
 \RequirePackage[neverdecrease]{paralist}
 
-%% Overwrite the listing environments with the ones from paralist 
-%% wich are more compact.
+% override item lists 
 \let\itemize\compactitem
 \let\enditemize\endcompactitem
 \let\enumerate\compactenum
@@ -258,7 +260,7 @@
 \setdefaultitem{$\circ$}{\textbullet}{\textperiodcentered}{--}%
 
 %%%-------------------------------------------------%%%
-%%% Graphics options %%%
+%%% Graphic options %%%
 %%%-------------------------------------------------%%%
 
 %% Use and create graphics %%
@@ -420,19 +422,19 @@ flexiblecolumns=true,
 extendedchars=true,
 breaklines=true,
 numbers=left, 
-backgroundcolor=\color{listing@background},
+backgroundcolor=\color{ospColor@ListingBackground},
 stepnumber=1,
 numbersep=7pt,
 xleftmargin=10pt,
-% rulesepcolor=\color{listing@base03},
+% rulesepcolor=\color{ospColor@ListingBase03},
 % numberblanklines=true,
-numberstyle=\tiny\color{listing@base01},
+numberstyle=\tiny\color{ospColor@ListingBase01},
 basicstyle=\footnotesize\ttfamily,
-keywordstyle=\color{listing@green},
-stringstyle=\color{listing@cyan}\ttfamily,
-identifierstyle=\color{listing@blue},
-commentstyle=\color{listing@base01},
-emphstyle=\color{listing@red}
+keywordstyle=\color{ospColor@ListingGreen},
+stringstyle=\color{ospColor@ListingCyan}\ttfamily,
+identifierstyle=\color{ospColor@ListingBlue},
+commentstyle=\color{ospColor@ListingBase01},
+emphstyle=\color{ospColor@ListingRed}
 }
 
 \lstset{literate=%
@@ -451,7 +453,7 @@ emphstyle=\color{listing@red}
 %%%-------------------------------------------------%%%
 
 % Define Header %% 
-\providecommand{\ospTitleRule}{\textcolor{ospColorTitleRule}{\noindent\rule{\linewidth}{1.6pt}}}
+\providecommand{\ospTitleRule}{\textcolor{ospColor@TitleRule}{\noindent\rule{\linewidth}{1.6pt}}}
 
 \providecommand{\ospMakeTitle}{%
 {\ospTitleRule}\\[0.01\baselineskip] 
@@ -461,7 +463,7 @@ emphstyle=\color{listing@red}
 \end{minipage}&	
 \begin{minipage}{0.7\textwidth} 
 \vspace{\baselineskip}
-{\color{TitleColor}{{\normalfont\sffamily\Huge\bfseries \ospTitle }}} \hfill\\[\baselineskip]
+{\color{ospColor@Title}{{\normalfont\sffamily\Huge\bfseries \ospTitle }}} \hfill\\[\baselineskip]
    \begin{normalsize}\textbf{\ospAuthors}\end{normalsize}\hfill\\
    \begin{normalsize}\textbf{Affiliation:} \ospAffiliations\end{normalsize}\hfill\\
    \begin{normalsize}\textbf{Keywords:} \ospKeywords\end{normalsize}\hfill\\[.5\baselineskip]
@@ -471,7 +473,7 @@ emphstyle=\color{listing@red}
 
 %% Defines the abstract %%
 \RequirePackage{abstract}
-\renewcommand{\abstractnamefont}{\color{AbstractSectionColor}\normalfont\sffamily\large\bfseries}
+\renewcommand{\abstractnamefont}{\color{ospColor@AbstractHeader}\normalfont\sffamily\large\bfseries}
 \renewcommand{\abstracttextfont}{\normalfont} 
 
 
@@ -486,16 +488,16 @@ emphstyle=\color{listing@red}
 %\thechapter}{20pt}{\Huge}
 
 \titleformat{\section}
-{\color{BibliographySectionColor}\normalfont\sffamily\large\bfseries}{\thesection}{1em}{}
+{\color{ospColor@SectionHeader}\normalfont\sffamily\large\bfseries}{\thesection}{1em}{}
 
 \titleformat{\subsection}
-{\color{SubsectionColor}\normalfont\sffamily\large\bfseries}{\thesubsection}{1em}{}
+{\color{ospColor@SubsectionHeader}\normalfont\sffamily\large\bfseries}{\thesubsection}{1em}{}
 
 %\titleformat{\subsubsection}
 %{\normalfont\sffamily\normalsize\bfseries}{\thesubsubsection}{1em}{}
 
 \titleformat{\paragraph}[runin]
-{\color{ParagraphColor}\normalfont\sffamily\normalsize\bfseries}{\theparagraph}{1em}{}
+{\color{ospColor@ParagraphHeader}\normalfont\sffamily\normalsize\bfseries}{\theparagraph}{1em}{}
 
 %\titleformat{\subparagraph}[runin]
 %{\normalfont\sffamily\normalsize\bfseries}{\thesubparagraph}{1em}{}
