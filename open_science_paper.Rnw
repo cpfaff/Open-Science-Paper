@@ -42,7 +42,6 @@
 <<global_knitr_options, child='subdocuments/osp_global_knitr_options.Rnw', eval=TRUE>>=
 @
 
-
 %%%--------------------------------------------------------------%%%
 %%% Document content %%%
 %%%--------------------------------------------------------------%%%
@@ -61,12 +60,12 @@
 %%%-------------------------------------------------%%%
 
 <<subdoc_content_abstract, child='subdocuments/osp_abstract_section.Rnw', eval=T>>=
-@
+@ 
+% Second rule which closes the title header
 \ospTitleRule
 
 % Start 2 column layout %
 \begin{multicols}{2}
-
 
 %%%-------------------------------------------------%%%
 %%% Include introduction %%%
@@ -112,7 +111,6 @@
 
 %% End 2 column layout
 \end{multicols}
-
 
 %%%------------------------------------------------------------------------------%%%
 %%% End of document %%%

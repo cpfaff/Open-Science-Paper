@@ -86,7 +86,7 @@
 %%% Color options %%%
 %%%-------------------------------------------------%%%
 
-\RequirePackage[svgnames]{xcolor} 
+\RequirePackage[svgnames,cmyk]{xcolor} 
 
 \xdefinecolor{LinkColor}{rgb}{0,0,0.4} 
 
@@ -102,9 +102,10 @@
    \colorlet{CapitalLetterColor}{gray} 
    
    \colorlet{ospColorFooterTextSeparator}{LightGray}
-   \colorlet{FootRuleColor}{LightGray}
-   \colorlet{ospColorCompleteLeftFooter}{DarkGray} 
-   \colorlet{PageNumberingColor}{DarkGray}
+   \colorlet{ospColorFooterRule}{LightGray}
+   \colorlet{ospColorFullLeftFooter}{DarkGray} 
+   \colorlet{ospColorFullRightFooter}{DarkGray} 
+   \colorlet{ospColorFooterPageNumbering}{DarkGray}
    
 
    \xdefinecolor{listing@background}{gray}{.90} 
@@ -132,9 +133,10 @@
    \colorlet{ParagraphColor}{black}
    \colorlet{BibliographySectionColor}{black}
    \colorlet{CapitalLetterColor}{black}
-   \colorlet{FootRuleColor}{black}
-   \colorlet{ospColorCompleteLeftFooter}{black} 
-   \colorlet{PageNumberingColor}{black} 
+   \colorlet{ospColorFooterRule}{black}
+   \colorlet{ospColorFullLeftFooter}{black}  
+   \colorlet{ospColorFullRightFooter}{black} 
+   \colorlet{ospColorFooterPageNumbering}{black} 
    \colorlet{ospColorFooterTextSeparator}{black}
 
    \xdefinecolor{listing@background}{gray}{.90} 
@@ -176,6 +178,11 @@
 %%% Define header and footer %%%
 %%%-------------------------------------------------%%%
 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+%% Set the footer contents
 \providecommand{\ospFooterTextLeftOfSeparator}{Open-Science-Papers} 
 \providecommand{\ospSetFooterTextLeftOfSeparator}[1]{\gdef\ospFooterTextLeftOfSeparator{#1}}
 
@@ -185,32 +192,46 @@
 \providecommand{\ospFooterLogo}{\relax}
 \providecommand{\ospSetFooterLogo}[1]{\gdef\ospFooterLogo{#1}}
 
-\ifcolor{ 
+\ifcolor{%
    \ospSetFooterLogo{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{graphics/open-science-papers-logo-footer.png}}}
-}{ 
+}{% 
    \ospSetFooterLogo{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{graphics/open-science-papers-logo-footer-black.png}}}
 }
 
 \providecommand{\ospFooterTextSeparator}{\textcolor{ospColorFooterTextSeparator}{$\circ$}} 
 \providecommand{\ospSetFooterTextSeparator}[1]{\gdef\ospFooterTextSeparator{#1}}
 
-\providecommand{\ospCompleteLeftFooter}{\ospFooterLogo\xspace \textcolor{ospColorCompleteLeftFooter}{{\small \ospFooterTextLeftOfSeparator\xspace \ospFooterTextSeparator\xspace \ospFooterTextRightOfSeparator}}} 
-\providecommand{\ospSetCompleteLeftFooter}[1]{\gdef\ospCompleteLeftFooter{#1}}
+\providecommand{\ospFullLeftFooter}{\ospFooterLogo\xspace \textcolor{ospColorFullLeftFooter}{{\normalsize \ospFooterTextLeftOfSeparator\xspace \ospFooterTextSeparator\xspace \ospFooterTextRightOfSeparator}}} 
+\providecommand{\ospSetFullLeftFooter}[1]{\gdef\ospFullLeftFooter{#1}}
 
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0.3pt} 
+%% Style the footer and header elements 
+\providecommand{\ospFooterRuleColor}{ospColorFooterRule} 
+\providecommand{\ospSetFooterRuleColor}[1]{\gdef\ospFooterRuleColor{#1}}
 
-\patchcmd{\footrule}{\hrule}{\color{FootRuleColor}\hrule}{}{}
+\newlength{\ospLengthHeaderRuleWidth} 
+\setlength{\ospLengthHeaderRuleWidth}{0pt} 
+\renewcommand{\headrulewidth}{\ospLengthHeaderRuleWidth}
 
-\fancyfoot[R]{\textbf{\textcolor{PageNumberingColor}{{\thepage}}}} 
-\fancyfoot[L]{\ospCompleteLeftFooter}
+\newlength{\ospLengthFooterRuleWidth} 
+\setlength{\ospLengthFooterRuleWidth}{0.3pt} 
+\renewcommand{\footrulewidth}{\ospLengthFooterRuleWidth} 
 
+\patchcmd{\footrule}{\hrule}{\color{\ospFooterRuleColor}\hrule}{}{}
+
+\providecommand{\ospFooterPageNumberingColor}{ospColorFooterPageNumbering} 
+\providecommand{\ospSetFooterPageNumberingColor}[1]{\gdef\ospFooterPageNumberingColor{#1}} 
+
+\providecommand{\ospFooterPageNumberingStyle}{\normalsize\textbf} 
+\providecommand{\ospSetFooterPageNumberingStyle}[1]{\gdef\ospFooterPageNumberingStyle{#1}} 
+
+\providecommand{\ospFullRightFooter}{{\ospFooterPageNumberingStyle{\textcolor{\ospFooterPageNumberingColor}{{\thepage}}}}} 
+\providecommand{\ospSetFullRightFooter}[1]{\gdef\ospFullRightFooter{#1}}
+
+\fancyfoot[L]{\ospFullLeftFooter}
+\fancyfoot[R]{\ospFullRightFooter} 
 
 %%%-------------------------------------------------%%%
-%%% Control runin big letters %%%
+%%% Control big starting letters (Lettrine) %%%
 %%%-------------------------------------------------%%%
 
 \usepackage{lettrine}
@@ -222,7 +243,8 @@
 
 \RequirePackage[neverdecrease]{paralist}
 
-%% Overwrite the listing environments with the ones from paralist
+%% Overwrite the listing environments with the ones from paralist 
+%% wich are more compact.
 \let\itemize\compactitem
 \let\enditemize\endcompactitem
 \let\enumerate\compactenum
@@ -250,8 +272,13 @@
 \pgfdeclarelayer{foreground}
 \pgfsetlayers{background,main,foreground}
 
-%% Define tikz styles %%
-\tikzstyle{pictureframe} = [rectangle, rounded corners, draw=gray!10, fill=white, blur shadow={shadow blur steps=5,shadow blur extra rounding=1.3pt}]
+%% Define tikz styles %% 
+\ifcolor{%
+   \tikzstyle{pictureframe} = [rectangle, rounded corners, draw=gray!10, fill=white, blur shadow={shadow blur steps=5,shadow blur extra rounding=1.3pt}] 
+}{%
+   \tikzstyle{pictureframe} = [rectangle, rounded corners, draw=black, fill=white]
+}
+
 \tikzstyle{signbackground} = [rectangle, fill=gray!3, rounded corners, draw=gray, very thin]
 
 \RequirePackage{subcaption} 

@@ -7,6 +7,27 @@
 %%%------------------------------------------------------------------------------------%%
 
 %%%-------------------------------------------------%%%
+%%% Define own colors %%%
+%%%-------------------------------------------------%%%
+
+%% Example:
+\xdefinecolor{YourColor}{rgb}{0,0,0.7}
+
+%%%-------------------------------------------------%%%
+%%% Define own commands %%%
+%%%-------------------------------------------------%%%
+
+%% Example:
+% \newcommand{name}[number of parameters]{things to do}
+
+%%%-------------------------------------------------%%%
+%%% Define own environments %%%
+%%%-------------------------------------------------%%%
+
+%% Example:
+% \newenvironment{name}[number of parameters]{definition begin}{definition end}
+
+%%%-------------------------------------------------%%%
 %%% Define titlel authors and affiliation %%%
 %%%-------------------------------------------------%%%
 
@@ -16,34 +37,26 @@
 % \ospSetKeywords{Open Science, Git, R, Knitr, ggplot2, tikz}
 
 %%%-------------------------------------------------%%%
-%%% Define footer contents %%%
+%%% Define footer contents and styling %%%
 %%%-------------------------------------------------%%%
 
-% \ospSetFooterTextSeparator{xx}
+%% Contents
+
 % \ospSetFooterTextRightOfSeparator{Right of separator} 
+% \ospSetFooterTextSeparator{xx} 
 % \ospSetFooterTextLeftOfSeparator{Left of separator} 
-% \ospSetCompleteLeftFooter{I am the complete left footer}
+% \ospSetFullLeftFooter{I am the complete left footer}
+% \ospSetFullRightFooter{\textbf{\thepage}}
 
-%%%-------------------------------------------------%%%
-%%% Define own colors %%%
-%%%-------------------------------------------------%%%
+%% Colors
 
-% Example:
-%  \xdefinecolor{YourColor}{rgb}{0,0,0.4}
+% \ospSetFooterRuleColor{YourColor}
+% \ospSetFooterPageNumberingColor{DarkOrange} 
 
-%%%-------------------------------------------------%%%
-%%% Define own commands %%%
-%%%-------------------------------------------------%%%
+%% Lengths [default]
 
-% Example:
-%  \newcommand{name}[number of parameters]{things to do}
-
-%%%-------------------------------------------------%%%
-%%% Define own environments %%%
-%%%-------------------------------------------------%%%
-
-% Example:
-%  \newenvironment{name}[number of parameters]{definition begin}{definition end}
+% \setlength{\ospLengthFooterRuleWidth}{5pt} %[0.3pt]
+% \setlength{\ospLengthHeaderRuleWidth}{0pt} %[0pt] 
 
 %%%-------------------------------------------------%%%
 %%% Set PDF options %%%
