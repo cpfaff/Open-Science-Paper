@@ -80,4 +80,8 @@ expldoc:
 	$(COPY) $(EXMPLDOCS) $(SUBDOCFOLDER) 
 
 tmpdoc:
-	$(COPY) $(TEMPDOCS) $(SUBDOCFOLDER) 
+	$(COPY) $(TEMPDOCS) $(SUBDOCFOLDER)  
+
+prep:
+	$(COPY) subdocuments/open_science_paper.cls subdocuments/open_science_paper.sty subdocuments/exmpl/ 
+	$(COPY) subdocuments/open_science_paper.cls subdocuments/open_science_paper.sty subdocuments/temp/ 
