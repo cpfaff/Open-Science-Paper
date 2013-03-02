@@ -275,7 +275,8 @@
 
 %% Define tikz styles %% 
 \ifcolor{%
-   \tikzstyle{pictureframe} = [rectangle, rounded corners, draw=LightGray, fill=white, blur shadow={shadow blur steps=5,shadow blur extra rounding=1.3pt}] 
+   % \tikzstyle{pictureframe} = [rectangle, rounded corners, draw=LightGray, fill=white, blur shadow={shadow blur steps=5, shadow blur extra rounding=1.3pt}] 
+   \tikzstyle{pictureframe} = [rectangle, rounded corners, draw=LightGray, thick, fill=white] 
 }{%
    \tikzstyle{pictureframe} = [rectangle, rounded corners, draw=black, fill=white]
 }
