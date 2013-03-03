@@ -16,7 +16,7 @@
 %%% Provides class. Load options from class call %%%
 %%%-------------------------------------------------%%%
 
-\ProvidesClass{open-science-paper}[2012/09/10 version 0.2 LaTeX class of the Open-Science-Paper]
+\ProvidesClass{open-science-paper}[2013/03/03 version 0.8 LaTeX class of the Open-Science-Paper]
 
 %% Provide class otions 
 \newif\if@color
