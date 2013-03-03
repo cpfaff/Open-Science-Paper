@@ -23,15 +23,21 @@
 \DeclareOption{color}{\@colortrue}
 \DeclareOption{nocolor}{\@colorfalse}
 
+\newif\if@csvdata
+\DeclareOption{csvdata}{\@csvdatatrue}
+\DeclareOption{nocsvdata}{\@csvdatafalse}
+
 \ExecuteOptions{% 
    % colored as default
    color,
+   nocsvdata,
 } 
 
 %% process options
 \ProcessOptions*\relax
 
 \providecommand{\ifcolor}[2]{\if@color#1\else#2\fi}
+\providecommand{\ifcsvdata}[2]{\if@csvdata#1\else#2\fi} 
 
 % \LoadClassWithOptions{scrartcl}
 \LoadClass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto, DIV=20, notitlepage, oneside, final]{scrartcl}
@@ -69,6 +75,7 @@
 \RequirePackage{calc}
 \RequirePackage{xkeyval} 
 \RequirePackage{xifthen} 
+\RequirePackage{datatool} 
 
 %%%-------------------------------------------------%%%
 %%% Language adaption of the document %%%
@@ -479,21 +486,53 @@ emphstyle=\color{ospColor@ListingRed}
 \newlength{\ospLengtTitleSpaceBelow} 
 \setlength{\ospLengtTitleSpaceBelow}{0.01\baselineskip}  
 
-\providecommand{\ospMakeTitle}{% 
-{\ospTitleRule}\\[\ospLengtTitleSpaceAbove] 
-\begin{tabular}{p{\ospLengtTitleLogoColwidth}p{\ospLengtTitleTitleColwidth}}
-\begin{minipage}{0.25\textwidth}
-   \ospTitleLogo 
-\end{minipage}&	
-\begin{minipage}{0.7\textwidth} 
-\vspace{\baselineskip}
-{\color{ospColor@Title}{{\normalfont\sffamily\Huge\bfseries \ospTitle}}} \hfill\\[\baselineskip]
-   \begin{normalsize}\textbf{\ospAuthors}\end{normalsize}\hfill\\
-   \begin{normalsize}\textbf{\ospTitleAffiliationName} \ospAffiliations\end{normalsize}\hfill\\
-   \begin{normalsize}\textbf{\ospTitleKeywordName} \ospKeywords\end{normalsize}\hfill\\[.5\baselineskip]
-\end{minipage}\\
-\end{tabular}\\[\ospLengtTitleSpaceBelow]
+\ifcsvdata{%
+   \DTLloaddb{ospHeaderInfoFromTable}{data/ospHeaderTable.csv}
+   \DTLgetvalue{\ospTitleCsv}{ospHeaderInfoFromTable}{1}{\dtlcolumnindex{ospHeaderInfoFromTable}{ospTitle}}   
+   
+   \DTLsort{ospAuthorPriorityToAppear,ospAuthorFirstName}{ospHeaderInfoFromTable} 
+
+   \providecommand{\ospMakeTitle}{% {\ospTitleRule}\\[\ospLengtTitleSpaceAbove]  
+      \ospTitleRule\\[\ospLengtTitleSpaceAbove]
+         \begin{tabular}{p{\ospLengtTitleLogoColwidth}p{\ospLengtTitleTitleColwidth}}
+            \begin{minipage}{0.25\textwidth}
+               \ospTitleLogo 
+            \end{minipage}&
+            \begin{minipage}{0.7\textwidth} 
+               \vspace{\baselineskip}
+                  {\color{ospColor@Title}{{\normalfont\sffamily\Huge\bfseries \ospTitleCsv}}} \hfill\\[\baselineskip]
+                     \begin{normalsize}\textbf{%
+                        \DTLforeach{ospHeaderInfoFromTable}{%
+                        \firstName=ospAuthorFirstNameShort, 
+                        \lastName=ospAuthorLastName, 
+                        \ids=ospAuthorAffiliationIDs}{\ifdefempty{\firstName}{}{\DTLiflastrow{\firstName\xspace\lastName\textsuperscript{\ids}}{\firstName\xspace\lastName\textsuperscript{\ids}, }}}
+                     }\end{normalsize}\hfill\\ 
+                  \begin{normalsize}\textbf{\ospTitleAffiliationName}  
+                     \DTLforeach{ospHeaderInfoFromTable}{% Fixme: The number in the superscript must be the right index for the affiliation
+                     \affiliation=ospAffiliations}{\ifdefempty{\affiliation}{}{\DTLiflastrow{\affiliation\textsuperscript{1}}{\affiliation\textsuperscript{\theDTLrowi}, }}}
+                  \end{normalsize}\hfill\\
+                  \begin{normalsize}\textbf{\ospTitleKeywordName} \DTLforeach{ospHeaderInfoFromTable}{\keyword=ospKeywords}{\DTLiflastrow{\keyword}{\keyword, }} \end{normalsize}\hfill\\[.5\baselineskip]
+            \end{minipage}\\
+         \end{tabular}\\[\ospLengtTitleSpaceBelow]
+      }
+}{%
+   \providecommand{\ospMakeTitle}{% {\ospTitleRule}\\[\ospLengtTitleSpaceAbove] 
+      \ospTitleRule\\[\ospLengtTitleSpaceAbove]
+         \begin{tabular}{p{\ospLengtTitleLogoColwidth}p{\ospLengtTitleTitleColwidth}}
+            \begin{minipage}{0.25\textwidth}
+               \ospTitleLogo 
+            \end{minipage}&	
+            \begin{minipage}{0.7\textwidth} 
+               \vspace{\baselineskip}
+                  {\color{ospColor@Title}{{\normalfont\sffamily\Huge\bfseries \ospTitle}}} \hfill\\[\baselineskip]
+                  \begin{normalsize}\textbf{\ospAuthors}\end{normalsize}\hfill\\
+                  \begin{normalsize}\textbf{\ospTitleAffiliationName} \ospAffiliations\end{normalsize}\hfill\\
+                  \begin{normalsize}\textbf{\ospTitleKeywordName} \ospKeywords\end{normalsize}\hfill\\[.5\baselineskip]
+            \end{minipage}\\
+         \end{tabular}\\[\ospLengtTitleSpaceBelow]
+      }
 }
+
 
 %% Defines the abstract %%
 \RequirePackage{abstract}

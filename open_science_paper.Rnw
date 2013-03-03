@@ -12,10 +12,12 @@
 %%
 %
 
-\documentclass[color]{subdocuments/open_science_paper} 
+\documentclass[color, nocsvdata]{subdocuments/open_science_paper} 
 
 %% Available class options [defaults]
 % - [color]/nocolor Changes between colorful output and a black and white theme 
+% - [nocsvdata]/csvdata  With csv data enabled you can use the csv file under
+%   the data folder to insert title header information into the document. (not fully finished feature)
 
 %%%------------------------------------------------------------------------------%%%
 %%% Load user options %%%
