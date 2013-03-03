@@ -66,6 +66,8 @@
 %%%-------------------------------------------------%%%
 
 \RequirePackage{calc}
+\RequirePackage{xkeyval} 
+\RequirePackage{xifthen} 
 
 %%%-------------------------------------------------%%%
 %%% Language adaption of the document %%%
@@ -455,20 +457,41 @@ emphstyle=\color{ospColor@ListingRed}
 % Define Header %% 
 \providecommand{\ospTitleRule}{\textcolor{ospColor@TitleRule}{\noindent\rule{\linewidth}{1.7pt}}}
 
-\providecommand{\ospMakeTitle}{%
-{\ospTitleRule}\\[0.01\baselineskip] 
-\begin{tabular}{p{0.23\textwidth}p{0.55\textwidth}}
+\providecommand{\ospTitleLogo}{\includegraphics[scale=0.3]{graphics/open-science-papers-logo-frameless.png}} 
+\providecommand{\ospSetTitleLogo}[1]{\gdef\ospTitleLogo{#1}} 
+
+\providecommand{\ospTitleAffiliationName}{Affiliation:} 
+\providecommand{\ospSetTitleAffiliationName}[1]{\gdef\ospTitleAffiliationName{#1}} 
+
+\providecommand{\ospTitleKeywordName}{Keywords:} 
+\providecommand{\ospSetTitleKeywordName}[1]{\gdef\ospTitleKeywordName{#1}}  
+
+\newlength{\ospLengtTitleLogoColwidth} 
+\setlength{\ospLengtTitleLogoColwidth}{0.23\textwidth} 
+
+\newlength{\ospLengtTitleTitleColwidth} 
+\setlength{\ospLengtTitleTitleColwidth}{0.55\textwidth} 
+
+\newlength{\ospLengtTitleSpaceAbove} 
+\setlength{\ospLengtTitleSpaceAbove}{0.01\baselineskip} 
+
+\newlength{\ospLengtTitleSpaceBelow} 
+\setlength{\ospLengtTitleSpaceBelow}{0.01\baselineskip}  
+
+\providecommand{\ospMakeTitle}{% 
+{\ospTitleRule}\\[\ospLengtTitleSpaceAbove] 
+\begin{tabular}{p{\ospLengtTitleLogoColwidth}p{\ospLengtTitleTitleColwidth}}
 \begin{minipage}{0.25\textwidth}
-   \includegraphics[scale=0.3]{graphics/open-science-papers-logo-frameless.png} 
+   \ospTitleLogo 
 \end{minipage}&	
 \begin{minipage}{0.7\textwidth} 
 \vspace{\baselineskip}
-{\color{ospColor@Title}{{\normalfont\sffamily\Huge\bfseries \ospTitle }}} \hfill\\[\baselineskip]
+{\color{ospColor@Title}{{\normalfont\sffamily\Huge\bfseries \ospTitle}}} \hfill\\[\baselineskip]
    \begin{normalsize}\textbf{\ospAuthors}\end{normalsize}\hfill\\
-   \begin{normalsize}\textbf{Affiliation:} \ospAffiliations\end{normalsize}\hfill\\
-   \begin{normalsize}\textbf{Keywords:} \ospKeywords\end{normalsize}\hfill\\[.5\baselineskip]
+   \begin{normalsize}\textbf{\ospTitleAffiliationName} \ospAffiliations\end{normalsize}\hfill\\
+   \begin{normalsize}\textbf{\ospTitleKeywordName} \ospKeywords\end{normalsize}\hfill\\[.5\baselineskip]
 \end{minipage}\\
-\end{tabular}\\[0.01\baselineskip]
+\end{tabular}\\[\ospLengtTitleSpaceBelow]
 }
 
 %% Defines the abstract %%
