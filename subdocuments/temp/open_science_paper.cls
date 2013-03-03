@@ -33,7 +33,8 @@
 
 \providecommand{\ifcolor}[2]{\if@color#1\else#2\fi}
 
-\LoadClassWithOptions{scrartcl}
+% \LoadClassWithOptions{scrartcl}
+\LoadClass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto, DIV=20, notitlepage, oneside, final]{scrartcl}
 
 %%%-------------------------------------------------%%%
 %%% Input encodings fonts and symbols %%%

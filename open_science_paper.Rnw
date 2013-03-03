@@ -12,7 +12,7 @@
 %%
 %
 
-\documentclass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto, DIV=20, notitlepage, oneside, final]{subdocuments/open_science_paper} 
+\documentclass[color]{subdocuments/open_science_paper} 
 
 %% Available class options [defaults]
 % - [color]/nocolor Changes between colorful output and a black and white theme 
