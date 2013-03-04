@@ -1,7 +1,7 @@
-ospTitle,ospAuthorTitle,ospAuthorPriorityToAppear,ospAuthorFirstName,ospAuthorFirstNameShort,ospAuthorLastName,ospAuthorAffiliationIDs,ospAffiliations,ospAffiliationID,ospKeywords
-This is the title read from csv,B.Sc,1,Claas-Thido,C.T.,Pfaff,1,Universität Leipzig,1,Open Science
-,Dr.,1,Karin,K.,Nadrowski,1,,,Git
-,,3,Aladin,A.,Alexis,1,,,R
-,,4,Kalander,K.,Zalander,1,,,Knitr
+ospTitle,ospAuthorTitle,ospAuthorPriorityToAppear,ospAuthorFirstName,ospAuthorFirstNameShort,ospAuthorLastName,ospAuthorAffiliationIDs,ospAffiliations,ospAffiliationIDs,ospKeywords
+This is the title read from csv,B.Sc,1,Claas-Thido,C.T.,Pfaff,1,University of Leipzig,1,Open Science
+,Dr.,1,Balofi,B.,Malofi,"1,2",University of Hohenheim,2,Git
+,,2,Aladin,A.,Alexis,1,,,R
+,,3,Kalander,K.,Zalander,1,,,Knitr
 ,,,,,,,,,ggplot
 ,,,,,,,,,tikz

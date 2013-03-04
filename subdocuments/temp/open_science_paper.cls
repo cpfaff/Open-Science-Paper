@@ -246,7 +246,12 @@
 %%% Control big starting letters (Lettrine) %%%
 %%%-------------------------------------------------%%%
 
-\usepackage{lettrine}
+\usepackage{lettrine} 
+
+% \ifthenelse{expression}
+%     { commands to execute if true  }
+%     { commands to execute if false }
+
 \newcommand{\capital}[1]{\lettrine[nindent=0em, findent=0.2em, lines=2]{\textcolor{ospColor@Lettrine}{#1}}}    
 
 %%%-------------------------------------------------%%%
@@ -489,29 +494,32 @@ emphstyle=\color{ospColor@ListingRed}
 \ifcsvdata{%
    \DTLloaddb{ospHeaderInfoFromTable}{data/ospHeaderTable.csv}
    \DTLgetvalue{\ospTitleCsv}{ospHeaderInfoFromTable}{1}{\dtlcolumnindex{ospHeaderInfoFromTable}{ospTitle}}   
-   
-   \DTLsort{ospAuthorPriorityToAppear,ospAuthorFirstName}{ospHeaderInfoFromTable} 
 
    \providecommand{\ospMakeTitle}{% {\ospTitleRule}\\[\ospLengtTitleSpaceAbove]  
       \ospTitleRule\\[\ospLengtTitleSpaceAbove]
          \begin{tabular}{p{\ospLengtTitleLogoColwidth}p{\ospLengtTitleTitleColwidth}}
             \begin{minipage}{0.25\textwidth}
                \ospTitleLogo 
-            \end{minipage}&
+            \end{minipage}&%
             \begin{minipage}{0.7\textwidth} 
                \vspace{\baselineskip}
                   {\color{ospColor@Title}{{\normalfont\sffamily\Huge\bfseries \ospTitleCsv}}} \hfill\\[\baselineskip]
                      \begin{normalsize}\textbf{%
+                        \DTLsort{ospAuthorPriorityToAppear,ospAuthorFirstName}{ospHeaderInfoFromTable} 
                         \DTLforeach{ospHeaderInfoFromTable}{%
-                        \firstName=ospAuthorFirstNameShort, 
-                        \lastName=ospAuthorLastName, 
-                        \ids=ospAuthorAffiliationIDs}{\ifdefempty{\firstName}{}{\DTLiflastrow{\firstName\xspace\lastName\textsuperscript{\ids}}{\firstName\xspace\lastName\textsuperscript{\ids}, }}}
+                           \firstName=ospAuthorFirstNameShort,% 
+                           \lastName=ospAuthorLastName,%
+                           \id=ospAuthorAffiliationIDs}{\ifdefempty{\firstName}{}{\DTLiflastrow{\firstName\xspace\lastName\textsuperscript{\id}}{\firstName\xspace\lastName\textsuperscript{\id}, }}}
                      }\end{normalsize}\hfill\\ 
                   \begin{normalsize}\textbf{\ospTitleAffiliationName}  
-                     \DTLforeach{ospHeaderInfoFromTable}{% Fixme: The number in the superscript must be the right index for the affiliation
-                     \affiliation=ospAffiliations}{\ifdefempty{\affiliation}{}{\DTLiflastrow{\affiliation\textsuperscript{1}}{\affiliation\textsuperscript{\theDTLrowi}, }}}
+                     \DTLsort{ospAffiliationIDs}{ospHeaderInfoFromTable} 
+                     \DTLforeach{ospHeaderInfoFromTable}{%
+                        \affiliation=ospAffiliations,%
+                        \id=ospAffiliationIDs}{\ifdefempty{\affiliation}{}{\DTLiflastrow{\affiliation\textsuperscript{\id}}{\affiliation\textsuperscript{\id}, }}}
                   \end{normalsize}\hfill\\
-                  \begin{normalsize}\textbf{\ospTitleKeywordName} \DTLforeach{ospHeaderInfoFromTable}{\keyword=ospKeywords}{\DTLiflastrow{\keyword}{\keyword, }} \end{normalsize}\hfill\\[.5\baselineskip]
+                  \begin{normalsize}\textbf{\ospTitleKeywordName}% 
+                     \DTLsort{ospKeywords}{ospHeaderInfoFromTable} 
+                     \DTLforeach{ospHeaderInfoFromTable}{\keyword=ospKeywords}{\ifdefempty{\keyword}{}{\DTLiflastrow{\keyword}{\keyword, }}} \end{normalsize}\hfill\\[.5\baselineskip]
             \end{minipage}\\
          \end{tabular}\\[\ospLengtTitleSpaceBelow]
       }
