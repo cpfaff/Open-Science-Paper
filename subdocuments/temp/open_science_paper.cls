@@ -190,9 +190,9 @@
 \newcommand{\ospSetFooterLogo}[1]{\gdef\ospFooterLogo{#1}}
 
 \ifcolor{%
-   \ospSetFooterLogo{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{graphics/open-science-papers-logo-footer.png}}}
+   \ospSetFooterLogo{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{graphics/branding/open-science-papers-footer-logo-gray.pdf}}}
 }{% 
-   \ospSetFooterLogo{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{graphics/open-science-papers-logo-footer-black.png}}}
+   \ospSetFooterLogo{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{graphics/branding/open-science-papers-footer-logo-black.pdf}}}
 }
 
 \newcommand{\ospFooterTextSeparator}{\textcolor{ospColor@FooterTextSeparator}{$\circ$}} 
@@ -247,6 +247,10 @@
       {A}{%
          \setlength{\DefaultFindent}{-0.2em}
          \setlength{\DefaultNindent}{0.5em}
+      }
+      {T}{%
+         \setlength{\DefaultFindent}{0.25em}
+         \setlength{\DefaultNindent}{0.02em}
       }
    }
    {%
@@ -489,7 +493,7 @@
 
 \newcommand{\ospTitleRule}{\textcolor{ospColor@TitleRule}{\noindent\rule{\linewidth}{1.7pt}}}
 
-\newcommand{\ospTitleLogo}{\includegraphics[scale=0.3]{graphics/open-science-papers-logo-frameless.png}} 
+\newcommand{\ospTitleLogo}{\includegraphics[scale=0.3]{graphics/branding/open-science-papers-title-header-logo.pdf}} 
 \newcommand{\ospSetTitleLogo}[1]{\gdef\ospTitleLogo{#1}} 
 
 \newcommand{\ospTitleAffiliationName}{Affiliation:} 
