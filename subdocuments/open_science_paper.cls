@@ -36,8 +36,8 @@
 %% process options
 \ProcessOptions*\relax
 
-\providecommand{\ifcolor}[2]{\if@color#1\else#2\fi}
-\providecommand{\ifcsvdata}[2]{\if@csvdata#1\else#2\fi} 
+\newcommand{\ifcolor}[2]{\if@color#1\else#2\fi}
+\newcommand{\ifcsvdata}[2]{\if@csvdata#1\else#2\fi} 
 
 % \LoadClassWithOptions{scrartcl}
 \LoadClass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto, DIV=20, notitlepage, oneside, final]{scrartcl}
@@ -76,6 +76,7 @@
 \RequirePackage{xkeyval} 
 \RequirePackage{xifthen} 
 \RequirePackage{datatool} 
+\RequirePackage{expl3} 
 
 %%%-------------------------------------------------%%%
 %%% Language adaption of the document %%%
@@ -171,22 +172,6 @@
 }
 
 %%%-------------------------------------------------%%%
-%%% Title header defaults %%%
-%%%-------------------------------------------------%%%
-
-\providecommand{\ospTitle}{The open science paper title} 
-\providecommand{\ospSetTitle}[1]{\def\ospTitle{#1}}
-
-\providecommand{\ospAuthors}{Author one\textsuperscript{1 2}, Author two\textsuperscript{2}, \ldots} 
-\providecommand{\ospSetAuthors}[1]{\def\ospAuthors{#1}}
-
-\providecommand{\ospAffiliations}{University of XY departement of Z\textsuperscript{1}, \ldots} 
-\providecommand{\ospSetAffiliations}[1]{\def\ospAffiliations{#1}}
-
-\providecommand{\ospKeywords}{Open Science, Git, R, Knitr, ggplot2, tikz}
-\providecommand{\ospSetKeywords}[1]{\def\ospKeywords{#1}}
-
-%%%-------------------------------------------------%%%
 %%% Define header and footer %%%
 %%%-------------------------------------------------%%%
 
@@ -195,14 +180,14 @@
 \fancyhf{}
 
 %% Set the footer contents
-\providecommand{\ospFooterTextLeftOfSeparator}{Open-Science-Papers} 
-\providecommand{\ospSetFooterTextLeftOfSeparator}[1]{\def\ospFooterTextLeftOfSeparator{#1}}
+\newcommand{\ospFooterTextLeftOfSeparator}{Open-Science-Papers} 
+\newcommand{\ospSetFooterTextLeftOfSeparator}[1]{\def\ospFooterTextLeftOfSeparator{#1}}
 
-\providecommand{\ospFooterTextRightOfSeparator}{Compiled on \today} 
-\providecommand{\ospSetFooterTextRightOfSeparator}[1]{\def\ospFooterTextRightOfSeparator{#1}}
+\newcommand{\ospFooterTextRightOfSeparator}{Compiled on \today} 
+\newcommand{\ospSetFooterTextRightOfSeparator}[1]{\def\ospFooterTextRightOfSeparator{#1}}
 
-\providecommand{\ospFooterLogo}{\relax}
-\providecommand{\ospSetFooterLogo}[1]{\gdef\ospFooterLogo{#1}}
+\newcommand{\ospFooterLogo}{\relax}
+\newcommand{\ospSetFooterLogo}[1]{\gdef\ospFooterLogo{#1}}
 
 \ifcolor{%
    \ospSetFooterLogo{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{graphics/open-science-papers-logo-footer.png}}}
@@ -210,15 +195,15 @@
    \ospSetFooterLogo{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{graphics/open-science-papers-logo-footer-black.png}}}
 }
 
-\providecommand{\ospFooterTextSeparator}{\textcolor{ospColor@FooterTextSeparator}{$\circ$}} 
-\providecommand{\ospSetFooterTextSeparator}[1]{\gdef\ospFooterTextSeparator{#1}}
+\newcommand{\ospFooterTextSeparator}{\textcolor{ospColor@FooterTextSeparator}{$\circ$}} 
+\newcommand{\ospSetFooterTextSeparator}[1]{\gdef\ospFooterTextSeparator{#1}}
 
-\providecommand{\ospFullLeftFooter}{\ospFooterLogo\xspace~ \textcolor{ospColor@FullLeftFooter}{{\normalsize \ospFooterTextLeftOfSeparator\xspace \ospFooterTextSeparator\xspace \ospFooterTextRightOfSeparator}}} 
-\providecommand{\ospSetFullLeftFooter}[1]{\gdef\ospFullLeftFooter{#1}}
+\newcommand{\ospFullLeftFooter}{\ospFooterLogo\xspace~ \textcolor{ospColor@FullLeftFooter}{{\normalsize \ospFooterTextLeftOfSeparator\xspace \ospFooterTextSeparator\xspace \ospFooterTextRightOfSeparator}}} 
+\newcommand{\ospSetFullLeftFooter}[1]{\gdef\ospFullLeftFooter{#1}}
 
 %% Style the footer and header elements 
-\providecommand{\ospFooterRuleColor}{ospColor@FooterRule} 
-\providecommand{\ospSetFooterRuleColor}[1]{\gdef\ospFooterRuleColor{#1}}
+\newcommand{\ospFooterRuleColor}{ospColor@FooterRule} 
+\newcommand{\ospSetFooterRuleColor}[1]{\gdef\ospFooterRuleColor{#1}}
 
 \newlength{\ospLengthHeaderRuleWidth} 
 \setlength{\ospLengthHeaderRuleWidth}{0pt} 
@@ -230,14 +215,14 @@
 
 \patchcmd{\footrule}{\hrule}{\color{\ospFooterRuleColor}\hrule}{}{}
 
-\providecommand{\ospFooterPageNumberingColor}{ospColor@FooterPageNumbering} 
-\providecommand{\ospSetFooterPageNumberingColor}[1]{\gdef\ospFooterPageNumberingColor{#1}} 
+\newcommand{\ospFooterPageNumberingColor}{ospColor@FooterPageNumbering} 
+\newcommand{\ospSetFooterPageNumberingColor}[1]{\gdef\ospFooterPageNumberingColor{#1}} 
 
-\providecommand{\ospFooterPageNumberingStyle}{\normalsize\textbf} 
-\providecommand{\ospSetFooterPageNumberingStyle}[1]{\gdef\ospFooterPageNumberingStyle{#1}} 
+\newcommand{\ospFooterPageNumberingStyle}{\normalsize\textbf} 
+\newcommand{\ospSetFooterPageNumberingStyle}[1]{\gdef\ospFooterPageNumberingStyle{#1}} 
 
-\providecommand{\ospFullRightFooter}{{\ospFooterPageNumberingStyle{\textcolor{\ospFooterPageNumberingColor}{{\thepage}}}}} 
-\providecommand{\ospSetFullRightFooter}[1]{\gdef\ospFullRightFooter{#1}}
+\newcommand{\ospFullRightFooter}{{\ospFooterPageNumberingStyle{\textcolor{\ospFooterPageNumberingColor}{{\thepage}}}}} 
+\newcommand{\ospSetFullRightFooter}[1]{\gdef\ospFullRightFooter{#1}}
 
 \fancyfoot[L]{\ospFullLeftFooter}
 \fancyfoot[R]{\ospFullRightFooter} 
@@ -248,11 +233,33 @@
 
 \usepackage{lettrine} 
 
-% \ifthenelse{expression}
-%     { commands to execute if true  }
-%     { commands to execute if false }
+% \setcounter{DefaultLines}{2}
+% \renewcommand{\DefaultLoversize}{0}
+% \renewcommand{\DefaultLraise}{0}
+% \renewcommand{\DefaultLhang}{0}
+% \LettrineImagefalse
+% \setlength{\DefaultSlope}{0pt}
 
-\newcommand{\capital}[1]{\lettrine[nindent=0em, findent=0.2em, lines=2]{\textcolor{ospColor@Lettrine}{#1}}}    
+\ExplSyntaxOn 
+\newcommand{\ospSet@LettrineOptions}[1]{%  
+   \prg_case_str:nnn {#1}
+   {%
+      {A}{%
+         \setlength{\DefaultFindent}{-0.2em}
+         \setlength{\DefaultNindent}{0.5em}
+      }
+   }
+   {%
+      \setlength{\DefaultFindent}{0.2em}
+      \setlength{\DefaultNindent}{0.02em}
+   }
+} 
+\ExplSyntaxOff 
+
+\newcommand{\capital}[1]{%
+   \ospSet@LettrineOptions{#1}
+   \lettrine{\textcolor{ospColor@Lettrine}{#1}}
+}    
 
 %%%-------------------------------------------------%%%
 %%% List options %%%
@@ -429,55 +436,70 @@
 \RequirePackage{listings}
  
 \lstset{%
-upquote=true,
-columns=fixed,
-tabsize=2,
-showstringspaces=false,
-flexiblecolumns=true,
-extendedchars=true,
-breaklines=true,
-numbers=left, 
-backgroundcolor=\color{ospColor@ListingBackground},
-stepnumber=1,
-numbersep=7pt,
-xleftmargin=10pt,
-% rulesepcolor=\color{ospColor@ListingBase03},
-% numberblanklines=true,
-numberstyle=\tiny\color{ospColor@ListingBase01},
-basicstyle=\footnotesize\ttfamily,
-keywordstyle=\color{ospColor@ListingGreen},
-stringstyle=\color{ospColor@ListingCyan}\ttfamily,
-identifierstyle=\color{ospColor@ListingBlue},
-commentstyle=\color{ospColor@ListingBase01},
-emphstyle=\color{ospColor@ListingRed}
+   upquote=true,%
+   columns=fixed,%
+   tabsize=2,%
+   showstringspaces=false,%
+   flexiblecolumns=true,%
+   extendedchars=true,%
+   breaklines=true,%
+   numbers=left,% 
+   backgroundcolor=\color{ospColor@ListingBackground},%
+   stepnumber=1,%
+   numbersep=7pt,%
+   xleftmargin=10pt,%
+   % rulesepcolor=\color{ospColor@ListingBase03},%
+   % numberblanklines=true,%
+   numberstyle=\tiny\color{ospColor@ListingBase01},%
+   basicstyle=\footnotesize\ttfamily,%
+   keywordstyle=\color{ospColor@ListingGreen},%
+   stringstyle=\color{ospColor@ListingCyan}\ttfamily,%
+   identifierstyle=\color{ospColor@ListingBlue},%
+   commentstyle=\color{ospColor@ListingBase01},%
+   emphstyle=\color{ospColor@ListingRed}
 }
 
 \lstset{literate=%
-{Ö}{{\"O}}1
-{Ä}{{\"A}}1
-{Ü}{{\"U}}1
-{ß}{{\ss}}2 
-{ü}{{\"u}}1
-{ä}{{\"a}}1
-{ö}{{\"o}}1
-{~}{{\textasciitilde}}1
+   {Ö}{{\"O}}1
+   {Ä}{{\"A}}1
+   {Ü}{{\"U}}1
+   {ß}{{\ss}}2 
+   {ü}{{\"u}}1
+   {ä}{{\"a}}1
+   {ö}{{\"o}}1
+   {~}{{\textasciitilde}}1
 }
 
 %%%-------------------------------------------------%%%
 %%% Definition of environments %%%
 %%%-------------------------------------------------%%%
 
-% Define Header %% 
-\providecommand{\ospTitleRule}{\textcolor{ospColor@TitleRule}{\noindent\rule{\linewidth}{1.7pt}}}
+%% Title header defaults %%
+\newcommand{\ospTitle}{The open science paper title} 
+\newcommand{\ospSetTitle}[1]{\def\ospTitle{#1}}
 
-\providecommand{\ospTitleLogo}{\includegraphics[scale=0.3]{graphics/open-science-papers-logo-frameless.png}} 
-\providecommand{\ospSetTitleLogo}[1]{\gdef\ospTitleLogo{#1}} 
+\newcommand{\ospAuthors}{Author one\textsuperscript{1,2}, Author two\textsuperscript{2}, \ldots} 
+\newcommand{\ospSetAuthors}[1]{\def\ospAuthors{#1}}
 
-\providecommand{\ospTitleAffiliationName}{Affiliation:} 
-\providecommand{\ospSetTitleAffiliationName}[1]{\gdef\ospTitleAffiliationName{#1}} 
+\newcommand{\ospAffiliations}{University of XY departement of Z\textsuperscript{1}, \ldots} 
+\newcommand{\ospSetAffiliations}[1]{\def\ospAffiliations{#1}}
 
-\providecommand{\ospTitleKeywordName}{Keywords:} 
-\providecommand{\ospSetTitleKeywordName}[1]{\gdef\ospTitleKeywordName{#1}}  
+\newcommand{\ospKeywords}{Open Science, Git, R, Knitr, ggplot2, tikz}
+\newcommand{\ospSetKeywords}[1]{\def\ospKeywords{#1}}
+
+\newcommand{\ospTitleRule}{\textcolor{ospColor@TitleRule}{\noindent\rule{\linewidth}{1.7pt}}}
+
+\newcommand{\ospTitleLogo}{\includegraphics[scale=0.3]{graphics/open-science-papers-logo-frameless.png}} 
+\newcommand{\ospSetTitleLogo}[1]{\gdef\ospTitleLogo{#1}} 
+
+\newcommand{\ospTitleAffiliationName}{Affiliation:} 
+\newcommand{\ospSetTitleAffiliationName}[1]{\gdef\ospTitleAffiliationName{#1}} 
+
+\newcommand{\ospTitleKeywordName}{Keywords:} 
+\newcommand{\ospSetTitleKeywordName}[1]{\gdef\ospTitleKeywordName{#1}}  
+
+\newcommand{\ospHeaderInfoFilePath}{data/ospHeaderTable.csv} 
+\newcommand{\ospSetHeaderInfoFilePath}[1]{\gdef\ospHeaderInfoFilePath{#1}}  
 
 \newlength{\ospLengtTitleLogoColwidth} 
 \setlength{\ospLengtTitleLogoColwidth}{0.23\textwidth} 
@@ -486,16 +508,15 @@ emphstyle=\color{ospColor@ListingRed}
 \setlength{\ospLengtTitleTitleColwidth}{0.55\textwidth} 
 
 \newlength{\ospLengtTitleSpaceAbove} 
-\setlength{\ospLengtTitleSpaceAbove}{0.01\baselineskip} 
+\setlength{\ospLengtTitleSpaceAbove}{0.5\baselineskip} 
 
 \newlength{\ospLengtTitleSpaceBelow} 
-\setlength{\ospLengtTitleSpaceBelow}{0.01\baselineskip}  
+\setlength{\ospLengtTitleSpaceBelow}{-1\baselineskip}  
 
 \ifcsvdata{%
-   \DTLloaddb{ospHeaderInfoFromTable}{data/ospHeaderTable.csv}
+   \DTLloaddb{ospHeaderInfoFromTable}{\ospHeaderInfoFilePath}
    \DTLgetvalue{\ospTitleCsv}{ospHeaderInfoFromTable}{1}{\dtlcolumnindex{ospHeaderInfoFromTable}{ospTitle}}   
-
-   \providecommand{\ospMakeTitle}{% {\ospTitleRule}\\[\ospLengtTitleSpaceAbove]  
+   \newcommand{\ospMakeTitle}{% 
       \ospTitleRule\\[\ospLengtTitleSpaceAbove]
          \begin{tabular}{p{\ospLengtTitleLogoColwidth}p{\ospLengtTitleTitleColwidth}}
             \begin{minipage}{0.25\textwidth}
@@ -524,7 +545,7 @@ emphstyle=\color{ospColor@ListingRed}
          \end{tabular}\\[\ospLengtTitleSpaceBelow]
       }
 }{%
-   \providecommand{\ospMakeTitle}{% {\ospTitleRule}\\[\ospLengtTitleSpaceAbove] 
+   \newcommand{\ospMakeTitle}{%
       \ospTitleRule\\[\ospLengtTitleSpaceAbove]
          \begin{tabular}{p{\ospLengtTitleLogoColwidth}p{\ospLengtTitleTitleColwidth}}
             \begin{minipage}{0.25\textwidth}
@@ -535,18 +556,16 @@ emphstyle=\color{ospColor@ListingRed}
                   {\color{ospColor@Title}{{\normalfont\sffamily\Huge\bfseries \ospTitle}}} \hfill\\[\baselineskip]
                   \begin{normalsize}\textbf{\ospAuthors}\end{normalsize}\hfill\\
                   \begin{normalsize}\textbf{\ospTitleAffiliationName} \ospAffiliations\end{normalsize}\hfill\\
-                  \begin{normalsize}\textbf{\ospTitleKeywordName} \ospKeywords\end{normalsize}\hfill\\[.5\baselineskip]
-            \end{minipage}\\
+                  \begin{normalsize}\textbf{\ospTitleKeywordName} \ospKeywords\end{normalsize}\hfill\\
+            \end{minipage}
          \end{tabular}\\[\ospLengtTitleSpaceBelow]
       }
 }
-
 
 %% Defines the abstract %%
 \RequirePackage{abstract}
 \renewcommand{\abstractnamefont}{\color{ospColor@AbstractHeader}\normalfont\sffamily\large\bfseries}
 \renewcommand{\abstracttextfont}{\normalfont} 
-
 
 %%%-------------------------------------------------%%%
 %%% Typographical options of the headings %%%
@@ -625,23 +644,23 @@ spacing=false]{microtype}
 %%%-------------------------------------------------%%%
 
 \RequirePackage[%
-  plainpages=false,%
-  bookmarks=true,%
-  bookmarksopen=true,%
-  pdfborder={0 0 0},%
-  pdfpagemode=UseNone,%
-  colorlinks=false,%
-  linkcolor=ospColor@Links,
-  citecolor=ospColor@Links,%
-  filecolor=ospColor@Links,%
-  menucolor=ospColor@Links,%	
-  urlcolor=ospColor@Links,%
-  breaklinks=true,%
-  raiselinks=true,%
-  pdfauthor={Open-Science-Paper},%
-  pdfcreator={Open-Science-Paper},%
-  pdfsubject={Open-Science-Paper},%
-  pdfkeywords={LaTeX, Tikz, Knitr, Scientific paper, Open science}
+   plainpages=false,%
+   bookmarks=true,%
+   bookmarksopen=true,%
+   pdfborder={0 0 0},%
+   pdfpagemode=UseNone,%
+   colorlinks=false,%
+   linkcolor=ospColor@Links,
+   citecolor=ospColor@Links,%
+   filecolor=ospColor@Links,%
+   menucolor=ospColor@Links,%	
+   urlcolor=ospColor@Links,%
+   breaklinks=true,%
+   raiselinks=true,%
+   pdfauthor={Open-Science-Paper},%
+   pdfcreator={Open-Science-Paper},%
+   pdfsubject={Open-Science-Paper},%
+   pdfkeywords={LaTeX, Tikz, Knitr, Scientific paper, Open science}
 ]{hyperref}
 
 % Usage:
