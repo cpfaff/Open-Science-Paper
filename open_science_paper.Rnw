@@ -12,7 +12,7 @@
 %%
 %
 
-\documentclass[nocolor, csvdata, gitinfo]{subdocuments/open_science_paper} 
+\documentclass[color, nocsvdata, nogitinfo]{subdocuments/open_science_paper} 
 
 %% Available class options [defaults]
 % - [color]/nocolor Changes between colorful output and a black and white theme 
