@@ -37,7 +37,7 @@
 
 \ExecuteOptions{%  
    % Class option defaults
-   color,
+   nocolor,
    nocsvdata, 
    nogitinfo,
    noprint,
@@ -299,6 +299,23 @@
    \ospSet@LettrineOptions{#1}
    \lettrine{\textcolor{ospColor@Lettrine}{#1}}
 }    
+
+%%%-------------------------------------------------%%%
+%%% For review %%%
+%%%-------------------------------------------------%%%
+
+% \iflinenumbers{
+   % \RequirePackage[pagewise]{lineno}
+   % % Running line numbers:
+   % \setlength\linenumbersep{2pt}
+   % \renewcommand\linenumberfont{\normalfont\tiny\sffamily\color{gray}}
+   % \AtBeginDocument{\linenumbers} 
+   % }{%
+% }
+% \newif\if@lala
+% \DeclareOption{lala}{\@lalatrue}
+% \DeclareOption{lulu}{\@lalafalse}
+% \newcommand{\iflinenumbers}[2]{\if@lala#1\else#2\fi} 
 
 %%%-------------------------------------------------%%%
 %%% List options %%%
