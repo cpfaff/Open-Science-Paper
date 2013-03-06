@@ -27,10 +27,16 @@
 \DeclareOption{csvdata}{\@csvdatatrue}
 \DeclareOption{nocsvdata}{\@csvdatafalse}
 
-\ExecuteOptions{% 
-   % colored as default
+\newif\if@gitinfo
+\DeclareOption{gitinfo}{\@gitinfotrue}
+\DeclareOption{nogitinfo}{\@gitinfofalse}
+
+
+\ExecuteOptions{%  
+   % Class option defaults
    color,
-   nocsvdata,
+   nocsvdata, 
+   nogitinfo,
 } 
 
 %% process options
@@ -38,6 +44,7 @@
 
 \newcommand{\ifcolor}[2]{\if@color#1\else#2\fi}
 \newcommand{\ifcsvdata}[2]{\if@csvdata#1\else#2\fi} 
+\newcommand{\ifgitinfo}[2]{\if@gitinfo#1\else#2\fi} 
 
 % \LoadClassWithOptions{scrartcl}
 \LoadClass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto, DIV=20, notitlepage, oneside, final]{scrartcl}
