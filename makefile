@@ -10,7 +10,7 @@
 DOCUMENT = open_science_paper
 
 # Dependencies maindocument
-DEPENDENCIES = $(DOCUMENT).Rnw subdocuments/open_science_paper.* subdocuments/*.Rnw data/*.csv
+DEPENDENCIES = $(DOCUMENT).Rnw subdocuments/open_science_paper.* subdocuments/*.Rnw data/ospSetup/*.csv
 
 # Used Programs
 KNITR = knit
@@ -19,7 +19,8 @@ PDFLATEX = pdflatex
 PACKER= tar -czf
 REMOVER = @-rm -r
 PRINTER = @-echo 
-GREPPER = @-grep
+GREPPER = @-grep 
+RIGHTSETTER = @-chmod
 COPY = @-cp
 PDFVIEWER = okular
 DATE = $(shell date +%y%m%d)
@@ -28,6 +29,11 @@ DATE = $(shell date +%y%m%d)
 SUBDOCFOLDER = subdocuments/
 EXMPLDOCS = subdocuments/exmpl/* 
 TEMPDOCS = subdocuments/temp/*
+
+# Git hooks 
+HOOKSOURCE = data/ospSetup/ospGitHook
+GITHOOKPATH = .git/hooks
+HOOKRIGHTS = 744
 
 # Archive document
 ARCHNAME = $(DOCUMENT)_$(DATE).tar.gz
@@ -81,6 +87,12 @@ expldoc:
 
 tmpdoc:
 	$(COPY) $(TEMPDOCS) $(SUBDOCFOLDER)  
+
+githooks:  
+	$(COPY) $(HOOKSOURCE) $(GITHOOKPATH)/post-checkout 
+	$(COPY) $(HOOKSOURCE) $(GITHOOKPATH)/post-commit 
+	$(COPY) $(HOOKSOURCE) $(GITHOOKPATH)/post-merge 
+	$(RIGHTSETTER) $(HOOKRIGHTS) $(GITHOOKPATH)/* 
 
 prep:
 	$(COPY) subdocuments/open_science_paper.cls subdocuments/open_science_paper.sty subdocuments/exmpl/ 

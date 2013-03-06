@@ -12,12 +12,16 @@
 %%
 %
 
-\documentclass[color, nocsvdata]{subdocuments/open_science_paper} 
+\documentclass[nocolor, csvdata, gitinfo]{subdocuments/open_science_paper} 
 
 %% Available class options [defaults]
 % - [color]/nocolor Changes between colorful output and a black and white theme 
 % - [nocsvdata]/csvdata  With csv data enabled you can use the csv file under
-%   the data folder to insert title header information into the document. (not fully finished feature)
+%   the data folder to insert title header information into the document.
+% - [nogitinfo]/gitinfo include git information into the title header of the 
+%   document. This requires the setup of git hooks which you can do by issuing 
+%   the make task (make githooks). After that you need to specify the url of the 
+%   git repository inside of the style file and you are done.
 
 %%%------------------------------------------------------------------------------%%%
 %%% Load user options %%%
@@ -62,7 +66,7 @@
 %%%-------------------------------------------------%%%
 
 <<subdoc_content_abstract, child='subdocuments/osp_abstract_section.Rnw', eval=T>>=
-@ 
+@
 % Second rule which closes the title header
 \ospTitleRule
 
