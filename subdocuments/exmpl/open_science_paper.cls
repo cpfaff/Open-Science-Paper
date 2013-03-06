@@ -31,12 +31,16 @@
 \DeclareOption{gitinfo}{\@gitinfotrue}
 \DeclareOption{nogitinfo}{\@gitinfofalse}
 
+\newif\if@print
+\DeclareOption{print}{\@printtrue}
+\DeclareOption{noprint}{\@printfalse}
 
 \ExecuteOptions{%  
    % Class option defaults
    color,
    nocsvdata, 
    nogitinfo,
+   noprint,
 } 
 
 %% process options
@@ -45,6 +49,7 @@
 \newcommand{\ifcolor}[2]{\if@color#1\else#2\fi}
 \newcommand{\ifcsvdata}[2]{\if@csvdata#1\else#2\fi} 
 \newcommand{\ifgitinfo}[2]{\if@gitinfo#1\else#2\fi} 
+\newcommand{\ifprint}[2]{\if@print#1\else#2\fi} 
 
 % \LoadClassWithOptions{scrartcl}
 \LoadClass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto, DIV=20, notitlepage, oneside, final]{scrartcl}
@@ -104,7 +109,11 @@
 %%% Color options %%%
 %%%-------------------------------------------------%%%
 
-\RequirePackage[svgnames,cmyk]{xcolor} 
+\ifprint{%
+   \RequirePackage[svgnames,cmyk]{xcolor} 
+   }{%
+   \RequirePackage[svgnames,rgb]{xcolor} 
+}
 
 \xdefinecolor{ospColor@Links}{rgb}{0,0,0.4} 
 
