@@ -27,10 +27,16 @@
 \DeclareOption{csvdata}{\@csvdatatrue}
 \DeclareOption{nocsvdata}{\@csvdatafalse}
 
-\ExecuteOptions{% 
-   % colored as default
+\newif\if@gitinfo
+\DeclareOption{gitinfo}{\@gitinfotrue}
+\DeclareOption{nogitinfo}{\@gitinfofalse}
+
+
+\ExecuteOptions{%  
+   % Class option defaults
    color,
-   nocsvdata,
+   nocsvdata, 
+   nogitinfo,
 } 
 
 %% process options
@@ -38,6 +44,7 @@
 
 \newcommand{\ifcolor}[2]{\if@color#1\else#2\fi}
 \newcommand{\ifcsvdata}[2]{\if@csvdata#1\else#2\fi} 
+\newcommand{\ifgitinfo}[2]{\if@gitinfo#1\else#2\fi} 
 
 % \LoadClassWithOptions{scrartcl}
 \LoadClass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto, DIV=20, notitlepage, oneside, final]{scrartcl}
@@ -170,6 +177,25 @@
    \colorlet{ospColor@ListingCyan}{black}
    \colorlet{ospColor@ListingGreen}{black}
 }
+
+%%%-------------------------------------------------%%%
+%%% Include Git information %%%
+%%%-------------------------------------------------%%%
+
+
+\ifgitinfo{
+   \RequirePackage{gitinfo} 
+
+   \newcommand{\ospGitUrl}{\tiny{\href{ospGitUrl}{https://github.com/cpfaff/Open-Science-Paper}}}
+   \newcommand{\ospSetGitUrl}[1]{\def\ospGitUrl{#1}}
+
+   \newcommand{\ospGitInfoLine}{{\tiny Version from commit by \gitAuthorEmail~on~\gitAuthorDate; Source on: \ospGitUrl}\\}
+   \newcommand{\ospSetGitInfoLine}[1]{\def\ospGitInfo{#1}}
+
+   }{
+   \newcommand{\ospGitInfoLine}{}
+   \newcommand{\ospSetGitInfoLine}[1]{\def\ospGitInfo{#1}}
+   }
 
 %%%-------------------------------------------------%%%
 %%% Define header and footer %%%
@@ -502,7 +528,7 @@
 \newcommand{\ospTitleKeywordName}{Keywords:} 
 \newcommand{\ospSetTitleKeywordName}[1]{\gdef\ospTitleKeywordName{#1}}  
 
-\newcommand{\ospHeaderInfoFilePath}{data/ospHeaderTable.csv} 
+\newcommand{\ospHeaderInfoFilePath}{data/ospSetup/ospHeaderTable.csv} 
 \newcommand{\ospSetHeaderInfoFilePath}[1]{\gdef\ospHeaderInfoFilePath{#1}}  
 
 \newlength{\ospLengtTitleLogoColwidth} 
@@ -544,7 +570,9 @@
                   \end{normalsize}\hfill\\
                   \begin{normalsize}\textbf{\ospTitleKeywordName}% 
                      \DTLsort{ospKeywords}{ospHeaderInfoFromTable} 
-                     \DTLforeach{ospHeaderInfoFromTable}{\keyword=ospKeywords}{\ifdefempty{\keyword}{}{\DTLiflastrow{\keyword}{\keyword, }}} \end{normalsize}\hfill\\[.5\baselineskip]
+                     \DTLforeach{ospHeaderInfoFromTable}{\keyword=ospKeywords}{\ifdefempty{\keyword}{}{\DTLiflastrow{\keyword}{\keyword, }}} \end{normalsize}\hfill\\ 
+                  % Include git information
+                  \ospGitInfoLine
             \end{minipage}\\
          \end{tabular}\\[\ospLengtTitleSpaceBelow]
       }
@@ -560,7 +588,9 @@
                   {\color{ospColor@Title}{{\normalfont\sffamily\Huge\bfseries \ospTitle}}} \hfill\\[\baselineskip]
                   \begin{normalsize}\textbf{\ospAuthors}\end{normalsize}\hfill\\
                   \begin{normalsize}\textbf{\ospTitleAffiliationName} \ospAffiliations\end{normalsize}\hfill\\
-                  \begin{normalsize}\textbf{\ospTitleKeywordName} \ospKeywords\end{normalsize}\hfill\\
+                  \begin{normalsize}\textbf{\ospTitleKeywordName} \ospKeywords\end{normalsize}\hfill\\ 
+                  % Include git information
+                  \ospGitInfoLine
             \end{minipage}
          \end{tabular}\\[\ospLengtTitleSpaceBelow]
       }
