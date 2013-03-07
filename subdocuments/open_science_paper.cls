@@ -18,38 +18,31 @@
 
 \ProvidesClass{open-science-paper}[2013/03/03 version 0.8 LaTeX class of the Open-Science-Paper]
 
-%% Provide class otions 
-\newif\if@color
-\DeclareOption{color}{\@colortrue}
-\DeclareOption{nocolor}{\@colorfalse}
+\RequirePackage{kvoptions}
+\RequirePackage{kvsetkeys}
 
-\newif\if@csvdata
-\DeclareOption{csvdata}{\@csvdatatrue}
-\DeclareOption{nocsvdata}{\@csvdatafalse}
+\SetupKeyvalOptions{
+  family=osp,
+  prefix=osp@,
+  setkeys=\kvsetkeys,
+}
 
-\newif\if@gitinfo
-\DeclareOption{gitinfo}{\@gitinfotrue}
-\DeclareOption{nogitinfo}{\@gitinfofalse}
+\DeclareBoolOption[false]{color} 
+% \DeclareComplementaryOption{nocolor}{color}
+\DeclareBoolOption[false]{print}
+\DeclareBoolOption[false]{gitinfo}
+\DeclareBoolOption[false]{csvdata}
+\DeclareBoolOption[false]{linenumbers}
 
-\newif\if@print
-\DeclareOption{print}{\@printtrue}
-\DeclareOption{noprint}{\@printfalse}
-
-\ExecuteOptions{%  
-   % Class option defaults
-   nocolor,
-   nocsvdata, 
-   nogitinfo,
-   noprint,
-} 
+% \DeclareDefaultOption{ 
+ % color = true, 
+ % print = false,  
+ % gitinfo = false,
+ % csvdata = false,
+% }
 
 %% process options
-\ProcessOptions*\relax
-
-\newcommand{\ifcolor}[2]{\if@color#1\else#2\fi}
-\newcommand{\ifcsvdata}[2]{\if@csvdata#1\else#2\fi} 
-\newcommand{\ifgitinfo}[2]{\if@gitinfo#1\else#2\fi} 
-\newcommand{\ifprint}[2]{\if@print#1\else#2\fi} 
+\ProcessKeyvalOptions*
 
 % \LoadClassWithOptions{scrartcl}
 \LoadClass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto, DIV=20, notitlepage, oneside, final]{scrartcl}
@@ -85,7 +78,7 @@
 %%%-------------------------------------------------%%%
 
 \RequirePackage{calc}
-\RequirePackage{xkeyval} 
+% \RequirePackage{xkeyval} 
 \RequirePackage{xifthen} 
 \RequirePackage{datatool} 
 \RequirePackage{expl3} 
@@ -109,15 +102,15 @@
 %%% Color options %%%
 %%%-------------------------------------------------%%%
 
-\ifprint{%
-   \RequirePackage[svgnames,cmyk]{xcolor} 
-   }{%
+\ifosp@print
+   \RequirePackage[svgnames,cmyk]{xcolor}  
+\else
    \RequirePackage[svgnames,rgb]{xcolor} 
-}
+\fi
 
 \xdefinecolor{ospColor@Links}{rgb}{0,0,0.4} 
 
-\ifcolor{%
+\ifosp@color
    \colorlet{ospColor@TitleRule}{LightGray}
    \colorlet{ospColor@Title}{DarkRed}
    
@@ -128,6 +121,8 @@
    
    \colorlet{ospColor@Lettrine}{DarkGray} 
    
+   \colorlet{ospColor@LineNumbers}{DarkGray} 
+
    \colorlet{ospColor@FooterTextSeparator}{DarkGray}
    \colorlet{ospColor@FooterRule}{LightGray}
    \colorlet{ospColor@FullLeftFooter}{DarkGray} 
@@ -151,7 +146,7 @@
    \xdefinecolor{ospColor@ListingBlue}{HTML}{268BD2}
    \xdefinecolor{ospColor@ListingCyan}{HTML}{2AA198}
    \xdefinecolor{ospColor@ListingGreen}{HTML}{859900}
-}{% 
+\else 
    \colorlet{ospColor@TitleRule}{black}
    \colorlet{ospColor@Title}{black} 
 
@@ -161,6 +156,8 @@
    \colorlet{ospColor@SectionHeader}{black}
 
    \colorlet{ospColor@Lettrine}{black}
+   
+   \colorlet{ospColor@LineNumbers}{black} 
    
    \colorlet{ospColor@FooterRule}{black}
    \colorlet{ospColor@FullLeftFooter}{black}   
@@ -185,14 +182,14 @@
    \colorlet{ospColor@ListingBlue}{black}
    \colorlet{ospColor@ListingCyan}{black}
    \colorlet{ospColor@ListingGreen}{black}
-}
+\fi
 
 %%%-------------------------------------------------%%%
 %%% Include Git information %%%
 %%%-------------------------------------------------%%%
 
 
-\ifgitinfo{
+\ifosp@gitinfo
    \RequirePackage{gitinfo} 
 
    \newcommand{\ospGitUrl}{\tiny{\href{ospGitUrl}{https://github.com/cpfaff/Open-Science-Paper}}}
@@ -200,11 +197,10 @@
 
    \newcommand{\ospGitInfoLine}{{\tiny Version from commit by \gitAuthorEmail~on~\gitAuthorDate; Source on: \ospGitUrl}\\}
    \newcommand{\ospSetGitInfoLine}[1]{\def\ospGitInfo{#1}}
-
-   }{
+\else
    \newcommand{\ospGitInfoLine}{}
    \newcommand{\ospSetGitInfoLine}[1]{\def\ospGitInfo{#1}}
-   }
+\fi
 
 %%%-------------------------------------------------%%%
 %%% Define header and footer %%%
@@ -224,11 +220,11 @@
 \newcommand{\ospFooterLogo}{\relax}
 \newcommand{\ospSetFooterLogo}[1]{\gdef\ospFooterLogo{#1}}
 
-\ifcolor{%
+\ifosp@color
    \ospSetFooterLogo{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{graphics/branding/open-science-papers-footer-logo-gray.pdf}}}
-}{% 
+\else 
    \ospSetFooterLogo{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{graphics/branding/open-science-papers-footer-logo-black.pdf}}}
-}
+\fi
 
 \newcommand{\ospFooterTextSeparator}{\textcolor{ospColor@FooterTextSeparator}{$\circ$}} 
 \newcommand{\ospSetFooterTextSeparator}[1]{\gdef\ospFooterTextSeparator{#1}}
@@ -304,18 +300,13 @@
 %%% For review %%%
 %%%-------------------------------------------------%%%
 
-% \iflinenumbers{
-   % \RequirePackage[pagewise]{lineno}
-   % % Running line numbers:
-   % \setlength\linenumbersep{2pt}
-   % \renewcommand\linenumberfont{\normalfont\tiny\sffamily\color{gray}}
-   % \AtBeginDocument{\linenumbers} 
-   % }{%
-% }
-% \newif\if@lala
-% \DeclareOption{lala}{\@lalatrue}
-% \DeclareOption{lulu}{\@lalafalse}
-% \newcommand{\iflinenumbers}[2]{\if@lala#1\else#2\fi} 
+\ifosp@linenumbers
+   \RequirePackage[pagewise]{lineno}
+   \setlength\linenumbersep{2pt}
+   \renewcommand\linenumberfont{\normalfont\tiny\sffamily\color{ospColor@LineNumbers}}
+   \AtBeginDocument{\linenumbers} 
+\else
+\fi 
 
 %%%-------------------------------------------------%%%
 %%% List options %%%
@@ -352,12 +343,12 @@
 \pgfsetlayers{background,main,foreground}
 
 %% Define tikz styles %% 
-\ifcolor{%
+\ifosp@color
    % \tikzstyle{pictureframe} = [rectangle, rounded corners, draw=LightGray, fill=white, blur shadow={shadow blur steps=5, shadow blur extra rounding=1.3pt}] 
    \tikzstyle{pictureframe} = [rectangle, rounded corners, draw=LightGray, thick, fill=white] 
-}{%
+\else
    \tikzstyle{pictureframe} = [rectangle, rounded corners, draw=black, fill=white]
-}
+\fi
 
 \tikzstyle{signbackground} = [rectangle, fill=gray!3, rounded corners, draw=gray, very thin]
 
@@ -569,7 +560,7 @@
 \newlength{\ospLengtTitleSpaceBelow} 
 \setlength{\ospLengtTitleSpaceBelow}{-1\baselineskip}  
 
-\ifcsvdata{%
+\ifosp@csvdata
    \DTLloaddb{ospHeaderInfoFromTable}{\ospHeaderInfoFilePath}
    \DTLgetvalue{\ospTitleCsv}{ospHeaderInfoFromTable}{1}{\dtlcolumnindex{ospHeaderInfoFromTable}{ospTitle}}   
    \newcommand{\ospMakeTitle}{% 
@@ -602,7 +593,7 @@
             \end{minipage}\\
          \end{tabular}\\[\ospLengtTitleSpaceBelow]
       }
-}{%
+\else
    \newcommand{\ospMakeTitle}{%
       \ospTitleRule\\[\ospLengtTitleSpaceAbove]
          \begin{tabular}{p{\ospLengtTitleLogoColwidth}p{\ospLengtTitleTitleColwidth}}
@@ -620,7 +611,7 @@
             \end{minipage}
          \end{tabular}\\[\ospLengtTitleSpaceBelow]
       }
-}
+\fi
 
 %% Defines the abstract %%
 \RequirePackage{abstract}

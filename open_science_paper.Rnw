@@ -12,18 +12,19 @@
 %%
 %
 
-\documentclass[nocolor, print, csvdata, gitinfo]{subdocuments/open_science_paper} 
+\documentclass[color=false, print=false, csvdata=false, gitinfo=false, linenumbers=true]{subdocuments/open_science_paper} 
 
 %% Available class options [defaults]
-% - [color]/nocolor Changes between colorful output and a black and white theme 
-% - [nocsvdata]/csvdata  With csv data enabled you can use the csv file under
+% - color true/[false]: Changes between colored output and a black and white theme 
+% - csvdata true/[false]: With csv data enabled you can use the csv file under
 %   the data folder to insert title header information into the document.
-% - [nogitinfo]/gitinfo include git information into the title header of the 
+% - gitinfo true/[false]: Include git information into the title header of the 
 %   document. This requires the setup of git hooks which you can do by issuing 
 %   the make task (make githooks). After that you need to specify the url of the 
 %   git repository inside of the style file and you are done.
-% - [noprint]/print switches between the color model rgb which is optimal for displays 
-%   and the cmyk color model which is required for professional printing.
+% - print true/[false] switches between the color model rgb which is optimal for displays 
+%   and the cmyk color model which is required for professional printing. 
+% - linenumbers true/[false]: Switch on/off line numbers for the whole document.
    
 %%%------------------------------------------------------------------------------%%%
 %%% Load user options %%%
