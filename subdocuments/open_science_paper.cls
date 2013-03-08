@@ -518,8 +518,14 @@
 \newcommand{\ospTitle}{The open science paper title} 
 \newcommand{\ospSetTitle}[1]{\def\ospTitle{#1}}
 
-\newcommand{\ospAuthors}{Author one\textsuperscript{1,2}, Author two\textsuperscript{2}, \ldots} 
+\newcommand{\ospAuthors}{Author one\textsuperscript{1,2,a}, Author two\textsuperscript{2,b}, \ldots} 
 \newcommand{\ospSetAuthors}[1]{\def\ospAuthors{#1}}
+
+\newcommand{\ospTitleKeywordContactName}{Contact:} 
+\newcommand{\ospSetTitleKeywordContactName}[1]{\gdef\ospTitleKeywordContactName{#1}}  
+
+\newcommand{\ospContacts}{foo@bar.com\textsuperscript{a}, bar@foo.com\textsuperscript{b}, \ldots} 
+\newcommand{\ospSetContacts}[1]{\def\ospContacts{#1}}
 
 \newcommand{\ospAffiliations}{University of XY departement of Z\textsuperscript{1}, \ldots} 
 \newcommand{\ospSetAffiliations}[1]{\def\ospAffiliations{#1}}
@@ -532,8 +538,8 @@
 \newcommand{\ospTitleLogo}{\includegraphics[scale=0.3]{graphics/branding/open-science-papers-title-header-logo.pdf}} 
 \newcommand{\ospSetTitleLogo}[1]{\gdef\ospTitleLogo{#1}} 
 
-\newcommand{\ospTitleAffiliationName}{Affiliation:} 
-\newcommand{\ospSetTitleAffiliationName}[1]{\gdef\ospTitleAffiliationName{#1}} 
+\newcommand{\ospTitleKeywordAffiliationName}{Affiliation:} 
+\newcommand{\ospSetTitleKeywordAffiliationName}[1]{\gdef\ospTitleKeywordAffiliationName{#1}} 
 
 \newcommand{\ospTitleKeywordName}{Keywords:} 
 \newcommand{\ospSetTitleKeywordName}[1]{\gdef\ospTitleKeywordName{#1}}  
@@ -552,6 +558,7 @@
 
 \newlength{\ospLengtTitleSpaceBelow} 
 \setlength{\ospLengtTitleSpaceBelow}{-1\baselineskip}  
+
 
 \ifosp@csvdata
    \DTLloaddb{ospHeaderInfoFromTable}{\ospHeaderInfoFilePath}
@@ -572,7 +579,13 @@
                            \lastName=ospAuthorLastName,%
                            \id=ospAuthorAffiliationIDs}{\ifdefempty{\firstName}{}{\DTLiflastrow{\firstName\xspace\lastName\textsuperscript{\id}}{\firstName\xspace\lastName\textsuperscript{\id}, }}}
                      }\end{normalsize}\hfill\\ 
-                  \begin{normalsize}\textbf{\ospTitleAffiliationName}  
+                  \begin{normalsize}\textbf{\ospTitleKeywordContactName}  
+                     \DTLsort{ospAuthorEmailID}{ospHeaderInfoFromTable} 
+                     \DTLforeach{ospHeaderInfoFromTable}{%
+                        \email=ospAuthorEmail,%
+                        \id=ospAuthorEmailID}{\ifdefempty{\email}{}{\DTLiflastrow{\href{mailto:\email}{\email}\textsuperscript{\id}}{\href{mailto:\email}{\email}\textsuperscript{\id}, }}}
+                  \end{normalsize}\\
+                  \begin{normalsize}\textbf{\ospTitleKeywordAffiliationName}  
                      \DTLsort{ospAffiliationIDs}{ospHeaderInfoFromTable} 
                      \DTLforeach{ospHeaderInfoFromTable}{%
                         \affiliation=ospAffiliations,%
@@ -596,9 +609,10 @@
             \begin{minipage}{0.7\textwidth} 
                \vspace{\baselineskip}
                   {\color{ospColor@Title}{{\normalfont\sffamily\Huge\bfseries \ospTitle}}} \hfill\\[\baselineskip]
-                  \begin{normalsize}\textbf{\ospAuthors}\end{normalsize}\hfill\\
-                  \begin{normalsize}\textbf{\ospTitleAffiliationName} \ospAffiliations\end{normalsize}\hfill\\
-                  \begin{normalsize}\textbf{\ospTitleKeywordName} \ospKeywords\end{normalsize}\hfill\\ 
+                  \ifdefempty{\ospAuthors}{}{\begin{normalsize}\textbf{\ospAuthors}\end{normalsize}\hfill\\}
+                  \ifdefempty{\ospContacts}{}{\begin{normalsize}\textbf{\ospTitleKeywordContactName} \ospContacts\end{normalsize}\hfill\\}
+                  \ifdefempty{\ospAffiliations}{}{\begin{normalsize}\textbf{\ospTitleKeywordAffiliationName} \ospAffiliations\end{normalsize}\hfill\\}
+                  \ifdefempty{\ospKeywords}{}{\begin{normalsize}\textbf{\ospTitleKeywordName} \ospKeywords\end{normalsize}\hfill\\} 
                   % Include git information
                   \ospGitInfoLine
             \end{minipage}
