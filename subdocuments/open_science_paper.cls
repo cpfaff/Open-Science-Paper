@@ -18,33 +18,24 @@
 
 \ProvidesClass{open-science-paper}[2013/03/03 version 0.8 LaTeX class of the Open-Science-Paper]
 
-\RequirePackage{kvoptions}
-\RequirePackage{kvsetkeys}
+\RequirePackage{xkeyval} 
 
-\SetupKeyvalOptions{
-  family=osp,
-  prefix=osp@,
-  setkeys=\kvsetkeys,
-}
+\define@boolkey[KV]{open-science-paper}[osp@]{linenumbers}[false]{}
+\define@boolkey[KV]{open-science-paper}[osp@]{color}[false]{}
+\define@boolkey[KV]{open-science-paper}[osp@]{print}[false]{}
+\define@boolkey[KV]{open-science-paper}[osp@]{gitinfo}[false]{}
+\define@boolkey[KV]{open-science-paper}[osp@]{csvdata}[false]{}
 
-\DeclareBoolOption[false]{color} 
-% \DeclareComplementaryOption{nocolor}{color}
-\DeclareBoolOption[false]{print}
-\DeclareBoolOption[false]{gitinfo}
-\DeclareBoolOption[false]{csvdata}
-\DeclareBoolOption[false]{linenumbers}
+\presetkeys{open-science-paper}{%
+   linenumbers=false, 
+   color=false, 
+   print=false, 
+   gitinfo=false, 
+   csvdata=false,
+}{}
 
-% \DeclareDefaultOption{ 
- % color = true, 
- % print = false,  
- % gitinfo = false,
- % csvdata = false,
-% }
+\ProcessOptionsX[KV]<open-science-paper>
 
-%% process options
-\ProcessKeyvalOptions*
-
-% \LoadClassWithOptions{scrartcl}
 \LoadClass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto, DIV=20, notitlepage, oneside, final]{scrartcl}
 
 %%%-------------------------------------------------%%%
@@ -302,10 +293,12 @@
 
 \ifosp@linenumbers
    \RequirePackage[pagewise]{lineno}
+   \RequirePackage{lineno}
    \setlength\linenumbersep{2pt}
    \renewcommand\linenumberfont{\normalfont\tiny\sffamily\color{ospColor@LineNumbers}}
    \AtBeginDocument{\linenumbers} 
-\else
+\else 
+   \RequirePackage[pagewise]{lineno}
 \fi 
 
 %%%-------------------------------------------------%%%
