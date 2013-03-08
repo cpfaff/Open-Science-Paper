@@ -2,11 +2,11 @@
 %%% Sub document results %%%
 %%%-------------------------------------------------%%%
 
-\subsection*{Results}
+\section{Results}
 
 % Remove the lipsum and the example plots and tables to fill in your abstract text here
 
-\paragraph{Subheading}
+\subsection{Subheading}
 
 \lipsum[1-2]
 

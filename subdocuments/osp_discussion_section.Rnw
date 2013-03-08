@@ -2,7 +2,7 @@
 %%% Sub document for discussion %%%
 %%%-------------------------------------------------%%%
 
-\subsection*{Discussion}
+\section{Discussion}
 
 % Remove the lipsum and fill in your discussion text here
 \lipsum[1-4]

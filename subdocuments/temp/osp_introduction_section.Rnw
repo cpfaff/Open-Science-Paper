@@ -2,5 +2,5 @@
 %%% Sub document introduction %%%
 %%%-------------------------------------------------%%%
 
-\subsection*{Introduction}
+\section{Introduction}
 

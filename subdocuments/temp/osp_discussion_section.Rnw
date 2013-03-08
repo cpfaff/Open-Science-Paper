@@ -2,4 +2,4 @@
 %%% Sub document for discussion %%%
 %%%-------------------------------------------------%%%
 
-\subsection*{Discussion}
+\section{Discussion}

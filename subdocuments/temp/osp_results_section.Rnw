@@ -2,5 +2,5 @@
 %%% Sub document results %%%
 %%%-------------------------------------------------%%%
 
-\subsection*{Results}
+\section{Results}
 

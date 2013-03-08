@@ -25,6 +25,7 @@
 \define@boolkey[KV]{open-science-paper}[osp@]{print}[false]{}
 \define@boolkey[KV]{open-science-paper}[osp@]{gitinfo}[false]{}
 \define@boolkey[KV]{open-science-paper}[osp@]{csvdata}[false]{}
+\define@boolkey[KV]{open-science-paper}[osp@]{sectionnumbers}[false]{}
 
 \presetkeys{open-science-paper}{%
    linenumbers=false, 
@@ -32,6 +33,7 @@
    print=false, 
    gitinfo=false, 
    csvdata=false,
+   sectionnumbers=false,
 }{}
 
 \ProcessOptionsX[KV]<open-science-paper>
@@ -631,38 +633,42 @@
 
 \RequirePackage[noindentafter,calcwidth]{titlesec}  
 
-%\titleformat{\chapter}
-%{\normalfont\sffamily\huge\bfseries}{%\chaptertitlename\ 
-%\thechapter}{20pt}{\Huge}
+\ifosp@sectionnumbers 
 
 \titleformat{\section}
-{\color{ospColor@SectionHeader}\normalfont\sffamily\large\bfseries}{\thesection}{1em}{}
+   {\color{ospColor@SectionHeader}\normalfont\sffamily\large\bfseries}{\thesection}{0.5em}{}
+   \titlespacing*{\section}
+    {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
 
-\titleformat{\subsection}
-{\color{ospColor@SubsectionHeader}\normalfont\sffamily\large\bfseries}{\thesubsection}{1em}{}
+   \AtBeginDocument{\renewcommand*{\refname}{\vspace*{-\baselineskip}}}
 
-%\titleformat{\subsubsection}
-%{\normalfont\sffamily\normalsize\bfseries}{\thesubsubsection}{1em}{}
+   \titleformat{\subsection}[runin]
+   {\color{ospColor@SubsectionHeader}\normalfont\sffamily\normalsize\bfseries}{\thesubsection}{0.5em}{}
+   \titlespacing*{\subsection}
+    {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
 
-\titleformat{\paragraph}[runin]
-{\color{ospColor@ParagraphHeader}\normalfont\sffamily\normalsize\bfseries}{\theparagraph}{1em}{}
+   \titleformat{\paragraph}[runin]
+   {\color{ospColor@ParagraphHeader}\normalfont\sffamily\normalsize\bfseries}{\theparagraph}{0.5em}{}
+   \titlespacing*{\paragraph}
+    {0pt}{3.25ex plus 1ex minus 0.2ex}{1em}
+\else 
+   \titleformat{\section}
+   {\color{ospColor@SectionHeader}\normalfont\sffamily\large\bfseries}{}{0em}{}
+   \titlespacing*{\section}
+    {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
 
-%\titleformat{\subparagraph}[runin]
-%{\normalfont\sffamily\normalsize\bfseries}{\thesubparagraph}{1em}{}
+   \AtBeginDocument{\renewcommand*{\refname}{\vspace*{-\baselineskip}}}
 
-%\titlespacing*{\chapter}
-% {0pt}{50pt}{40pt}
-%\titlespacing*{\section}
-% {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
-\titlespacing*{\section}
- {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
-\titlespacing*{\subsection}
- {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
-%\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
-\titlespacing*{\paragraph}
- {0pt}{3.25ex plus 1ex minus 0.2ex}{1em}
-%\titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}
+   \titleformat{\subsection}[runin]
+   {\color{ospColor@SubsectionHeader}\normalfont\sffamily\normalsize\bfseries}{}{0em}{}
+   \titlespacing*{\subsection}
+    {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
 
+   \titleformat{\paragraph}[runin]
+   {\color{ospColor@ParagraphHeader}\normalfont\sffamily\normalsize\bfseries}{}{0em}{}
+   \titlespacing*{\paragraph}
+    {0pt}{3.25ex plus 1ex minus 0.2ex}{1em}
+\fi
 
 %%%-------------------------------------------------%%%
 %%% Typographical fine-tuning %%%

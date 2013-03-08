@@ -2,7 +2,7 @@
 %%% Sub document introduction %%%
 %%%-------------------------------------------------%%%
 
-\subsection*{Introduction}
+\section{Introduction}
 
 % Remove the lipsum and the list example and fill in your introductin text here
 

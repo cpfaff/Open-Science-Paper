@@ -12,7 +12,7 @@
 %%
 %
 
-\documentclass[color=false, print=false, csvdata=false, gitinfo=false, linenumbers=false]{subdocuments/open_science_paper} 
+\documentclass[color=false, print=false, csvdata=true, gitinfo=false, linenumbers=false, sectionnumbers=false]{subdocuments/open_science_paper} 
 
 %% Available class options [defaults]
 % - color true/[false]: Changes between colored output and a black and white theme 
@@ -25,7 +25,8 @@
 % - print true/[false] switches between the color model rgb which is optimal for displays 
 %   and the cmyk color model which is required for professional printing. 
 % - linenumbers true/[false]: Switch on/off line numbers for the whole document.
-   
+% - sectionnumbers true/[false]: Switch between numbered and numberless sections
+
 %%%------------------------------------------------------------------------------%%%
 %%% Load user options %%%
 %%%------------------------------------------------------------------------------%%%

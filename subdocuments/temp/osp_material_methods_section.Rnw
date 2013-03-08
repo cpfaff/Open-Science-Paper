@@ -2,5 +2,5 @@
 %%% Sub document for material and methods %%%
 %%%-------------------------------------------------%%%
 
-\subsection*{Material And Methods}
+\section{Material And Methods}
 
