@@ -403,6 +403,9 @@
 %%%-------------------------------------------------%%%
 
 \RequirePackage{multicol}
+% \setlength\columnseprule{0.5pt}
+\newcommand{\ospColumnCount}{2} 
+\newcommand{\ospSetColumnCount}[1]{\def\ospColumnCount{#1}} 
 
 %%%-------------------------------------------------%%%
 %%% Bibliography options %%%
