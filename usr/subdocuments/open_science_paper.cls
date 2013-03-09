@@ -215,9 +215,9 @@
 \newcommand{\ospSetFooterLogo}[1]{\gdef\ospFooterLogo{#1}}
 
 \ifosp@color
-   \ospSetFooterLogo{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{graphics/branding/open-science-papers-footer-logo-gray.pdf}}}
+   \ospSetFooterLogo{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{osp/graphics/open-science-papers-footer-logo-gray.pdf}}}
 \else 
-   \ospSetFooterLogo{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{graphics/branding/open-science-papers-footer-logo-black.pdf}}}
+   \ospSetFooterLogo{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{osp/graphics/open-science-papers-footer-logo-black.pdf}}}
 \fi
 
 \newcommand{\ospFooterTextSeparator}{\textcolor{ospColor@FooterTextSeparator}{$\circ$}} 
@@ -541,7 +541,7 @@
 
 \newcommand{\ospTitleRule}{\textcolor{ospColor@TitleRule}{\noindent\rule{\linewidth}{1.7pt}}}
 
-\newcommand{\ospTitleLogo}{\includegraphics[scale=0.3]{graphics/branding/open-science-papers-title-header-logo.pdf}} 
+\newcommand{\ospTitleLogo}{\includegraphics[scale=0.3]{osp/graphics/open-science-papers-title-header-logo.pdf}} 
 \newcommand{\ospSetTitleLogo}[1]{\gdef\ospTitleLogo{#1}} 
 
 \newcommand{\ospTitleKeywordAffiliationName}{Affiliation:} 
@@ -550,7 +550,7 @@
 \newcommand{\ospTitleKeywordName}{Keywords:} 
 \newcommand{\ospSetTitleKeywordName}[1]{\gdef\ospTitleKeywordName{#1}}  
 
-\newcommand{\ospHeaderInfoFilePath}{data/ospSetup/ospHeaderTable.csv} 
+\newcommand{\ospHeaderInfoFilePath}{osp/data/ospHeaderTable.csv} 
 \newcommand{\ospSetHeaderInfoFilePath}[1]{\gdef\ospHeaderInfoFilePath{#1}}  
 
 \newlength{\ospLengtTitleLogoColwidth} 
@@ -572,7 +572,7 @@
       \ospTitleRule\\[\ospLengtTitleSpaceAbove]
          \begin{tabular}{p{\ospLengtTitleLogoColwidth}p{\ospLengtTitleTitleColwidth}}
             \begin{minipage}{0.25\textwidth}
-               \ospTitleLogo 
+               \ospTitleLogo%
             \end{minipage}&%
             \begin{minipage}{0.7\textwidth} 
                \vspace{\baselineskip}

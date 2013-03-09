@@ -10,7 +10,7 @@
 DOCUMENT = open_science_paper
 
 # Dependencies maindocument
-DEPENDENCIES = $(DOCUMENT).Rnw subdocuments/open_science_paper.* subdocuments/*.Rnw data/ospSetup/*.csv
+DEPENDENCIES = $(DOCUMENT).Rnw usr/subdocuments/open_science_paper.* usr/subdocuments/*.Rnw osp/data/*.csv
 
 # Used Programs
 KNITR = knit
@@ -26,21 +26,21 @@ PDFVIEWER = okular
 DATE = $(shell date +%y%m%d)
 
 # Example and Empty files  
-SUBDOCFOLDER = subdocuments/
-EXMPLDOCS = subdocuments/exmpl/* 
-TEMPDOCS = subdocuments/temp/*
+SUBDOCFOLDER = usr/subdocuments/
+EXMPLDOCS = usr/subdocuments/exmpl/* 
+TEMPDOCS = usr/subdocuments/temp/*
 
 # Git hooks 
-HOOKSOURCE = data/ospSetup/ospGitHook
+HOOKSOURCE = osp/data/ospGitHook
 GITHOOKPATH = .git/hooks
 HOOKRIGHTS = 744
 
 # Archive document
 ARCHNAME = $(DOCUMENT)_$(DATE).tar.gz
-ARCHFILES = $(DOCUMENT).pdf $(DOCUMENT).Rnw subdocuments data graphics makefile
+ARCHFILES = $(DOCUMENT).pdf $(DOCUMENT).Rnw usr/subdocuments data usr/graphics makefile
 
 # Clean up the document folder
-CLEANFILES = graphics/dynamic/* cache/* *.xdy *tikzDictionary *.idx *.mtc* *.glo *.maf *.ptc *.tikz *.lot *.dpth *.figlist *.dep *.log *.makefile *.out *.map *.tex *.toc *.aux *.tmp *.bbl *.blg *.lof *.acn *.acr *.alg *.glg *.gls *.ilg *.ind *.ist *.slg *.syg *.syi minimal.acn minimal.dvi minimal.ist minimal.syg minimal.synctex.gz *.bcf *.run.xml *-blx.bib  
+CLEANFILES = usr/graphics/dynamic/* *.gin usr/cache/* *.xdy *tikzDictionary *.idx *.mtc* *.glo *.maf *.ptc *.tikz *.lot *.dpth *.figlist *.dep *.log *.makefile *.out *.map *.tex *.toc *.aux *.tmp *.bbl *.blg *.lof *.acn *.acr *.alg *.glg *.gls *.ilg *.ind *.ist *.slg *.syg *.syi minimal.acn minimal.dvi minimal.ist minimal.syg minimal.synctex.gz *.bcf *.run.xml *-blx.bib  
 
 # Default rule
 all: $(DOCUMENT).pdf 
@@ -95,5 +95,5 @@ githooks:
 	$(RIGHTSETTER) $(HOOKRIGHTS) $(GITHOOKPATH)/* 
 
 prep:
-	$(COPY) subdocuments/open_science_paper.cls subdocuments/open_science_paper.sty subdocuments/osp_global_knitr_options.Rnw subdocuments/exmpl/ 
-	$(COPY) subdocuments/open_science_paper.cls subdocuments/open_science_paper.sty subdocuments/osp_global_knitr_options.Rnw subdocuments/temp/ 
+	$(COPY) usr/subdocuments/open_science_paper.cls usr/subdocuments/open_science_paper.sty usr/subdocuments/osp_global_knitr_options.Rnw usr/subdocuments/exmpl/ 
+	$(COPY) usr/subdocuments/open_science_paper.cls usr/subdocuments/open_science_paper.sty usr/subdocuments/osp_global_knitr_options.Rnw usr/subdocuments/temp/ 

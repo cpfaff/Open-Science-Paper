@@ -1,0 +1,11 @@
+tikzDevice
+filehash
+ggplot2
+methods
+knitr
+stats
+graphics
+grDevices
+utils
+datasets
+base

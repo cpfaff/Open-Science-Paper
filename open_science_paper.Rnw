@@ -12,7 +12,7 @@
 %%
 %
 
-\documentclass[color=false, print=false, csvdata=false, gitinfo=false, linenumbers=false, sectionnumbers=false]{subdocuments/open_science_paper} 
+\documentclass[color=false, print=false, csvdata=false, gitinfo=false, linenumbers=false, sectionnumbers=false]{usr/subdocuments/open_science_paper} 
 
 %% Available class options [defaults]
 % - color true/[false]: Changes between colored output and a black and white theme 
@@ -31,7 +31,7 @@
 %%% Load user options %%%
 %%%------------------------------------------------------------------------------%%%
 
-\input{subdocuments/open_science_paper.sty} 
+\input{usr/subdocuments/open_science_paper.sty} 
 
 %%%------------------------------------------------------------------------------%%%
 %%% Begin the document %%%
@@ -49,7 +49,7 @@
 %%% Preferences for Knitr %%%
 %%%-------------------------------------------------%%%
 
-<<global_knitr_options, child='subdocuments/osp_global_knitr_options.Rnw', eval=TRUE>>=
+<<global_knitr_options, child='usr/subdocuments/osp_global_knitr_options.Rnw', eval=TRUE>>=
 @
 
 %%%--------------------------------------------------------------%%%
@@ -62,14 +62,14 @@
 %%% Include header %%%
 %%%-------------------------------------------------%%%
 
-<<subdoc_content_header, child='subdocuments/osp_header.Rnw', eval=T>>=
+<<subdoc_content_header, child='usr/subdocuments/osp_header.Rnw', eval=T>>=
 @
 
 %%%-------------------------------------------------%%%
 %%% Include abstract %%%
 %%%-------------------------------------------------%%%
 
-<<subdoc_content_abstract, child='subdocuments/osp_abstract_section.Rnw', eval=T>>=
+<<subdoc_content_abstract, child='usr/subdocuments/osp_abstract_section.Rnw', eval=T>>=
 @
 % Second rule which closes the title header
 \ospTitleRule
@@ -81,42 +81,42 @@
 %%% Include introduction %%%
 %%%-------------------------------------------------%%%
 
-<<subdoc_content_introduction, child='subdocuments/osp_introduction_section.Rnw', eval=T>>=
+<<subdoc_content_introduction, child='usr/subdocuments/osp_introduction_section.Rnw', eval=T>>=
 @
 
 %%%-------------------------------------------------%%%
 %%% Include material and methods %%%
 %%%-------------------------------------------------%%%
 
-<<subdoc_content_material_methods, child='subdocuments/osp_material_methods_section.Rnw', eval=T>>=
+<<subdoc_content_material_methods, child='usr/subdocuments/osp_material_methods_section.Rnw', eval=T>>=
 @
 
 %%%-------------------------------------------------%%%
 %%% Include results %%%
 %%%-------------------------------------------------%%%
 
-<<subdoc_content_results, child='subdocuments/osp_results_section.Rnw', eval=T>>=
+<<subdoc_content_results, child='usr/subdocuments/osp_results_section.Rnw', eval=T>>=
 @
 
 %%%-------------------------------------------------%%%
 %%% Include discussion %%%
 %%%-------------------------------------------------%%%
 
-<<subdoc_content_discussion, child='subdocuments/osp_discussion_section.Rnw', eval=T>>=
+<<subdoc_content_discussion, child='usr/subdocuments/osp_discussion_section.Rnw', eval=T>>=
 @
 
 %%%-------------------------------------------------%%%
 %%% Include acknowledgements %%%
 %%%-------------------------------------------------%%%
 
-<<subdoc_content_acknowledgement, child='subdocuments/osp_acknowledgements_section.Rnw', eval=T>>=
+<<subdoc_content_acknowledgement, child='usr/subdocuments/osp_acknowledgements_section.Rnw', eval=T>>=
 @
 
 %%%-------------------------------------------------%%%
 %%% Include the bibliography %%%
 %%%-------------------------------------------------%%%
 
-<<options_bibliography, child='subdocuments/osp_bibliography_section.Rnw', eval=T>>=
+<<options_bibliography, child='usr/subdocuments/osp_bibliography_section.Rnw', eval=T>>=
 @
 
 %% End column layout

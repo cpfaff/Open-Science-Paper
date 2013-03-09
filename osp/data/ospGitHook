@@ -4,7 +4,7 @@
 # -----------------------------------------------------
 # Post-{commit,checkout,merge} hook for the gitinfo package
 #
-prefixes=". test docs"    # Example for multiple gitHeadInfo.tex files
+#prefixes=". test docs"    # Example for multiple gitHeadInfo.tex files
 prefixes="."              # Default --- in the working copy root
 for pref in $prefixes
 	do
