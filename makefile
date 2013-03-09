@@ -10,7 +10,7 @@
 DOCUMENT = open_science_paper
 
 # Dependencies maindocument
-DEPENDENCIES = $(DOCUMENT).Rnw usr/subdocuments/open_science_paper.* usr/subdocuments/*.Rnw osp/data/*.csv
+DEPENDENCIES = $(DOCUMENT).Rnw osp/subdocuments/open_science_paper.* usr/subdocuments/open_science_paper.* usr/subdocuments/*.Rnw osp/data/*.csv
 
 # Used Programs
 KNITR = knit
