@@ -18,7 +18,7 @@ the document. The document layout is close to common scientific paper formats.
 This layout can help you to prepare figures and tables for publication. But you
 can also use the Open-Science-Paper just to produce nice looking, paper like
 formatted documents. For an example see the PDF file inside the repository or
-have a look into the ipressions section below.
+have a look into the impressions section below.
 
 The project is documented on detail in the Open-Science-Paper
 [wiki](https://github.com/cpfaff/Open-Science-Paper/wiki). It covers information
