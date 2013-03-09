@@ -4,27 +4,26 @@
 
 The Open-Science-Paper
 [repository](https://github.com/cpfaff/Open-Science-Paper) contains a LaTeX
-document which is thought to be forked and used for scientific, collaborative
-paper writing on GitHub. The document combines the LaTeX typesetting
+document. It is thought to be forked and used for scientific, collaborative
+paper writing over GitHub. The document combines the LaTeX typesetting
 capabilities with the R programming language for statistics, using the
 [Knitr](http://yihui.name/knitr/) package. This combination allows for the
-production of executable documents which enhances the reproducibility
+production of executable documents to enhance the reproducibility
 of your research.
 
-The Open-Science-Paper offers a clean and logical folder structure and lots
-of examples of typical typesetting requirements to typeset your paper.
-A makefile helps you to compile, clean and archive the document. The
-layout of the document is close to common scientific paper formats. For
-an example see the PDF file in the repository or the documentation in the
-[wiki](https://github.com/cpfaff/Open-Science-Paper/wiki). The document layout
-can help you to prepare figures and tables for publication. But you can also
-use the Open-Science-Paper just to produce nice looking, paper like formatted
-documents.
+The Open-Science-Paper offers a clean and logical folder structure. It offers
+lots of examples on typical typesetting requirements to help you typeset your
+paper. It comes with a makefile that helps you to compile, clean and archive
+the document. The document layout is close to common scientific paper formats.
+This layout can help you to prepare figures and tables for publication. But you
+can also use the Open-Science-Paper just to produce nice looking, paper like
+formatted documents. For an example see the PDF file inside the repository or
+have a look into the ipressions section below.
 
 The project is documented on detail in the Open-Science-Paper
 [wiki](https://github.com/cpfaff/Open-Science-Paper/wiki). It covers information
-about how to get started with the document, a workflow for collaborative paper
-writing on GitHub and much more.
+about the prerequisites and how to get started with the document, a workflow for
+collaborative paper writing on GitHub and much more.
 
 ### Some impressions
 
