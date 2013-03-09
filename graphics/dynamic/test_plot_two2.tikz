@@ -1,8 +1,8 @@
-% Created by tikzDevice version 0.6.2 on 2013-03-08 23:08:11
+% Created by tikzDevice version 0.6.2 on 2013-03-09 13:24:29
 % !TEX encoding = UTF-8 Unicode
 
 
-\documentclass[color=false, print=false, csvdata=true, gitinfo=false, linenumbers=false, sectionnumbers=false]{subdocuments/open_science_paper}
+\documentclass[color=false, print=false, csvdata=false, gitinfo=false, linenumbers=false, sectionnumbers=false]{subdocuments/open_science_paper}
 \nonstopmode
 
 \usepackage{tikz}
