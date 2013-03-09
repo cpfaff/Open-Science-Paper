@@ -26,6 +26,7 @@
 \define@boolkey[KV]{open-science-paper}[osp@]{gitinfo}[false]{}
 \define@boolkey[KV]{open-science-paper}[osp@]{csvdata}[false]{}
 \define@boolkey[KV]{open-science-paper}[osp@]{sectionnumbers}[false]{}
+\define@boolkey[KV]{open-science-paper}[osp@]{autolayout}[false]{}
 
 \presetkeys{open-science-paper}{%
    linenumbers=false, 
@@ -34,15 +35,18 @@
    gitinfo=false, 
    csvdata=false,
    sectionnumbers=false,
+   autolayout=true,
 }{}
 
 \ProcessOptionsX[KV]<open-science-paper>
 
-% \LoadClass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto, DIV=20, notitlepage, oneside, final]{scrartcl} 
-\LoadClass[fontsize=11pt, headings=small, captions=tableheading, notitlepage, twoside, final]{scrartcl}
-
+\ifosp@autolayout
+   \LoadClass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto, DIV=20, notitlepage, oneside, final]{scrartcl} 
+\else%
 % A4 papersize 210 mm x 297 mm  
+\LoadClass[fontsize=11pt, headings=small, captions=tableheading, notitlepage, twoside, final]{scrartcl}
 \usepackage[left=2cm, right=2cm, textheight=25cm]{geometry}
+\fi% 
 
 %%%-------------------------------------------------%%%
 %%% Input encodings fonts and symbols %%%
