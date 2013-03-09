@@ -27,8 +27,8 @@ DATE = $(shell date +%y%m%d)
 
 # Example and Empty files  
 SUBDOCFOLDER = usr/subdocuments/
-EXMPLDOCS = usr/subdocuments/exmpl/* 
-TEMPDOCS = usr/subdocuments/temp/*
+EXMPLDOCS = osp/subdocuments/exmpl/* 
+TEMPDOCS = osp/subdocuments/temp/*
 
 # Git hooks 
 HOOKSOURCE = osp/data/ospGitHook
