@@ -32,25 +32,23 @@ writing on GitHub and much more.
 
 ![Open-Science-Paper-PDF-Header](https://dl.dropbox.com/u/844606/Open-Science-Paper-Documentation/open-science-papers-logo.png)
 
-#### Nice formatted header with useful informations
+#### Well formatted title header
 
-![black_and_white_title_header](https://dl.dropbox.com/u/844606/Open_Science_Paper_Documentation/black_paper_header_frameless.png)
+![black_and_white_title_header](https://dl.dropbox.com/u/844606/Open-Science-Paper-Documentation/black_paper_header_frameless.png)
 
 You can also read the header information from a csv file if you like and display git commit information inside of the header.
 
-#### Automated spacing correction on lettrines
+#### Lettrines
 
 ![black-letter-T](https://dl.dropbox.com/u/844606/Open-Science-Paper-Documentation/black_paper_introduction_big_letter_T.png)
 
-![black-letter-A](https://dl.dropbox.com/u/844606/Open-Science-Paper-Documentation/black_paper_introduction_big_letter_A.png)
+#### Some Optional features
 
-#### Class options to enable useful features
-
-#### Line numbering
+##### Line numbering
 
 ![black-line-numbers](https://dl.dropbox.com/u/844606/Open-Science-Paper-Documentation/black_line_numbers.png)
 
-#### Section numbering
+##### Section numbering
 
 ![black-section-numbers](https://dl.dropbox.com/u/844606/Open-Science-Paper-Documentation/black_section_numbers.png)
 
