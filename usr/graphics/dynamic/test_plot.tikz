@@ -1,8 +1,8 @@
-% Created by tikzDevice version 0.6.2 on 2013-03-09 16:28:56
+% Created by tikzDevice version 0.6.2 on 2013-03-09 16:45:07
 % !TEX encoding = UTF-8 Unicode
 
 
-\documentclass[color=false, print=false, csvdata=false, gitinfo=false, linenumbers=false, sectionnumbers=false]{usr/subdocuments/open_science_paper}
+\documentclass[color=false, print=false, csvdata=false, gitinfo=false, linenumbers=false, sectionnumbers=false]{osp/subdocuments/open_science_paper}
 \nonstopmode
 
 \usepackage{tikz}
@@ -51,11 +51,11 @@
 \fill[color=fillColor,fill opacity=0.00,] (0,0) rectangle (236.32,180.67);
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \definecolor[named]{drawColor}{rgb}{1.00,1.00,1.00}
 \definecolor[named]{fillColor}{rgb}{1.00,1.00,1.00}
 
@@ -63,19 +63,19 @@
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \begin{scope}
 \path[clip] ( 37.59, 34.74) rectangle (224.28,168.63);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \definecolor[named]{fillColor}{rgb}{1.00,1.00,1.00}
 
 \draw[fill=fillColor,draw opacity=0.00,] ( 37.59, 34.74) rectangle (224.28,168.63);
@@ -432,15 +432,15 @@
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
 
 \node[color=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.96] at ( 30.48, 64.41) {10};
@@ -451,11 +451,11 @@
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
 
 \draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 33.33, 67.87) --
@@ -469,27 +469,27 @@
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
 
 \draw[color=drawColor,line width= 0.6pt,line join=round,fill opacity=0.00,] ( 43.20, 30.48) --
@@ -512,11 +512,11 @@
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
 
 \node[color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.96] at ( 43.20, 20.70) {0};
@@ -533,53 +533,53 @@
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
 
 \node[color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  1.20] at (130.94,  9.03) {dist};
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
 
 \node[rotate= 90.00,color=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  1.20] at ( 17.69,101.69) {speed};
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (236.32,180.67);
-\definecolor[named]{drawColor}{rgb}{0.66,0.09,0.38}
+\definecolor[named]{drawColor}{rgb}{0.66,0.72,0.24}
 \end{scope}
 \end{tikzpicture}
 
