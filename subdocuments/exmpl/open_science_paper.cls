@@ -39,6 +39,7 @@
 \ProcessOptionsX[KV]<open-science-paper>
 
 \LoadClass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto, DIV=20, notitlepage, oneside, final]{scrartcl}
+% \usepackage[left=6cm,right=1cm,top=1.5cm,bottom=1cm,includeheadfoot]{geometry}
 
 %%%-------------------------------------------------%%%
 %%% Input encodings fonts and symbols %%%
@@ -273,7 +274,7 @@
          \setlength{\DefaultNindent}{0.5em}
       }
       {T}{%
-         \setlength{\DefaultFindent}{0.25em}
+         \setlength{\DefaultFindent}{0.27em}
          \setlength{\DefaultNindent}{0.02em}
       }
    }
@@ -563,7 +564,6 @@
 
 \newlength{\ospLengtTitleSpaceBelow} 
 \setlength{\ospLengtTitleSpaceBelow}{-1\baselineskip}  
-
 
 \ifosp@csvdata
    \DTLloaddb{ospHeaderInfoFromTable}{\ospHeaderInfoFilePath}

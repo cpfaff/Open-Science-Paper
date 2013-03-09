@@ -95,5 +95,5 @@ githooks:
 	$(RIGHTSETTER) $(HOOKRIGHTS) $(GITHOOKPATH)/* 
 
 prep:
-	$(COPY) subdocuments/open_science_paper.cls subdocuments/open_science_paper.sty subdocuments/exmpl/ 
-	$(COPY) subdocuments/open_science_paper.cls subdocuments/open_science_paper.sty subdocuments/temp/ 
+	$(COPY) subdocuments/open_science_paper.cls subdocuments/open_science_paper.sty subdocuments/osp_global_knitr_options.Rnw subdocuments/exmpl/ 
+	$(COPY) subdocuments/open_science_paper.cls subdocuments/open_science_paper.sty subdocuments/osp_global_knitr_options.Rnw subdocuments/temp/ 

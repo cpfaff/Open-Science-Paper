@@ -17,7 +17,7 @@
 		\node[pictureframe]{%    
 			\begin{minipage}{0.47\textwidth}%
 				\begin{center}
-               <<test_plot, cache=T, fig.width=3, fig.height=2.5, out.width='\\textwidth', echo=FALSE>>=
+               <<test_plot, cache=T, fig.width=3.27, fig.height=2.5, echo=FALSE>>=
                   suppressPackageStartupMessages(library(ggplot2))
 
                   ggplot(cars, aes(x=dist, y=speed)) +
@@ -59,10 +59,10 @@
 		\node[pictureframe]{%    
 			\begin{minipage}{0.98\textwidth}%
 				\begin{center}
-               <<test_plot_two, cache=T, fig.width=3, fig.height=2.5, out.width='0.45\\textwidth', echo=FALSE>>=
+               <<test_plot_two, cache=T, fig.width=3.415, fig.height=2.5, echo=FALSE>>=
                   suppressPackageStartupMessages(library(ggplot2))
-                  #plotting
-                  par(mar=c(4,4,.1,.1),cex.lab=.95,cex.axis=.9,mgp=c(2,.7,0),tcl=-.3)
+                  # plotting
+		  # par(mar=c(4,4,.1,.1),cex.lab=.1,cex.axis=.1,mgp=c(2,.7,0),tcl=-.3)
 
                   ggplot(movies, aes(x=rating)) +
                   geom_density() +
