@@ -15,8 +15,8 @@
   opts_chunk$set(fig.path='graphics/dynamic/', dev='tikz', fig.keep='high', fig.show='hold')  
   # tune details of graphics appearance 
   knit_hooks$set(par=function(before, options, envir){
-	 if (before && options$fig.show!='none') par(mar=c(4,4,.1,.1),cex.lab=.1,cex.axis=.1,mgp=c(2,.7,0),tcl=-.3)
-	 }
+    if (before && options$fig.show!='none') par(mar=c(4,4,.1,.1),cex.lab=.95,cex.axis=.9,mgp=c(2,.7,0),tcl=-.3)
+    }
   ) 
   # pdf.options(family = "Times", width=15)
   # tikz options
