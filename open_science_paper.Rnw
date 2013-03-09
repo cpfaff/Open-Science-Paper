@@ -12,7 +12,7 @@
 %%
 %
 
-\documentclass[color=false, print=false, csvdata=false, gitinfo=true, linenumbers=false, sectionnumbers=false]{osp/subdocuments/open_science_paper} 
+\documentclass[color=false, print=false, csvdata=false, gitinfo=false, linenumbers=false, sectionnumbers=false]{osp/subdocuments/open_science_paper} 
 
 %% Available class options [defaults]
 % - color true/[false]: Changes between colored output and a black and white theme 
