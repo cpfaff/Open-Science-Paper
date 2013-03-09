@@ -52,6 +52,10 @@ You can also read the header information from a csv file if you like and display
 
 ![black-section-numbers](https://dl.dropbox.com/u/844606/Open-Science-Paper-Documentation/black_section_numbers.png)
 
+##### Coloring
+
+![colored-output](https://dl.dropbox.com/u/844606/Open-Science-Paper-Documentation/color_paper_title_header.png)
+
 ## Self-promotion
 
 Do you like the Open-Science-Paper repository? You are welcome
