@@ -38,8 +38,11 @@
 
 \ProcessOptionsX[KV]<open-science-paper>
 
-\LoadClass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto, DIV=20, notitlepage, oneside, final]{scrartcl}
-% \usepackage[left=6cm,right=1cm,top=1.5cm,bottom=1cm,includeheadfoot]{geometry}
+% \LoadClass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto, DIV=20, notitlepage, oneside, final]{scrartcl} 
+\LoadClass[fontsize=11pt, headings=small, captions=tableheading, notitlepage, twoside, final]{scrartcl}
+
+% A4 papersize 210 mm x 297 mm  
+\usepackage[left=2cm, right=2cm, textheight=25cm]{geometry}
 
 %%%-------------------------------------------------%%%
 %%% Input encodings fonts and symbols %%%
@@ -189,7 +192,7 @@
    \newcommand{\ospGitUrl}{\tiny{\href{ospGitUrl}{https://github.com/cpfaff/Open-Science-Paper}}}
    \newcommand{\ospSetGitUrl}[1]{\def\ospGitUrl{#1}}
 
-   \newcommand{\ospGitInfoLine}{{\tiny Version from commit by \gitAuthorEmail~on~\gitAuthorDate; Source on: \ospGitUrl}\\}
+   \newcommand{\ospGitInfoLine}{{\tiny Version from commit by \gitAuthorEmail~on~\gitAuthorDate; Source on: \ospGitUrl}\par}
    \newcommand{\ospSetGitInfoLine}[1]{\def\ospGitInfo{#1}}
 \else
    \newcommand{\ospGitInfoLine}{}
@@ -251,6 +254,9 @@
 
 \fancyfoot[L]{\ospFullLeftFooter}
 \fancyfoot[R]{\ospFullRightFooter} 
+
+% \fancyfoot[LO,RE]{\ospFullLeftFooter}
+% \fancyfoot[RO,LE]{\ospFullRightFooter} 
 
 %%%-------------------------------------------------%%%
 %%% Control big starting letters (Lettrine) %%%
@@ -559,71 +565,69 @@
 \newlength{\ospLengtTitleTitleColwidth} 
 \setlength{\ospLengtTitleTitleColwidth}{0.55\textwidth} 
 
-\newlength{\ospLengtTitleSpaceAbove} 
+\newlength{\ospLengtTitleSpaceAbove}
 \setlength{\ospLengtTitleSpaceAbove}{0.5\baselineskip} 
 
 \newlength{\ospLengtTitleSpaceBelow} 
-\setlength{\ospLengtTitleSpaceBelow}{-1\baselineskip}  
+\setlength{\ospLengtTitleSpaceBelow}{0\baselineskip}  
 
 \ifosp@csvdata
    \DTLloaddb{ospHeaderInfoFromTable}{\ospHeaderInfoFilePath}
    \DTLgetvalue{\ospTitleCsv}{ospHeaderInfoFromTable}{1}{\dtlcolumnindex{ospHeaderInfoFromTable}{ospTitle}}   
    \newcommand{\ospMakeTitle}{% 
-      \ospTitleRule\\[\ospLengtTitleSpaceAbove]
+      \ospTitleRule\par\vspace{\ospLengtTitleSpaceAbove}
          \begin{tabular}{p{\ospLengtTitleLogoColwidth}p{\ospLengtTitleTitleColwidth}}
             \begin{minipage}{0.25\textwidth}
                \ospTitleLogo%
             \end{minipage}&%
             \begin{minipage}{0.7\textwidth} 
                \vspace{\baselineskip}
-                  {\color{ospColor@Title}{{\normalfont\sffamily\Huge\bfseries \ospTitleCsv}}} \hfill\\[\baselineskip]
+                  {\color{ospColor@Title}{{\normalfont\sffamily\Huge\bfseries \ospTitleCsv}}}\par%
                      \begin{normalsize}\textbf{%
                         \DTLsort{ospAuthorPriorityToAppear,ospAuthorFirstName}{ospHeaderInfoFromTable} 
                         \DTLforeach{ospHeaderInfoFromTable}{%
                            \firstName=ospAuthorFirstNameShort,% 
                            \lastName=ospAuthorLastName,%
                            \id=ospAuthorAffiliationIDs}{\ifdefempty{\firstName}{}{\DTLiflastrow{\firstName\xspace\lastName\textsuperscript{\id}}{\firstName\xspace\lastName\textsuperscript{\id}, }}}
-                     }\end{normalsize}\hfill\\ 
+                     }\end{normalsize}\par 
                   \begin{normalsize}\textbf{\ospTitleKeywordContactName}  
                      \DTLsort{ospAuthorEmailID}{ospHeaderInfoFromTable} 
                      \DTLforeach{ospHeaderInfoFromTable}{%
                         \email=ospAuthorEmail,%
                         \id=ospAuthorEmailID}{\ifdefempty{\email}{}{\DTLiflastrow{\href{mailto:\email}{\email}\textsuperscript{\id}}{\href{mailto:\email}{\email}\textsuperscript{\id}, }}}
-                  \end{normalsize}\\
+                  \end{normalsize}\par%
                   \begin{normalsize}\textbf{\ospTitleKeywordAffiliationName}  
                      \DTLsort{ospAffiliationIDs}{ospHeaderInfoFromTable} 
                      \DTLforeach{ospHeaderInfoFromTable}{%
                         \affiliation=ospAffiliations,%
                         \id=ospAffiliationIDs}{\ifdefempty{\affiliation}{}{\DTLiflastrow{\affiliation\textsuperscript{\id}}{\affiliation\textsuperscript{\id}, }}}
-                  \end{normalsize}\hfill\\
+                  \end{normalsize}\par%
                   \begin{normalsize}\textbf{\ospTitleKeywordName}% 
                      \DTLsort{ospKeywords}{ospHeaderInfoFromTable} 
-                     \DTLforeach{ospHeaderInfoFromTable}{\keyword=ospKeywords}{\ifdefempty{\keyword}{}{\DTLiflastrow{\keyword}{\keyword, }}} \end{normalsize}\hfill\\ 
-                  % Include git information
-                  \ospGitInfoLine
-            \end{minipage}\\
-         \end{tabular}\\[\ospLengtTitleSpaceBelow]
+                     \DTLforeach{ospHeaderInfoFromTable}{\keyword=ospKeywords}{\ifdefempty{\keyword}{}{\DTLiflastrow{\keyword}{\keyword, }}} \end{normalsize}\par%
+                  \ospGitInfoLine%
+            \end{minipage}
+         \end{tabular}\par\vspace{\ospLengtTitleSpaceBelow}
       }
-\else
+\else%
    \newcommand{\ospMakeTitle}{%
-      \ospTitleRule\\[\ospLengtTitleSpaceAbove]
+      \ospTitleRule\par\vspace{\ospLengtTitleSpaceAbove}
          \begin{tabular}{p{\ospLengtTitleLogoColwidth}p{\ospLengtTitleTitleColwidth}}
             \begin{minipage}{0.25\textwidth}
-               \ospTitleLogo 
+               \ospTitleLogo%
             \end{minipage}&	
             \begin{minipage}{0.7\textwidth} 
                \vspace{\baselineskip}
-                  {\color{ospColor@Title}{{\normalfont\sffamily\Huge\bfseries \ospTitle}}} \hfill\\[\baselineskip]
-                  \ifdefempty{\ospAuthors}{}{\begin{normalsize}\textbf{\ospAuthors}\end{normalsize}\hfill\\}
-                  \ifdefempty{\ospContacts}{}{\begin{normalsize}\textbf{\ospTitleKeywordContactName} \ospContacts\end{normalsize}\hfill\\}
-                  \ifdefempty{\ospAffiliations}{}{\begin{normalsize}\textbf{\ospTitleKeywordAffiliationName} \ospAffiliations\end{normalsize}\hfill\\}
-                  \ifdefempty{\ospKeywords}{}{\begin{normalsize}\textbf{\ospTitleKeywordName} \ospKeywords\end{normalsize}\hfill\\} 
-                  % Include git information
-                  \ospGitInfoLine
+                  {\color{ospColor@Title}{{\normalfont\sffamily\Huge\bfseries \ospTitle}}} \par
+                  \ifdefempty{\ospAuthors}{}{\begin{normalsize}\textbf{\ospAuthors}\end{normalsize}\par}
+                  \ifdefempty{\ospContacts}{}{\begin{normalsize}\textbf{\ospTitleKeywordContactName} \ospContacts\end{normalsize}\par}
+                  \ifdefempty{\ospAffiliations}{}{\begin{normalsize}\textbf{\ospTitleKeywordAffiliationName} \ospAffiliations\end{normalsize}\par}
+                  \ifdefempty{\ospKeywords}{}{\begin{normalsize}\textbf{\ospTitleKeywordName} \ospKeywords\end{normalsize}\par}
+                  \ospGitInfoLine%
             \end{minipage}
-         \end{tabular}\\[\ospLengtTitleSpaceBelow]
+         \end{tabular}\par\vspace{\ospLengtTitleSpaceBelow}
       }
-\fi
+\fi%
 
 %% Defines the abstract %%
 \RequirePackage{abstract}
@@ -741,4 +745,4 @@ spacing=false]{microtype}
 %%%-------------------------------------------------%%%
 
 %% Set typesetting area with last chosen options
-\KOMAoptions{DIV=last} 
+% \KOMAoptions{DIV=last} 
