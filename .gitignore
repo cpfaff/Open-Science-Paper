@@ -33,4 +33,5 @@ gitHeadInfo.gin
 usr/cache/*.RData
 usr/cache/*.rdb
 usr/cache/*.rdx
-usr/cache/*packages
+usr/cache/*packages 
+usr/graphics/dynamic/*
