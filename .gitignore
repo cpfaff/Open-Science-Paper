@@ -30,3 +30,8 @@ gitHeadInfo.gin
 *.mtc
 *.mtc0
 *tikzDictionary
+usr/cache/* 
+!usr/cache/.gitkeep
+usr/graphics/dynamic/* 
+!usr/graphics/dynamic/.gitkeep
+
