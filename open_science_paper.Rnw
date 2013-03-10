@@ -28,6 +28,9 @@
 % - sectionnumbers true/[false]: Switch between numbered and numberless sections 
 % - autolayout [true]/false: Switch between the nice automatic calculated layout 
 %   (Koma script) and a geometry fixed layout (feature not finished yet).
+% - reversepagelayout [false]/true reverse the order of odd and evenside margins. This 
+%   can be used for twosided layout to decide if to start with a right or left page. 
+%   (feature not finished yet)
 
 %%%------------------------------------------------------------------------------%%%
 %%% Load user options %%%

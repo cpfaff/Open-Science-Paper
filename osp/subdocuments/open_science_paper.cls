@@ -27,6 +27,7 @@
 \define@boolkey[KV]{open-science-paper}[osp@]{csvdata}[false]{}
 \define@boolkey[KV]{open-science-paper}[osp@]{sectionnumbers}[false]{}
 \define@boolkey[KV]{open-science-paper}[osp@]{autolayout}[false]{}
+\define@boolkey[KV]{open-science-paper}[osp@]{reversepagelayout}[false]{}
 
 \presetkeys{open-science-paper}{%
    linenumbers=false, 
@@ -36,16 +37,18 @@
    csvdata=false,
    sectionnumbers=false,
    autolayout=true,
+   reversepagelayout=false,
 }{}
 
 \ProcessOptionsX[KV]<open-science-paper>
 
 \ifosp@autolayout
-   \LoadClass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto, DIV=20, notitlepage, oneside, final]{scrartcl} 
+   \LoadClass[fontsize=11pt, headings=small, captions=tableheading, DIV=20, notitlepage, oneside, final]{scrartcl}  
 \else%
    % A4 papersize 210 mm x 297 mm  
+   % If you have to meet certain specifications  
    \LoadClass[fontsize=11pt, headings=small, captions=tableheading, notitlepage, twoside, final]{scrartcl}
-   \usepackage[left=2cm, right=2cm, textheight=25cm]{geometry}
+   \usepackage[left=2cm, right=3cm, textheight=25cm]{geometry}
 \fi% 
 
 %%%-------------------------------------------------%%%
@@ -736,6 +739,17 @@ spacing=false]{microtype}
 %% Set typesetting area with last chosen options %%
 \ifosp@autolayout%
    \AtBeginDocument{\KOMAoptions{DIV=last}}
+\else% 
+   \relax
+\fi% 
+
+\ifosp@reversepagelayout%
+   \AtBeginDocument{
+      \let\tmp\evensidemargin%
+      \let\evensidemargin\oddsidemargin%
+      \let\oddsidemargin\tmp%
+      \reversemarginpar%
+   }
 \else% 
    \relax
 \fi%
