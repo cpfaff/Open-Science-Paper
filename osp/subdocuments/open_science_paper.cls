@@ -43,9 +43,9 @@
 \ifosp@autolayout
    \LoadClass[fontsize=11pt, headings=small, captions=tableheading, pagesize=auto, DIV=20, notitlepage, oneside, final]{scrartcl} 
 \else%
-% A4 papersize 210 mm x 297 mm  
-\LoadClass[fontsize=11pt, headings=small, captions=tableheading, notitlepage, twoside, final]{scrartcl}
-\usepackage[left=2cm, right=2cm, textheight=25cm]{geometry}
+   % A4 papersize 210 mm x 297 mm  
+   \LoadClass[fontsize=11pt, headings=small, captions=tableheading, notitlepage, twoside, final]{scrartcl}
+   \usepackage[left=2cm, right=2cm, textheight=25cm]{geometry}
 \fi% 
 
 %%%-------------------------------------------------%%%
@@ -79,7 +79,6 @@
 %%%-------------------------------------------------%%%
 
 \RequirePackage{calc}
-% \RequirePackage{xkeyval} 
 \RequirePackage{xifthen} 
 \RequirePackage{datatool} 
 \RequirePackage{expl3} 
@@ -94,7 +93,7 @@
 %  \enquote{} to put a text in the right quotes
 
 %%%-------------------------------------------------%%%
-%%% Blindtext %%%
+%%% Lipsum %%%
 %%%-------------------------------------------------%%%
 
 \RequirePackage{lipsum}
@@ -103,15 +102,13 @@
 %%% Color options %%%
 %%%-------------------------------------------------%%%
 
-\ifosp@print
+\ifosp@print%
    \RequirePackage[svgnames,cmyk]{xcolor}  
-\else
+\else%
    \RequirePackage[svgnames,rgb]{xcolor} 
-\fi
+\fi%
 
-\xdefinecolor{ospColor@Links}{rgb}{0,0,0.4} 
-
-\ifosp@color
+\ifosp@color%
    \colorlet{ospColor@TitleRule}{LightGray}
    \colorlet{ospColor@Title}{DarkRed}
    
@@ -130,6 +127,7 @@
    \colorlet{ospColor@FullRightFooter}{DarkGray} 
    \colorlet{ospColor@FooterPageNumbering}{DarkGray}
 
+   \xdefinecolor{ospColor@Links}{rgb}{0,0,0.4} 
    \xdefinecolor{ospColor@ListingBackground}{gray}{.90} 
    \xdefinecolor{ospColor@ListingBase00}{HTML}{657b83}
    \xdefinecolor{ospColor@ListingBase01}{HTML}{586e75}
@@ -147,7 +145,7 @@
    \xdefinecolor{ospColor@ListingBlue}{HTML}{268BD2}
    \xdefinecolor{ospColor@ListingCyan}{HTML}{2AA198}
    \xdefinecolor{ospColor@ListingGreen}{HTML}{859900}
-\else 
+\else%
    \colorlet{ospColor@TitleRule}{black}
    \colorlet{ospColor@Title}{black} 
 
@@ -166,6 +164,7 @@
    \colorlet{ospColor@FooterPageNumbering}{black} 
    \colorlet{ospColor@FooterTextSeparator}{black}
 
+   \xdefinecolor{ospColor@Links}{rgb}{0,0,0.4} 
    \xdefinecolor{ospColor@ListingBackground}{gray}{.90} 
    \colorlet{ospColor@ListingBase00}{black}
    \colorlet{ospColor@ListingBase01}{black}
@@ -183,14 +182,13 @@
    \colorlet{ospColor@ListingBlue}{black}
    \colorlet{ospColor@ListingCyan}{black}
    \colorlet{ospColor@ListingGreen}{black}
-\fi
+\fi%
 
 %%%-------------------------------------------------%%%
 %%% Include Git information %%%
 %%%-------------------------------------------------%%%
 
-
-\ifosp@gitinfo
+\ifosp@gitinfo%
    \RequirePackage{gitinfo} 
 
    \newcommand{\ospGitUrl}{\tiny{\href{ospGitUrl}{https://github.com/cpfaff/Open-Science-Paper}}}
@@ -198,10 +196,10 @@
 
    \newcommand{\ospGitInfoLine}{{\tiny Version from commit by \gitAuthorEmail~on~\gitAuthorDate; Source on: \ospGitUrl}\par}
    \newcommand{\ospSetGitInfoLine}[1]{\def\ospGitInfo{#1}}
-\else
+\else%
    \newcommand{\ospGitInfoLine}{}
    \newcommand{\ospSetGitInfoLine}[1]{\def\ospGitInfo{#1}}
-\fi
+\fi%
 
 %%%-------------------------------------------------%%%
 %%% Define header and footer %%%
@@ -221,11 +219,11 @@
 \newcommand{\ospFooterLogo}{\relax}
 \newcommand{\ospSetFooterLogo}[1]{\gdef\ospFooterLogo{#1}}
 
-\ifosp@color
+\ifosp@color%
    \ospSetFooterLogo{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{osp/graphics/open-science-papers-footer-logo-gray.pdf}}}
-\else 
+\else% 
    \ospSetFooterLogo{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{osp/graphics/open-science-papers-footer-logo-black.pdf}}}
-\fi
+\fi%
 
 \newcommand{\ospFooterTextSeparator}{\textcolor{ospColor@FooterTextSeparator}{$\circ$}} 
 \newcommand{\ospSetFooterTextSeparator}[1]{\gdef\ospFooterTextSeparator{#1}}
@@ -259,23 +257,13 @@
 \fancyfoot[L]{\ospFullLeftFooter}
 \fancyfoot[R]{\ospFullRightFooter} 
 
-% \fancyfoot[LO,RE]{\ospFullLeftFooter}
-% \fancyfoot[RO,LE]{\ospFullRightFooter} 
-
 %%%-------------------------------------------------%%%
 %%% Control big starting letters (Lettrine) %%%
 %%%-------------------------------------------------%%%
 
 \usepackage{lettrine} 
 
-% \setcounter{DefaultLines}{2}
-% \renewcommand{\DefaultLoversize}{0}
-% \renewcommand{\DefaultLraise}{0}
-% \renewcommand{\DefaultLhang}{0}
-% \LettrineImagefalse
-% \setlength{\DefaultSlope}{0pt}
-
-\ExplSyntaxOn 
+\ExplSyntaxOn%
 \newcommand{\ospSet@LettrineOptions}[1]{%  
    \prg_case_str:nnn {#1}
    {%
@@ -293,7 +281,7 @@
       \setlength{\DefaultNindent}{0.02em}
    }
 } 
-\ExplSyntaxOff 
+\ExplSyntaxOff%
 
 \newcommand{\capital}[1]{%
    \ospSet@LettrineOptions{#1}
@@ -301,18 +289,18 @@
 }    
 
 %%%-------------------------------------------------%%%
-%%% For review %%%
+%%% Enable linenumbers %%%
 %%%-------------------------------------------------%%%
 
-\ifosp@linenumbers
+\ifosp@linenumbers%
    \RequirePackage[pagewise]{lineno}
    \RequirePackage{lineno}
    \setlength\linenumbersep{2pt}
    \renewcommand\linenumberfont{\normalfont\tiny\sffamily\color{ospColor@LineNumbers}}
    \AtBeginDocument{\linenumbers} 
-\else 
+\else% 
    \RequirePackage[pagewise]{lineno}
-\fi 
+\fi% 
 
 %%%-------------------------------------------------%%%
 %%% List options %%%
@@ -321,14 +309,14 @@
 \RequirePackage[neverdecrease]{paralist}
 
 % override item lists 
-\let\itemize\compactitem
-\let\enditemize\endcompactitem
-\let\enumerate\compactenum
-\let\endenumerate\endcompactenum
-\let\description\compactdesc
-\let\enddescription\endcompactdesc
+\let\itemize\compactitem%
+\let\enditemize\endcompactitem%
+\let\enumerate\compactenum%
+\let\endenumerate\endcompactenum%
+\let\description\compactdesc%
+\let\enddescription\endcompactdesc%
 
-\pltopsep=\medskipamount
+\pltopsep=\medskipamount%
 \setdefaultenum{1.}{a)~}{i.~}{A)~}%
 \setdefaultleftmargin{1.5em}{1.2em}{1.2em}{1.2em}{1.2em}{1.2em}%
 \setdefaultitem{$\circ$}{\textbullet}{\textperiodcentered}{--}%
@@ -406,7 +394,7 @@
 %  Vertical aggregation of table cells  
 %	 \multirow{count of rows}{width}{text}
 
-%% Tables spanning multiple pages 
+%% Tables spanning multiple pages %%
 \RequirePackage{longtable}
 
 %%%-------------------------------------------------%%%
@@ -452,10 +440,9 @@
 %  \SI{30000}{\kilogram}
 
 %%%-------------------------------------------------%%%
-%%% Display LaTeX code compiled %%%
+%%% Display LaTeX code and compiled output %%%
 %%%-------------------------------------------------%%%
 
-%% Source code and compiled LaTeX document next to each other %%
 \RequirePackage{showexpl}
 
 %%%-------------------------------------------------%%%
@@ -644,9 +631,8 @@
 
 \RequirePackage[noindentafter,calcwidth]{titlesec}  
 
-\ifosp@sectionnumbers 
-
-\titleformat{\section}
+\ifosp@sectionnumbers%
+   \titleformat{\section}
    {\color{ospColor@SectionHeader}\normalfont\sffamily\large\bfseries}{\thesection}{0.5em}{}
    \titlespacing*{\section}
     {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
@@ -662,7 +648,7 @@
    {\color{ospColor@ParagraphHeader}\normalfont\sffamily\normalsize\bfseries}{\theparagraph}{0.5em}{}
    \titlespacing*{\paragraph}
     {0pt}{3.25ex plus 1ex minus 0.2ex}{1em}
-\else 
+\else% 
    \titleformat{\section}
    {\color{ospColor@SectionHeader}\normalfont\sffamily\large\bfseries}{}{0em}{}
    \titlespacing*{\section}
@@ -679,7 +665,7 @@
    {\color{ospColor@ParagraphHeader}\normalfont\sffamily\normalsize\bfseries}{}{0em}{}
    \titlespacing*{\paragraph}
     {0pt}{3.25ex plus 1ex minus 0.2ex}{1em}
-\fi
+\fi%
 
 %%%-------------------------------------------------%%%
 %%% Typographical fine-tuning %%%
@@ -743,10 +729,13 @@ spacing=false]{microtype}
 %  \url{URL}
 %  \nolinkurl{URL}
 
-
 %%%-------------------------------------------------%%%
 %%% Do before the document starts %%%
 %%%-------------------------------------------------%%%
 
-%% Set typesetting area with last chosen options
-% \KOMAoptions{DIV=last} 
+%% Set typesetting area with last chosen options %%
+\ifosp@autolayout%
+   \AtBeginDocument{\KOMAoptions{DIV=last}}
+\else% 
+   \relax
+\fi%
