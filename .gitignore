@@ -1,4 +1,5 @@
 gitHeadInfo.gin
+!*.gitkeep
 *.aux
 *.bcf
 *.run.xml
@@ -30,8 +31,3 @@ gitHeadInfo.gin
 *.mtc
 *.mtc0
 *tikzDictionary
-!usr/cache/
-usr/cache/*.*
-!usr/graphics/dynamic/
-usr/graphics/dynamic/*.* 
-
