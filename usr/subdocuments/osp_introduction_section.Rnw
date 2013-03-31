@@ -4,7 +4,7 @@
 
 \section{Introduction}
 
-% Remove the lipsum and the list example and fill in your introductin text here
+% Remove the lipsum and the list example and fill in your introduction text here
 \capital{T} his is just an introduction text snippet to show how drop caps look in this document.
 \lipsum[1]
 
@@ -20,5 +20,5 @@
 	\item Three
 \end{itemize}
 
-\lipsum[1-2] 
+\lipsum[1-2]
 
