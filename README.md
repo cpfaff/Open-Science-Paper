@@ -3,22 +3,22 @@
 ### Open-Science-Paper
 
 The Open-Science-Paper
-[repository](https://github.com/cpfaff/Open-Science-Paper) contains a LaTeX
-document. It is thought to be forked and used for scientific, collaborative
-paper writing over GitHub. The document combines the LaTeX typesetting
-capabilities with the R programming language for statistics, using the
-[Knitr](http://yihui.name/knitr/) package. This combination allows for the
-production of executable documents to enhance the reproducibility
-of your research.
+[repository](https://github.com/cpfaff/Open-Science-Paper) contains a
+LaTeX document which is thought to be forked and used for scientific,
+collaborative paper writing via GitHub. The document combines the typesetting
+capabilities of LaTeX with the R programming language for statistics, using
+the [Knitr](http://yihui.name/knitr/) package. This combination allows for the
+production of executable documents that enhance the reproducibility of your
+research.
 
-The Open-Science-Paper offers a clean and logical folder structure. It offers
-lots of examples on typical typesetting requirements to help you typeset your
-paper. It comes with a makefile that helps you to compile, clean and archive
-the document. The document layout is close to common scientific paper formats.
-This layout can help you to prepare figures and tables for publication. But you
-can also use the Open-Science-Paper just to produce nice looking, paper like
-formatted documents. For an example see the PDF file inside the repository or
-have a look into the impressions section below.
+The Open-Science-Paper offers a clean and logical folder structure and lots of
+examples of typical typesetting requirements to help you typeset your paper. It
+comes with a makefile that helps you to compile, clean and archive the document.
+The document layout is close to common scientific paper formats. This layout
+can help you to prepare figures and tables for publication. But you can also
+just use the Open-Science-Paper to produce nice looking, paper like formatted
+documents. For an example see the PDF file inside of the repository or have a
+look into the impressions section below.
 
 The project is documented on detail in the Open-Science-Paper
 [wiki](https://github.com/cpfaff/Open-Science-Paper/wiki). It covers information
@@ -35,7 +35,8 @@ collaborative paper writing on GitHub and much more.
 
 ![black_and_white_title_header](https://dl.dropbox.com/u/844606/Open-Science-Paper-Documentation/black_paper_header_frameless.png)
 
-You can also read the header information from a csv file if you like and display git commit information inside of the header.
+You can also read the header information from a csv file if you like and display
+git commit information inside of the header.
 
 #### Lettrines
 
