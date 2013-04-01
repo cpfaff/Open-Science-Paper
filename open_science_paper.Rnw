@@ -32,6 +32,10 @@
 % - twosidelayout true/[false]: Switch between two and one side page layout.
 % - reversepagelayout [false]/true reverse the order of odd and even side margins. This 
 %   option can be used to start the paper on a left or right page. 
+% - resetdefaultclassoptions true/[false] resets the default options the open science paper 
+%   loads the scrartcl class. After that you can modify every option via the open science 
+%   paper class call. For example to change the calculated typearea you can use 
+%   \documentclass[resetdefaultclassoptions=true, DIV=15]{osp/subdocuments/open_science_paper} 
 
 %%%------------------------------------------------------------------------------%%%
 %%% Load user options %%%

@@ -28,7 +28,10 @@
 \define@boolkey[KV]{open-science-paper}[osp@]{sectionnumbers}[false]{}
 \define@boolkey[KV]{open-science-paper}[osp@]{autolayout}[false]{}
 \define@boolkey[KV]{open-science-paper}[osp@]{twosidelayout}[false]{}
-\define@boolkey[KV]{open-science-paper}[osp@]{reversepagelayout}[false]{}
+\define@boolkey[KV]{open-science-paper}[osp@]{reversepagelayout}[false]{}  
+\define@boolkey[KV]{open-science-paper}[osp@]{resetdefaultclassoptions}[false]{}  
+
+\DeclareOptionX*{\PassOptionsToClass{\CurrentOption}{scrartcl}}
 
 \presetkeys{open-science-paper}{%
    linenumbers=false, 
@@ -39,26 +42,30 @@
    sectionnumbers=false,
    autolayout=true,
    twosidelayout=false,
-   reversepagelayout=false,
+   reversepagelayout=false, 
+   resetdefaultclassoptions=false,
 }{}
 
 \ProcessOptionsX[KV]<open-science-paper>
 
-
-\ifosp@autolayout  
-   \ifosp@twosidelayout%
-      \LoadClass[fontsize=11pt, headings=small, captions=tableheading, DIV=20, notitlepage, twoside, final]{scrartcl}   
+\ifosp@resetdefaultclassoptions%
+   \LoadClass{scrartcl}   
+\else% 
+   \ifosp@autolayout  
+      \ifosp@twosidelayout%
+         \LoadClass[headings=small, captions=tableheading, DIV=20, notitlepage, twoside, final]{scrartcl}   
+      \else%
+         \LoadClass[headings=small, captions=tableheading, DIV=20, notitlepage, oneside, final]{scrartcl}   
+      \fi%
    \else%
-      \LoadClass[fontsize=11pt, headings=small, captions=tableheading, DIV=20, notitlepage, oneside, final]{scrartcl}   
-   \fi%
-\else%
-   \ifosp@twosidelayout%
-      \LoadClass[fontsize=11pt, headings=small, captions=tableheading, notitlepage, twoside, final]{scrartcl}
-   \else%
-      \LoadClass[fontsize=11pt, headings=small, captions=tableheading, notitlepage, oneside, final]{scrartcl}
-   \fi%
-   \RequirePackage{geometry}
-\fi% 
+      \ifosp@twosidelayout%
+         \LoadClass[headings=small, captions=tableheading, notitlepage, twoside, final]{scrartcl}
+      \else%
+         \LoadClass[headings=small, captions=tableheading, notitlepage, oneside, final]{scrartcl}
+      \fi%
+      \RequirePackage{geometry}
+   \fi% 
+\fi%
 
 %%%-------------------------------------------------%%%
 %%% Input encodings fonts and symbols %%%
