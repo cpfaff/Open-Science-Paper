@@ -45,10 +45,8 @@
 \ifosp@autolayout
    \LoadClass[fontsize=11pt, headings=small, captions=tableheading, DIV=20, notitlepage, oneside, final]{scrartcl}  
 \else%
-   % A4 papersize 210 mm x 297 mm  
-   % If you have to meet certain specifications  
-   \LoadClass[fontsize=11pt, headings=small, captions=tableheading, notitlepage, twoside, final]{scrartcl}
-   \usepackage[left=2cm, right=3cm, textheight=25cm]{geometry}
+   \LoadClass[fontsize=11pt, headings=small, captions=tableheading, notitlepage, oneside, final]{scrartcl}
+   \RequirePackage{geometry}
 \fi% 
 
 %%%-------------------------------------------------%%%
