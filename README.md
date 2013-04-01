@@ -42,7 +42,7 @@ git commit information inside of the header.
 
 ![black-letter-T](https://dl.dropbox.com/u/844606/Open-Science-Paper-Documentation/black_paper_introduction_big_letter_T.png)
 
-#### Some Optional features
+#### Some optional features
 
 ##### Line numbering
 
