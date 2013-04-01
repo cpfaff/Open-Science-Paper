@@ -11,12 +11,15 @@
 %%%-------------------------------------------------%%%
 
 %% Note: 
+
 % Needs the class option autolayout=false
 
 %% Example:
+
 % \geometry{left=4cm, right=4cm, textheight=25cm}
 
 %% Note: 
+
 % Find all available options in the geometry package 
 % documentation.
 
@@ -25,6 +28,7 @@
 %%%-------------------------------------------------%%%
 
 %% Example:
+
 % \xdefinecolor{YourColor}{rgb}{0,0,0.7}
 
 %%%-------------------------------------------------%%%
@@ -32,6 +36,7 @@
 %%%-------------------------------------------------%%%
 
 %% Example:
+
 % \newcommand{name}[number of parameters]{things to do}
 
 %%%-------------------------------------------------%%%
@@ -39,17 +44,16 @@
 %%%-------------------------------------------------%%%
 
 %% Example:
+
 % \newenvironment{name}[number of parameters]{definition begin}{definition end}
 
 %%%-------------------------------------------------%%%
 %%% Define titlel authors and affiliation %%%
 %%%-------------------------------------------------%%%
 
-%% Contents
+%% Note: You can set them empty to remove the line
 
-% Note: You can set them empty to remove the line
-
-% \ospSetTitle{This it the title of the paper} 
+% \ospSetTitle{This is the title of the paper} 
 % \ospSetAuthors{Author one\textsuperscript{1,2,a}, Author two\textsuperscript{2,b}}  
 % \ospSetContacts{foo@bar.com\textsuperscript{a}, bar@foo.com\textsuperscript{b}}
 % \ospSetAffiliations{University of XY departement of Z\textsuperscript{1}, University of \ldots}
@@ -98,8 +102,9 @@
 %%% Set and change the git info display  %%%
 %%%-------------------------------------------------%%%
 
-%% This features need the gitinfo class option set 
-%% inside the root file.
+%% Note 
+% This features need the gitinfo class option set 
+% inside the root file.
 
 % \ospSetGitUrl{\url{www.....}}
 % \ospSetGitInfoLine{}
@@ -108,27 +113,28 @@
 %%% Set PDF options %%%
 %%%-------------------------------------------------%%%
 
-% Example:
+%% Example:
 %  \hypersetup{%
 %   pdfauthor={Your-Name},
 %   pdfcreator={Your-Name},
 %   pdfsubject={Subject},
 %   pdfkeywords={Keyword1, Keyword2, ...}
 %  }
-% 
+
+%% Note: 
 % See the hyperref package documentation for more options
 
 %%%-------------------------------------------------%%%
-%%% Additional bib options %%%
+%%% Bibliography options %%%
 %%%-------------------------------------------------%%%
 
 \ExecuteBibliographyOptions{%
-url=false,
-isbn=false,
-doi=false,
-firstinits=false,
-bibencoding=utf8
+url=false,%
+isbn=false,%
+doi=false,%
+firstinits=false,%
+bibencoding=utf8%
 } 
 
-%% add a BibTeX bibliography file %%
+% Add a BibTeX bibliography file 
 \addbibresource{usr/subdocuments/open_science_paper.bib}

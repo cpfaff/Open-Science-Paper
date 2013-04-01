@@ -12,7 +12,7 @@
 %%
 %
 
-\documentclass[color=false, print=false, csvdata=false, gitinfo=false, linenumbers=false, sectionnumbers=false, autolayout=true]{osp/subdocuments/open_science_paper} 
+\documentclass[color=false, csvdata=false]{osp/subdocuments/open_science_paper} 
 
 %% Available class options [defaults]
 % - color true/[false]: Changes between colored output and a black and white theme 
@@ -26,12 +26,12 @@
 %   and the cmyk color model which is required for professional printing. 
 % - linenumbers true/[false]: Switch on/off line numbers for the whole document.
 % - sectionnumbers true/[false]: Switch between numbered and numberless sections 
-% - autolayout [true]/false: Switch between the nice automatic calculated layout 
-%   (Koma script) and a fixed geometry layout. You need to set the geometry inside of 
-%   the style file if you choose false.
-% - reversepagelayout [false]/true reverse the order of odd and evenside margins. This 
-%   can be used for twosided layout to decide if to start with a right or left page. 
-%   (feature not finished yet)
+% - autolayout [true]/false: Switch between the nice automatic calculated typearea layout 
+%   (Koma script) and a fixed geometry page layout (geometry package). You need to set the 
+%   geometry inside of the style file if you choose false. 
+% - twosidelayout true/[false]: Switch between two and one side page layout.
+% - reversepagelayout [false]/true reverse the order of odd and even side margins. This 
+%   option can be used to start the paper on a left or right page. 
 
 %%%------------------------------------------------------------------------------%%%
 %%% Load user options %%%

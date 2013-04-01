@@ -27,6 +27,7 @@
 \define@boolkey[KV]{open-science-paper}[osp@]{csvdata}[false]{}
 \define@boolkey[KV]{open-science-paper}[osp@]{sectionnumbers}[false]{}
 \define@boolkey[KV]{open-science-paper}[osp@]{autolayout}[false]{}
+\define@boolkey[KV]{open-science-paper}[osp@]{twosidelayout}[false]{}
 \define@boolkey[KV]{open-science-paper}[osp@]{reversepagelayout}[false]{}
 
 \presetkeys{open-science-paper}{%
@@ -37,15 +38,25 @@
    csvdata=false,
    sectionnumbers=false,
    autolayout=true,
+   twosidelayout=false,
    reversepagelayout=false,
 }{}
 
 \ProcessOptionsX[KV]<open-science-paper>
 
-\ifosp@autolayout
-   \LoadClass[fontsize=11pt, headings=small, captions=tableheading, DIV=20, notitlepage, oneside, final]{scrartcl}  
+
+\ifosp@autolayout  
+   \ifosp@twosidelayout%
+      \LoadClass[fontsize=11pt, headings=small, captions=tableheading, DIV=20, notitlepage, twoside, final]{scrartcl}   
+   \else%
+      \LoadClass[fontsize=11pt, headings=small, captions=tableheading, DIV=20, notitlepage, oneside, final]{scrartcl}   
+   \fi%
 \else%
-   \LoadClass[fontsize=11pt, headings=small, captions=tableheading, notitlepage, oneside, final]{scrartcl}
+   \ifosp@twosidelayout%
+      \LoadClass[fontsize=11pt, headings=small, captions=tableheading, notitlepage, twoside, final]{scrartcl}
+   \else%
+      \LoadClass[fontsize=11pt, headings=small, captions=tableheading, notitlepage, oneside, final]{scrartcl}
+   \fi%
    \RequirePackage{geometry}
 \fi% 
 
