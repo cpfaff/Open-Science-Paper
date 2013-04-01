@@ -35,7 +35,7 @@
 % - resetdefaultclassoptions true/[false] resets the default options the open science paper 
 %   loads the scrartcl class. After that you can modify every option via the open science 
 %   paper class call. For example to change the calculated typearea you can use 
-%   \documentclass[resetdefaultclassoptions=true, DIV=15]{osp/subdocuments/open_science_paper} 
+%   \documentclass[resetdefaultclassoptions=true, DIV=7]{osp/subdocuments/open_science_paper} 
 
 %%%------------------------------------------------------------------------------%%%
 %%% Load user options %%%
@@ -81,7 +81,7 @@
 
 <<subdoc_content_abstract, child='usr/subdocuments/osp_abstract_section.Rnw', eval=T>>=
 @
-% Second rule which closes the title header
+% Big rule after abstract which closes the title header 
 \ospTitleRule
 
 % Start column layout %
