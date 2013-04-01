@@ -266,8 +266,18 @@
 \newcommand{\ospFullRightFooter}{{\ospFooterPageNumberingStyle{\textcolor{\ospFooterPageNumberingColor}{{\thepage}}}}} 
 \newcommand{\ospSetFullRightFooter}[1]{\gdef\ospFullRightFooter{#1}}
 
-\fancyfoot[L]{\ospFullLeftFooter}
-\fancyfoot[R]{\ospFullRightFooter} 
+\ifosp@twosidelayout% 
+   \ifosp@reversepagelayout%
+      \fancyfoot[LO, RE]{\ospFullLeftFooter}
+      \fancyfoot[RO, LE]{\ospFullRightFooter} 
+   \else%
+      \fancyfoot[RO, LE]{\ospFullLeftFooter}
+      \fancyfoot[LO, RE]{\ospFullRightFooter} 
+   \fi%
+\else%
+   \fancyfoot[L]{\ospFullLeftFooter}
+   \fancyfoot[R]{\ospFullRightFooter} 
+\fi%
 
 %%%-------------------------------------------------%%%
 %%% Control big starting letters (Lettrine) %%%
