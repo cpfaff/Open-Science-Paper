@@ -11,8 +11,13 @@
   opts_chunk$set(tidy=TRUE, prompt=TRUE, comment='##', highlight=TRUE, size='normalsize')
   # cache options
   opts_chunk$set(cache.path='usr/cache/') 
-  # plot options
-  opts_chunk$set(fig.path='usr/graphics/dynamic/', dev='tikz', fig.keep='high', fig.show='hold')  
+  # plot options 
+  if("tikzDevice" %in% rownames(installed.packages()) == TRUE) {
+	 opts_chunk$set(fig.path='usr/graphics/dynamic/', dev='tikz', fig.keep='high', fig.show='hold')  
+  } else {
+	 opts_chunk$set(fig.path='usr/graphics/dynamic/', dev='pdf', fig.keep='high', fig.show='hold')  
+  }
+
   # tune details of graphics appearance 
   knit_hooks$set(par=function(before, options, envir){
     if (before && options$fig.show!='none') par(mar=c(4,4,.1,.1),cex.lab=.95,cex.axis=.9,mgp=c(2,.7,0),tcl=-.3)
