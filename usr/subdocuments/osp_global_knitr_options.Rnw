@@ -3,9 +3,13 @@
 %%%-------------------------------------------------%%%
 
 <<global_knitr_options, tidy=FALSE, highlight=FALSE, include=FALSE, cache=FALSE, eval=TRUE>>= 
-  # Load default libraries
+  ## Load default R libraries
+  
   suppressPackageStartupMessages(library(ggplot2))
+  # suppressPackageStartupMessages(library(grid))
   # suppressPackageStartupMessages(library(plyr))
+
+  ## Knitr 
 
   # messages 
   opts_chunk$set(warning=FALSE)
