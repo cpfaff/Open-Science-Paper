@@ -20,7 +20,7 @@
   # cache options
   opts_chunk$set(cache.path='usr/cache/')  
   # Caching on by default
-  opts_chunk$set(cache=F)
+  opts_chunk$set(cache=T)
   # plot options 
   if("tikzDevice" %in% rownames(installed.packages()) == TRUE) {
 	 opts_chunk$set(fig.path='usr/graphics/dynamic/', dev='tikz', fig.keep='high', fig.show='hold')  
