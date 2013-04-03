@@ -16,7 +16,7 @@
 	 \node[pictureframe]{%    
 	    \begin{minipage}{0.47\textwidth}%
 	       \begin{center}
-		  <<test_plot, cache=T, fig.width=3.27, fig.height=2.5, echo=FALSE>>= 
+		  <<test_plot, fig.width=3.27, fig.height=2.5, echo=FALSE>>= 
 		     ggplot(cars, aes(x=dist, y=speed)) +
 		     geom_point(shape=1) + geom_smooth(method = "lm", size = 1) +
 		     theme_osp() 
@@ -54,7 +54,7 @@
 	 \node[pictureframe]{%    
 	    \begin{minipage}{0.98\textwidth}%
 	       \begin{center}
-		  <<test_plot_two, cache=T, fig.width=3.415, fig.height=2.5, echo=FALSE>>=
+		  <<test_plot_two, fig.width=3.415, fig.height=2.5, echo=FALSE>>=
 		     ggplot(movies, aes(x=rating)) +
 		     geom_density() +
 		     theme_osp() 
