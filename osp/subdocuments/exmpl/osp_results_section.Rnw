@@ -11,28 +11,24 @@
 \lipsum[1-2]
 
 \begin{figure}[H] % {{{
-% Label fig:test_plot
-	\centering
-	\begin{tikzpicture}
-		\node[pictureframe]{%    
-			\begin{minipage}{0.47\textwidth}%
-				\begin{center}
-               <<test_plot, cache=T, fig.width=3.27, fig.height=2.5, echo=FALSE>>=
-                  suppressPackageStartupMessages(library(ggplot2))
-
-                  ggplot(cars, aes(x=dist, y=speed)) +
-                     geom_point(shape=1) + geom_smooth(method = "lm", size = 1) +
-                     theme_bw() +
-                     theme(panel.grid.major=element_blank(), panel.grid.minor=element_blank()) 
-               @
-				\end{center}
-			\end{minipage}
-		};
-	\end{tikzpicture}
-	 \caption{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-	 commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-	 dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-	 pellentesque eu, pretium quis, sem.}
+   \centering
+      \begin{tikzpicture}
+	 \node[pictureframe]{%    
+	    \begin{minipage}{0.47\textwidth}%
+	       \begin{center}
+		  <<test_plot, cache=T, fig.width=3.27, fig.height=2.5, echo=FALSE>>= 
+		     ggplot(cars, aes(x=dist, y=speed)) +
+		     geom_point(shape=1) + geom_smooth(method = "lm", size = 1) +
+		     theme_osp() 
+		  @
+	       \end{center}
+	    \end{minipage}
+	 };
+      \end{tikzpicture}
+   \caption{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+   commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+   dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+   pellentesque eu, pretium quis, sem.}
 \label{fig:test_plot}
 \end{figure} % }}}
 
@@ -53,35 +49,28 @@
 \end{multline}
 
 \begin{figure*} % {{{
-% Label fig:test_plot_two
-	\centering
-	\begin{tikzpicture}
-		\node[pictureframe]{%    
-			\begin{minipage}{0.98\textwidth}%
-				\begin{center}
-               <<test_plot_two, cache=T, fig.width=3.415, fig.height=2.5, echo=FALSE>>=
-                  suppressPackageStartupMessages(library(ggplot2))
-                  # plotting
-		  # par(mar=c(4,4,.1,.1),cex.lab=.1,cex.axis=.1,mgp=c(2,.7,0),tcl=-.3)
+   \centering
+      \begin{tikzpicture}
+	 \node[pictureframe]{%    
+	    \begin{minipage}{0.98\textwidth}%
+	       \begin{center}
+		  <<test_plot_two, cache=T, fig.width=3.415, fig.height=2.5, echo=FALSE>>=
+		     ggplot(movies, aes(x=rating)) +
+		     geom_density() +
+		     theme_osp() 
 
-                  ggplot(movies, aes(x=rating)) +
-                  geom_density() +
-                  theme_bw() +
-                  theme(panel.grid.major=element_blank(), panel.grid.minor=element_blank()) 
-
-                  ggplot(mtcars, aes(factor(cyl), mpg)) +
-                  geom_boxplot() +
-                  theme_bw() +
-                  theme(panel.grid.major=element_blank(), panel.grid.minor=element_blank()) 
-               @
-				\end{center}
-			\end{minipage}
-		};
-	\end{tikzpicture}
-	 \caption{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-	 commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-	 dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-	 pellentesque eu, pretium quis, sem.}
+		     ggplot(mtcars, aes(factor(cyl), mpg)) +
+		     geom_boxplot() +
+		     theme_osp() 
+		  @
+	       \end{center}
+	    \end{minipage}
+	 };
+      \end{tikzpicture}
+   \caption{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+   commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+   dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+   pellentesque eu, pretium quis, sem.}
 \label{fig:test_plot_two}
 \end{figure*} % }}}
 
