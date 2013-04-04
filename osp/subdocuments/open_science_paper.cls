@@ -579,6 +579,9 @@
 \newcommand{\ospHeaderInfoFilePath}{osp/data/ospHeaderTable.csv} 
 \newcommand{\ospSetHeaderInfoFilePath}[1]{\gdef\ospHeaderInfoFilePath{#1}}  
 
+\newcommand{\ospFontTitle}{\normalfont\sffamily\Huge\bfseries} 
+\newcommand{\ospSetFontTitle}[1]{\gdef\ospFontTitle{#1}} 
+
 \newlength{\ospLengtTitleLogoColwidth} 
 \setlength{\ospLengtTitleLogoColwidth}{0.23\textwidth} 
 
@@ -602,7 +605,7 @@
             \end{minipage}&%
             \begin{minipage}{0.7\textwidth} 
                \vspace{\baselineskip}
-                  {\color{ospColor@Title}{{\normalfont\sffamily\Huge\bfseries \ospTitleCsv}}}\par%
+                  {\color{ospColor@Title}{{\ospFontTitle \ospTitleCsv}}}\par%
                      \begin{normalsize}\textbf{%
                         \DTLsort{ospAuthorPriorityToAppear,ospAuthorFirstName}{ospHeaderInfoFromTable} 
                         \DTLforeach{ospHeaderInfoFromTable}{%
@@ -638,7 +641,7 @@
             \end{minipage}&	
             \begin{minipage}{0.7\textwidth} 
                \vspace{\baselineskip}
-                  {\color{ospColor@Title}{{\normalfont\sffamily\Huge\bfseries \ospTitle}}} \par
+                  {\color{ospColor@Title}{{\ospFontTitle \ospTitle}}} \par
                   \ifdefempty{\ospAuthors}{}{\begin{normalsize}\textbf{\ospAuthors}\end{normalsize}\par}
                   \ifdefempty{\ospContacts}{}{\begin{normalsize}\textbf{\ospTitleKeywordContactName} \ospContacts\end{normalsize}\par}
                   \ifdefempty{\ospAffiliations}{}{\begin{normalsize}\textbf{\ospTitleKeywordAffiliationName} \ospAffiliations\end{normalsize}\par}
