@@ -35,7 +35,8 @@
 % - resetdefaultclassoptions true/[false] resets the default options the open science paper 
 %   loads the scrartcl class. After that you can modify every option via the open science 
 %   paper class call. For example to change the calculated typearea you can use 
-%   \documentclass[resetdefaultclassoptions=true, DIV=7]{osp/subdocuments/open_science_paper} 
+%   \documentclass[resetdefaultclassoptions=true, DIV=7]{osp/subdocuments/open_science_paper}  
+% - parindent true/[false] Switch paragraph indent on or off.
 
 %%%------------------------------------------------------------------------------%%%
 %%% Load user options %%%

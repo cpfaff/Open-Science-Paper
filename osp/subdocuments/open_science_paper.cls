@@ -30,6 +30,7 @@
 \define@boolkey[KV]{open-science-paper}[osp@]{twosidelayout}[false]{}
 \define@boolkey[KV]{open-science-paper}[osp@]{reversepagelayout}[false]{}  
 \define@boolkey[KV]{open-science-paper}[osp@]{resetdefaultclassoptions}[false]{}  
+\define@boolkey[KV]{open-science-paper}[osp@]{parindent}[false]{}
 
 \DeclareOptionX*{\PassOptionsToClass{\CurrentOption}{scrartcl}}
 
@@ -43,7 +44,8 @@
    autolayout=true,
    twosidelayout=false,
    reversepagelayout=false, 
-   resetdefaultclassoptions=false,
+   resetdefaultclassoptions=false, 
+   parindent=false,
 }{}
 
 \ProcessOptionsX[KV]<open-science-paper>
@@ -703,8 +705,12 @@
 %%% Typographical fine-tuning %%%
 %%%-------------------------------------------------%%%
 
-%% No indent for new paragraph %%
-\setlength{\parindent}{0em} 
+%% No indent for new paragraph %% 
+\ifosp@parindent%
+   \setlength{\parindent}{1em} 
+\else%
+   \setlength{\parindent}{0em} 
+\fi% 
 
 %% Correction of white spaces %%
 \RequirePackage{ellipsis}
