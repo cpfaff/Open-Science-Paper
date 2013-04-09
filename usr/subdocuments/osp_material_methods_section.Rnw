@@ -4,34 +4,3 @@
 
 \section{Material And Methods}
 
-% Remove the lipsum and example table fill in your material and methods text here
-
-
-\lipsum[1]
-
-
-% example for a one column table %
-
-\begin{table}[H] % {{{
-% Label tab:test_table_one
-	\centering
-	\label{tab:test_table_one}
-	\caption{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-	 commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-	 dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-	 pellentesque eu, pretium quis, sem.}
-	   {\small
-			\begin{tabular}{p{0.055\columnwidth}p{0.055\columnwidth}p{0.055\columnwidth}p{0.055\columnwidth}p{0.055\columnwidth}p{0.055\columnwidth}p{0.055\columnwidth}p{0.055\columnwidth}p{0.055\columnwidth}}
-				\toprule
-					A & B & C & D & E & F & G & H & I\\ 
-				\midrule
-					1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\ 
-					1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\ 
-					1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\ 
-				\bottomrule
-			\end{tabular}
-		}
-\end{table} % }}}
-
-
-\lipsum[1]
