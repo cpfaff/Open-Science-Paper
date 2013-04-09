@@ -1,12 +1,5 @@
 ## About
 
-### How to use the Open-Science-Paper
-
-This repository contains a paper about the Open-Science-Paper using the
-Open-Science-Paper. Its purpose is to show interested users how to use
-Open-Science-Paper on a concrete example. But it also will be a detailed
-documentation about the features of the Open-Science-Paper.
-
 ### Open-Science-Paper
 
 The Open-Science-Paper
