@@ -19,7 +19,7 @@ PDFLATEX = pdflatex
 PACKER= tar -czf
 REMOVER = @-rm -r
 PRINTER = @-echo 
-GREPPER = @-grep 
+GREPPER = @-grep  
 RIGHTSETTER = @-chmod
 COPY = @-cp
 PDFVIEWER = okular
@@ -27,8 +27,13 @@ DATE = $(shell date +%y%m%d)
 
 # Example and Empty files  
 SUBDOCFOLDER = usr/subdocuments/
-EXMPLDOCS = osp/subdocuments/exmpl/* 
-TEMPDOCS = osp/subdocuments/temp/*
+EXMPLDOCS = osp/subdocuments/exmpl/*.bib osp/subdocuments/exmpl/*.sty osp/subdocuments/exmpl/*.Rnw 
+TEMPDOCS = osp/subdocuments/temp/*.bib osp/subdocuments/temp/*.sty osp/subdocuments/temp/*.Rnw 
+TEMPREADME = osp/subdocuments/temp/README.md
+EXMPLREADME = osp/subdocuments/exmpl/README.md  
+
+# Base folder 
+BASEFOLDER = `pwd` 
 
 # Git hooks 
 HOOKSOURCE = osp/data/ospGitHook
@@ -82,11 +87,13 @@ archive:
 clean:
 	$(REMOVER) $(CLEANFILES)	
 
-expldoc:
+exmpldoc:
 	$(COPY) $(EXMPLDOCS) $(SUBDOCFOLDER) 
+	$(COPY) $(EXMPLREADME) $(BASEFOLDER) 
 
 tmpdoc:
 	$(COPY) $(TEMPDOCS) $(SUBDOCFOLDER)  
+	$(COPY) $(TEMPREADME) $(BASEFOLDER) 
 
 githooks:  
 	$(COPY) $(HOOKSOURCE) $(GITHOOKPATH)/post-checkout 
@@ -97,3 +104,4 @@ githooks:
 prep:
 	$(COPY) usr/subdocuments/open_science_paper.sty usr/subdocuments/osp_global_knitr_options.Rnw osp/subdocuments/exmpl/
 	$(COPY) usr/subdocuments/open_science_paper.sty usr/subdocuments/osp_global_knitr_options.Rnw osp/subdocuments/temp/ 
+	$(COPY) README.md osp/subdocuments/exmpl/
