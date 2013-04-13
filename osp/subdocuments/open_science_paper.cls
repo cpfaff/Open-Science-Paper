@@ -75,13 +75,13 @@
 
 %% input and font encoding %%
 \RequirePackage[T1]{fontenc}
-\RequirePackage[utf8]{inputenc}
+\RequirePackage[utf8]{luainputenc}
 
 %% Fonts and math symbols %%
 \RequirePackage{libertine}
+\RequirePackage{amsfonts}
 \RequirePackage{amsmath}
 \RequirePackage[libertine]{newtxmath}
-\RequirePackage{amsfonts}
 \RequirePackage{amssymb} 
 \RequirePackage{textcomp}
 
@@ -100,9 +100,11 @@
 %%%-------------------------------------------------%%%
 
 \RequirePackage{calc}
-\RequirePackage{xifthen} 
+\RequirePackage{xifthen}  
+\RequirePackage{ifluatex} 
 \RequirePackage{datatool} 
-\RequirePackage{expl3} 
+\RequirePackage{expl3}  
+% \RequirePackage{xstring}
 
 %%%-------------------------------------------------%%%
 %%% Language adaption of the document %%%
@@ -552,13 +554,13 @@
 \newcommand{\ospTitle}{The open science paper title} 
 \newcommand{\ospSetTitle}[1]{\def\ospTitle{#1}}
 
-\newcommand{\ospAuthors}{Author one\textsuperscript{1,2,a}, Author two\textsuperscript{2,b}, \ldots} 
+\newcommand{\ospAuthors}{Author one\textsuperscript{1,2,a}, Author two\textsuperscript{2}, \ldots} 
 \newcommand{\ospSetAuthors}[1]{\def\ospAuthors{#1}}
 
-\newcommand{\ospTitleKeywordContactName}{Contact:} 
+\newcommand{\ospTitleKeywordContactName}{Corresponding:} 
 \newcommand{\ospSetTitleKeywordContactName}[1]{\gdef\ospTitleKeywordContactName{#1}}  
 
-\newcommand{\ospContacts}{foo@bar.com\textsuperscript{a}, bar@foo.com\textsuperscript{b}, \ldots} 
+\newcommand{\ospContacts}{foo@bar.com\textsuperscript{a}} 
 \newcommand{\ospSetContacts}[1]{\def\ospContacts{#1}}
 
 \newcommand{\ospAffiliations}{University of XY departement of Z\textsuperscript{1}, \ldots} 
@@ -584,6 +586,9 @@
 \newcommand{\ospFontTitle}{\normalfont\sffamily\Huge\bfseries} 
 \newcommand{\ospSetFontTitle}[1]{\gdef\ospFontTitle{#1}} 
 
+\newcommand{\ospFontAuthors}{\normalfont\sffamily\normalsize} 
+\newcommand{\ospSetFontAuthors}[1]{\gdef\ospFontAuthors{#1}} 
+
 \newlength{\ospLengtTitleLogoColwidth} 
 \setlength{\ospLengtTitleLogoColwidth}{0.23\textwidth} 
 
@@ -598,7 +603,7 @@
 
 \ifosp@csvdata
    \DTLloaddb{ospHeaderInfoFromTable}{\ospHeaderInfoFilePath}
-   \DTLgetvalue{\ospTitleCsv}{ospHeaderInfoFromTable}{1}{\dtlcolumnindex{ospHeaderInfoFromTable}{ospTitle}}   
+   \DTLgetvalue{\ospTitleCsv}{ospHeaderInfoFromTable}{1}{\dtlcolumnindex{ospHeaderInfoFromTable}{ospTitle}}\par%
    \newcommand{\ospMakeTitle}{% 
       \ospTitleRule\par\vspace{\ospLengtTitleSpaceAbove}
          \begin{tabular}{p{\ospLengtTitleLogoColwidth}p{\ospLengtTitleTitleColwidth}}
@@ -607,29 +612,29 @@
             \end{minipage}&%
             \begin{minipage}{0.7\textwidth} 
                \vspace{\baselineskip}
-                  {\color{ospColor@Title}{{\ospFontTitle \ospTitleCsv}}}\par%
+                  {\color{ospColor@Title}{{\ospFontTitle\ospTitleCsv}}}\par%
                      \begin{normalsize}\textbf{%
                         \DTLsort{ospAuthorPriorityToAppear,ospAuthorFirstName}{ospHeaderInfoFromTable} 
                         \DTLforeach{ospHeaderInfoFromTable}{%
                            \firstName=ospAuthorFirstNameShort,% 
                            \lastName=ospAuthorLastName,%
-                           \id=ospAuthorAffiliationIDs}{\ifdefempty{\firstName}{}{\DTLiflastrow{\firstName\xspace\lastName\textsuperscript{\id}}{\firstName\xspace\lastName\textsuperscript{\id}, }}}
+                           \id=ospAuthorAffiliationIDs}{\ifdefempty{\firstName}{}{\DTLiflastrow{\firstName\xspace\lastName\textsuperscript{\id}}{\firstName\xspace\lastName\textsuperscript{\id},~}}}
                      }\end{normalsize}\par 
                   \begin{normalsize}\textbf{\ospTitleKeywordContactName}  
                      \DTLsort{ospAuthorEmailID}{ospHeaderInfoFromTable} 
                      \DTLforeach{ospHeaderInfoFromTable}{%
                         \email=ospAuthorEmail,%
-                        \id=ospAuthorEmailID}{\ifdefempty{\email}{}{\DTLiflastrow{\href{mailto:\email}{\email}\textsuperscript{\id}}{\href{mailto:\email}{\email}\textsuperscript{\id}, }}}
+                        \id=ospAuthorEmailID}{\ifdefempty{\email}{}{\DTLiflastrow{\href{mailto:\email}{\email}\textsuperscript{\id}}{\href{mailto:\email}{\email}\textsuperscript{\id},~}}}
                   \end{normalsize}\par%
                   \begin{normalsize}\textbf{\ospTitleKeywordAffiliationName}  
                      \DTLsort{ospAffiliationIDs}{ospHeaderInfoFromTable} 
                      \DTLforeach{ospHeaderInfoFromTable}{%
                         \affiliation=ospAffiliations,%
-                        \id=ospAffiliationIDs}{\ifdefempty{\affiliation}{}{\DTLiflastrow{\affiliation\textsuperscript{\id}}{\affiliation\textsuperscript{\id}, }}}
+                        \id=ospAffiliationIDs}{\ifdefempty{\affiliation}{}{\DTLiflastrow{\affiliation\textsuperscript{\id}}{\affiliation\textsuperscript{\id},~}}}
                   \end{normalsize}\par%
                   \begin{normalsize}\textbf{\ospTitleKeywordName}% 
                      \DTLsort{ospKeywords}{ospHeaderInfoFromTable} 
-                     \DTLforeach{ospHeaderInfoFromTable}{\keyword=ospKeywords}{\ifdefempty{\keyword}{}{\DTLiflastrow{\keyword}{\keyword, }}} \end{normalsize}\par%
+                     \DTLforeach{ospHeaderInfoFromTable}{\keyword=ospKeywords}{\ifdefempty{\keyword}{}{\DTLiflastrow{\keyword}{\keyword,~}}} \end{normalsize}\par%
                   \ospGitInfoLine%
             \end{minipage}
          \end{tabular}\par\vspace{\ospLengtTitleSpaceBelow}
@@ -643,7 +648,7 @@
             \end{minipage}&	
             \begin{minipage}{0.7\textwidth} 
                \vspace{\baselineskip}
-                  {\color{ospColor@Title}{{\ospFontTitle \ospTitle}}} \par
+                  {\color{ospColor@Title}{{\ospFontTitle\ospTitle}}}\par
                   \ifdefempty{\ospAuthors}{}{\begin{normalsize}\textbf{\ospAuthors}\end{normalsize}\par}
                   \ifdefempty{\ospContacts}{}{\begin{normalsize}\textbf{\ospTitleKeywordContactName} \ospContacts\end{normalsize}\par}
                   \ifdefempty{\ospAffiliations}{}{\begin{normalsize}\textbf{\ospTitleKeywordAffiliationName} \ospAffiliations\end{normalsize}\par}
@@ -652,7 +657,7 @@
             \end{minipage}
          \end{tabular}\par\vspace{\ospLengtTitleSpaceBelow}
       }
-\fi%
+\fi% 
 
 %% Defines the abstract %%
 \RequirePackage{abstract}
@@ -727,16 +732,23 @@
 \emergencystretch = 1.5em
 \hfuzz = 0.3pt
 
-%% Microtype for fine-tuning of typesetting %%
-\RequirePackage[protrusion=true,%
-expansion=true,%
-babel=true,%
-tracking=true,% 
-spacing=false]{microtype}     
+\ifluatex% 
+   \RequirePackage[protrusion=true,%
+   expansion=true,%
+   babel=true,%
+   spacing=false]{microtype}     
+\else%
+   %% Microtype for fine-tuning of typesetting %%
+   \RequirePackage[protrusion=true,%
+   expansion=true,%
+   babel=true,%
+   tracking=true,% 
+   spacing=false]{microtype}     
 
-\DeclareMicrotypeSet*[tracking]{my}% 
-       {font = */*/*/sc/*}% 
-\SetTracking{encoding = *, shape = sc}{40}
+   \DeclareMicrotypeSet*[tracking]{my}% 
+          {font = */*/*/sc/*}% 
+   \SetTracking{encoding = *, shape = sc}{40}
+\fi 
 
 %%%-------------------------------------------------%%%
 %%% PDF Options %%%

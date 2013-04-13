@@ -14,8 +14,9 @@ DEPENDENCIES = $(DOCUMENT).Rnw osp/subdocuments/open_science_paper.* usr/subdocu
 
 # Used Programs
 KNITR = knit
-BIBTEX = biber
-PDFLATEX = pdflatex
+BIBTEX = biber 
+LUALATEX = lualatex
+PDFLATEX = pdflatex 
 PACKER= tar -czf
 REMOVER = @-rm -r
 PRINTER = @-echo 
@@ -56,6 +57,13 @@ $(DOCUMENT).pdf: $(DEPENDENCIES)
 	$(PDFLATEX) $(DOCUMENT).tex
 	$(BIBTEX) $(DOCUMENT)
 	$(PDFLATEX) $(DOCUMENT).tex
+
+uselua: $(DEPENDENCIES)  
+	$(KNITR) $(DOCUMENT).Rnw $(DOCUMENT).tex --no-convert
+	$(LUALATEX) $(DOCUMENT).tex
+	$(LUALATEX) $(DOCUMENT).tex
+	$(BIBTEX) $(DOCUMENT)
+	$(LUALATEX) $(DOCUMENT).tex
 
 # Special rules
 showpdf:
