@@ -58,12 +58,12 @@ git commit information inside of the header.
 
 ## See also
 
-The Open-Science-Paper is one of a series of documents that are in preparation.
-You might also be interested in one of the following repositories.
+The Open-Science-Paper is the first stable document of a series of documents
+that are in preparation. You might also be interested in one of the following
+repositories.
 
 - [Open-Science-Thesis](https://github.com/cpfaff/Open-Science-Thesis)
 - [Open-Science-Poster](https://github.com/cpfaff/Open-Science-Poster)
-
 
 ## Self-promotion
 
