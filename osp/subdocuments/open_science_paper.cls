@@ -373,13 +373,14 @@
 \ifosp@color
    % \tikzstyle{pictureframe} = [rectangle, rounded corners, draw=LightGray, fill=white, blur shadow={shadow blur steps=5, shadow blur extra rounding=1.3pt}] 
    \tikzstyle{pictureframe} = [rectangle, rounded corners, draw=LightGray, thick, fill=white] 
-\else
+\else%
    \tikzstyle{pictureframe} = [rectangle, rounded corners, draw=black, fill=white]
 \fi
 
 \tikzstyle{signbackground} = [rectangle, fill=gray!3, rounded corners, draw=gray, very thin]
 
 \RequirePackage{subcaption} 
+
 % usage:
 %  \begin{figure}
 %    \begin{subfigure}{Breite}
@@ -461,6 +462,7 @@
 %%%-------------------------------------------------%%%
 
 \RequirePackage{siunitx}
+
 % usage:
 %  \si{kg.m/s^2}
 %  \num{12345}
