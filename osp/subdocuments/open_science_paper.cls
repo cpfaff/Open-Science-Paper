@@ -140,8 +140,8 @@
    \colorlet{ospColor@ParagraphHeader}{DarkGray}
    \colorlet{ospColor@SectionHeader}{DarkOrange}
    
-   \colorlet{ospColor@Lettrine}{DarkGray} 
-   
+   \colorlet{ospColor@Lettrine}{DarkGray}  
+
    \colorlet{ospColor@LineNumbers}{DarkGray} 
 
    \colorlet{ospColor@FooterTextSeparator}{DarkGray}
@@ -294,32 +294,27 @@
 %%% Control big starting letters (Lettrine) %%%
 %%%-------------------------------------------------%%%
 
-\usepackage{lettrine} 
+\usepackage{lettrine}
 
-\ExplSyntaxOn%
-\newcommand{\ospSet@LettrineOptions}[1]{%  
-   \prg_case_str:nnn {#1}
-   {%
-      {A}{%
-         \setlength{\DefaultFindent}{-0.2em}
-         \setlength{\DefaultNindent}{0.5em}
-      }
-      {T}{%
-         \setlength{\DefaultFindent}{0.27em}
-         \setlength{\DefaultNindent}{0.02em}
-      }
-   }
-   {%
-      \setlength{\DefaultFindent}{0.2em}
+\setlength{\DefaultFindent}{0.2em}
+\setlength{\DefaultNindent}{0.02em}
+
+\newcommand{\ospSet@LettrineOptions}[1]{%
+   \ifstrequal{#1}{A}{
+      \setlength{\DefaultFindent}{-0.2em}
+      \setlength{\DefaultNindent}{0.5em}
+   }{\relax}
+
+   \ifstrequal{#1}{T}{
+      \setlength{\DefaultFindent}{0.27em}
       \setlength{\DefaultNindent}{0.02em}
-   }
-} 
-\ExplSyntaxOff%
+   }{\relax}
+}
 
 \newcommand{\capital}[1]{%
    \ospSet@LettrineOptions{#1}
    \lettrine{\textcolor{ospColor@Lettrine}{#1}}
-}    
+} 
 
 %%%-------------------------------------------------%%%
 %%% Enable linenumbers %%%

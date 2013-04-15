@@ -56,10 +56,19 @@ git commit information inside of the header.
 
 ![colored-output](https://dl.dropbox.com/u/844606/Open-Science-Paper-Documentation/color_paper_title_header.png)
 
+## See also
+
+The Open-Science-Paper is the first stable document of a series of documents
+that are in preparation. You might also be interested in one of the following
+repositories.
+
+- [Open-Science-Thesis](https://github.com/cpfaff/Open-Science-Thesis)
+- [Open-Science-Poster](https://github.com/cpfaff/Open-Science-Poster)
+
 ## Self-promotion
 
-Do you like the Open-Science-Paper repository? You are welcome
-to follow me on [GitHub](https://github.com/cpfaff) and or
+Do you like the Open-Science-Paper repository? You are welcome to follow me on
+[GitHub](https://github.com/cpfaff) and or
 [Twitter](http://twitter.com/ctpfaff).
 
 ## License
