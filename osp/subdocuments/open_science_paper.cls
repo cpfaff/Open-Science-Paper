@@ -55,15 +55,15 @@
 \else% 
    \ifosp@autolayout  
       \ifosp@twosidelayout%
-         \LoadClass[headings=small, captions=tableheading, DIV=20, notitlepage, twoside, final]{scrartcl}   
+         \LoadClass[11pt, headings=small, captions=tableheading, DIV=20, notitlepage, twoside, final]{scrartcl}   
       \else%
-         \LoadClass[headings=small, captions=tableheading, DIV=20, notitlepage, oneside, final]{scrartcl}   
+         \LoadClass[11pt, headings=small, captions=tableheading, DIV=20, notitlepage, oneside, final]{scrartcl}   
       \fi%
    \else%
       \ifosp@twosidelayout%
-         \LoadClass[headings=small, captions=tableheading, notitlepage, twoside, final]{scrartcl}
+         \LoadClass[11pt, headings=small, captions=tableheading, notitlepage, twoside, final]{scrartcl}
       \else%
-         \LoadClass[headings=small, captions=tableheading, notitlepage, oneside, final]{scrartcl}
+         \LoadClass[11pt, headings=small, captions=tableheading, notitlepage, oneside, final]{scrartcl}
       \fi%
       \RequirePackage{geometry}
    \fi% 
