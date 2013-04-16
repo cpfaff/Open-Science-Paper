@@ -296,6 +296,7 @@
 
 \usepackage{lettrine}
 
+% set defaults
 \setlength{\DefaultFindent}{0.2em}
 \setlength{\DefaultNindent}{0.02em}
 
@@ -309,6 +310,7 @@
       \setlength{\DefaultFindent}{0.27em}
       \setlength{\DefaultNindent}{0.02em}
    }{\relax}
+   
 }
 
 \newcommand{\capital}[1]{%
