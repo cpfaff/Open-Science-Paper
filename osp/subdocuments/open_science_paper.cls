@@ -545,6 +545,11 @@
    {~}{{\textasciitilde}}1
 }
 
+% For inline code listings (may be refined with a tikz frame)
+\newcommand{\inlinecode}[1]{\colorbox{ospColorAtListingBackground}{\lstinline|#1|}}
+% Usage: 
+%       \inlinecode{a=a+b} 
+
 %%%-------------------------------------------------%%%
 %%% Definition of environments %%%
 %%%-------------------------------------------------%%%
