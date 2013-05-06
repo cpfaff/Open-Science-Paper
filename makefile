@@ -65,6 +65,9 @@ uselua: $(DEPENDENCIES)
 	$(BIBTEX) $(DOCUMENT)
 	$(LUALATEX) $(DOCUMENT).tex
 
+buildserver: 
+	ruby osp/server/buildserver.rb
+
 # Special rules
 showpdf:
 	$(PDFVIEWER) $(DOCUMENT).pdf & 
