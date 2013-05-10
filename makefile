@@ -65,10 +65,16 @@ uselua: $(DEPENDENCIES)
 	$(BIBTEX) $(DOCUMENT)
 	$(LUALATEX) $(DOCUMENT).tex
 
-buildserver: 
-	ruby osp/server/buildserver.rb
+initproject:  
+	# Only works with installed R package Project Template
+	rm -rf usr/statistics
+	Rscript -e "library(ProjectTemplate); create.project('usr/statistics')" 
 
-# Special rules
+# Special rules 
+buildserver: 
+	# Not finished feature
+	ruby osp/server/buildserver.rb 
+
 showpdf:
 	$(PDFVIEWER) $(DOCUMENT).pdf & 
 
