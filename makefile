@@ -10,7 +10,7 @@
 DOCUMENT = open_science_paper
 
 # Dependencies maindocument
-DEPENDENCIES = $(DOCUMENT).Rnw osp/subdocuments/open_science_paper.* usr/subdocuments/open_science_paper.* usr/subdocuments/*.Rnw osp/data/*.csv
+DEPENDENCIES = $(DOCUMENT).Rnw osp/subdocuments/*.cls usr/subdocuments/bibliography/*.bib usr/subdocuments/chapters/* usr/subdocuments/options/* osp/data/*.csv
 
 # Used Programs
 KNITR = knit
@@ -22,14 +22,15 @@ REMOVER = @-rm -r
 PRINTER = @-echo 
 GREPPER = @-grep  
 RIGHTSETTER = @-chmod
-COPY = @-cp
+COPY = @-cp -r
 PDFVIEWER = okular
 DATE = $(shell date +%y%m%d)
 
 # Example and Empty files  
 SUBDOCFOLDER = usr/subdocuments/
-EXMPLDOCS = osp/subdocuments/exmpl/*.bib osp/subdocuments/exmpl/*.sty osp/subdocuments/exmpl/*.Rnw 
-TEMPDOCS = osp/subdocuments/temp/*.bib osp/subdocuments/temp/*.sty osp/subdocuments/temp/*.Rnw 
+EXMPLDOCS = osp/subdocuments/exmpl/*  
+TEMPDOCS = osp/subdocuments/temp/*  
+
 TEMPREADME = osp/subdocuments/temp/README.md
 EXMPLREADME = osp/subdocuments/exmpl/README.md  
 
@@ -66,13 +67,13 @@ uselua: $(DEPENDENCIES)
 	$(LUALATEX) $(DOCUMENT).tex
 
 initproject:  
-	# Only works with installed R package Project Template
-	rm -rf usr/statistics
-	Rscript -e "library(ProjectTemplate); create.project('usr/statistics')" 
+	# Only works with installed R package "Project Template"
+	rm -rf usr/statistics/rproject
+	Rscript -e "library(ProjectTemplate); create.project('usr/statistics/rproject')" 
 
 # Special rules 
 buildserver: 
-	# Not finished feature
+	# Not finished feature (Needs ruby installed)
 	ruby osp/server/buildserver.rb 
 
 showpdf:
@@ -105,11 +106,15 @@ clean:
 	$(REMOVER) $(CLEANFILES)	
 
 exmpldoc:
-	$(COPY) $(EXMPLDOCS) $(SUBDOCFOLDER) 
+	$(COPY) $(EXMPLDOCS) $(SUBDOCFOLDER)  
+
+exmplreadme:
 	$(COPY) $(EXMPLREADME) $(BASEFOLDER) 
 
 tmpdoc:
-	$(COPY) $(TEMPDOCS) $(SUBDOCFOLDER)  
+	$(COPY) $(TEMPDOCS) $(SUBDOCFOLDER) 
+
+tmpreadme:
 	$(COPY) $(TEMPREADME) $(BASEFOLDER) 
 
 githooks:  
@@ -119,6 +124,6 @@ githooks:
 	$(RIGHTSETTER) $(HOOKRIGHTS) $(GITHOOKPATH)/* 
 
 prep:
-	$(COPY) usr/subdocuments/open_science_paper.sty usr/subdocuments/osp_global_knitr_options.Rnw osp/subdocuments/exmpl/
-	$(COPY) usr/subdocuments/open_science_paper.sty usr/subdocuments/osp_global_knitr_options.Rnw osp/subdocuments/temp/ 
+	$(COPY) usr/subdocuments/ osp/subdocuments/exmpl/
 	$(COPY) README.md osp/subdocuments/exmpl/
+	$(COPY) usr/subdocuments/options/ osp/subdocuments/temp/ 
