@@ -44,7 +44,7 @@ HOOKRIGHTS = 744
 
 # Archive document
 ARCHNAME = $(DOCUMENT)_$(DATE).tar.gz
-ARCHFILES = $(DOCUMENT).pdf $(DOCUMENT).Rnw usr/subdocuments data usr/graphics makefile
+ARCHFILES = $(DOCUMENT).pdf $(DOCUMENT).Rnw osp/ usr/ makefile
 
 # Clean up the document folder
 CLEANFILES = usr/graphics/dynamic/* *.gin usr/cache/* *.xdy *tikzDictionary *.idx *.mtc* *.glo *.maf *.ptc *.tikz *.lot *.dpth *.figlist *.dep *.log *.makefile *.out *.map *.tex *.toc *.aux *.tmp *.bbl *.blg *.lof *.acn *.acr *.alg *.glg *.gls *.ilg *.ind *.ist *.slg *.syg *.syi *.acn *.dvi *.ist *.syg *.synctex.gz *.bcf *.run.xml *-blx.bib  
@@ -66,7 +66,7 @@ uselua: $(DEPENDENCIES)
 	$(BIBTEX) $(DOCUMENT)
 	$(LUALATEX) $(DOCUMENT).tex
 
-initproject:  
+initrproject:  
 	# Only works with installed R package "Project Template"
 	rm -rf usr/statistics/rproject
 	Rscript -e "library(ProjectTemplate); create.project('usr/statistics/rproject')" 
@@ -99,11 +99,12 @@ warnings:
 	$(GREPPER) 'Underfull' $(DOCUMENT).log
 	$(PRINTER) "----------------------------------------------------o"
 
-archive:
-	$(PACKER) $(ARCHNAME) $(ARCHFILES)
-
 clean:
 	$(REMOVER) $(CLEANFILES)	
+
+archive: 
+	make clean
+	$(PACKER) $(ARCHNAME) $(ARCHFILES)
 
 exmpldoc:
 	$(COPY) $(EXMPLDOCS) $(SUBDOCFOLDER)  
