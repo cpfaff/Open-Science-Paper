@@ -28,8 +28,8 @@ DATE = $(shell date +%y%m%d)
 
 # Example and Empty files  
 SUBDOCFOLDER = usr/subdocuments/
-EXMPLDOCS = osp/subdocuments/exmpl/*  
-TEMPDOCS = osp/subdocuments/temp/*  
+EXMPLDOCS = osp/subdocuments/exmpl/bibliography/  osp/subdocuments/exmpl/chapters/ osp/subdocuments/exmpl/options/
+TEMPDOCS =  osp/subdocuments/temp/bibliography/  osp/subdocuments/temp/chapters/ osp/subdocuments/temp/options/
 
 TEMPREADME = osp/subdocuments/temp/README.md
 EXMPLREADME = osp/subdocuments/exmpl/README.md  
