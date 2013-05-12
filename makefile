@@ -67,7 +67,7 @@ uselua: $(DEPENDENCIES)
 	$(LUALATEX) $(DOCUMENT).tex
 
 initrproject:  
-	# Only works with installed R package "Project Template"
+	# Works only with R package "Project Template" installed
 	rm -rf usr/statistics/rproject
 	Rscript -e "library(ProjectTemplate); create.project('usr/statistics/rproject')" 
 
@@ -130,7 +130,7 @@ rmgithooks:
 	$(REMOVER) $(GITHOOKPATH)/post-merge  
 
 prep: 
-	# Development only
-	$(COPY) usr/subdocuments/ osp/subdocuments/exmpl/
+	# This is a development only task
+	$(COPY) usr/subdocuments/* osp/subdocuments/exmpl/
 	$(COPY) README.md osp/subdocuments/exmpl/
 	$(COPY) usr/subdocuments/options/ osp/subdocuments/temp/ 
