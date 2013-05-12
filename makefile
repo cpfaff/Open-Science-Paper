@@ -118,13 +118,19 @@ tmpdoc:
 tmpreadme:
 	$(COPY) $(TEMPREADME) $(BASEFOLDER) 
 
-githooks:  
+setgithooks:  
 	$(COPY) $(HOOKSOURCE) $(GITHOOKPATH)/post-checkout 
 	$(COPY) $(HOOKSOURCE) $(GITHOOKPATH)/post-commit 
 	$(COPY) $(HOOKSOURCE) $(GITHOOKPATH)/post-merge 
 	$(RIGHTSETTER) $(HOOKRIGHTS) $(GITHOOKPATH)/* 
 
-prep:
+rmgithooks:
+	$(REMOVER) $(GITHOOKPATH)/post-checkout 
+	$(REMOVER) $(GITHOOKPATH)/post-commit 
+	$(REMOVER) $(GITHOOKPATH)/post-merge  
+
+prep: 
+	# Development only
 	$(COPY) usr/subdocuments/ osp/subdocuments/exmpl/
 	$(COPY) README.md osp/subdocuments/exmpl/
 	$(COPY) usr/subdocuments/options/ osp/subdocuments/temp/ 
