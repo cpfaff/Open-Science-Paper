@@ -30,4 +30,12 @@ FSSM.monitor do
     delete {|base, relative| system cmd}
     create {|base, relative| system cmd}
   end
+
+  path '.' do
+    glob 'open_science_paper.Rnw'
+    update {|base, relative| system cmd}
+    delete {|base, relative| system cmd}
+    create {|base, relative| system cmd}
+  end
+
 end

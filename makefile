@@ -12,11 +12,12 @@ DOCUMENT = open_science_paper
 # Dependencies maindocument
 DEPENDENCIES = $(DOCUMENT).Rnw osp/subdocuments/*.cls usr/subdocuments/bibliography/*.bib usr/subdocuments/chapters/* usr/subdocuments/options/* osp/data/*.csv
 
-# Used Programs
+# Programs used 
 KNITR = knit
 BIBTEX = biber 
-LUALATEX = lualatex
-PDFLATEX = pdflatex 
+COMPILER = pdflatex 
+# The Open-Science-Paper is prepared for Lua-LaTeX if you prefer it. Just comment out pdflatex and comment in lualatex as compiler
+# COMPILER = lualatex 
 PACKER= tar -czf
 REMOVER = @-rm -r
 PRINTER = @-echo 
@@ -54,30 +55,44 @@ all: $(DOCUMENT).pdf
 
 $(DOCUMENT).pdf: $(DEPENDENCIES)  
 	$(KNITR) $(DOCUMENT).Rnw $(DOCUMENT).tex --no-convert
-	$(PDFLATEX) $(DOCUMENT).tex
-	$(PDFLATEX) $(DOCUMENT).tex
+	$(COMPILER) $(DOCUMENT).tex
+	$(COMPILER) $(DOCUMENT).tex
 	$(BIBTEX) $(DOCUMENT)
-	$(PDFLATEX) $(DOCUMENT).tex
+	$(COMPILER) $(DOCUMENT).tex
 
-uselua: $(DEPENDENCIES)  
-	$(KNITR) $(DOCUMENT).Rnw $(DOCUMENT).tex --no-convert
-	$(LUALATEX) $(DOCUMENT).tex
-	$(LUALATEX) $(DOCUMENT).tex
-	$(BIBTEX) $(DOCUMENT)
-	$(LUALATEX) $(DOCUMENT).tex
+# Initproject 
+
+# It usese the R package ProjectTemplate to create a Project inside the
+# usr/statistics folder. The Template offers a nice and clean folder structure
+# and services for your analyses. For more information see the projects
+# homepage.  
 
 initrproject:  
 	# Works only with R package "Project Template" installed
 	rm -rf usr/statistics/rproject
 	Rscript -e "library(ProjectTemplate); create.project('usr/statistics/rproject')" 
 
-# Special rules 
+# Buildserver 
+
+# It is a continous integration service for your Open-Science-Paper document. 
+# You can start it by issuing the task below. It starts a server that tracks 
+# changes in the directory and rebuilds your document to pdf. 
+
 buildserver: 
-	# Not finished feature (Needs ruby installed)
 	ruby osp/server/buildserver.rb 
+
+# Showpdf 
+
+# Simply calls the PDF viewer defined under pgrogams to schow you the created
+# PDF file.
 
 showpdf:
 	$(PDFVIEWER) $(DOCUMENT).pdf & 
+
+# Warnings 
+
+# Extracts warning messages from the LaTeX log files to display them nicely for
+# inspection.
 
 warnings:
 	$(PRINTER) "----------------------------------------------------o"
@@ -99,12 +114,33 @@ warnings:
 	$(GREPPER) 'Underfull' $(DOCUMENT).log
 	$(PRINTER) "----------------------------------------------------o"
 
+# Clean 
+
+# Cleans the document from generated files. This taks is called automatically
+# before backing up the document.
+
 clean:
 	$(REMOVER) $(CLEANFILES)	
+
+# Archive
+
+# Backup of the document. It creates a archive with all files inside it to
+# reproduce the document.
 
 archive: 
 	make clean
 	$(PACKER) $(ARCHNAME) $(ARCHFILES)
+
+# Example and Temps content
+
+# The tasks for example and temp content can be used switch between an empty
+# and a document with examples. This is useful as the Open-Science-Paper comes
+# usually filled with example content to show you how things work. If you are
+# already familiar with LaTeX and onyly want to have an empty document to start
+# with you can just issue eht "tmpdoc" task below. If you like to remove the
+# content from the GitHub readme file you can use the "rmpreadme" task instead.
+# The original exmaple contens can be restored with the "exmpl*" tasks but
+# NOTE: This overwrites your files.
 
 exmpldoc:
 	$(COPY) $(EXMPLDOCS) $(SUBDOCFOLDER)  
@@ -118,6 +154,12 @@ tmpdoc:
 tmpreadme:
 	$(COPY) $(TEMPREADME) $(BASEFOLDER) 
 
+# set-/rmgithooks 
+
+# The set task creates the githooks required to display github information
+# inside of your PDF. If you do no longer need the hooks you can also remove
+# them with the rmgithooks task. 
+
 setgithooks:  
 	$(COPY) $(HOOKSOURCE) $(GITHOOKPATH)/post-checkout 
 	$(COPY) $(HOOKSOURCE) $(GITHOOKPATH)/post-commit 
@@ -128,6 +170,12 @@ rmgithooks:
 	$(REMOVER) $(GITHOOKPATH)/post-checkout 
 	$(REMOVER) $(GITHOOKPATH)/post-commit 
 	$(REMOVER) $(GITHOOKPATH)/post-merge  
+
+# Prep 
+
+# As the name suggest this is for preparation purposes and should be used for
+# development only.  It helps me to put all stuff where I need it for example
+# and temp content.
 
 prep: 
 	# This is a development only task
