@@ -1,25 +1,33 @@
 #!/usr/bin/ruby
-# Simple LaTeX-Build server
 
-file = "open_science_paper.Rnw"
+###------------------------------------------------------------------------------------%%
+###------------------------------------------------------------------------------------%%
+### Content: Open-Science-Paper ruby build server
+### Usage: Continous build your Open-Science-Paper on changes
+### Author: Claas-Thido Pfaff
+###------------------------------------------------------------------------------------%%
+###------------------------------------------------------------------------------------%%
+
+# This requires you to install the fssm gem  to work
+#       gem install fssm
+
+require 'rubygems'
+require 'fssm'
+
 cmd = "make"
 
-class String
-  def mtime
-    File.new(self).mtime
+FSSM.monitor do
+  path 'osp/' do
+    glob '**/*'
+    update {|base, relative| system cmd}
+    delete {|base, relative| system cmd}
+    create {|base, relative| system cmd}
   end
-end
 
-lastmtime = file.mtime
-
-while true
-  currentTime = file.mtime
-  if (currentTime > lastmtime) then
-    print "file modified at " + currentTime.to_s
-    lastmtime = currentTime
-    print "Compiling " + file + "\n"
-    system cmd
+  path 'usr/' do
+    glob '**/*'
+    update {|base, relative| system cmd}
+    delete {|base, relative| system cmd}
+    create {|base, relative| system cmd}
   end
-  print ". "
-  sleep 1
 end
