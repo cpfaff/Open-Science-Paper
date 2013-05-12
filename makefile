@@ -78,7 +78,8 @@ initrproject:
 # You can start it by issuing the task below. It starts a server that tracks 
 # changes in the directory and rebuilds your document to pdf. 
 
-buildserver: 
+buildserver:  
+	# needs ruby and gem fssm
 	ruby osp/server/buildserver.rb 
 
 # Showpdf 
