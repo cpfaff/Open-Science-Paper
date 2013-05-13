@@ -104,7 +104,8 @@
 \RequirePackage{ifluatex} 
 \RequirePackage{datatool} 
 \RequirePackage{expl3}  
-% \RequirePackage{xstring}
+% \RequirePackage{xstring} 
+\RequirePackage{suffix}
 
 %%%-------------------------------------------------%%%
 %%% Language adaption of the document %%%
@@ -715,6 +716,7 @@
     % \end{figure}
   % }
 
+
 \providecommand{\ospFrameMap}[2][]{
   \setkeys{MyFrameMap}{#1}
   \begin{figure}[H]
@@ -736,7 +738,7 @@
     \end{figure}
   }
 
-\providecommand{\ospDFrameMap}[2][]{
+\WithSuffix\providecommand\ospFrameMap*[2][]{
   \setkeys{MyFrameMap}{#1}
   \begin{figure*}
     \centering
