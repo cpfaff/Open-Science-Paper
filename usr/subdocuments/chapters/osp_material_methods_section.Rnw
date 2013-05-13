@@ -7,7 +7,10 @@
 % Remove the lipsum and example table fill in your material and methods text here
 
 
-\lipsum[1]
+\lipsum[1] 
+
+
+\ospFrameMap[map=usr/graphics/MapPelargoniumSidoides.pdf,pic=usr/graphics/Pelargoniumsidoides.png,spe=Pelargonium sidoides,lab=fig:KaplandPelargonie]{Verbreitung von Pelargonium sidoides. Die Karte wurde aus Angaben der Global Biodiversity Information Facitily Datenbank erstellt. Die Verbreitung ist auf Gebiete in Lesotho und Südafrika beschränkt (Rot).}
 
 
 % example for a one column table %
@@ -34,4 +37,7 @@
 \end{table} % }}}
 
 
-\lipsum[1]
+\lipsum[1] 
+
+
+\ospDFrameMap[map=usr/graphics/MapPelargoniumSidoides.pdf,pic=usr/graphics/Pelargoniumsidoides.png,spe=Pelargonium sidoides,lab=fig:KaplandPelargonie]{Verbreitung von Pelargonium sidoides. Die Karte wurde aus Angaben der Global Biodiversity Information Facitily Datenbank erstellt. Die Verbreitung ist auf Gebiete in Lesotho und Südafrika beschränkt (Rot).}
