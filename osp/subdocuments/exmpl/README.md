@@ -42,6 +42,10 @@ git commit information inside of the header.
 
 ![black-letter-T](https://dl.dropbox.com/u/844606/Open-Science-Paper-Documentation/black_paper_introduction_big_letter_T.png)
 
+#### Simple inclusion of distibution maps
+
+![distribution-maps](https://dl.dropboxusercontent.com/u/844606/Open-Science-Paper-Documentation/distribution_maps.png)
+
 #### Some optional features
 
 ##### Line numbering

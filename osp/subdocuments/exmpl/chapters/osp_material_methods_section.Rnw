@@ -7,8 +7,15 @@
 % Remove the lipsum and example table fill in your material and methods text here
 
 
-\lipsum[1]
+\lipsum[1] 
 
+\ospDistributionMap[% 
+	mappath=osp/graphics/MapPelargoniumSidoides.pdf,%
+	label=fig:KaplandPelargonie]{%   
+	Distribution of Pelargonium sidoides. Die maps was created from data
+	available via Global Biodiversity Information Facility database.  The
+	distribution is restricted to regions in Lesotho and South Africa.
+	(Rot).}  
 
 % example for a one column table %
 
@@ -33,5 +40,14 @@
 		}
 \end{table} % }}}
 
+\lipsum[1] 
 
-\lipsum[1]
+\ospDistributionMap*[% 
+	mappath=osp/graphics/MapPelargoniumSidoides.pdf,% 
+	picpath=osp/graphics/Pelargoniumsidoides.png,%
+	species=Pelargonium sidoides,%
+	label=fig:KaplandPelargonie]{%  
+	Distribution of Pelargonium sidoides. Die maps was created from data
+	available via Global Biodiversity Information Facility database.  The
+	distribution is restricted to regions in Lesotho and South Africa.
+	(Rot).}  
