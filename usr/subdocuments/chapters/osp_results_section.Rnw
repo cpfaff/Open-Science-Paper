@@ -74,7 +74,7 @@
 \label{fig:test_plot_two}
 \end{figure*} % }}}
 
-\lipsum[1-4]
+\lipsum[1-5]
 
 \begin{lstlisting}[language=Ruby]
 #!/usr/bin/ruby
@@ -87,6 +87,8 @@ while $i < $num  do
    $i +=1
 end
 \end{lstlisting}
+
+\lipsum[1-5]
 
 % example for a two column table %
 
@@ -113,6 +115,3 @@ end
 			\end{tabular}
 		}
 \end{table*} % }}}
-
-
-

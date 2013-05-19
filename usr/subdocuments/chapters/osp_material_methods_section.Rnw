@@ -9,9 +9,13 @@
 
 \lipsum[1] 
 
-
-\ospFrameMap[map=usr/graphics/MapPelargoniumSidoides.pdf,pic=usr/graphics/Pelargoniumsidoides.png,spe=Pelargonium sidoides,lab=fig:KaplandPelargonie]{Verbreitung von Pelargonium sidoides. Die Karte wurde aus Angaben der Global Biodiversity Information Facitily Datenbank erstellt. Die Verbreitung ist auf Gebiete in Lesotho und Südafrika beschränkt (Rot).}
-
+\ospDistributionMap[% 
+	mappath=osp/graphics/MapPelargoniumSidoides.pdf,%
+	label=fig:KaplandPelargonie]{%   
+	Distribution of Pelargonium sidoides. Die maps was created from data
+	available via Global Biodiversity Information Facility database.  The
+	distribution is restricted to regions in Lesotho and South Africa.
+	(Rot).}  
 
 % example for a one column table %
 
@@ -36,8 +40,14 @@
 		}
 \end{table} % }}}
 
-
 \lipsum[1] 
 
-
-\ospFrameMap*[map=usr/graphics/MapPelargoniumSidoides.pdf,pic=usr/graphics/Pelargoniumsidoides.png,spe=Pelargonium sidoides,lab=fig:KaplandPelargonie]{Verbreitung von Pelargonium sidoides. Die Karte wurde aus Angaben der Global Biodiversity Information Facitily Datenbank erstellt. Die Verbreitung ist auf Gebiete in Lesotho und Südafrika beschränkt (Rot).}
+\ospDistributionMap*[% 
+	mappath=osp/graphics/MapPelargoniumSidoides.pdf,% 
+	picpath=osp/graphics/Pelargoniumsidoides.png,%
+	species=Pelargonium sidoides,%
+	label=fig:KaplandPelargonie]{%  
+	Distribution of Pelargonium sidoides. Die maps was created from data
+	available via Global Biodiversity Information Facility database.  The
+	distribution is restricted to regions in Lesotho and South Africa.
+	(Rot).}  
