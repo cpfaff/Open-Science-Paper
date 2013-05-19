@@ -25,6 +25,14 @@ The project is documented on detail in the Open-Science-Paper
 about the prerequisites and how to get started with the document, a workflow for
 collaborative paper writing on GitHub and much more.
 
+### Get latest stable version
+
+```
+git clone https://github.com/cpfaff/Open-Science-Paper.git
+cd Open-Science-Paper
+git checkout v0.9.1
+```
+
 ### Some impressions
 
 #### Logo
