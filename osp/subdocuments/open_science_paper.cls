@@ -699,29 +699,29 @@
     \centering
     \begin{tikzpicture}
       \node[pictureframe]{%
-	\begin{minipage}{0.47\textwidth}%
-	  \begin{centerpar}
-	    \begin{overpic}[keepaspectratio, keepaspectratio, trim=1.2cm 5.2cm 1.2cm 5.2cm, clip, width=\textwidth]{\mappath}
-                \ifdefempty{\picturepath}{ 
-                  \ifdefempty{\speciesname}{  
-                    \relax
-                  }{
-                    \put(0,0){\begin{tikzpicture}\node[signbackground]{\begin{minipage}{2.5cm}\begin{center} 
-                      \emph{\speciesname}\end{center}\end{minipage}};\end{tikzpicture}}  
+        \begin{minipage}{0.47\textwidth}%
+          \begin{centerpar}
+            \begin{overpic}[keepaspectratio, keepaspectratio, trim=1.2cm 5.2cm 1.2cm 5.2cm, clip, width=\textwidth]{\mappath}
+              \ifdefempty{\picturepath}{ 
+                \ifdefempty{\speciesname}{  
+                  \relax
+                }{
+                  \put(0,0){\begin{tikzpicture}\node[signbackground]{\begin{minipage}{2.5cm}\begin{center} 
+                    \emph{\speciesname}\end{center}\end{minipage}};\end{tikzpicture}}  
                   }
                 }{
                   \put(0,0){\begin{tikzpicture}\node[signbackground]{\begin{minipage}{2.5cm}\begin{center} 
                     \includegraphics[trim=0cm 0cm 0cm 0cm, clip, width=1cm]{\picturepath} \emph{\speciesname}\end{center}\end{minipage}};\end{tikzpicture}}  
-                }
-	      \end{overpic}
-	    \end{centerpar}
-	  \end{minipage}
-	};
-      \end{tikzpicture}
-      \captionbelow{#2}
-      \label{\envlabel}
-    \end{figure}
-  }
+                  }
+                \end{overpic}
+              \end{centerpar}
+            \end{minipage}
+          };
+        \end{tikzpicture}
+        \captionbelow{#2}
+        \label{\envlabel}
+      \end{figure}
+    }
 
 \WithSuffix\providecommand\ospDistributionMap*[2][]{
   \setkeys{ospDistributionMap}{#1}
@@ -729,135 +729,75 @@
     \centering
     \begin{tikzpicture}
       \node[pictureframe]{%
-	\begin{minipage}{\textwidth}%
-	  \begin{centerpar}
-	    \begin{overpic}[keepaspectratio, keepaspectratio, trim=1.2cm 5.2cm 1.2cm 5.2cm, clip, width=\textwidth]{\mappath}
-                \ifdefempty{\picturepath}{ 
-                  \ifdefempty{\speciesname}{  
-                    \relax
-                  }{
-                    \put(0,0){\begin{tikzpicture}\node[signbackground]{\begin{minipage}{2.5cm}\begin{center} 
-                      \emph{\speciesname}\end{center}\end{minipage}};\end{tikzpicture}}  
+        \begin{minipage}{\textwidth}%
+          \begin{centerpar}
+            \begin{overpic}[keepaspectratio, keepaspectratio, trim=1.2cm 5.2cm 1.2cm 5.2cm, clip, width=\textwidth]{\mappath}
+              \ifdefempty{\picturepath}{ 
+                \ifdefempty{\speciesname}{  
+                  \relax
+                }{
+                  \put(0,0){\begin{tikzpicture}\node[signbackground]{\begin{minipage}{2.5cm}\begin{center} 
+                    \emph{\speciesname}\end{center}\end{minipage}};\end{tikzpicture}}  
                   }
                 }{
                   \put(0,0){\begin{tikzpicture}\node[signbackground]{\begin{minipage}{2.5cm}\begin{center} 
                     \includegraphics[trim=0cm 0cm 0cm 0cm, clip, width=1cm]{\picturepath} \emph{\speciesname}\end{center}\end{minipage}};\end{tikzpicture}}  
-                }
-	      \end{overpic}
-	    \end{centerpar}
-	  \end{minipage}
-	};
-      \end{tikzpicture}
-      \captionbelow{#2}
-      \label{\envlabel}
-    \end{figure*}
-  }
- 
-% \providecommand{\MyFramePic}[2][]{
-	% \setkeys{ospDistributionMap}{#1}
-% \begin{figure}[\placement]
-   % \centering
-      % \begin{tikzpicture}
-         % \node[pictureframe]{%
-            % \begin{minipage}{\envwidth}%
-               % \begin{center}
-                  % \begin{overpic}[width=0.8\textwidth]{\picturepath}        
-                  % \end{overpic}
-               % \end{center}
-            % \end{minipage}
-         % };
-      % \end{tikzpicture}
-   % \captionbelow{#2}
-   % \label{\envlabel}
-% \end{figure}
-% }
+                  }
+                \end{overpic}
+              \end{centerpar}
+            \end{minipage}
+          };
+        \end{tikzpicture}
+        \captionbelow{#2}
+        \label{\envlabel}
+      \end{figure*}
+    }
 
-%\newcommand*\clipper{clipper}
-%\define@key{ospDistributionMap}{clipper}{\renewcommand*\clipper{#1}}
+\providecommand*{\el}{}
+\define@key{ospFramedEnv}{label}{\renewcommand*\el{#1}} 
+\presetkeys{ospFramedEnv}{label=fig:PicDefaultLabel}{}%
 
-% \providecommand{\ospDistributionMap}[2][]{
-  % \setkeys{ospDistributionMap}{#1}
-  % \begin{figure}[H]
-    % \centering
-    % \begin{tikzpicture}
-      % \node[pictureframe]{%
-	% \begin{minipage}{\envwidth}%
-	  % \begin{centerpar}
-	    % \begin{overpic}[keepaspectratio, keepaspectratio, trim=1.2cm 5.2cm 1.2cm 5.2cm, clip, width=\textwidth]{\mappath}
-	      % \put(0,0){\begin{tikzpicture}\node[signbackground]{\begin{minipage}{2.5cm}\begin{center}
-		% \includegraphics[trim=0cm 0cm 0cm 0cm, clip,w idth=1cm]{\picturepath} \emph{\speciesname}\end{center}\end{minipage}};\end{tikzpicture}}
-	      % \end{overpic}
-	    % \end{centerpar}
-	  % \end{minipage}
-	% };
-      % \end{tikzpicture}
-      % \captionbelow{#2}
-      % \label{\envlabel}
-    % \end{figure}
-  % }
+\providecommand\ospFramedEnv[3][]{
+\setkeys{ospFramedEnv}{#1}
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      \node[pictureframe]{%
+        \begin{minipage}{0.47\textwidth}
+          \begin{center} 
+            #2
+          \end{center}
+        \end{minipage}
+      };
+    \end{tikzpicture}
+    \captionbelow{#3}
+    \label{\el{}}
+  \end{figure}
+} 
 
+% Usage: 
 
-% one column solution for distribution maps
-% \begin{figure}[H] % {{{
-   % \centering
-    % \begin{tikzpicture}
-    % \node[pictureframe]{%
-    % \begin{minipage}{0.47\textwidth}%
-      % \begin{centerpar}
-	% \begin{overpic}[keepaspectratio, trim=1.2cm 5.2cm 1.2cm 5.2cm,clip, width=\textwidth]{usr/graphics/MapPelargoniumSidoides.pdf}
-	  % \put(0,0){\begin{tikzpicture}\node[signbackground]{\begin{minipage}{1.3cm}\begin{center}
-	    % \includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=1cm]{usr/graphics/Pelargoniumsidoides.png} \emph{Pelargonium Sidoides}\end{center}\end{minipage}};\end{tikzpicture}}
-	  % \end{overpic}
-	% \end{centerpar}
-      % \end{minipage}
-    % };
-    % \end{tikzpicture}
-   % \caption{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-   % commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-   % dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-   % pellentesque eu, pretium quis, sem.}
-% \label{fig:test_distribution}
-% \end{figure} % }}}
+% \ospFramedEnv[label=type:name]{%
+  % % Content here
+% }{Caption here}
 
-%\newcommand{\ospDistributionMap}[6]{
-%\begin{figure}[#1]
-%\centering
-%\begin{tikzpicture}
-%\node[pictureframe]{%
-%\begin{minipage}{0.97\textwidth}%
-%\begin{center}
-%\begin{overpic}[keepaspectratio, trim=1.2cm 5.2cm 1.2cm 5.2cm,clip,width=\textwidth]{#2}
-%\put(0,0){\begin{tikzpicture}\node[signbackground]{\begin{minipage}{2.5cm}\begin{center}
-%\includegraphics[trim=0cm 0cm 0cm 0cm, clip,width=2cm]{#3} \emph{#4}\end{center}\end{minipage}};\end{tikzpicture}}
-%\end{overpic}
-%\end{center}
-%\end{minipage}
-%};
-%\end{tikzpicture}
-%\captionbelow{#5}
-%\label{#6}
-%\end{figure}
-%}
-
-%Usage:
-
-%\ospDistributionMap{Alignment}{Path/To/Map.pdf}{Path/To/Picture.pdf/png/jpg}{%
-%Description of the picture in the caption environment. Can be longer than
-%one line.}{Label}
-
-%\ospDistributionMap{tb}{maps/MapPelargoniumSidoides.pdf}{Bilder/Pelargoniumsidoides.png}{%
-%Verbreitung von Pelargonium sidoides. Die Karte wurde aus Angaben der Global Biodiversity
-%Information Facitily Datenbank erstellt. Die Verbreitung ist auf Gebiete in Lesotho und
-%Südafrika beschränkt (Rot).}{KaplandPelargonie}
-
-% \ospDistributionMap[map=maps/clMapPelargoniumSidoides.pdf,pic=pictures/Pelargoniumsidoides.png,spe=Pelargonium sidoides,lab=fig:KaplandPelargonie]{Verbreitung von Pelargonium sidoides. Die Karte wurde aus Angaben der Global Biodiversity
-% Information Facitily Datenbank erstellt. Die Verbreitung ist auf Gebiete in Lesotho und
-% Südafrika beschränkt (Rot).}
-
-
-% \MyFramePic[pic=pictures/Kumarine.png, lab=fig:Coumarine]{Die Wurzel enthält eine Reihe von Cumarinen. Eine gerinnungshemmende Wirkung konnte trotz den Enthaltenen Cumarinen nicht nachgewiesen werden.}
-
-
+\WithSuffix\providecommand\ospFramedEnv*[3][]{
+\setkeys{ospFramedEnv}{#1}
+  \begin{figure*}
+    \centering
+    \begin{tikzpicture}
+      \node[pictureframe]{%
+        \begin{minipage}{0.98\textwidth}
+          \begin{center} 
+            #2
+          \end{center}
+        \end{minipage}
+      };
+    \end{tikzpicture}
+    \captionbelow{#3}
+    \label{\el{}}
+  \end{figure*}
+} 
 
 %%%-------------------------------------------------%%%
 %%% Typographical options of the headings %%%

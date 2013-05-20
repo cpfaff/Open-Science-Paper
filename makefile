@@ -15,7 +15,7 @@ DEPENDENCIES = $(DOCUMENT).Rnw osp/subdocuments/*.cls usr/subdocuments/bibliogra
 # Programs used 
 KNITR = knit
 BIBTEX = biber 
-COMPILER = pdflatex 
+COMPILER = pdflatex -interaction=nonstopmode
 # The Open-Science-Paper is prepared for Lua-LaTeX if you prefer it. Just comment out pdflatex and comment in lualatex as compiler
 # COMPILER = lualatex 
 PACKER= tar -czf

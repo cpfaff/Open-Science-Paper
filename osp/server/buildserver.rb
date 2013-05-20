@@ -17,7 +17,7 @@ require 'fssm'
 FSSM.monitor do
   path '.' do
     cmd = "make"
-    glob ['*.Rnw','*.sty']
+    glob ['*.Rnw','*.sty', '*.cls']
     update { system cmd }
     delete { system cmd }
     create { system cmd }
