@@ -775,6 +775,24 @@
   \end{figure}
 } 
 
+% \ospDistributionMap*[% 
+	% mappath=osp/graphics/MapPelargoniumSidoides.pdf,% 
+	% picpath=osp/graphics/Pelargoniumsidoides.png,%
+	% species=Pelargonium sidoides,%
+	% label=fig:KaplandPelargonie]{%  
+	% Distribution of Pelargonium sidoides. Die maps was created from data
+	% available via Global Biodiversity Information Facility database.  The
+	% distribution is restricted to regions in Lesotho and South Africa.
+	% (Rot).}  
+
+% \ospDistributionMap[% 
+	% mappath=osp/graphics/MapPelargoniumSidoides.pdf,%
+	% label=fig:KaplandPelargonie]{%   
+	% Distribution of Pelargonium sidoides. Die maps was created from data
+	% available via Global Biodiversity Information Facility database.  The
+	% distribution is restricted to regions in Lesotho and South Africa.
+	% (Rot).}  
+
 % Usage: 
 
 % \ospFramedEnv[label=type:name]{%

@@ -9,13 +9,16 @@
 
 \lipsum[1] 
 
-\ospDistributionMap[% 
-	mappath=osp/graphics/MapPelargoniumSidoides.pdf,%
-	label=fig:KaplandPelargonie]{%   
-	Distribution of Pelargonium sidoides. Die maps was created from data
-	available via Global Biodiversity Information Facility database.  The
-	distribution is restricted to regions in Lesotho and South Africa.
-	(Rot).}  
+% {{{
+\ospFramedEnv[label=fig:distmapone]{   
+<<distmap, fig.width=3.45, fig.height=2.5, echo=FALSE, message=FALSE>>=   
+  osp_distmap(species=c('Accipiter erythronemius'))
+@  
+}{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+  commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+  dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+  pellentesque eu, pretium quis, sem.}
+% }}}
 
 % example for a one column table %
 
@@ -42,12 +45,14 @@
 
 \lipsum[1] 
 
-\ospDistributionMap*[% 
-	mappath=osp/graphics/MapPelargoniumSidoides.pdf,% 
-	picpath=osp/graphics/Pelargoniumsidoides.png,%
-	species=Pelargonium sidoides,%
-	label=fig:KaplandPelargonie]{%  
-	Distribution of Pelargonium sidoides. Die maps was created from data
-	available via Global Biodiversity Information Facility database.  The
-	distribution is restricted to regions in Lesotho and South Africa.
-	(Rot).}  
+
+% {{{
+\ospFramedEnv*[label=fig:distmatwo]{   
+<<distmap_two, fig.width=10, fig.height=5, echo=FALSE, message=FALSE>>=   
+  osp_distmap(species=c('Accipiter erythronemius', 'Junco hyemalis', 'Aix sponsa'))
+@  
+}{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+  commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+  dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+  pellentesque eu, pretium quis, sem.}
+% }}}
