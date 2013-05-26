@@ -13,9 +13,9 @@
   \item One
     \begin{itemize}
       \item One One
-	\begin{itemize}
-	  \item One One One
-	\end{itemize}
+        \begin{itemize}
+          \item One One One
+        \end{itemize}
     \end{itemize}
   \item Two
   \item Three
