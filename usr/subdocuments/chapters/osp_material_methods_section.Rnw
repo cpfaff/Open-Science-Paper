@@ -6,19 +6,7 @@
 
 % Remove the lipsum and example table fill in your material and methods text here
 
-
 \lipsum[1] 
-
-% {{{
-\ospFramedEnv[label=fig:distmapone]{   
-<<distmap, fig.width=3.45, fig.height=2.5, echo=FALSE, message=FALSE>>=   
-  osp_distmap(species=c('Accipiter erythronemius'))
-@  
-}{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-  commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-  dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-  pellentesque eu, pretium quis, sem.}
-% }}}
 
 % example for a one column table %
 
@@ -45,7 +33,6 @@
 
 \lipsum[1] 
 
-
 % {{{
 \ospFramedEnv*[label=fig:distmatwo]{   
 <<distmap_two, fig.width=10, fig.height=5, echo=FALSE, message=FALSE>>=   
@@ -55,4 +42,4 @@
   commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
   dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
   pellentesque eu, pretium quis, sem.}
-% }}}
+% }}} 

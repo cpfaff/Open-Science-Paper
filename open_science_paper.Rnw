@@ -60,8 +60,8 @@
 %%% Preferences for Knitr %%%
 %%%-------------------------------------------------%%%
 
-<<global_knitr_options, child='usr/subdocuments/options/osp_global_knitr_options.Rnw', eval=TRUE>>=
-@
+<<chunk_global_r_options, child='usr/subdocuments/options/osp_global_r_options.Rnw', eval=TRUE>>=
+@ 
 
 %%%--------------------------------------------------------------%%%
 %%% Document content %%%

@@ -669,7 +669,6 @@
 \renewcommand{\abstractnamefont}{\color{ospColor@AbstractHeader}\normalfont\sffamily\large\bfseries}
 \renewcommand{\abstracttextfont}{\normalfont} 
 
-
 %% definitions for distribution maps 
 
 %Set the Environments for Textsizes etc
@@ -681,20 +680,20 @@
 \providecommand*{\envwidth}{}
 \providecommand*{\mappath}{}
 \providecommand*{\picturepath}{}
-\providecommand*{\speciesname}{}
+\providecommand*{\overlaytextname}{}
 \providecommand*{\envlabel}{}
 
-\define@key{ospDistributionMap}{placement}{\renewcommand*\placement{#1}}
-\define@key{ospDistributionMap}{width}{\renewcommand*\envwidth{#1}}
-\define@key{ospDistributionMap}{mappath}{\renewcommand*\mappath{#1}}
-\define@key{ospDistributionMap}{picpath}{\renewcommand*\picturepath{#1}}
-\define@key{ospDistributionMap}{species}{\renewcommand*\speciesname{#1}}
-\define@key{ospDistributionMap}{label}{\renewcommand*\envlabel{#1}}
+\define@key{ospFramedEnvOverlay}{placement}{\renewcommand*\placement{#1}}
+\define@key{ospFramedEnvOverlay}{width}{\renewcommand*\envwidth{#1}}
+\define@key{ospFramedEnvOverlay}{mappath}{\renewcommand*\mappath{#1}}
+\define@key{ospFramedEnvOverlay}{picpath}{\renewcommand*\picturepath{#1}}
+\define@key{ospFramedEnvOverlay}{overlaytext}{\renewcommand*\overlaytextname{#1}}
+\define@key{ospFramedEnvOverlay}{label}{\renewcommand*\envlabel{#1}}
 
-\presetkeys{ospDistributionMap}{placement=H, width=0.95\textwidth, label=fig:DistmapDefaultLabel}{}%
+\presetkeys{ospFramedEnvOverlay}{placement=H, width=0.95\textwidth, label=fig:DistmapDefaultLabel}{}%
 
-\providecommand{\ospDistributionMap}[2][]{
-  \setkeys{ospDistributionMap}{#1}
+\providecommand{\ospFramedEnvOverlay}[2][]{
+  \setkeys{ospFramedEnvOverlay}{#1}
   \begin{figure}[H]
     \centering
     \begin{tikzpicture}
@@ -703,15 +702,15 @@
           \begin{centerpar}
             \begin{overpic}[keepaspectratio, keepaspectratio, trim=1.2cm 5.2cm 1.2cm 5.2cm, clip, width=\textwidth]{\mappath}
               \ifdefempty{\picturepath}{ 
-                \ifdefempty{\speciesname}{  
+                \ifdefempty{\overlaytextname}{  
                   \relax
                 }{
                   \put(0,0){\begin{tikzpicture}\node[signbackground]{\begin{minipage}{2.5cm}\begin{center} 
-                    \emph{\speciesname}\end{center}\end{minipage}};\end{tikzpicture}}  
+                    \emph{\overlaytextname}\end{center}\end{minipage}};\end{tikzpicture}}  
                   }
                 }{
                   \put(0,0){\begin{tikzpicture}\node[signbackground]{\begin{minipage}{2.5cm}\begin{center} 
-                    \includegraphics[trim=0cm 0cm 0cm 0cm, clip, width=1cm]{\picturepath} \emph{\speciesname}\end{center}\end{minipage}};\end{tikzpicture}}  
+                    \includegraphics[trim=0cm 0cm 0cm 0cm, clip, width=1cm]{\picturepath} \emph{\overlaytextname}\end{center}\end{minipage}};\end{tikzpicture}}  
                   }
                 \end{overpic}
               \end{centerpar}
@@ -723,8 +722,8 @@
       \end{figure}
     }
 
-\WithSuffix\providecommand\ospDistributionMap*[2][]{
-  \setkeys{ospDistributionMap}{#1}
+\WithSuffix\providecommand\ospFramedEnvOverlay*[2][]{
+  \setkeys{ospFramedEnvOverlay}{#1}
   \begin{figure*}
     \centering
     \begin{tikzpicture}
@@ -733,15 +732,15 @@
           \begin{centerpar}
             \begin{overpic}[keepaspectratio, keepaspectratio, trim=1.2cm 5.2cm 1.2cm 5.2cm, clip, width=\textwidth]{\mappath}
               \ifdefempty{\picturepath}{ 
-                \ifdefempty{\speciesname}{  
+                \ifdefempty{\overlaytextname}{  
                   \relax
                 }{
                   \put(0,0){\begin{tikzpicture}\node[signbackground]{\begin{minipage}{2.5cm}\begin{center} 
-                    \emph{\speciesname}\end{center}\end{minipage}};\end{tikzpicture}}  
+                    \emph{\overlaytextname}\end{center}\end{minipage}};\end{tikzpicture}}  
                   }
                 }{
                   \put(0,0){\begin{tikzpicture}\node[signbackground]{\begin{minipage}{2.5cm}\begin{center} 
-                    \includegraphics[trim=0cm 0cm 0cm 0cm, clip, width=1cm]{\picturepath} \emph{\speciesname}\end{center}\end{minipage}};\end{tikzpicture}}  
+                    \includegraphics[trim=0cm 0cm 0cm 0cm, clip, width=1cm]{\picturepath} \emph{\overlaytextname}\end{center}\end{minipage}};\end{tikzpicture}}  
                   }
                 \end{overpic}
               \end{centerpar}
@@ -752,6 +751,17 @@
         \label{\envlabel}
       \end{figure*}
     }
+
+% Example usage:  
+
+% \ospFramedEnv*[label=fig:distmatwo]{   
+% <<distmap_two, fig.width=10, fig.height=5, echo=FALSE, message=FALSE>>=   
+  % osp_distmap(species=c('Accipiter erythronemius', 'Junco hyemalis', 'Aix sponsa'))
+% @  
+% }{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+  % commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+  % dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+  % pellentesque eu, pretium quis, sem.}
 
 \providecommand*{\el}{}
 \define@key{ospFramedEnv}{label}{\renewcommand*\el{#1}} 
@@ -775,17 +785,17 @@
   \end{figure}
 } 
 
-% \ospDistributionMap*[% 
+% \ospFramedEnvOverlay*[% 
 	% mappath=osp/graphics/MapPelargoniumSidoides.pdf,% 
 	% picpath=osp/graphics/Pelargoniumsidoides.png,%
-	% species=Pelargonium sidoides,%
+	% overlaytext=Pelargonium sidoides,%
 	% label=fig:KaplandPelargonie]{%  
 	% Distribution of Pelargonium sidoides. Die maps was created from data
 	% available via Global Biodiversity Information Facility database.  The
 	% distribution is restricted to regions in Lesotho and South Africa.
 	% (Rot).}  
 
-% \ospDistributionMap[% 
+% \ospFramedEnvOverlay[% 
 	% mappath=osp/graphics/MapPelargoniumSidoides.pdf,%
 	% label=fig:KaplandPelargonie]{%   
 	% Distribution of Pelargonium sidoides. Die maps was created from data
