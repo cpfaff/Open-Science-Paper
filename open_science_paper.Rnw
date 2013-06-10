@@ -86,7 +86,7 @@
 \ospTitleRule
 
 % Start column layout %
-\begin{multicols}{\ospColumnCount{}}
+\ospColumnLayoutControlBegin{} 
 
 %%%-------------------------------------------------%%%
 %%% Include introduction %%%
@@ -131,7 +131,7 @@
 @
 
 %% End column layout
-\end{multicols}
+\ospColumnLayoutControlEnd{} 
 
 %%%------------------------------------------------------------------------------%%%
 %%% End of document %%%

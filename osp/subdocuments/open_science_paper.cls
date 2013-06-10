@@ -438,6 +438,22 @@
 \newcommand{\ospColumnCount}{2} 
 \newcommand{\ospSetColumnCount}[1]{\def\ospColumnCount{#1}} 
 
+\newcommand{\ospColumnLayoutControlBegin}{
+  \ifnum\ospColumnCount=1 
+    \relax 
+  \else 
+    \begin{multicols}{\ospColumnCount{}}
+  \fi
+}
+
+\newcommand{\ospColumnLayoutControlEnd}{
+  \ifnum\ospColumnCount=1 
+    \relax 
+  \else 
+    \end{multicols}
+  \fi
+}
+
 %%%-------------------------------------------------%%%
 %%% Bibliography options %%%
 %%%-------------------------------------------------%%%
