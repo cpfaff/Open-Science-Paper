@@ -572,8 +572,22 @@
 %%%-------------------------------------------------%%%
 
 %% Title header defaults %%
+\newcommand{\ospFontTitle}{\normalfont\sffamily\Huge\bfseries} 
+\newcommand{\ospSetFontTitle}[1]{\gdef\ospFontTitle{#1}} 
+
 \newcommand{\ospTitle}{The open science paper title} 
-\newcommand{\ospSetTitle}[1]{\def\ospTitle{#1}}
+\newcommand{\ospSetTitle}[1]{%
+  \def\ospTitle{#1} 
+  \newlength{\firstlen} 
+  \settowidth{\firstlen}{#1}  
+  \newlength{\secondlen} 
+  \setlength{\secondlen}{0.6\textwidth} 
+  \ifdim\firstlen>\secondlen
+    \ospSetFontTitle{\normalfont\sffamily\LARGE\bfseries}
+  \else 
+    \ospSetFontTitle{\normalfont\sffamily\Huge\bfseries}
+  \fi 
+} 
 
 \newcommand{\ospAuthors}{Author one\textsuperscript{1,2,a}, Author two\textsuperscript{2}, \ldots} 
 \newcommand{\ospSetAuthors}[1]{\def\ospAuthors{#1}}
@@ -603,9 +617,6 @@
 
 \newcommand{\ospHeaderInfoFilePath}{osp/data/ospHeaderTable.csv} 
 \newcommand{\ospSetHeaderInfoFilePath}[1]{\gdef\ospHeaderInfoFilePath{#1}}  
-
-\newcommand{\ospFontTitle}{\normalfont\sffamily\Huge\bfseries} 
-\newcommand{\ospSetFontTitle}[1]{\gdef\ospFontTitle{#1}} 
 
 \newcommand{\ospFontAuthors}{\normalfont\sffamily\normalsize} 
 \newcommand{\ospSetFontAuthors}[1]{\gdef\ospFontAuthors{#1}} 
