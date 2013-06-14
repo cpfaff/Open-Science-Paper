@@ -394,6 +394,8 @@
 %% Control float placement %%
 \RequirePackage{float} 
 
+\RequirePackage{placeins}
+
 %% Control caption layout %%
 \RequirePackage[format=plain, margin=7pt, font={small,it}, labelformat=default, labelfont=bf]{caption}
 
@@ -434,7 +436,11 @@
 %%%-------------------------------------------------%%%
 
 \RequirePackage{multicol}
-% \setlength\columnseprule{0.5pt}
+
+\newlength{\ospLengthColumnSeparator} 
+\setlength{\ospLengthColumnSeparator}{10pt} 
+\AtBeginDocument{\setlength\columnsep{\ospLengthColumnSeparator{}}}
+
 \newcommand{\ospColumnCount}{2} 
 \newcommand{\ospSetColumnCount}[1]{\def\ospColumnCount{#1}} 
 
@@ -575,14 +581,16 @@
 \newcommand{\ospFontTitle}{\normalfont\sffamily\Huge\bfseries} 
 \newcommand{\ospSetFontTitle}[1]{\gdef\ospFontTitle{#1}} 
 
+\newlength{\ospLengthOfTitleBeforeReduceFontSize} 
+\setlength{\ospLengthOfTitleBeforeReduceFontSize}{0.6\textwidth} 
+
 \newcommand{\ospTitle}{The open science paper title} 
 \newcommand{\ospSetTitle}[1]{%
   \def\ospTitle{#1} 
-  \newlength{\firstlen} 
-  \settowidth{\firstlen}{#1}  
-  \newlength{\secondlen} 
-  \setlength{\secondlen}{0.6\textwidth} 
-  \ifdim\firstlen>\secondlen
+  \newlength{\osp@LenghtTitle} 
+  \settowidth{\osp@LenghtTitle}{#1}   
+
+  \ifdim\osp@LenghtTitle>\ospLengthOfTitleBeforeReduceFontSize
     \ospSetFontTitle{\normalfont\sffamily\LARGE\bfseries}
   \else 
     \ospSetFontTitle{\normalfont\sffamily\Huge\bfseries}
@@ -873,6 +881,11 @@
    \titlespacing*{\subsection}
     {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
 
+   \titleformat{\subsubsection}[runin]
+   {\color{ospColor@SubsectionHeader}\normalfont\sffamily\normalsize\bfseries}{\thesubsubsection}{0.5em}{}
+   \titlespacing*{\subsubsection}
+    {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
+
    \titleformat{\paragraph}[runin]
    {\color{ospColor@ParagraphHeader}\normalfont\sffamily\normalsize\bfseries}{\theparagraph}{0.5em}{}
    \titlespacing*{\paragraph}
@@ -886,6 +899,11 @@
    \AtBeginDocument{\renewcommand*{\refname}{\vspace*{-\baselineskip}}}
 
    \titleformat{\subsection}[runin]
+   {\color{ospColor@SubsectionHeader}\normalfont\sffamily\normalsize\bfseries}{}{0em}{}
+   \titlespacing*{\subsection}
+    {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
+
+   \titleformat{\subsubsection}[runin]
    {\color{ospColor@SubsectionHeader}\normalfont\sffamily\normalsize\bfseries}{}{0em}{}
    \titlespacing*{\subsection}
     {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
