@@ -27,9 +27,66 @@
 %%% Define own colors %%%
 %%%-------------------------------------------------%%%
 
-%% Example:
+% Use any command for color defintion you like or the 
+% open science paper wrapper "ospDefineColor".
 
-% \xdefinecolor{YourColor}{rgb}{0,0,0.7}
+% usage: 
+
+% \ospDefineColor{new color name}{model: HTML, rgb, cmyk}{colordefinition according the model}
+
+% example:
+
+% \ospDefineColor{YourColor}{rgb}{0,0,0.7}
+
+%%%-------------------------------------------------%%%
+%%% Define your color schema %%%
+%%%-------------------------------------------------%%%
+
+% usage: 
+
+% \ospSetColor{internam color name}{your color name}
+
+% example (uses color defined in section above):
+
+% \ospSetColor{ospColorTitle}{YourColor}
+
+% Full color scheme example:
+
+% \ospSetColor{ospColorTitle}{SteelBlue}
+% \ospSetColor{ospColorSectionHeader}{SteelBlue}
+% \ospSetColor{ospColorSubsectionHeader}{SteelBlue}
+% \ospSetColor{ospColorParagraphHeader}{SteelBlue}
+% \ospSetColor{ospColorLettrine}{DarkGray}  
+% \ospSetColor{ospcolorLineNumbers}{DarkGray} 
+% \ospSetColor{ospColorFooterTextSeparator}{DarkGray}
+% \ospSetColor{ospColorFooterRule}{LightGray}
+% \ospSetColor{ospColorFullLeftFooter}{DarkGray} 
+% \ospSetColor{ospColorFooterPageNumber}{DarkGray}
+
+%%%-------------------------------------------------%%%
+%%% Set lengths %%%
+%%%-------------------------------------------------%%%
+
+% \ospSetLength{\ospLengtTitleLogoColwidth}{0.2\textwidth} %[0.23\textwidth]
+% \ospSetLength{\ospLengtTitleTitleColwidth}{0.5\textwidth} %[0.55\textwidth] 
+% \ospSetLength{\ospLengtTitleSpaceAbove}{2\baselineskip} %[0.01\baselineskip] 
+% \ospSetLength{\ospLengtTitleSpaceBelow}{-1\baselineskip} %[0.01\baselineskip] 
+% \ospSetLength{\ospLengthOfTitleBeforeReduceFontSize}{0.6\textwidth} 
+% \ospSetLength{\ospLengthColumnSeparator}{20pt} 
+% \ospSetLength{\ospLengthFooterRuleWidth}{5pt} %[0.3pt]
+% \ospSetLength{\ospLengthHeaderRuleWidth}{0pt} %[0pt] 
+
+%%%-------------------------------------------------%%%
+%%% Change fonts %%%
+%%%-------------------------------------------------%%%
+
+% \ospSetFontTitle{\normalfont\sffamily\Huge\bfseries} 
+
+%%%-------------------------------------------------%%%
+%%% Define document column count %%%
+%%%-------------------------------------------------%%%
+
+% \ospSetColumnCount{3}
 
 %%%-------------------------------------------------%%%
 %%% Define own commands %%%
@@ -47,10 +104,6 @@
 
 % \newenvironment{name}[number of parameters]{definition begin}{definition end}
 
-%%%-------------------------------------------------%%%
-%%% Define titlel authors and affiliation %%%
-%%%-------------------------------------------------%%%
-
 %% Note: You can set them empty to remove the line
 
 % \ospSetTitle{This is the title of the paper}  
@@ -63,23 +116,6 @@
 % \ospSetTitleKeywordAffiliationName{Affi:}
 % \ospSetTitleKeywordName{Keys:}
 
-%% Fonts 
-
-% \ospSetFontTitle{\normalfont\sffamily\Huge\bfseries} 
-
-%% Lengths [default]
-
-% \setlength{\ospLengtTitleLogoColwidth}{0.2\textwidth} %[0.23\textwidth]
-% \setlength{\ospLengtTitleTitleColwidth}{0.5\textwidth} %[0.55\textwidth] 
-% \setlength{\ospLengtTitleSpaceAbove}{2\baselineskip} %[0.01\baselineskip] 
-% \setlength{\ospLengtTitleSpaceBelow}{-1\baselineskip} %[0.01\baselineskip] 
-
-%%%-------------------------------------------------%%%
-%%% Define document column count %%%
-%%%-------------------------------------------------%%%
-
-% \ospSetColumnCount{3}
-
 %%%-------------------------------------------------%%%
 %%% Define footer contents and styling %%%
 %%%-------------------------------------------------%%%
@@ -91,16 +127,6 @@
 % \ospSetFooterTextLeftOfSeparator{Left of separator} 
 % \ospSetFullLeftFooter{I am the complete left footer}
 % \ospSetFullRightFooter{\textbf{\thepage}}
-
-%% Colors
-
-% \ospSetFooterRuleColor{YourColor}
-% \ospSetFooterPageNumberingColor{DarkOrange} 
-
-%% Lengths [default]
-
-% \setlength{\ospLengthFooterRuleWidth}{5pt} %[0.3pt]
-% \setlength{\ospLengthHeaderRuleWidth}{0pt} %[0pt] 
 
 %%%-------------------------------------------------%%%
 %%% Set and change the git info display  %%%
@@ -140,5 +166,8 @@ firstinits=false,%
 bibencoding=utf8%
 } 
 
-% Add a BibTeX bibliography file 
+% Add a BibTeX bibliography file. If you like to use anoter bib file just
+% change the path here. If you like to add another source just copy the line
+% and add a new one with the path to the new file. 
+
 \addbibresource{usr/subdocuments/bibliography/open_science_paper.bib}

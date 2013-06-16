@@ -108,6 +108,14 @@
 \RequirePackage{suffix}
 
 %%%-------------------------------------------------%%%
+%%% Helpers (unify commands to use in style file) %%%
+%%%-------------------------------------------------%%%
+
+\newcommand{\ospSetLength}[2]{\setlength{#1}{#2}}
+\newcommand{\ospSetColor}[2]{\colorlet{#1}{#2}} 
+\newcommand{\ospDefineColor}[3]{\xdefinecolor{#1}{#2}{#3}}
+
+%%%-------------------------------------------------%%%
 %%% Language adaption of the document %%%
 %%%-------------------------------------------------%%%
 
@@ -132,24 +140,23 @@
    \RequirePackage[svgnames,rgb]{xcolor} 
 \fi%
 
-\ifosp@color%
-   \colorlet{ospColor@TitleRule}{LightGray}
-   \colorlet{ospColor@Title}{DarkRed}
-   
-   \colorlet{ospColor@AbstractHeader}{DarkGray}   
-   \colorlet{ospColor@SubsectionHeader}{DarkOrange}
-   \colorlet{ospColor@ParagraphHeader}{DarkGray}
-   \colorlet{ospColor@SectionHeader}{DarkOrange}
-   
-   \colorlet{ospColor@Lettrine}{DarkGray}  
+\ifosp@color% 
+   \colorlet{ospColorTitleRule}{LightGray}
+   \colorlet{ospColorTitle}{DarkRed}
+   \colorlet{ospColorAbstractHeader}{DarkGray}   
+   \colorlet{ospColorSubsectionHeader}{DarkOrange}
+   \colorlet{ospColorParagraphHeader}{DarkGray}
+   \colorlet{ospColorSectionHeader}{DarkOrange}
 
-   \colorlet{ospColor@LineNumbers}{DarkGray} 
+   \colorlet{ospColorLettrine}{DarkGray}  
 
-   \colorlet{ospColor@FooterTextSeparator}{DarkGray}
-   \colorlet{ospColor@FooterRule}{LightGray}
-   \colorlet{ospColor@FullLeftFooter}{DarkGray} 
-   \colorlet{ospColor@FullRightFooter}{DarkGray} 
-   \colorlet{ospColor@FooterPageNumbering}{DarkGray}
+   \colorlet{ospcolorLineNumbers}{DarkGray} 
+
+   \colorlet{ospColorFooterTextSeparator}{DarkGray}
+   \colorlet{ospColorFooterRule}{LightGray}
+   \colorlet{ospColorFullLeftFooter}{DarkGray} 
+   \colorlet{ospColorFullRightFooter}{DarkGray} 
+   \colorlet{ospColorFooterPageNumber}{DarkGray}
 
    \xdefinecolor{ospColor@Links}{rgb}{0,0,0.4} 
    \xdefinecolor{ospColor@ListingBackground}{gray}{.90} 
@@ -170,23 +177,23 @@
    \xdefinecolor{ospColor@ListingCyan}{HTML}{2AA198}
    \xdefinecolor{ospColor@ListingGreen}{HTML}{859900}
 \else%
-   \colorlet{ospColor@TitleRule}{black}
-   \colorlet{ospColor@Title}{black} 
+   \colorlet{ospColorTitleRule}{black}
+   \colorlet{ospColorTitle}{black} 
 
-   \colorlet{ospColor@AbstractHeader}{black}  
-   \colorlet{ospColor@SubsectionHeader}{black}
-   \colorlet{ospColor@ParagraphHeader}{black}
-   \colorlet{ospColor@SectionHeader}{black}
+   \colorlet{ospColorAbstractHeader}{black}  
+   \colorlet{ospColorSubsectionHeader}{black}
+   \colorlet{ospColorParagraphHeader}{black}
+   \colorlet{ospColorSectionHeader}{black}
 
-   \colorlet{ospColor@Lettrine}{black}
+   \colorlet{ospColorLettrine}{black}
    
-   \colorlet{ospColor@LineNumbers}{black} 
+   \colorlet{ospcolorLineNumbers}{black} 
    
-   \colorlet{ospColor@FooterRule}{black}
-   \colorlet{ospColor@FullLeftFooter}{black}   
-   \colorlet{ospColor@FullRightFooter}{black} 
-   \colorlet{ospColor@FooterPageNumbering}{black} 
-   \colorlet{ospColor@FooterTextSeparator}{black}
+   \colorlet{ospColorFooterRule}{black}
+   \colorlet{ospColorFullLeftFooter}{black}   
+   \colorlet{ospColorFullRightFooter}{black} 
+   \colorlet{ospColorFooterPageNumber}{black} 
+   \colorlet{ospColorFooterTextSeparator}{black}
 
    \xdefinecolor{ospColor@Links}{rgb}{0,0,0.4} 
    \xdefinecolor{ospColor@ListingBackground}{gray}{.90} 
@@ -249,14 +256,14 @@
    \ospSetFooterLogo{\raisebox{-0.9ex}{\includegraphics[scale=0.15]{osp/graphics/open-science-papers-footer-logo-black.pdf}}}
 \fi%
 
-\newcommand{\ospFooterTextSeparator}{\textcolor{ospColor@FooterTextSeparator}{$\circ$}} 
+\newcommand{\ospFooterTextSeparator}{\textcolor{ospColorFooterTextSeparator}{$\circ$}} 
 \newcommand{\ospSetFooterTextSeparator}[1]{\gdef\ospFooterTextSeparator{#1}}
 
-\newcommand{\ospFullLeftFooter}{\ospFooterLogo\xspace~ \textcolor{ospColor@FullLeftFooter}{{\normalsize \ospFooterTextLeftOfSeparator\xspace \ospFooterTextSeparator\xspace \ospFooterTextRightOfSeparator}}} 
+\newcommand{\ospFullLeftFooter}{\ospFooterLogo\xspace~ \textcolor{ospColorFullLeftFooter}{{\normalsize \ospFooterTextLeftOfSeparator\xspace \ospFooterTextSeparator\xspace \ospFooterTextRightOfSeparator}}} 
 \newcommand{\ospSetFullLeftFooter}[1]{\gdef\ospFullLeftFooter{#1}}
 
 %% Style the footer and header elements 
-\newcommand{\ospFooterRuleColor}{ospColor@FooterRule} 
+\newcommand{\ospFooterRuleColor}{ospColorFooterRule} 
 \newcommand{\ospSetFooterRuleColor}[1]{\gdef\ospFooterRuleColor{#1}}
 
 \newlength{\ospLengthHeaderRuleWidth} 
@@ -269,7 +276,7 @@
 
 \patchcmd{\footrule}{\hrule}{\color{\ospFooterRuleColor}\hrule}{}{}
 
-\newcommand{\ospFooterPageNumberingColor}{ospColor@FooterPageNumbering} 
+\newcommand{\ospFooterPageNumberingColor}{ospColorFooterPageNumber} 
 \newcommand{\ospSetFooterPageNumberingColor}[1]{\gdef\ospFooterPageNumberingColor{#1}} 
 
 \newcommand{\ospFooterPageNumberingStyle}{\normalsize\textbf} 
@@ -316,7 +323,7 @@
 
 \newcommand{\capital}[1]{%
    \ospSet@LettrineOptions{#1}
-   \lettrine{\textcolor{ospColor@Lettrine}{#1}}
+   \lettrine{\textcolor{ospColorLettrine}{#1}}
 } 
 
 %%%-------------------------------------------------%%%
@@ -327,7 +334,7 @@
    \RequirePackage[pagewise]{lineno}
    \RequirePackage{lineno}
    \setlength\linenumbersep{2pt}
-   \renewcommand\linenumberfont{\normalfont\tiny\sffamily\color{ospColor@LineNumbers}}
+   \renewcommand\linenumberfont{\normalfont\tiny\sffamily\color{ospcolorLineNumbers}}
    \AtBeginDocument{\linenumbers} 
 \else% 
    \RequirePackage[pagewise]{lineno}
@@ -612,7 +619,7 @@
 \newcommand{\ospKeywords}{Open Science, Git, R, Knitr, ggplot2, tikz}
 \newcommand{\ospSetKeywords}[1]{\def\ospKeywords{#1}}
 
-\newcommand{\ospTitleRule}{\textcolor{ospColor@TitleRule}{\noindent\rule{\linewidth}{1.7pt}}}
+\newcommand{\ospTitleRule}{\textcolor{ospColorTitleRule}{\noindent\rule{\linewidth}{1.7pt}}}
 
 \newcommand{\ospTitleLogo}{\includegraphics[scale=0.3]{osp/graphics/open-science-papers-title-header-logo.pdf}} 
 \newcommand{\ospSetTitleLogo}[1]{\gdef\ospTitleLogo{#1}} 
@@ -652,7 +659,7 @@
             \end{minipage}&%
             \begin{minipage}{0.7\textwidth} 
                \vspace{\baselineskip}
-                  {\color{ospColor@Title}{{\ospFontTitle\ospTitleCsv}}}\par%
+                  {\color{ospColorTitle}{{\ospFontTitle\ospTitleCsv}}}\par%
                      \begin{normalsize}\textbf{%
                         \DTLsort{ospAuthorPriorityToAppear,ospAuthorFirstName}{ospHeaderInfoFromTable} 
                         \DTLforeach{ospHeaderInfoFromTable}{%
@@ -688,7 +695,7 @@
             \end{minipage}&	
             \begin{minipage}{0.7\textwidth} 
                \vspace{\baselineskip}
-                  {\color{ospColor@Title}{{\ospFontTitle\ospTitle}}}\par
+                  {\color{ospColorTitle}{{\ospFontTitle\ospTitle}}}\par
                   \ifdefempty{\ospAuthors}{}{\begin{normalsize}\textbf{\ospAuthors}\end{normalsize}\par}
                   \ifdefempty{\ospContacts}{}{\begin{normalsize}\textbf{\ospTitleKeywordContactName} \ospContacts\end{normalsize}\par}
                   \ifdefempty{\ospAffiliations}{}{\begin{normalsize}\textbf{\ospTitleKeywordAffiliationName} \ospAffiliations\end{normalsize}\par}
@@ -701,7 +708,7 @@
 
 %% Defines the abstract %%
 \RequirePackage{abstract}
-\renewcommand{\abstractnamefont}{\color{ospColor@AbstractHeader}\normalfont\sffamily\large\bfseries}
+\renewcommand{\abstractnamefont}{\color{ospColorAbstractHeader}\normalfont\sffamily\large\bfseries}
 \renewcommand{\abstracttextfont}{\normalfont} 
 
 %% definitions for distribution maps 
@@ -870,46 +877,46 @@
 
 \ifosp@sectionnumbers%
    \titleformat{\section}
-   {\color{ospColor@SectionHeader}\normalfont\sffamily\large\bfseries}{\thesection}{0.5em}{}
+   {\color{ospColorSectionHeader}\normalfont\sffamily\large\bfseries}{\thesection}{0.5em}{}
    \titlespacing*{\section}
     {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
 
    \AtBeginDocument{\renewcommand*{\refname}{\vspace*{-\baselineskip}}}
 
    \titleformat{\subsection}[runin]
-   {\color{ospColor@SubsectionHeader}\normalfont\sffamily\normalsize\bfseries}{\thesubsection}{0.5em}{}
+   {\color{ospColorSubsectionHeader}\normalfont\sffamily\normalsize\bfseries}{\thesubsection}{0.5em}{}
    \titlespacing*{\subsection}
     {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
 
    \titleformat{\subsubsection}[runin]
-   {\color{ospColor@SubsectionHeader}\normalfont\sffamily\normalsize\bfseries}{\thesubsubsection}{0.5em}{}
+   {\color{ospColorSubsectionHeader}\normalfont\sffamily\normalsize\bfseries}{\thesubsubsection}{0.5em}{}
    \titlespacing*{\subsubsection}
     {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
 
    \titleformat{\paragraph}[runin]
-   {\color{ospColor@ParagraphHeader}\normalfont\sffamily\normalsize\bfseries}{\theparagraph}{0.5em}{}
+   {\color{ospColorParagraphHeader}\normalfont\sffamily\normalsize\bfseries}{\theparagraph}{0.5em}{}
    \titlespacing*{\paragraph}
     {0pt}{3.25ex plus 1ex minus 0.2ex}{1em}
 \else% 
    \titleformat{\section}
-   {\color{ospColor@SectionHeader}\normalfont\sffamily\large\bfseries}{}{0em}{}
+   {\color{ospColorSectionHeader}\normalfont\sffamily\large\bfseries}{}{0em}{}
    \titlespacing*{\section}
     {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
 
    \AtBeginDocument{\renewcommand*{\refname}{\vspace*{-\baselineskip}}}
 
    \titleformat{\subsection}[runin]
-   {\color{ospColor@SubsectionHeader}\normalfont\sffamily\normalsize\bfseries}{}{0em}{}
+   {\color{ospColorSubsectionHeader}\normalfont\sffamily\normalsize\bfseries}{}{0em}{}
    \titlespacing*{\subsection}
     {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
 
    \titleformat{\subsubsection}[runin]
-   {\color{ospColor@SubsectionHeader}\normalfont\sffamily\normalsize\bfseries}{}{0em}{}
+   {\color{ospColorSubsectionHeader}\normalfont\sffamily\normalsize\bfseries}{}{0em}{}
    \titlespacing*{\subsection}
     {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
 
    \titleformat{\paragraph}[runin]
-   {\color{ospColor@ParagraphHeader}\normalfont\sffamily\normalsize\bfseries}{}{0em}{}
+   {\color{ospColorParagraphHeader}\normalfont\sffamily\normalsize\bfseries}{}{0em}{}
    \titlespacing*{\paragraph}
     {0pt}{3.25ex plus 1ex minus 0.2ex}{1em}
 \fi%
