@@ -1,0 +1,7 @@
+ospTitle,ospAuthorTitle,ospAuthorPriorityToAppear,ospAuthorFirstName,ospAuthorFirstNameShort,ospAuthorLastName,ospAuthorEmail,ospAuthorEmailID,ospAuthorAffiliationIDs,ospAffiliations,ospAffiliationIDs,ospKeywords
+This is the title read from csv,B.Sc,1,Claas-Thido,C.T.,Pfaff,ctpfaff@arcor.de,a,1,University of Leipzig,1,Open Science
+,Dr.,1,Balofi,B.,Malofi,malofi@balofi.de,b,"1,2",University of Hohenheim,2,Git
+,,2,Aladin,A.,Alexis,alexis@gmail.com,c,1,,,R
+,,3,Kalander,K.,Zalander,zalander@gmail.com,d,1,,,Knitr
+,,,,,,,,,,,ggplot
+,,,,,,,,,,,tikz

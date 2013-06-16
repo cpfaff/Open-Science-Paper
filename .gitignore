@@ -30,7 +30,3 @@ gitHeadInfo.gin
 *.mtc
 *.mtc0
 *tikzDictionary
-cache/*.RData
-cache/*.rdb
-cache/*.rdx
-cache/*packages

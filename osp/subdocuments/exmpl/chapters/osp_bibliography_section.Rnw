@@ -1,0 +1,8 @@
+%%%-------------------------------------------------%%%
+%%% Sub document bibliography inclusion %%%
+%%%-------------------------------------------------%%%
+
+\section{References} 
+
+\nocite{*}
+\printbibliography

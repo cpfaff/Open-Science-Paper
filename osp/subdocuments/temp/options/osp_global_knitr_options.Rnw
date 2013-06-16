@@ -1,0 +1,95 @@
+%%%-------------------------------------------------%%%
+%%% Sub document global preferences for Knitr %%%
+%%%-------------------------------------------------%%%
+
+<<global_knitr_options, tidy=FALSE, highlight=FALSE, include=FALSE, cache=FALSE, eval=TRUE>>= 
+  ## Load default R libraries
+  
+  suppressPackageStartupMessages(library(ggplot2))
+  # suppressPackageStartupMessages(library(grid))
+  # suppressPackageStartupMessages(library(plyr))
+
+  ## Knitr 
+
+  # messages 
+  opts_chunk$set(warning=FALSE)
+  # code evaluation 
+  opts_chunk$set(eval=TRUE)
+  # code decoration
+  opts_chunk$set(tidy=TRUE, prompt=TRUE, comment='##', highlight=TRUE, size='normalsize')
+  # cache options
+  opts_chunk$set(cache.path='usr/cache/')  
+  # Caching on by default
+  opts_chunk$set(cache=T)
+  # plot options 
+  if("tikzDevice" %in% rownames(installed.packages()) == TRUE) {
+	 opts_chunk$set(fig.path='usr/graphics/dynamic/', dev='tikz', fig.keep='high', fig.show='hold')  
+  } else {
+	 opts_chunk$set(fig.path='usr/graphics/dynamic/', dev='pdf', fig.keep='high', fig.show='hold')  
+  }
+
+  # tune details of graphics appearance 
+  knit_hooks$set(par=function(before, options, envir){
+    if (before && options$fig.show!='none') par(mar=c(4,4,.1,.1),cex.lab=.95,cex.axis=.9,mgp=c(2,.7,0),tcl=-.3)
+    }
+  )  
+
+  # Plot theme for ggplot2 (use with "+ theme_osp()") 
+  theme_osp <- function(base_size = 10, base_family = "") {
+    theme_grey(base_size = base_size, base_family = base_family) %+replace%
+      theme(
+	axis.text = element_text(size = rel(0.8)),
+	axis.ticks = element_line(colour = "black"),
+	legend.key = element_rect(colour = "grey80"),
+	panel.background = element_rect(fill = "white", colour = NA),
+	panel.border = element_rect(fill = NA, colour = "grey50"),
+	panel.grid.major = element_blank(),
+	panel.grid.minor = element_blank(),  
+	strip.background = element_rect(fill = "grey80", colour = "grey50"),
+	strip.background = element_rect(fill = "grey80", colour = "grey50")
+      )
+  }
+
+
+  theme_osp_distmap <- function(base_size = 10, base_family = "") {
+    theme_grey(base_size = base_size, base_family = base_family) %+replace%
+      theme(
+	axis.text = element_blank(),#element_text(size = rel(0.8)),
+	axis.ticks = element_blank(),#element_line(colour = "black"),
+	legend.key = element_rect(colour = "grey80"),
+	panel.background = element_rect(fill = "white", colour = NA),
+	panel.border = element_rect(fill = NA, colour = "grey50"),
+	panel.grid.major = element_blank(),
+	panel.grid.minor = element_blank(),  
+	panel.border = element_blank(),
+	strip.background = element_rect(fill = "grey80", colour = "grey50"),
+	strip.background = element_rect(fill = "grey80", colour = "grey50")
+      )
+  }
+
+
+  # pdf.options(family = "Times", width=15)
+  # tikz options
+  options(replace.assign=TRUE, width=60)
+  options(tikzSanitizeCharacters = c('%','$','}','{','^', '_'))
+  options(tikzReplacementCharacters = c('\\%','\\$','\\}','\\{','\\^{}', '\\textunderscore'))
+
+  # OSP that embed rOpenSci packages 
+
+  osp_load_or_install <- function(library=NULL){
+    # does nothing yet
+  }
+
+  osp_distmap <- function(species=NULL){
+    library(ggplot2) 
+    library(plyr) 
+    library(rgbif)  
+    out <- llply(species, function(x) occurrencelist(x, coordinatestatus = T, maxresults = 50)) 
+    custom <- function(){list(theme_osp_distmap())}
+    gbifmap(out, customize=custom()) 
+  }
+@  
+
+
+
+

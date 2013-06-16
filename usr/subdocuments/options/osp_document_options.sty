@@ -1,0 +1,173 @@
+%%%------------------------------------------------------------------------------------%%
+%%%------------------------------------------------------------------------------------%%
+%%% Content : Open-Science-Paper LateX-Style 
+%%% Use : Open-Sciene-Paper user modifications 
+%%% Author : Claas-Thido Pfaff
+%%%------------------------------------------------------------------------------------%%
+%%%------------------------------------------------------------------------------------%%
+
+%%%-------------------------------------------------%%%
+%%% Define your papers geometry %%%
+%%%-------------------------------------------------%%%
+
+%% Note: 
+
+% Needs the class option autolayout=false
+
+%% Example:
+
+% \geometry{left=4cm, right=4cm, textheight=25cm}
+
+%% Note: 
+
+% Find all available options in the geometry package 
+% documentation.
+
+%%%-------------------------------------------------%%%
+%%% Define own colors %%%
+%%%-------------------------------------------------%%%
+
+% Use any command for color defintion you like or the 
+% open science paper wrapper "ospDefineColor".
+
+% usage: 
+
+% \ospDefineColor{new color name}{model: HTML, rgb, cmyk}{colordefinition according the model}
+
+% example:
+
+% \ospDefineColor{YourColor}{rgb}{0,0,0.7}
+
+%%%-------------------------------------------------%%%
+%%% Define your color schema %%%
+%%%-------------------------------------------------%%%
+
+% usage: 
+
+% \ospSetColor{internam color name}{your color name}
+
+% example (uses color defined in section above):
+
+% \ospSetColor{ospColorTitle}{YourColor}
+
+% Full color scheme example:
+
+% \ospSetColor{ospColorTitle}{SteelBlue}
+% \ospSetColor{ospColorSectionHeader}{SteelBlue}
+% \ospSetColor{ospColorSubsectionHeader}{SteelBlue}
+% \ospSetColor{ospColorParagraphHeader}{SteelBlue}
+% \ospSetColor{ospColorLettrine}{DarkGray}  
+% \ospSetColor{ospColorLineNumbers}{DarkGray} 
+% \ospSetColor{ospColorFooterTextSeparator}{DarkGray}
+% \ospSetColor{ospColorFooterRule}{LightGray}
+% \ospSetColor{ospColorFullLeftFooter}{DarkGray} 
+% \ospSetColor{ospColorFooterPageNumber}{DarkGray}
+
+%%%-------------------------------------------------%%%
+%%% Set lengths %%%
+%%%-------------------------------------------------%%%
+
+% \ospSetLength{\ospLengtTitleLogoColwidth}{0.2\textwidth} %[0.23\textwidth]
+% \ospSetLength{\ospLengtTitleTitleColwidth}{0.5\textwidth} %[0.55\textwidth] 
+% \ospSetLength{\ospLengtTitleSpaceAbove}{2\baselineskip} %[0.01\baselineskip] 
+% \ospSetLength{\ospLengtTitleSpaceBelow}{-1\baselineskip} %[0.01\baselineskip] 
+% \ospSetLength{\ospLengthOfTitleBeforeReduceFontSize}{0.6\textwidth} 
+% \ospSetLength{\ospLengthColumnSeparator}{20pt} 
+% \ospSetLength{\ospLengthFooterRuleWidth}{5pt} %[0.3pt]
+% \ospSetLength{\ospLengthHeaderRuleWidth}{0pt} %[0pt] 
+
+%%%-------------------------------------------------%%%
+%%% Change fonts %%%
+%%%-------------------------------------------------%%%
+
+% \ospSetFontTitle{\normalfont\sffamily\Huge\bfseries} 
+
+%%%-------------------------------------------------%%%
+%%% Define document column count %%%
+%%%-------------------------------------------------%%%
+
+% \ospSetColumnCount{3}
+
+%%%-------------------------------------------------%%%
+%%% Define own commands %%%
+%%%-------------------------------------------------%%%
+
+%% Example:
+
+% \newcommand{name}[number of parameters]{things to do}
+
+%%%-------------------------------------------------%%%
+%%% Define own environments %%%
+%%%-------------------------------------------------%%%
+
+%% Example:
+
+% \newenvironment{name}[number of parameters]{definition begin}{definition end}
+
+%% Note: You can set them empty to remove the line
+
+% \ospSetTitle{This is the title of the paper}  
+% \ospSetAuthors{Author one\textsuperscript{1,2,a}, Author two\textsuperscript{2,b}}  
+% \ospSetContacts{foo@bar.com\textsuperscript{a}, bar@foo.com\textsuperscript{b}}
+% \ospSetAffiliations{University of XY departement of Z\textsuperscript{1}, University of \ldots}
+% \ospSetKeywords{Open Science, Git, R, Knitr, ggplot2, tikz}
+
+% \ospSetTitleKeywordContactName{Cont:}
+% \ospSetTitleKeywordAffiliationName{Affi:}
+% \ospSetTitleKeywordName{Keys:}
+
+%%%-------------------------------------------------%%%
+%%% Define footer contents and styling %%%
+%%%-------------------------------------------------%%%
+
+%% Contents
+
+% \ospSetFooterTextRightOfSeparator{Right of separator} 
+% \ospSetFooterTextSeparator{xx} 
+% \ospSetFooterTextLeftOfSeparator{Left of separator} 
+% \ospSetFullLeftFooter{I am the complete left footer}
+% \ospSetFullRightFooter{\textbf{\thepage}}
+
+%%%-------------------------------------------------%%%
+%%% Set and change the git info display  %%%
+%%%-------------------------------------------------%%%
+
+%% Note 
+% This features need the gitinfo class option set 
+% inside the root file.
+
+% \ospSetGitUrl{\url{www.....}}
+% \ospSetGitInfoLine{}
+
+%%%-------------------------------------------------%%%
+%%% Set PDF options %%%
+%%%-------------------------------------------------%%%
+
+%% Example:
+%  \hypersetup{%
+%   pdfauthor={Your-Name},
+%   pdfcreator={Your-Name},
+%   pdfsubject={Subject},
+%   pdfkeywords={Keyword1, Keyword2, ...}
+%  }
+
+%% Note: 
+% See the hyperref package documentation for more options
+
+%%%-------------------------------------------------%%%
+%%% Bibliography options %%%
+%%%-------------------------------------------------%%%
+
+\ExecuteBibliographyOptions{%
+url=false,%
+isbn=false,%
+doi=false,%
+firstinits=false,%
+bibencoding=utf8%
+} 
+
+% Add a BibTeX bibliography file. If you like to use anoter bib file just
+% change the path here. If you like to add another source just copy the line
+% and add a new one with the path to the new file. 
+
+\addbibresource{usr/subdocuments/bibliography/open_science_paper.bib}

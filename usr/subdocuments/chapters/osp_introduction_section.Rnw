@@ -1,0 +1,24 @@
+%%%-------------------------------------------------%%%
+%%% Sub document introduction %%%
+%%%-------------------------------------------------%%%
+
+\section{Introduction}
+
+% Remove the lipsum and the list example and fill in your introduction text here
+
+\capital{T} his is just an introduction text snippet to show how drop caps look in this document.
+\lipsum[1]
+
+\begin{itemize}
+  \item One
+    \begin{itemize}
+      \item One One
+        \begin{itemize}
+          \item One One One
+        \end{itemize}
+    \end{itemize}
+  \item Two
+  \item Three
+\end{itemize}
+
+\lipsum[1-2]

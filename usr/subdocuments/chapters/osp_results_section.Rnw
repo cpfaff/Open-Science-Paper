@@ -1,0 +1,99 @@
+%%%-------------------------------------------------%%%
+%%% Sub document results %%%
+%%%-------------------------------------------------%%%
+
+\section{Results}
+
+% Remove the lipsum and the example plots and tables to fill in your abstract text here
+
+\subsection{Subheading}
+
+\lipsum[1-2]
+
+% {{{ 
+\ospFramedEnv[label=fig:test_plot_one]{ 
+<<test_plot, fig.width=3.27, fig.height=2.5, echo=FALSE>>= 
+   ggplot(cars, aes(x=dist, y=speed)) +
+   geom_point(shape=1) + geom_smooth(method = "lm", size = 1) +
+   theme_osp() 
+@
+}{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+  commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+  dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+  pellentesque eu, pretium quis, sem.}
+% }}}
+
+\lipsum 
+
+\begin{equation}
+   \sqrt[3]{1-y^2}
+\end{equation}
+
+\setlength\multlinegap{0pt}
+\begin{multline} \tag{2}
+   \sum_{t \in \mathbf{T}} \int_a^t
+   \biggl\lbrace \int_a^t f(t - x)^2 \,
+   g(y)^2 \,dx \biggr\rbrace \,dy \\
+   = \sum_{t \notin \mathbf{T}} \int_t^a
+   \biggl\lbrace g(y)^2 \int_t^a
+   f(x)^2 \,dx \biggr\rbrace \,dy
+\end{multline}
+
+% {{{ 
+\ospFramedEnv*[label=fig:test_plot_two]{ 
+<<test_plot_two, fig.width=3.415, fig.height=2.5, echo=FALSE>>=
+   ggplot(movies, aes(x=rating)) +
+   geom_density() +
+   theme_osp() 
+
+   ggplot(mtcars, aes(factor(cyl), mpg)) +
+   geom_boxplot() +
+   theme_osp() 
+@
+}{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+  commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+  dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+  pellentesque eu, pretium quis, sem.}
+% }}}
+
+\lipsum[1-5]
+
+\begin{lstlisting}[language=Ruby]
+#!/usr/bin/ruby
+
+$i = 0
+$num = 5
+
+while $i < $num  do
+   puts("Text inside the loop: i = #$i")
+   $i +=1
+end
+\end{lstlisting}
+
+\lipsum[1-5]
+
+% example for a two column table %
+
+\begin{table*} % {{{
+% Label tab:test_plot_two 
+  \centering
+  \label{tab:test_table_two}
+  \caption{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+  commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+  dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+  pellentesque eu, pretium quis, sem.}
+  {\small
+  \begin{tabular}{p{0.08\textwidth}p{0.08\textwidth}p{0.08\textwidth}p{0.08\textwidth}p{0.08\textwidth}p{0.08\textwidth}p{0.08\textwidth}p{0.08\textwidth}p{0.08\textwidth}}
+    \toprule
+    \multicolumn{4}{c}{A-D}   & \multicolumn{5}{c}{E-I}\\
+    \cmidrule(lr){1-4} \cmidrule(lr){5-9}
+    A & B & C & D & E & F & G & H & I\\
+    \midrule
+    1     & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\
+    1     & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\
+    1     & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\
+    1     & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\
+    \bottomrule
+  \end{tabular}
+  }
+\end{table*} % }}}
