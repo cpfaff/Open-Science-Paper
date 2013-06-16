@@ -150,7 +150,7 @@
 
    \colorlet{ospColorLettrine}{DarkGray}  
 
-   \colorlet{ospcolorLineNumbers}{DarkGray} 
+   \colorlet{ospColorLineNumbers}{DarkGray} 
 
    \colorlet{ospColorFooterTextSeparator}{DarkGray}
    \colorlet{ospColorFooterRule}{LightGray}
@@ -187,7 +187,7 @@
 
    \colorlet{ospColorLettrine}{black}
    
-   \colorlet{ospcolorLineNumbers}{black} 
+   \colorlet{ospColorLineNumbers}{black} 
    
    \colorlet{ospColorFooterRule}{black}
    \colorlet{ospColorFullLeftFooter}{black}   
@@ -334,7 +334,7 @@
    \RequirePackage[pagewise]{lineno}
    \RequirePackage{lineno}
    \setlength\linenumbersep{2pt}
-   \renewcommand\linenumberfont{\normalfont\tiny\sffamily\color{ospcolorLineNumbers}}
+   \renewcommand\linenumberfont{\normalfont\tiny\sffamily\color{ospColorLineNumbers}}
    \AtBeginDocument{\linenumbers} 
 \else% 
    \RequirePackage[pagewise]{lineno}
