@@ -103,7 +103,7 @@
 \RequirePackage{xifthen}  
 \RequirePackage{ifluatex} 
 \RequirePackage{datatool} 
-\RequirePackage{expl3}  
+% \RequirePackage{expl3}  
 % \RequirePackage{xstring} 
 \RequirePackage{suffix}
 
@@ -115,12 +115,19 @@
 \newcommand{\ospSetColor}[2]{\colorlet{#1}{#2}} 
 \newcommand{\ospDefineColor}[3]{\xdefinecolor{#1}{#2}{#3}}
 
+\newcommand{\ospSetFont}[2]{
+  \def#1{#2} 
+}  
+
+% usage:
+
 %%%-------------------------------------------------%%%
 %%% Language adaption of the document %%%
 %%%-------------------------------------------------%%%
 
 \RequirePackage[ngerman, english]{babel} 
-\RequirePackage[autostyle]{csquotes} 
+\RequirePackage[autostyle]{csquotes}  
+
 % usage:
 %  \enquote{} to put a text in the right quotes
 
@@ -129,6 +136,8 @@
 %%%-------------------------------------------------%%%
 
 \RequirePackage{lipsum}
+
+% usage:
 
 %%%-------------------------------------------------%%%
 %%% Color options %%%
@@ -585,8 +594,8 @@
 %%%-------------------------------------------------%%%
 
 %% Title header defaults %%
-\newcommand{\ospFontTitle}{\normalfont\sffamily\Huge\bfseries} 
-\newcommand{\ospSetFontTitle}[1]{\gdef\ospFontTitle{#1}} 
+\newcommand{\ospFontTitle}{\normalfont\sffamily\Huge\bfseries}  
+% \newcommand{\ospSetFontTitle}[1]{\gdef\ospFontTitle{#1}} 
 
 \newlength{\ospLengthOfTitleBeforeReduceFontSize} 
 \setlength{\ospLengthOfTitleBeforeReduceFontSize}{0.6\textwidth} 
@@ -598,9 +607,11 @@
   \settowidth{\osp@LenghtTitle}{#1}   
 
   \ifdim\osp@LenghtTitle>\ospLengthOfTitleBeforeReduceFontSize
-    \ospSetFontTitle{\normalfont\sffamily\LARGE\bfseries}
+    % \ospSetFontTitle{\normalfont\sffamily\LARGE\bfseries} 
+    \ospSetFont{\ospFontTitle}{\normalfont\sffamily\LARGE\bfseries}
   \else 
-    \ospSetFontTitle{\normalfont\sffamily\Huge\bfseries}
+    % \ospSetFontTitle{\normalfont\sffamily\Huge\bfseries}
+    \ospSetFont{\ospFontTitle}{\normalfont\sffamily\Huge\bfseries}
   \fi 
 } 
 
@@ -634,7 +645,8 @@
 \newcommand{\ospSetHeaderInfoFilePath}[1]{\gdef\ospHeaderInfoFilePath{#1}}  
 
 \newcommand{\ospFontAuthors}{\normalfont\sffamily\normalsize} 
-\newcommand{\ospSetFontAuthors}[1]{\gdef\ospFontAuthors{#1}} 
+% \newcommand{\ospSetFontAuthors}[1]{\gdef\ospFontAuthors{#1}} 
+\ospSetFont{\ospFontAuthors}{\normalfont\sffamily\normalsize}
 
 \newlength{\ospLengtTitleLogoColwidth} 
 \setlength{\ospLengtTitleLogoColwidth}{0.23\textwidth} 
@@ -709,7 +721,7 @@
 %% Defines the abstract %%
 \RequirePackage{abstract}
 \renewcommand{\abstractnamefont}{\color{ospColorAbstractHeader}\normalfont\sffamily\large\bfseries}
-\renewcommand{\abstracttextfont}{\normalfont} 
+% \renewcommand{\abstracttextfont}{\normalfont} 
 
 %% definitions for distribution maps 
 
@@ -779,11 +791,11 @@
                 }{
                   \put(0,0){\begin{tikzpicture}\node[signbackground]{\begin{minipage}{2.5cm}\begin{center} 
                     \emph{\overlaytextname}\end{center}\end{minipage}};\end{tikzpicture}}  
-                  }
+                 }
                 }{
                   \put(0,0){\begin{tikzpicture}\node[signbackground]{\begin{minipage}{2.5cm}\begin{center} 
                     \includegraphics[trim=0cm 0cm 0cm 0cm, clip, width=1cm]{\picturepath} \emph{\overlaytextname}\end{center}\end{minipage}};\end{tikzpicture}}  
-                  }
+                 }
                 \end{overpic}
               \end{centerpar}
             \end{minipage}
