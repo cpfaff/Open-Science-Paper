@@ -822,13 +822,13 @@
   % dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
   % pellentesque eu, pretium quis, sem.}
 
-\providecommand*{\el}{}
-\define@key{ospFramedEnv}{label}{\renewcommand*\el{#1}} 
-\presetkeys{ospFramedEnv}{label=fig:PicDefaultLabel}{}%
+\define@key{ospFramedEnv}{placement}{\renewcommand*\placement{#1}}
+\define@key{ospFramedEnv}{label}{\renewcommand*\envlabel{#1}}
+\presetkeys{ospFramedEnv}{placement=H, label=fig:DistmapDefaultLabel}{}%
 
 \providecommand\ospFramedEnv[3][]{
 \setkeys{ospFramedEnv}{#1}
-  \begin{figure}[H]
+  \begin{figure}[\placement]
     \centering
     \begin{tikzpicture}
       \node[pictureframe]{%
@@ -840,7 +840,7 @@
       };
     \end{tikzpicture}
     \captionbelow{#3}
-    \label{\el{}}
+    \label{\envlabel}
   \end{figure}
 } 
 
@@ -882,7 +882,7 @@
       };
     \end{tikzpicture}
     \captionbelow{#3}
-    \label{\el{}}
+    \label{\envlabel}
   \end{figure*}
 } 
 
