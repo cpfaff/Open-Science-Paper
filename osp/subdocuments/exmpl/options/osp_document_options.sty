@@ -20,8 +20,7 @@
 
 %% Note: 
 
-% Find all available options in the geometry package 
-% documentation.
+% Find all available options in the geometry package documentation.
 
 %%%-------------------------------------------------%%%
 %%% Define own colors %%%
@@ -67,6 +66,8 @@
 %%% Set lengths %%%
 %%%-------------------------------------------------%%%
 
+%% Examples: 
+
 % \ospSetLength{\ospLengtTitleLogoColwidth}{0.2\textwidth} %[0.23\textwidth]
 % \ospSetLength{\ospLengtTitleTitleColwidth}{0.5\textwidth} %[0.55\textwidth] 
 % \ospSetLength{\ospLengtTitleSpaceAbove}{2\baselineskip} %[0.01\baselineskip] 
@@ -75,12 +76,6 @@
 % \ospSetLength{\ospLengthColumnSeparator}{20pt} 
 % \ospSetLength{\ospLengthFooterRuleWidth}{5pt} %[0.3pt]
 % \ospSetLength{\ospLengthHeaderRuleWidth}{0pt} %[0pt] 
-
-%%%-------------------------------------------------%%%
-%%% Change fonts %%%
-%%%-------------------------------------------------%%%
-
-% \ospSetFontTitle{\normalfont\sffamily\Huge\bfseries} 
 
 %%%-------------------------------------------------%%%
 %%% Define document column count %%%
@@ -104,9 +99,13 @@
 
 % \newenvironment{name}[number of parameters]{definition begin}{definition end}
 
+%%%-------------------------------------------------%%%
+%%% Set header contents %%%
+%%%-------------------------------------------------%%%
+
 %% Note: You can set them empty to remove the line
 
-% \ospSetTitle{This is the title of the paper}  
+% \ospSetTitle{This is the title of the paper} 
 % \ospSetAuthors{Author one\textsuperscript{1,2,a}, Author two\textsuperscript{2,b}}  
 % \ospSetContacts{foo@bar.com\textsuperscript{a}, bar@foo.com\textsuperscript{b}}
 % \ospSetAffiliations{University of XY departement of Z\textsuperscript{1}, University of \ldots}
@@ -117,16 +116,23 @@
 % \ospSetTitleKeywordName{Keys:}
 
 %%%-------------------------------------------------%%%
-%%% Define footer contents and styling %%%
+%%% Define footer contents %%%
 %%%-------------------------------------------------%%%
-
-%% Contents
 
 % \ospSetFooterTextRightOfSeparator{Right of separator} 
 % \ospSetFooterTextSeparator{xx} 
 % \ospSetFooterTextLeftOfSeparator{Left of separator} 
 % \ospSetFullLeftFooter{I am the complete left footer}
 % \ospSetFullRightFooter{\textbf{\thepage}}
+
+%%%-------------------------------------------------%%%
+%%% Change fonts %%%
+%%%-------------------------------------------------%%%
+
+%% Examples:
+
+% \ospSetFont{\ospFontTitle}{\normalfont\sffamily\tiny\bfseries}  
+
 
 %%%-------------------------------------------------%%%
 %%% Set and change the git info display  %%%
