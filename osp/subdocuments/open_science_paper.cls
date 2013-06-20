@@ -726,15 +726,13 @@
 %% Defines the abstract %%
 \RequirePackage{abstract}
 \renewcommand{\abstractnamefont}{\color{ospColorAbstractHeader}\normalfont\sffamily\large\bfseries}
-% \renewcommand{\abstracttextfont}{\normalfont} 
-
-%% definitions for distribution maps 
 
 %Set the Environments for Textsizes etc
 \newenvironment{smallpar}{\par\small}{\par}
 \newenvironment{centerpar}{\par\center}{\par}
 \newenvironment{hugepar}{\par\huge}{\par}
 
+%% definitions for framed environments
 \providecommand*{\placement}{}
 \providecommand*{\envwidth}{}
 \providecommand*{\mappath}{}
@@ -749,7 +747,7 @@
 \define@key{ospFramedEnvOverlay}{overlaytext}{\renewcommand*\overlaytextname{#1}}
 \define@key{ospFramedEnvOverlay}{label}{\renewcommand*\envlabel{#1}}
 
-\presetkeys{ospFramedEnvOverlay}{placement=H, width=0.95\textwidth, label=fig:DistmapDefaultLabel}{}%
+\presetkeys{ospFramedEnvOverlay}{placement=H, width=0.95\textwidth, label=fig:DefaultLabel}{}%
 
 \providecommand{\ospFramedEnvOverlay}[2][]{
   \setkeys{ospFramedEnvOverlay}{#1}
@@ -824,7 +822,7 @@
 
 \define@key{ospFramedEnv}{placement}{\renewcommand*\placement{#1}}
 \define@key{ospFramedEnv}{label}{\renewcommand*\envlabel{#1}}
-\presetkeys{ospFramedEnv}{placement=H, label=fig:DistmapDefaultLabel}{}%
+\presetkeys{ospFramedEnv}{placement=H, label=fig:DefaultLabel}{}%
 
 \providecommand\ospFramedEnv[3][]{
 \setkeys{ospFramedEnv}{#1}
