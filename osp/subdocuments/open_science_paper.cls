@@ -486,8 +486,8 @@
 %%%-------------------------------------------------%%%
 
 %% citation management %%
-\RequirePackage[backend=biber, natbib=true, style=authoryear, bibstyle=authoryear, hyperref=true]{biblatex}
-
+\RequirePackage[backend = biber, bibstyle = authoryear, style = authoryear, natbib = true]{biblatex}
+ 
 % usage:
 %  \citet{jon90} ⇒ Jones et al. (1990)
 %  \citet[chap.~2]{jon90} ⇒ Jones et al. (1990, chap. 2)
@@ -893,14 +893,14 @@
 
 \ifosp@sectionnumbers%
    \titleformat{\section}
-   {\color{ospColorSectionHeader}\normalfont\sffamily\large\bfseries}{\thesection}{0.5em}{}
+   {\color{ospColorSectionHeader}\normalfont\sffamily\Large\bfseries}{\thesection}{0.5em}{}
    \titlespacing*{\section}
     {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
 
    \AtBeginDocument{\renewcommand*{\refname}{\vspace*{-\baselineskip}}}
 
-   \titleformat{\subsection}[runin]
-   {\color{ospColorSubsectionHeader}\normalfont\sffamily\normalsize\bfseries}{\thesubsection}{0.5em}{}
+   \titleformat{\subsection}
+   {\color{ospColorSubsectionHeader}\normalfont\sffamily\large\bfseries}{\thesubsection}{0.5em}{}
    \titlespacing*{\subsection}
     {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
 
@@ -915,14 +915,14 @@
     {0pt}{3.25ex plus 1ex minus 0.2ex}{1em}
 \else% 
    \titleformat{\section}
-   {\color{ospColorSectionHeader}\normalfont\sffamily\large\bfseries}{}{0em}{}
+   {\color{ospColorSectionHeader}\normalfont\sffamily\Large\bfseries}{}{0em}{}
    \titlespacing*{\section}
     {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
 
    \AtBeginDocument{\renewcommand*{\refname}{\vspace*{-\baselineskip}}}
 
-   \titleformat{\subsection}[runin]
-   {\color{ospColorSubsectionHeader}\normalfont\sffamily\normalsize\bfseries}{}{0em}{}
+   \titleformat{\subsection}
+   {\color{ospColorSubsectionHeader}\normalfont\sffamily\large\bfseries}{}{0em}{}
    \titlespacing*{\subsection}
     {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}
 
@@ -936,6 +936,31 @@
    \titlespacing*{\paragraph}
     {0pt}{3.25ex plus 1ex minus 0.2ex}{1em}
 \fi%
+
+% Note: This are the defaults
+% \titleformat{\chapter}[display]
+% {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge} 
+
+% \titleformat{\section} 
+% {\normalfont\Large\bfseries}{\thesection}{1em}{} 
+
+% \titleformat{\subsection}
+% {\normalfont\large\bfseries}{\thesubsection}{1em}{} 
+
+% \titleformat{\subsubsection}
+% {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{} 
+
+% \titleformat{\paragraph}[runin]
+% {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+% \titleformat{\subparagraph}[runin]
+% {\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+% \titlespacing*{\chapter} {0pt}{50pt}{40pt}
+% \titlespacing*{\section} {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+% \titlespacing*{\subsection} {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+% \titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+% \titlespacing*{\paragraph} {0pt}{3.25ex plus 1ex minus .2ex}{1em}
+% \titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}
+
 
 %%%-------------------------------------------------%%%
 %%% Typographical fine-tuning %%%
