@@ -73,6 +73,8 @@
 %%% Include header %%%
 %%%-------------------------------------------------%%%
 
+\begin{ospHeader}
+
 <<subdoc_content_header, child='usr/subdocuments/chapters/osp_header.Rnw', eval=T>>=
 @
 
@@ -82,11 +84,11 @@
 
 <<subdoc_content_abstract, child='usr/subdocuments/chapters/osp_abstract_section.Rnw', eval=T>>=
 @
-% Big rule after abstract which closes the title header 
-\ospTitleRule
+
+\end{ospHeader}
 
 % Start column layout %
-\ospColumnLayoutControlBegin{} 
+\begin{ospColumLayout}
 
 %%%-------------------------------------------------%%%
 %%% Include introduction %%%
@@ -130,8 +132,15 @@
 <<options_bibliography, child='usr/subdocuments/chapters/osp_bibliography_section.Rnw', eval=T>>=
 @
 
-%% End column layout
-\ospColumnLayoutControlEnd{} 
+% End column layout %
+\end{ospColumLayout}
+
+% uncomment the following lines to get an appendix section.
+
+% \begin{ospAppendix} 
+% <<subdoc_content_appendix, child='usr/subdocuments/chapters/osp_appendix_section.Rnw', eval=T>>=
+% @ 
+% \end{ospAppendix} 
 
 %%%------------------------------------------------------------------------------%%%
 %%% End of document %%%

@@ -481,6 +481,14 @@
   \fi
 }
 
+% wrapper for the column layout in the root document
+\newenvironment{ospColumLayout}{%
+  \ospColumnLayoutControlBegin{}%
+}{%
+  \ospColumnLayoutControlEnd{}%
+}
+
+
 %%%-------------------------------------------------%%%
 %%% Bibliography options %%%
 %%%-------------------------------------------------%%%
@@ -619,6 +627,13 @@
     \ospSetFont{\ospFontTitle}{\normalfont\sffamily\Huge\bfseries}
   \fi 
 } 
+
+% wrapper for the header content in root file
+\newenvironment{ospHeader}{
+  \relax
+}{
+  \ospTitleRule
+}
 
 \newcommand{\ospAuthors}{Author one\textsuperscript{1,2,a}, Author two\textsuperscript{2}, \ldots} 
 \newcommand{\ospSetAuthors}[1]{\def\ospAuthors{#1}}
@@ -961,7 +976,17 @@
 % \titlespacing*{\paragraph} {0pt}{3.25ex plus 1ex minus .2ex}{1em}
 % \titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}
 
+% try to get a nice appendix section for graphics and tables 
+\newenvironment{ospAppendix}{
+\titleformat{\section}
+  {\FloatBarrier\color{ospColor@SectionHeader}\normalfont\sffamily\large\bfseries}{\thesection}{0.5em}{}
+\titlespacing*{\section}
+  {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}   
 
+  \newpage 
+  \appendix  
+}{\relax}
+ 
 %%%-------------------------------------------------%%%
 %%% Typographical fine-tuning %%%
 %%%-------------------------------------------------%%%
