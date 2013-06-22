@@ -820,13 +820,14 @@
   % dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
   % pellentesque eu, pretium quis, sem.}
 
+
 \define@key{ospFramedEnv}{placement}{\renewcommand*\placement{#1}}
 \define@key{ospFramedEnv}{label}{\renewcommand*\envlabel{#1}}
-\presetkeys{ospFramedEnv}{placement=H, label=fig:DefaultLabel}{}%
+\presetkeys{ospFramedEnv}{placement = H, label = nolabel}{}%
 
 \providecommand\ospFramedEnv[3][]{
 \setkeys{ospFramedEnv}{#1}
-  \begin{figure}[\placement]
+  \begin{figure}[H]
     \centering
     \begin{tikzpicture}
       \node[pictureframe]{%
@@ -868,7 +869,7 @@
 
 \WithSuffix\providecommand\ospFramedEnv*[3][]{
 \setkeys{ospFramedEnv}{#1}
-  \begin{figure*}
+  \begin{figure*}[\placement]
     \centering
     \begin{tikzpicture}
       \node[pictureframe]{%
