@@ -846,7 +846,8 @@
     \centering
     \begin{tikzpicture}
       \node[pictureframe]{%
-        \begin{minipage}{0.47\textwidth}
+        % \begin{minipage}{0.47\textwidth}
+        \begin{minipage}{0.97\columnwidth}
           \begin{center} 
             #2
           \end{center}
