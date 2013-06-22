@@ -16,7 +16,7 @@
 %%% Provides class. Load options from class call %%%
 %%%-------------------------------------------------%%%
 
-\ProvidesClass{open-science-paper}[2013/03/03 version 0.9.1 LaTeX class of the Open-Science-Paper]
+\ProvidesClass{open-science-paper}[2013/03/03 version 0.9.2 LaTeX class of the Open-Science-Paper]
 
 \RequirePackage{xkeyval} 
 

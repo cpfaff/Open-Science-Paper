@@ -30,7 +30,7 @@ collaborative paper writing on GitHub and much more.
 ```
 git clone https://github.com/cpfaff/Open-Science-Paper.git
 cd Open-Science-Paper
-git checkout v0.9.1
+git checkout v0.9.2
 ```
 
 ### Some impressions
