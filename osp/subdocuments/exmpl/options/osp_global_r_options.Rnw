@@ -34,6 +34,13 @@
     }
   )  
   
+  # escape latex if in line code chunk
+  hook_inline = knit_hooks$get('inline')
+  knit_hooks$set(inline = function(x) {
+    if (is.character(x)) x = knitr:::escape_latex(x)
+    hook_inline(x)
+  }) 
+
   # pdf.options(family = "Times", width=15)
   # tikz options
   options(replace.assign=TRUE, width=60)

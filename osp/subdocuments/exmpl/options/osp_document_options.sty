@@ -119,10 +119,10 @@
 %%% Define footer contents %%%
 %%%-------------------------------------------------%%%
 
-% \ospSetFooterTextRightOfSeparator{Right of separator} 
+% \ospSetFooterTextRightOfSeparator{DOI 123456abcd} 
 % \ospSetFooterTextSeparator{xx} 
 % \ospSetFooterTextLeftOfSeparator{Left of separator} 
-% \ospSetFullLeftFooter{I am the complete left footer}
+% \ospSetFullLeftFooter{I am the full left footer}
 % \ospSetFullRightFooter{\textbf{\thepage}}
 
 %%%-------------------------------------------------%%%
@@ -164,13 +164,24 @@
 %%% Bibliography options %%%
 %%%-------------------------------------------------%%%
 
-\ExecuteBibliographyOptions{%
+% Note: As the following list of options to BibLaTeX 
+  % need to be set on load these are set in the class 
+  % file. If you find yourself in a situation where you 
+  % need change one of those you need to 
+  % do it in the class file.  
+
+% style, bibstyle, citestyle, natbib and mcite, backend 
+
+% All other options can be set here
+
+\ExecuteBibliographyOptions{
+bibencoding=utf8,%
+hyperref=true,%
 url=false,%
 isbn=false,%
 doi=false,%
-firstinits=false,%
-bibencoding=utf8%
-} 
+firstinits=false%
+}  
 
 % Add a BibTeX bibliography file. If you like to use anoter bib file just
 % change the path here. If you like to add another source just copy the line
