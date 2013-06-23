@@ -824,17 +824,23 @@
       \end{figure*}
     }
 
-% Example usage:  
+% \ospFramedEnvOverlay*[% 
+	% mappath=osp/graphics/MapPelargoniumSidoides.pdf,% 
+	% picpath=osp/graphics/Pelargoniumsidoides.png,%
+	% overlaytext=Pelargonium sidoides,%
+	% label=fig:KaplandPelargonie]{%  
+	% Distribution of Pelargonium sidoides. Die maps was created from data
+	% available via Global Biodiversity Information Facility database.  The
+	% distribution is restricted to regions in Lesotho and South Africa.
+	% (Rot).}  
 
-% \ospFramedEnv*[label=fig:distmatwo]{   
-% <<distmap_two, fig.width=10, fig.height=5, echo=FALSE, message=FALSE>>=   
-  % osp_distmap(species=c('Accipiter erythronemius', 'Junco hyemalis', 'Aix sponsa'))
-% @  
-% }{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-  % commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-  % dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-  % pellentesque eu, pretium quis, sem.}
-
+% \ospFramedEnvOverlay[% 
+	% mappath=osp/graphics/MapPelargoniumSidoides.pdf,%
+	% label=fig:KaplandPelargonie]{%   
+	% Distribution of Pelargonium sidoides. Die maps was created from data
+	% available via Global Biodiversity Information Facility database.  The
+	% distribution is restricted to regions in Lesotho and South Africa.
+	% (Rot).}  
 
 \define@key{ospFramedEnv}{placement}{\renewcommand*\placement{#1}}
 \define@key{ospFramedEnv}{label}{\renewcommand*\envlabel{#1}}
@@ -859,30 +865,6 @@
   \end{figure}
 } 
 
-% \ospFramedEnvOverlay*[% 
-	% mappath=osp/graphics/MapPelargoniumSidoides.pdf,% 
-	% picpath=osp/graphics/Pelargoniumsidoides.png,%
-	% overlaytext=Pelargonium sidoides,%
-	% label=fig:KaplandPelargonie]{%  
-	% Distribution of Pelargonium sidoides. Die maps was created from data
-	% available via Global Biodiversity Information Facility database.  The
-	% distribution is restricted to regions in Lesotho and South Africa.
-	% (Rot).}  
-
-% \ospFramedEnvOverlay[% 
-	% mappath=osp/graphics/MapPelargoniumSidoides.pdf,%
-	% label=fig:KaplandPelargonie]{%   
-	% Distribution of Pelargonium sidoides. Die maps was created from data
-	% available via Global Biodiversity Information Facility database.  The
-	% distribution is restricted to regions in Lesotho and South Africa.
-	% (Rot).}  
-
-% Usage: 
-
-% \ospFramedEnv[label=type:name]{%
-  % % Content here
-% }{Caption here}
-
 \WithSuffix\providecommand\ospFramedEnv*[3][]{
 \setkeys{ospFramedEnv}{#1}
   \begin{figure*}[\placement]
@@ -900,6 +882,72 @@
     \label{\envlabel}
   \end{figure*}
 } 
+
+% Usage: 
+
+% \ospFramedEnv[label=type:name]{%
+  % % Content here
+% }{Caption here}
+
+% Example usage:  
+
+% \ospFramedEnv*[label=fig:distmatwo]{   
+% <<distmap_two, fig.width=10, fig.height=5, echo=FALSE, message=FALSE>>=   
+  % osp_distmap(species=c('Accipiter erythronemius', 'Junco hyemalis', 'Aix sponsa'))
+% @  
+% }{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+  % commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+  % dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+  % pellentesque eu, pretium quis, sem.}
+
+\define@key{ospTableEnv}{placement}{\renewcommand*\placement{#1}}
+\define@key{ospTableEnv}{label}{\renewcommand*\envlabel{#1}}
+\presetkeys{ospTableEnv}{placement = H, label = nolabel}{}%
+
+\providecommand\ospTableEnv[3][]{
+\setkeys{ospTableEnv}{#1}
+\begin{table}[H]
+% Label tab:test_plot_two 
+  \centering
+  \label{\envlabel}
+  \caption{#3}
+  {\small  
+    #2
+  }
+\end{table} 
+} 
+
+\WithSuffix\providecommand\ospTableEnv*[3][]{
+\setkeys{ospTableEnv}{#1}
+\begin{table*}
+% Label tab:test_plot_two 
+  \centering
+  \label{\envlabel}
+  \caption{#3}
+  {\small  
+    #2
+  }
+\end{table*} 
+} 
+
+% \lstnewenvironment{wrappedlisting}{\noindent\minipage{\linewidth}}{\endminipage}
+% \begin{wrappedlisting}
+% ...
+% \end{wrappedlisting}
+
+% \providecommand*{\envlanguage}{}
+
+% \define@key{ospCodeEnv}{label}{\renewcommand*\envlabel{#1}}
+% \define@key{ospCodeEnv}{language}{\renewcommand*\envlanguage{#1}}
+% \presetkeys{ospCodeEnv}{language = Ruby, label = nolabel}{}%
+
+% \DeclareRobustCommand\ospCodeEnv[2][]{%
+% \setkeys{ospCodeEnv}{#1}
+% \begin{lstlisting}[language = \envlanguage] 
+% #2
+% \end{lstlisting}
+% } 
+
 
 %%%-------------------------------------------------%%%
 %%% Typographical options of the headings %%%

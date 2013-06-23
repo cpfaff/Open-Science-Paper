@@ -10,15 +10,8 @@
 
 % example for a one column table %
 
-\begin{table}[H] % {{{
-% Label tab:test_table_one
-  \centering
-  \label{tab:test_table_one}
-  \caption{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-  commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-  dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-  pellentesque eu, pretium quis, sem.}
-  {\small
+% {{{ table: tab:test_table_one
+\ospTableEnv[label = tab:test_table_one]{%
   \begin{tabular}{p{0.055\columnwidth}p{0.055\columnwidth}p{0.055\columnwidth}p{0.055\columnwidth}p{0.055\columnwidth}p{0.055\columnwidth}p{0.055\columnwidth}p{0.055\columnwidth}p{0.055\columnwidth}}
     \toprule
     A & B & C & D & E & F & G & H & I\\ 
@@ -28,13 +21,20 @@
     1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\ 
     \bottomrule
   \end{tabular}
-  }
-\end{table} % }}}
+}{%
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+pellentesque eu, pretium quis, sem.
+}
+% }}}
 
 \lipsum[1] 
 
-% {{{
-\ospFramedEnv*[label=fig:distmatwo]{   
+% example for a distribution map
+
+% {{{ plot fig:distmap
+\ospFramedEnv*[label = fig:distmap]{   
 <<distmap_two, fig.width=10, fig.height=5, echo=FALSE, message=FALSE>>=   
   osp_distmap(species=c('Accipiter erythronemius', 'Junco hyemalis', 'Aix sponsa'))
 @  
