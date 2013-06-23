@@ -33,7 +33,7 @@ cd Open-Science-Paper
 git checkout v0.9.2
 ```
 
-### Some impressions
+### Appetizers
 
 #### Logo
 
@@ -45,11 +45,11 @@ git checkout v0.9.2
 
 #### Lettrines
 
-![black-letter-T](https://dl.dropbox.com/u/844606/Open-Science-Paper-Documentation/black_paper_introduction_big_letter_T.png)
+![black-letter-T](https://github.com/cpfaff/Open-Science-Paper/wiki/files/graphics/osp_lettrines.png)
 
 #### Simple inclusion of distibution maps
 
-![distribution-maps](https://dl.dropboxusercontent.com/u/844606/Open-Science-Paper-Documentation/distribution_maps.png)
+![distribution-maps](https://github.com/cpfaff/Open-Science-Paper/wiki/files/graphics/osp_distmap.png)
 
 #### Some optional features
 
