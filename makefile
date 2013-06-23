@@ -182,4 +182,8 @@ prep:
 	# This is a development only task
 	$(COPY) usr/subdocuments/* osp/subdocuments/exmpl/
 	$(COPY) README.md osp/subdocuments/exmpl/
-	$(COPY) usr/subdocuments/options/ osp/subdocuments/temp/ 
+	$(COPY) usr/subdocuments/options/ osp/subdocuments/temp/  
+
+# Installers (this package is not maintained at the moment but works well so far)
+installtikzdev:  
+	Rscript -e "install.packages('tikzDevice', repos='http://R-Forge.R-project.org')" 
