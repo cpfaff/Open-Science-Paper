@@ -41,10 +41,7 @@ git checkout v0.9.2
 
 #### Well formatted title header
 
-![black_and_white_title_header](https://dl.dropbox.com/u/844606/Open-Science-Paper-Documentation/black_paper_header_frameless.png)
-
-You can also read the header information from a csv file if you like and display
-git commit information inside of the header.
+![black_and_white_title_header](https://github.com/cpfaff/Open-Science-Paper/wiki/files/graphics/osp_title_header.png)
 
 #### Lettrines
 
