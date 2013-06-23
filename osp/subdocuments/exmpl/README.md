@@ -1,29 +1,29 @@
-## About
+## Open-Science-Paper
 
-### Open-Science-Paper
+### About
 
 The Open-Science-Paper
-[repository](https://github.com/cpfaff/Open-Science-Paper) contains a
-LaTeX document which is thought to be forked and used for scientific,
-collaborative paper writing via GitHub. The document combines the typesetting
-capabilities of LaTeX with the R programming language for statistics, using
-the [Knitr](http://yihui.name/knitr/) package. This combination allows for the
+[repository](https://github.com/cpfaff/Open-Science-Paper) contains a LaTeX
+document which is thought to be forked and used for scientific, collaborative
+paper writing via GitHub. The document combines the typesetting capabilities of
+LaTeX with the R programming language for statistics, using the
+[Knitr](http://yihui.name/knitr/) package. This combination allows for the
 production of executable documents that enhance the reproducibility of your
 research.
 
 The Open-Science-Paper offers a clean and logical folder structure and lots of
 examples of typical typesetting requirements to help you typeset your paper. It
-comes with a makefile that helps you to compile, clean and archive the document.
-The document layout is close to common scientific paper formats. This layout
-can help you to prepare figures and tables for publication. But you can also
-just use the Open-Science-Paper to produce nice looking, paper like formatted
-documents. For an example see the PDF file inside of the repository or have a
-look into the impressions section below.
+comes with a makefile that helps you to compile, clean and archive the
+document.  The document layout is close to common scientific paper formats.
+This layout can help you to prepare figures and tables for publication. But you
+can also just use the Open-Science-Paper to produce nice looking, paper like
+formatted documents. For an example see the PDF file inside of the repository
+or have a look into the impressions section below.
 
 The project is documented on detail in the Open-Science-Paper
-[wiki](https://github.com/cpfaff/Open-Science-Paper/wiki). It covers information
-about the prerequisites and how to get started with the document, a workflow for
-collaborative paper writing on GitHub and much more.
+[wiki](https://github.com/cpfaff/Open-Science-Paper/wiki). It covers
+information about the prerequisites and how to get started with the document, a
+workflow for collaborative paper writing on GitHub and much more.
 
 ### Get latest stable version
 
@@ -33,7 +33,7 @@ cd Open-Science-Paper
 git checkout v0.9.2
 ```
 
-### Some impressions
+### Appetizers
 
 #### Logo
 
@@ -41,18 +41,15 @@ git checkout v0.9.2
 
 #### Well formatted title header
 
-![black_and_white_title_header](https://dl.dropbox.com/u/844606/Open-Science-Paper-Documentation/black_paper_header_frameless.png)
-
-You can also read the header information from a csv file if you like and display
-git commit information inside of the header.
+![black_and_white_title_header](https://github.com/cpfaff/Open-Science-Paper/wiki/files/graphics/osp_title_header.png)
 
 #### Lettrines
 
-![black-letter-T](https://dl.dropbox.com/u/844606/Open-Science-Paper-Documentation/black_paper_introduction_big_letter_T.png)
+![black-letter-T](https://github.com/cpfaff/Open-Science-Paper/wiki/files/graphics/osp_lettrines.png)
 
-#### Simple inclusion of distibution maps
+#### Distibution maps
 
-![distribution-maps](https://dl.dropboxusercontent.com/u/844606/Open-Science-Paper-Documentation/distribution_maps.png)
+![distribution-maps](https://github.com/cpfaff/Open-Science-Paper/wiki/files/graphics/osp_distmap.png)
 
 #### Some optional features
 
