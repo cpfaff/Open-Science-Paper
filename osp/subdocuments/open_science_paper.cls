@@ -401,12 +401,34 @@
 \RequirePackage{subcaption} 
 
 % usage:
-%  \begin{figure}
-%    \begin{subfigure}{Breite}
-%      Bild
-%      \caption{Text}
-%    \end{subfigure}
-%  \end{figure}
+
+% \begin{figure}
+  % \centering
+  % \begin{subfigure}[b]{0.3\textwidth}
+    % \centering
+    % \includegraphics[width=\textwidth]{path/to/figure.png}
+    % \caption{Picture A}
+    % \label{fig:pica}
+  % \end{subfigure}%
+  % ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+  % %(or a blank line to force the subfigure onto a new line)
+  % \begin{subfigure}[b]{0.3\textwidth}
+    % \centering
+    % \includegraphics[width=\textwidth]{path/to/figure.png}
+    % \caption{Picture B}
+    % \label{fig:picb}
+  % \end{subfigure}
+  % ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+  % %(or a blank line to force the subfigure onto a new line)
+  % \begin{subfigure}[b]{0.3\textwidth}
+    % \centering
+    % \includegraphics[width=\textwidth]{path/to/figure.png}
+    % \caption{Picture C}
+    % \label{fig:picc}
+  % \end{subfigure}
+  % \caption{Pictures of animals}\label{fig:allfigs}
+% \end{figure}
+
 
 %%%-------------------------------------------------%%%
 %%% Control floatings and captions %%%
@@ -943,6 +965,13 @@
 % \begin{ospCodeEnv}[options]
   % a + b = c
 % \end{ospCodeEnv}
+
+% example usage: 
+
+% \begin{ospCodeEnv}[language = Ruby, label = code:testlabel]
+  % a + b = c
+% \end{ospCodeEnv}
+
 
 %%%-------------------------------------------------%%%
 %%% Typographical options of the headings %%%
