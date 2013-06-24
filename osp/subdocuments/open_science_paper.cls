@@ -930,24 +930,19 @@
 \end{table*} 
 } 
 
-% \lstnewenvironment{wrappedlisting}{\noindent\minipage{\linewidth}}{\endminipage}
-% \begin{wrappedlisting}
-% ...
-% \end{wrappedlisting}
+% \lstnewenvironment{\ospCodeEnv}{\noindent\minipage{\columnwidth}}{\endminipage} 
 
-% \providecommand*{\envlanguage}{}
+\lstnewenvironment{ospCodeEnv}[1][]{
+  \lstset{#1}
+}{
+  \relax
+} 
 
-% \define@key{ospCodeEnv}{label}{\renewcommand*\envlabel{#1}}
-% \define@key{ospCodeEnv}{language}{\renewcommand*\envlanguage{#1}}
-% \presetkeys{ospCodeEnv}{language = Ruby, label = nolabel}{}%
+% usage: 
 
-% \DeclareRobustCommand\ospCodeEnv[2][]{%
-% \setkeys{ospCodeEnv}{#1}
-% \begin{lstlisting}[language = \envlanguage] 
-% #2
-% \end{lstlisting}
-% } 
-
+% \begin{ospCodeEnv}[options]
+  % a + b = c
+% \end{ospCodeEnv}
 
 %%%-------------------------------------------------%%%
 %%% Typographical options of the headings %%%

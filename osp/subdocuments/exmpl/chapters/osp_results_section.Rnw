@@ -58,17 +58,19 @@
 
 \lipsum[1-5]
 
-\begin{lstlisting}[language=Ruby]
+% code listing: example {{{
+\begin{ospCodeEnv}[language=Ruby]
 #!/usr/bin/ruby
 
 $i = 0
 $num = 5
 
 while $i < $num  do
-   puts("Text inside the loop: i = #$i")
-   $i +=1
+ puts("Text inside the loop: i = #$i")
+ $i +=1
 end
-\end{lstlisting}
+\end{ospCodeEnv} 
+% }}}
 
 \lipsum[1-5]
 
