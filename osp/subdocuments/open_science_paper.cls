@@ -1052,7 +1052,7 @@
 % try to get a nice appendix section for graphics and tables 
 \newenvironment{ospAppendix}{
 \titleformat{\section}
-  {\FloatBarrier\color{ospColor@SectionHeader}\normalfont\sffamily\large\bfseries}{\thesection}{0.5em}{}
+  {\FloatBarrier\color{ospColorSectionHeader}\normalfont\sffamily\large\bfseries}{\thesection}{0.5em}{}
 \titlespacing*{\section}
   {0pt}{3.25ex plus 1ex minus 0.2ex}{1.5ex plus 0.2ex}   
 
