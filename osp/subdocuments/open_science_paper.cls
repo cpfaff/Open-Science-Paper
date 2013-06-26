@@ -776,6 +776,7 @@
 \providecommand*{\picturepath}{}
 \providecommand*{\overlaytextname}{}
 \providecommand*{\envlabel}{}
+\providecommand*{\envcaption}{}
 
 \define@key{ospFramedEnvOverlay}{placement}{\renewcommand*\placement{#1}}
 \define@key{ospFramedEnvOverlay}{width}{\renewcommand*\envwidth{#1}}
@@ -866,7 +867,8 @@
 
 \define@key{ospFramedEnv}{placement}{\renewcommand*\placement{#1}}
 \define@key{ospFramedEnv}{label}{\renewcommand*\envlabel{#1}}
-\presetkeys{ospFramedEnv}{placement = H, label = nolabel}{}%
+\define@key{ospFramedEnv}{caption}{\renewcommand*\envcaption{#1}}
+\presetkeys{ospFramedEnv}{placement = H, label = nolabel, caption = fillme}{}%
 
 \providecommand\ospFramedEnv[3][]{
 \setkeys{ospFramedEnv}{#1}
@@ -887,7 +889,63 @@
   \end{figure}
 } 
 
-\WithSuffix\providecommand\ospFramedEnv*[3][]{
+% \RequirePackage{environ} 
+% \RequirePackage{newenviron} 
+
+% \NewEnviron{ospFramedEn}[1][]{%
+% \setkeys{ospFramedEnv}{#1}
+  % \begin{figure}[H]
+    % \centering
+    % \begin{tikzpicture}
+      % \node[pictureframe]{%
+        % \begin{minipage}{0.97\columnwidth}
+          % \begin{center}  
+            % \BODY
+          % \end{center}
+        % \end{minipage}
+      % };
+    % \end{tikzpicture}
+    % \captionbelow{\envcaption}
+    % \label{\envlabel}
+  % \end{figure}
+% }
+
+% \NewEnviron{ospFramedEn*}[1][]{%
+% \setkeys{ospFramedEnv}{#1}
+  % \begin{figure*}[\placement]
+    % \centering
+    % \begin{tikzpicture}
+      % \node[pictureframe]{%
+        % \begin{minipage}{0.98\textwidth} 
+          % \centering
+            % \BODY
+        % \end{minipage}
+      % };
+    % \end{tikzpicture}
+    % \captionbelow{\envcaption}
+    % \label{\envlabel}
+  % \end{figure*}
+% }
+
+% \newenviron{ospFramedEnv*}[1][]{%
+% \setkeys{ospFramedEnv}{#1}
+  % \begin{figure}[H]
+    % \centering
+    % \begin{tikzpicture}
+      % \node[pictureframe]{%
+        % \begin{minipage}{0.97\columnwidth}
+          % \begin{center}  
+            % \ospFramedEnvNbody
+          % \end{center}
+        % \end{minipage}
+      % };
+    % \end{tikzpicture}
+    % \captionbelow{\envcaption}
+    % \label{\envlabel}
+  % \end{figure}
+% }
+
+\WithSuffix\providecommand\ospFramedEnv*[3][]{%
 \setkeys{ospFramedEnv}{#1}
   \begin{figure*}[\placement]
     \centering
