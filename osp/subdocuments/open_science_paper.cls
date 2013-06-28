@@ -987,26 +987,24 @@
 \providecommand\ospTableEnv[3][]{
 \setkeys{ospTableEnv}{#1}
 \begin{table}[H]
-% Label tab:test_plot_two 
   \centering
-  \label{\envlabel}
   \caption{#3}
   {\small  
     #2
   }
+\label{\envlabel}
 \end{table} 
 } 
 
 \WithSuffix\providecommand\ospTableEnv*[3][]{
 \setkeys{ospTableEnv}{#1}
 \begin{table*}
-% Label tab:test_plot_two 
   \centering
-  \label{\envlabel}
   \caption{#3}
   {\small  
     #2
   }
+\label{\envlabel}
 \end{table*} 
 } 
 
