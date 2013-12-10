@@ -172,6 +172,16 @@ rmgithooks:
 	$(REMOVER) $(GITHOOKPATH)/post-commit 
 	$(REMOVER) $(GITHOOKPATH)/post-merge  
 
+# Installers (this package is not maintained at the moment but still works well so far)
+installtikzdev:  
+	Rscript -e "install.packages('tikzDevice', repos='http://R-Forge.R-project.org')"  
+
+# Create png files from the pdf images
+pngnize: 
+        # needs imagemagick installed	
+	for file in usr/graphics/dynamic/*.pdf; do convert $${file}  $${file}.png; done
+	for file in usr/graphics/static/*; do convert $${file}  $${file}.png; done
+
 # Prep 
 
 # As the name suggest this is for preparation purposes and should be used for
@@ -183,7 +193,3 @@ prep:
 	$(COPY) usr/subdocuments/* osp/subdocuments/exmpl/
 	$(COPY) README.md osp/subdocuments/exmpl/
 	$(COPY) usr/subdocuments/options/ osp/subdocuments/temp/  
-
-# Installers (this package is not maintained at the moment but works well so far)
-installtikzdev:  
-	Rscript -e "install.packages('tikzDevice', repos='http://R-Forge.R-project.org')" 
