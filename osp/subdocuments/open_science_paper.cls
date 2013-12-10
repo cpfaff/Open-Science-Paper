@@ -437,6 +437,26 @@
 %% Control float placement %%
 \RequirePackage{float} 
 
+% \renewcommand{\topfraction}{0.85}
+% \renewcommand{\textfraction}{0.1}
+% \renewcommand{\floatpagefraction}{0.75}
+
+% totalnumber (default 3) is the maximum number of floats on a text (!) page
+% topnumber (default 2) is the maximum number of floats in the top area
+% bottomnumber (default 1) is the maximum number of floats in the bottom area
+% dbltopnumber (default 2) is the maximum number of full sized floats in two-colum mode going above the text columns.
+% \topfraction (default 0.7) maximum size of the top area
+% \bottomfraction (default 0.3) maximum size of the bottom area
+% \dbltopfraction (default 0.7) maximum size of the top area for double-colum floats
+% \textfraction (default 0.2) minimum size of the text area, i.e., the area that must not be occupied by floats 
+
+% \floatsep (default 12pt plus 2pt minus 2pt) the separation between floats in top or bottom areas
+% \dblfloatsep (default 12pt plus 2pt minus 2pt) the separation between double-column floats on two column pages
+% \textfloatsep (default 20pt plus 2pt minus 4pt) the separation between top or bottoma area and the text area
+% \dbltextfloatsep (default 20pt plus 2pt minus 4pt) the analog of \textfloatsep for two-column floats
+% \intextsep (default 12pt plus 2pt minus 2pt) 
+% \floatpagefraction (default 0.5) minimum part of the page (or column) that need to be occupied by floats to be allowed to form a float page (or column)
+
 \RequirePackage{placeins}
 
 %% Control caption layout %%
@@ -1136,7 +1156,10 @@
 %% TeX typesetting parameters %%
 \clubpenalty = 9999 % No "Schusterjungen"
 \widowpenalty = 9999 % No "Hurenkinder"
-\displaywidowpenalty = 9999
+\displaywidowpenalty = 9999 
+% \clubpenalty = 150
+% \widowpenalty = 150
+% \displaywidowpenalty = 150
 \tolerance = 200
 \hbadness = 1414
 \emergencystretch = 1.5em
