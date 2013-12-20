@@ -34,10 +34,10 @@ pellentesque eu, pretium quis, sem.
 % example for a distribution map
 
 % {{{ plot fig:distmap
-\ospFramedEnv*[label = fig:distmap]{   
-<<distmap_two, fig.width=10, fig.height=5, echo=FALSE, message=FALSE>>=   
-  osp_distmap(species=c('Accipiter erythronemius', 'Junco hyemalis', 'Aix sponsa'))
-@  
+\ospFramedEnv*[label=fig:distmap]{   
+<<distmap_two, fig.width=10, fig.height=5, echo=FALSE, message=FALSE, cache=FALSE>>=   
+  osp_distmap(species = c("Plantago lanceolata","Lolium perenne", "Betula pendula"))
+@
 }{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
   commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
   dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
