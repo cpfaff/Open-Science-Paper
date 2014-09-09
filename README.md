@@ -8,19 +8,19 @@ document which is thought to be forked and used for scientific, collaborative
 paper writing via GitHub. The document combines the typesetting capabilities of
 LaTeX with the R programming language for statistics, using the
 [Knitr](http://yihui.name/knitr/) package. This combination allows for the
-production of executable documents that enhance the reproducibility of your
+creation of executable documents that enhance the reproducibility of your
 research.
 
 The Open-Science-Paper offers a clean and logical folder structure and lots of
 examples of typical typesetting requirements to help you typeset your paper. It
 comes with a makefile that helps you to compile, clean and archive the
-document.  The document layout is close to common scientific paper formats.
-This layout can help you to prepare figures and tables for publication. But you
-can also just use the Open-Science-Paper to produce nice looking, paper like
-formatted documents. For an example see the PDF file inside of the repository
-or have a look into the impressions section below.
+document. The document layout is close to common scientific paper formats.  The
+layout can help to prepare figures and tables for publication. But you can also
+just use the Open-Science-Paper to create nice looking, paper like formatted
+documents. For an example see the PDF file inside of the repository or have a
+look into the impressions section below.
 
-The project is documented on detail in the Open-Science-Paper
+The project is documented in detail in the Open-Science-Paper
 [wiki](https://github.com/cpfaff/Open-Science-Paper/wiki). It covers
 information about the prerequisites and how to get started with the document, a
 workflow for collaborative paper writing on GitHub and much more.
@@ -47,7 +47,7 @@ git checkout v0.9.2
 
 ![black-letter-T](https://github.com/cpfaff/Open-Science-Paper/wiki/files/graphics/osp_lettrines.png)
 
-#### Distibution maps
+#### Distibution maps (via simple `rgbif` wrapper)
 
 ![distribution-maps](https://github.com/cpfaff/Open-Science-Paper/wiki/files/graphics/osp_distmap.png)
 
@@ -83,3 +83,7 @@ Do you like the Open-Science-Paper repository? You are welcome to follow me on
 ## License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/cpfaff/open-science-paper/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+

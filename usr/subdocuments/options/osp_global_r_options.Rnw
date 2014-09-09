@@ -84,10 +84,10 @@
   }
 
 
-  ## Helpers functions
+  ## Helper functions
 
-  osp_load_or_install <- function(library=NULL){
-    # todo: Implement a check if package is installed otherwise install it
+  osp_load_or_install <- function(library = NULL){
+    # TODO: Implement a check if package is installed otherwise install it
   }
 
   osp_distmap <- function(species=NULL){
@@ -96,11 +96,11 @@
     library(rgbif)  
     keys <- sapply(species, function(x) name_backbone(name=x)$speciesKey, USE.NAMES=FALSE)
     dat <- occ_search(taxonKey=keys, limit=100, return='data', hasCoordinate=TRUE)
-    library('plyr')
     datdf <- ldply(dat)
     custom <- function(){list(theme_osp_distmap(), labs(colour = "Species"))}
     gbifmap(datdf, customize=custom()) 
   }
+
 @  
 
 

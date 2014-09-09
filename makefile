@@ -48,7 +48,7 @@ ARCHNAME = $(DOCUMENT)_$(DATE).tar.gz
 ARCHFILES = $(DOCUMENT).pdf $(DOCUMENT).Rnw osp/ usr/ makefile
 
 # Clean up the document folder
-CLEANFILES = usr/graphics/dynamic/* *.gin usr/cache/* *.xdy *tikzDictionary *.idx *.mtc* *.glo *.maf *.ptc *.tikz *.lot *.dpth *.figlist *.dep *.log *.makefile *.out *.map *.tex *.toc *.aux *.tmp *.bbl *.blg *.lof *.acn *.acr *.alg *.glg *.gls *.ilg *.ind *.ist *.slg *.syg *.syi *.acn *.dvi *.ist *.syg *.synctex.gz *.bcf *.run.xml *-blx.bib  
+CLEANFILES = usr/graphics/dynamic/* *.gin usr/cache/* *.xdy *tikzDictionary *.idx *.mtc* *.glo *.maf *.ptc *.tikz *.lot *.dpth *.figlist *.dep *.log *.makefile *.out *.map *.tex *.toc *.aux *.tmp *.bbl *.blg *.lof *.acn *.acr *.alg *.glg *.gls *.ilg *.ind *.ist *.slg *.syg *.syi *.acn *.dvi *.ist *.syg *.synctex.gz *.bcf *.run.xml *-blx.bib *.txt
 
 # Default rule
 all: $(DOCUMENT).pdf 
@@ -172,6 +172,16 @@ rmgithooks:
 	$(REMOVER) $(GITHOOKPATH)/post-commit 
 	$(REMOVER) $(GITHOOKPATH)/post-merge  
 
+# Installers (this package is not maintained at the moment but still works well so far)
+installtikzdev:  
+	Rscript -e "install.packages('tikzDevice', repos='http://R-Forge.R-project.org')"  
+
+# Create png files from the pdf images
+pngnize: 
+        # needs imagemagick installed	
+	for file in usr/graphics/dynamic/*.pdf; do convert $${file}  $${file}.png; done
+	for file in usr/graphics/static/*; do convert $${file}  $${file}.png; done
+
 # Prep 
 
 # As the name suggest this is for preparation purposes and should be used for
@@ -183,7 +193,3 @@ prep:
 	$(COPY) usr/subdocuments/* osp/subdocuments/exmpl/
 	$(COPY) README.md osp/subdocuments/exmpl/
 	$(COPY) usr/subdocuments/options/ osp/subdocuments/temp/  
-
-# Installers (this package is not maintained at the moment but works well so far)
-installtikzdev:  
-	Rscript -e "install.packages('tikzDevice', repos='http://R-Forge.R-project.org')" 
