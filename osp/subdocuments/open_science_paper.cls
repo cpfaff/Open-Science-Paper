@@ -332,6 +332,11 @@
       \setlength{\DefaultFindent}{0.27em}
       \setlength{\DefaultNindent}{0.02em}
    }{\relax}
+
+   \ifstrequal{#1}{O}{
+      \setlength{\DefaultFindent}{0.20em}
+      \setlength{\DefaultNindent}{0.04em}
+   }{\relax}
    
 }
 
